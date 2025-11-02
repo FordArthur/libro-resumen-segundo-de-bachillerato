@@ -1,0 +1,54 @@
+\contentsline {part}{I\hspace {1em}Preambulo}{1}{part.1}%
+\contentsline {section}{\numberline {1}Sobre este libro}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Cómo leer este libro}{1}{subsection.1.1}%
+\contentsline {part}{II\hspace {1em}Matemáticas}{2}{part.2}%
+\contentsline {section}{\numberline {2}Preludio}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Lógica proposicional de primer orden}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Conjuntos}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Análisis real}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Funciones reales}{4}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}En práctica}{4}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Límites}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Derivadas}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Integrales}{4}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Geometría}{4}{section.4}%
+\contentsline {section}{\numberline {5}Algebra}{5}{section.5}%
+\contentsline {section}{\numberline {6}Estadística y probabilidad}{5}{section.6}%
+\contentsline {part}{III\hspace {1em}Física}{6}{part.3}%
+\contentsline {section}{\numberline {7}Preludio}{6}{section.7}%
+\contentsline {section}{\numberline {8}Campo gravitatorio}{6}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Momento lineal y angular}{6}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Campo gravitatorio de los cuerpos celestes}{7}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Leyes de Kepler}{7}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Campo Eléctrico}{7}{section.9}%
+\contentsline {part}{IV\hspace {1em}Tecnología}{8}{part.4}%
+\contentsline {section}{\numberline {10}Preludio}{8}{section.10}%
+\contentsline {section}{\numberline {11}Materiales y sus propiedades}{8}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Propiedades mecánicas de los materiales}{8}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Ensayos de propiedades mecánicas}{8}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}De tracción}{8}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}De dureza}{9}{subsubsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.3}De resilencia}{10}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Máquinas térmicas}{10}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Principios fundamentales de termodinámica}{10}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Principios de la termodinámica}{10}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Transformaciones termodinámicas en los gases}{12}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.3.1}Transformaciones isobáricas (presión constante)}{12}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}Transformaciones isotérmicas (temperatura constante)}{12}{subsubsection.12.3.2}%
+\contentsline {subsubsection}{\numberline {12.3.3}Transformaciones isocóricas (volumen constante)}{13}{subsubsection.12.3.3}%
+\contentsline {subsubsection}{\numberline {12.3.4}Transformaciones adiabáticas}{13}{subsubsection.12.3.4}%
+\contentsline {section}{\numberline {13}Procesos reversibles e irreversibles}{13}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Motores térmicos y máquinas frigoríficas}{13}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Ciclo ideal de Carnot}{14}{subsection.13.2}%
+\contentsline {section}{\numberline {14}Motores térmicos}{14}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Motores de combustión interna}{14}{subsection.14.1}%
+\contentsline {subsubsection}{\numberline {14.1.1}Motores de explosión}{15}{subsubsection.14.1.1}%
+\contentsline {subsubsection}{\numberline {14.1.2}Motores de diesel}{16}{subsubsection.14.1.2}%
+\contentsline {subsubsection}{\numberline {14.1.3}Parámetros y magnitudes características}{17}{subsubsection.14.1.3}%
+\contentsline {subsection}{\numberline {14.2}Motores de combustión externa}{17}{subsection.14.2}%
+\contentsline {subsubsection}{\numberline {14.2.1}Ciclo de Rankine (Turbina de vapor)}{17}{subsubsection.14.2.1}%
+\contentsline {subsubsection}{\numberline {14.2.2}Ciclo de Brayton (Turbina de gas)}{18}{subsubsection.14.2.2}%
+\contentsline {part}{V\hspace {1em}Filosofía}{19}{part.5}%
+\contentsline {section}{\numberline {15}Preludio}{19}{section.15}%
+\contentsline {part}{VI\hspace {1em}Lengua}{20}{part.6}%
+\contentsline {section}{\numberline {16}Preludio}{20}{section.16}%
