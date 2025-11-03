@@ -66,7 +66,7 @@ El compendio anterior quizás no es suficiente para alguien no ya algo expuesto 
 
 \begin{enumerate}
 
-  \item \[ \forall x, y \in X.\; x = y \Rightarrow f(x) = f(y) \]
+  \item \[ \forall x, y \in X.\; f(x) = f(y) \Rightarrow x = y \]
 
   \item \[ \forall y \in Y.\; \exists x \in X. \text{ tal que } f(x) = y \]
 
@@ -122,22 +122,71 @@ zonas cercanas en el dominio. Dicho de otra manera, si $ x $ está cercano a $ y
 
 \subsubsection{En práctica}
 
-En la selectividad no es raro un ejercicio que requiera calcular el dominio de una función. Para este fin, debemos identificar todas las funciones ``problemáticas'' y limitarnos a 
-el dominio en el que todas ``funcionen''. A continuación una tabla con funciones típicas:
+En la selectividad no es raro un ejercicio que requiera calcular el dominio de una función. Para este fin, debemos identificar el dominio e imagen de todas las funciones con dominios restringidos involucradas y
+restringir hasta que la imagen de la función que les sirve cómo argumento caiga en el dominio de estas funciones ``problemáticas''. A continuación una tabla con reglas de inferencia para los dominios:
 
 \begin{center}
-\begin{tabular}{| c | c c |} 
+\begin{tabular}{| c | c |} 
  \hline
- $ f(x) $ & dom $ f $ & im $ f $ \\
+ $ f(x) $ & dom $ f $ \\
  \hline
- $ a + x $ & $ \mathbb{R} $ & $ \mathbb{R}$ \\
- $ ax $ & $ \mathbb{R} $ & $ \mathbb{R} $ \\
- $ x^n $ & $ \mathbb{R} $ & $ \mathbb{R} $ si $ n $ es impar y $ (0, +\infty) $ si $ n $ es par \\
+ $ f_1(x) + f_2(x) $ & $ \text{dom} f_1 \cap \text{dom} f_2 $ \\
+ $ f_1(x)f_2(x) $ & $ \text{dom} f_1 \cap \text{dom} f_2 $ \\
+ $ f_1(x)/f_2(x) $ & $ (\text{dom} f_1 \cap \text{dom} f_2) \backslash \{f_2(x) = 0\} $ \\
+ $ ax^b $ & $ \mathbb{R} $ \\
+ $ \sqrt[2n]{x} $ & $ [0, +\infty) $ \\
+ $ \sqrt[2n+1]{x} $ & $ \mathbb{R} $ \\
+ $ a^x $ & $ \mathbb{R} $ \\
+ $ \ln(x) $ & $ (0, +\infty) $ \\
+ $ |x| $ & $ \mathbb{R} $ \\
  \hline
 \end{tabular}
 \end{center}
 
 \subsection{Límites}
+
+Los límites son la propiedad característica de los números reales \sn{Todo ``campo completo ordenado'' es isomórfico a $ \mathbb{R} $. }: el salto de los números racionales a los
+números reales es precisamente requerir que toda secuencia (\href{https://ncatlab.org/nlab/show/Cauchy+sequence}{\textit{Cauchy}}) converja.
+
+\begin{definition}[Secuencia]
+  Una secuencia (de números reales) es una función de $ \mathbb{N} $ a $ \mathbb{R} $.
+
+  Equivalentemente es una lista ordenada e infinita de números reales.
+\end{definition}
+
+\begin{definition}[Secuencia Cauchy]
+  Se dice que una secuencia es \textit{Cauchy} cuando los números se acercan aribtrariamente. Si $ f : \mathbb{N} \rightarrow \mathbb{R} $ es una secuencia Cauchy:
+
+  \[ \forall \epsilon \in \mathbb{R}, \exists N \in \mathbb{R}, \forall m, n \ge N. | f(m) - f(n) | < \epsilon  \]
+\end{definition}
+
+Con esta definición a mano, el límite de una función $ f $ cuando tiende a $ a $ es simplemente a lo que converja el aplicarle $ f $ a una secuencia Cauchy que converja a $ a $:
+
+\begin{definition}[Límite de una función]
+  Se dice que $ \lim_{x \to a} f(x) = L $ sí:
+
+  \[ \forall \epsilon > 0, \exists \delta > 0. | a - x | < \delta \Rightarrow | L - f(x) | < \epsilon \]
+\end{definition}
+
+En la práctica, hay veces que nos interesa investigar secuencias Cauchy que siempre sean mayores o menores que el número al que convergen:
+
+\begin{definition}[Límites laterales de una función]
+  Se dice que $ \lim_{x \to a^+} f(x) = L $ (convergencia por la derecha) sí:
+
+  \[ \forall \epsilon > 0, \exists \delta > 0. a < x < a +\delta \Rightarrow | L - f(x) | < \epsilon \]
+
+  Dualmente, se dice que $ \lim_{x \to a^-} f(x) = L $ (convergencia por la izquierda) sí:
+
+  \[ \forall \epsilon > 0, \exists \delta > 0. a - \delta < x < a \Rightarrow | L - f(x) | < \epsilon \]
+\end{definition}
+
+Finalmente, cabe replantear la definción de continuidad utilizando límties, ya que esta es la utilizada en la selectividad:
+
+\begin{definition}[Continuidad]
+  Decimos que una función real es continua en $ a $ si:
+
+  \[ \lim_{x \to a^-} f(x) = f(a) = \lim_{x \to a^+} f(x) \]
+\end{definition}
 
 \subsection{Derivadas}
 
@@ -159,10 +208,14 @@ Las áreas de la física pertinentes a la selectividad son \dots : \textbf{Campo
 
 \section{Campo gravitatorio}
 
+\subsection{Mecánica clásica}
+
 El campo gravitatorio es un campo vectorial en la mecánica clásica \sn{en la teoría de relatividad general es un \textbf{campo tensorial} }, y utilizamos los tres \textit{versores}
 estándar: $ \hat{i}, \hat{j}, \hat{k} $.
 
-\subsection{Momento lineal y angular}
+Dentro del campo gravitatorio todas las fuerzas son atractivas y son resultantes de la masa de los objetos, que aproximamos cómo partículas puntuales.
+
+\subsubsection{Momento lineal y angular}
 
 \begin{definition}[Momento Lineal]
   El momento lineal $ \vec{p} $ es una magnitud vectorial que representa la inercia de un cuerpo, su resistencia a cambiar su estado de movimiento.
@@ -188,7 +241,7 @@ En un movimiento curvilíneo, $ \vec{p} $ cambia continuamente, lo cuál lo expl
 
 En un movimiento circular podemos simplificar la definición de la magnitud del momento angular, ya que:
 
-$$ L = r p \sin{\alpha} = r p \sin{90º} = r p = r m v $$
+$$ L = r p \sin{\alpha} = r p \sin{90} = r p = r m v $$
 
 \begin{definition}[Fuerza central]
   Fuerza central es aquella cuya direción es siempre a un punto fijo y cuya magnitud solo depende de la distancia a ese punto.
@@ -204,7 +257,60 @@ $$ L = r p \sin{\alpha} = r p \sin{90º} = r p = r m v $$
   Si ni $ \vec{r} = 0 $ ni $ \vec{F} = 0 $, entonces $ \vec{r} \times \vec{F} = 0 $  implica que $ \vec{r} $ y $ \vec{F} $ son paralelos (definición de fuerza central).
 \end{proof}
 
+\subsubsection{Energía y trabajo}
+
+\begin{definition}[Trabajo]
+  Capacidad que tiene un cuerpo para realizar trabajo. La energía mecánica es aquella asociada al movimiento:
+
+  \begin{itemize}
+    \item \textbf{Energía cinética}: Energía que tiene un cuerpo en virtud a su velocidad: 
+      \[ E_C = \frac{1}{2}mv^2 \]
+    \item \textbf{Energía potencial}: Energía que tiene un cuerpo en virtud a su posición respecto a una masa:
+      \[ E_P = G \frac{M}{r} \]
+  \end{itemize}
+  
+  La suma de estas dos anteriores es la \textbf{energía mecánica}: 
+
+  \[ E_M = E_C + E_P \]
+
+\end{definition}
+
+\begin{definition}[Energía y energía mecánica]
+  Capacidad que tiene un cuerpo para realizar trabajo. La energía mecánica es aquella asociada al movimiento:
+
+  \begin{itemize}
+    \item \textbf{Energía cinética}: Energía que tiene un cuerpo en virtud a su velocidad: 
+      \[ E_C = \frac{1}{2}mv^2 \]
+    \item \textbf{Energía potencial}: Energía que tiene un cuerpo en virtud a su posición respecto a una masa:
+      \[ E_P = G \frac{M}{r} \]
+  \end{itemize}
+  
+  La suma de estas dos anteriores es la \textbf{energía mecánica}: 
+
+  \[ E_M = E_C + E_P \]
+
+\end{definition}
+
+\subsection{Campo gravitatorio creado por masas puntuales}
+
+\begin{definition}[Fuerza gravitacional]
+  Fuerza resultante de las perturbaciones del campo gravitatorio.
+  \[ \vec{F_g} = G \frac{M m}{r^2} \]
+\end{definition}
+
+\begin{definition}[Intensidad del campo gravitatorio]
+  Fuerza resultante por el campo gravitatorio por unidad de masa.
+  \[ \vec{g} = \frac{\vec{F_g}}{m} = G \frac{M}{r^2} \]
+\end{definition}
+
+\begin{remark}
+  El principio de superposición aplica:
+  \[ \vec{g_T} = \sum_i \vec{g_i} = G \sum_i \frac{M_i}{r^2_i} \hat{u_{ri}} \]
+\end{remark}
+
 \subsection{Campo gravitatorio de los cuerpos celestes}
+
+El campo gravitatorio tal y cómo lo hemos presentado puede utilizarse para operar con cuerpos celestes (aproximadamente).
 
 \subsection{Leyes de Kepler}
 
@@ -217,7 +323,77 @@ $$ L = r p \sin{\alpha} = r p \sin{90º} = r p = r m v $$
 
 El punto más alejado de una órbita elíptica es el afelio y el más cercano es el perihelio.
 
-\section{Campo Eléctrico}
+\subsection{Leyes de Kepler}
+
+El campo eléctrico es un campo vectorial al igual que el campo gravitatorio.
+
+\section{Campo Eléctroestático}
+
+\subsection{Intensidad del campo electroestático}
+
+\begin{definition}[Fuerza Eléctrica, Ley de Coulomb]
+  La fuerza eléctrica es la resultante de las perturbaciones del campo electroestático.
+
+  \[ \vec{F_e} = K\frac{Q q}{r^2} \cdot \hat{u_r} \]
+\end{definition}
+
+\begin{remark}
+    Si se fija una dirección, es fácil ver que:
+    \begin{itemize}
+      \item \textbf{Si $ Q $ y $ q $ tienen mismo signo}: Entonces $ Q q > 0 $ por lo que  $ F_e > 0 $ (repulsión).
+      \item \textbf{Si $ Q $ y $ q $ tienen distinto signo}: Entonces $ Q q < 0 $ por lo que  $ F_e < 0 $ (atracción).
+    \end{itemize}
+
+    Por lo que se justifica la regla ``similares se repelen y opuestos se atraen''.
+\end{remark}
+
+\begin{definition}[Intensidad eléctrica]
+  Fuerza resultante por el campo eléctroestático por unidad de carga.
+
+  \[ \vec{E} = \frac{\vec{F_e}}{q} = K\frac{Q}{r^2} \]
+\end{definition}
+
+\begin{remark}
+  Nótese que si $ Q > 0 $  entonces $ \vec{E} $ y $ \hat{u_r} $ tendrán el mismo sentido mientras que si $ Q < 0 $ entonces $ \vec{E} $ y $ \hat{u_r} $ tendrán sentidos opuestos (demostración trivial).
+\end{remark}
+
+\begin{remark}
+  También es importante remarcar que el principio de superposición aplica:
+  
+  \[ \vec{E_T} = \sum_{i} \vec{E_i} = K \sum_{i} \frac{Q_i}{r^2_i} \cdot \hat{u_{ri}}  \]
+\end{remark}
+
+\subsection{Energía asociada al campo eléctrico}
+
+En la situación descrita, podemos llegar a una forma cerrada para el trabajo dentro del campo electroestático:
+
+\[ W = \int_i^f \vec{F_e} \cdot d\vec{r} = \int_i^f K \frac{Q q}{r^2} \hat{u_r} \cdot d\vec{r} = \int_i^f K \frac{Q q}{r^2} dr = K Q q \left[ \frac{-1}{r} \right]_i^f  \]
+
+\begin{definition}[Energía potencial eléctrica]
+  La energía potencial eléctrica se define en virtud a que el campo electroestático es conservativo:
+
+  \[ W_c = -\Delta E_P \qquad \text{ó} \qquad E_P = K \frac{Q q}{r} \]
+\end{definition}
+
+Intuitivamente, la energía potencial eléctrica es comparable a la gravitacional solo que cargas positivas ``suben el terreno'' mientras que cargas negativas lo bajan. De la misma manera que con los campos
+gravitatorios, es fructífero considerar energía potencial por unidad de carga (A ser explicado a continuación).
+
+\subsection{Potencial eléctrico}
+
+\begin{definition}[Potencial eléctrico]
+  Trabajo necesario para llevar una unidad de carga hasta el infinito a velocidad constante:
+
+  \[ V = E_{P \infty} - E_P = K \frac{Q}{r} \]
+\end{definition}
+
+\begin{remark}
+    Si se fija una dirección, es fácil ver que si $ Q $ y $ q $ tienen mismo signo ($ Q q > 0 $)
+    \begin{itemize}
+      \item \textbf{Si $ r_f > r_i $} (se aleja): Entonces $ W = -\Delta E_P = -q \Delta V > 0 $ (movimiento espontáneo).
+      \item \textbf{Si $ r_f < r_i $} (se aleja): Entonces $ W = -\Delta E_P = -q \Delta V < 0 $ (se necesita suplir una fuerza).
+    \end{itemize}
+  Mientras que lo contrario es cierto si $ Q $ y $ q $ tienen distinto signo.
+\end{remark}
 
 \newpage
 
@@ -312,7 +488,7 @@ Vickers:
 
 \begin{itemize}
   \item $ d := $ Diagonal de la huella.
-  \item $ S := \frac{d^2}{2 \sin{68º}} $
+  \item $ S := \frac{d^2}{2 \sin{68}} $
   \item \textbf{Grado de dureza}: $ HV := \frac{F}{S} = \frac{2 \sin{68º} F}{d^2} $
 \end{itemize}
 

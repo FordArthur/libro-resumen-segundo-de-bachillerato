@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762102046.17486 "main.tex" "main.pdf" "main" 1762102047.25438 0
+["pdflatex"] 1762200346.89803 "main.tex" "main.pdf" "main" 1762200348.17826 0
   "/home/ford/Projects/transcripts/t2a/mea-pugna/NotesTeXV3/NotesTeX.sty" 1658426795 19514 574dd07d13f3350f65ca9466bdd7b319 ""
   "/home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG" 1761484620.83377 45139 a14205d737461f060a05afd8ca026fb0 ""
   "/home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png" 1761485887.34446 12773 cd478362cf0c0c1dee06ef4deadfc25c ""
@@ -89,6 +89,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmri9.pfb" 1755987285 109598 cb570392cb143ca78182169795feed7a ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb" 1755987285 119663 e82fa1a58f98ccd89bdbd77311ac9cf1 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb" 1755987285 27863 09ce3735688ffde955e72da27c95b61a ""
+  "/usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb" 1755987285 28210 987b40585e9bcf6463d6155bb4219492 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb" 1755987285 27941 d1f5d03f61a46c3fcc3a2ba904ddda52 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb" 1755987285 27802 5c876bb2c4040caaf035d60bd74a86bd ""
   "/usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb" 1755987285 16077 4737ac34f0fb5608550f3780a0202c22 ""
@@ -275,10 +276,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1761996366 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1761996348 2008243 af1178ae4f1b7be3f97f850b38419136 ""
-  "main.aux" 1762102047.14479 9303 0b4d911116a444ab8b4a0a43fb2128bf "pdflatex"
-  "main.out" 1762102047.14589 9314 74db55a2b0f1dbfa696cb09882ba77ed "pdflatex"
-  "main.tex" 1762102043.43585 29510 a47a854bef3b2f99df137b9f6a71bef8 ""
-  "main.toc" 1762102047.14589 4688 d2e3904f0ab4581dd2a341e3e890ed4b "pdflatex"
+  "main.aux" 1762200348.06345 13513 de93fe4fc8ede95febd60ce00d4b38cb "pdflatex"
+  "main.out" 1762200348.06455 10763 46e96b86f5afe4f183d552cb7855ae1d "pdflatex"
+  "main.tex" 1762200343.5882 37183 b4ba52602dff5ea1e8926e4dd886905b ""
+  "main.toc" 1762200348.06455 5375 93f3be68ce9b37219716c35233c8f245 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
