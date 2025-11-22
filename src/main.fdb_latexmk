@@ -1,9 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1762200346.89803 "main.tex" "main.pdf" "main" 1762200348.17826 0
+["pdflatex"] 1762886906.02042 "main.tex" "main.pdf" "main" 1762886907.42279 0
   "/home/ford/Projects/transcripts/t2a/mea-pugna/NotesTeXV3/NotesTeX.sty" 1658426795 19514 574dd07d13f3350f65ca9466bdd7b319 ""
   "/home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG" 1761484620.83377 45139 a14205d737461f060a05afd8ca026fb0 ""
   "/home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png" 1761485887.34446 12773 cd478362cf0c0c1dee06ef4deadfc25c ""
   "/home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg" 1761485803.82233 78473 10c1b48c409beebdc349426ee170d1e4 ""
+  "/home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png" 1762879442.60832 305899 65a2808681119c1dde589deb7c4ecc61 ""
   "/home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg" 1761485080.1162 934713 997e447b01efed3e20ffc4b3859fcec4 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1755987285 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1755987285 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -276,10 +277,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1761996366 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1761996348 2008243 af1178ae4f1b7be3f97f850b38419136 ""
-  "main.aux" 1762200348.06345 13513 de93fe4fc8ede95febd60ce00d4b38cb "pdflatex"
-  "main.out" 1762200348.06455 10763 46e96b86f5afe4f183d552cb7855ae1d "pdflatex"
-  "main.tex" 1762200343.5882 37183 b4ba52602dff5ea1e8926e4dd886905b ""
-  "main.toc" 1762200348.06455 5375 93f3be68ce9b37219716c35233c8f245 "pdflatex"
+  "main.aux" 1762886907.3089 16631 1d8e674c3c96bc78702426b361320a21 "pdflatex"
+  "main.out" 1762886907.31006 13162 2ea55c83491bf21a91187d84dc630fd8 "pdflatex"
+  "main.tex" 1762886902.958 48658 ca7be8a15db515ed74e91089f5e15b1d ""
+  "main.toc" 1762886907.31006 6741 7a7a7f4b93fbbb15ea89f6786a12de2b "pdflatex"
   (generated)
   "main.aux"
   "main.log"

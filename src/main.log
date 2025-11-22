@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.1)  3 NOV 2025 21:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.1)  11 NOV 2025 19:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1034,13 +1034,13 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-[1])
+[1]
+
+[2])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
 
-
-[2]
 
 [3]
 Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 18.
@@ -1077,128 +1077,141 @@ Package hyperref Info: bookmark level for unknown definition defaults to 0 on in
 
 
 [4]
-
-[5]
-Package marginnote Info: Margin note 12.1 is on absolute page 12 on input line 203.
-Package marginnote Info: right page because not two side mode on input line 203.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 203.
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 226.
-Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 231.
-
-
-[6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
+[5]
+Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 251.
+
+
+[6{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+
 [7]
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 307.
+Package marginnote Info: Margin note 14.1 is on absolute page 14 on input line 285.
+Package marginnote Info: right page because not two side mode on input line 285.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 285.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 308.
 
 
-[8{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+[8]
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 384.
+
 
 [9]
 
 [10]
-Package marginnote Info: Margin note 17.1 is on absolute page 17 on input line 400.
-Package marginnote Info: right page because not two side mode on input line 400.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 400.
-
 
 [11]
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 492.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 492.
-
-
-
 [12]
+Package marginnote Info: Margin note 19.1 is on absolute page 19 on input line 507.
+Package marginnote Info: right page because not two side mode on input line 507.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 507.
+
 
 [13]
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 599.
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 599.
+
+
 
 [14]
 
 [15]
-Overfull \hbox (14.33403pt too wide) in paragraph at lines 658--659
+
+[16]
+Overfull \hbox (14.33403pt too wide) in paragraph at lines 763--764
 \T1/lmr/m/n/10 Llamamos pro-ceso re-versible a aquel en el cuál en el pro-ceso de trans-for-ma-ción $\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 p[]; V[]; T[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 !
  []
 
 
 
-[16]
-</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG, id=497, 472.01344pt x 235.63031pt>
+[17]
+</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG, id=585, 472.01344pt x 235.63031pt>
 File: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG Graphic file (type jpg)
 <use /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG>
-Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG  used on input line 706.
+Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG  used on input line 809.
 (pdftex.def)             Requested size: 236.00613pt x 117.81487pt.
 
 
-[17]
-</home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg, id=506, 1451.4225pt x 929.4725pt>
+[18]
+</home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg, id=594, 1451.4225pt x 929.4725pt>
 File: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg Graphic file (type jpg)
 <use /home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg>
-Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg  used on input line 725.
+Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg  used on input line 828.
 (pdftex.def)             Requested size: 290.27936pt x 185.8912pt.
 
 
-[18 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg>]
+[19 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg>]
 
-[19]
-</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg, id=527, 1284.8pt x 722.7pt>
+[20]
+</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg, id=615, 1284.8pt x 722.7pt>
 File: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg Graphic file (type jpg)
 <use /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg>
-Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg  used on input line 795.
+Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg  used on input line 898.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-Overfull \hbox (4.58308pt too wide) in paragraph at lines 795--796
+Overfull \hbox (4.58308pt too wide) in paragraph at lines 898--899
  [] 
  []
 
 
 
-[20 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg>]
-</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png, id=537, 513.92pt x 296.10625pt>
+[21 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg>]
+</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png, id=625, 513.92pt x 296.10625pt>
 File: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png Graphic file (type png)
 <use /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png>
-Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png  used on input line 815.
+Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png  used on input line 918.
 (pdftex.def)             Requested size: 256.95937pt x 148.05275pt.
 
 
-[21 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png>]
-Package marginnote Info: Margin note 28.1 is on absolute page 28 on input line 833.
-Package marginnote Info: right page because not two side mode on input line 833.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 833.
+[22 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png>]
+
+[23]
+</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png, id=646, 642.4pt x 596.2275pt>
+File: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png Graphic file (type png)
+<use /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png>
+Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png  used on input line 992.
+(pdftex.def)             Requested size: 321.19922pt x 298.11302pt.
 
 
-[22]
-Package marginnote Info: Margin note 29.1 is on absolute page 29 on input line 839.
-Package marginnote Info: right page because not two side mode on input line 839.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 839.
+[24 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png>]
+Package marginnote Info: Margin note 31.1 is on absolute page 31 on input line 997.
+Package marginnote Info: right page because not two side mode on input line 997.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 997.
 
 
-[23] (./main.aux)
+[25]
+Package marginnote Info: Margin note 32.1 is on absolute page 32 on input line 1019.
+Package marginnote Info: right page because not two side mode on input line 1019.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 1019.
+
+
+[26] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 46E96B86F5AFE4F183D552CB7855AE1D;10763.
+(rerunfilecheck)             Checksum: 2EA55C83491BF21A91187D84DC630FD8;13162.
  ) 
 Here is how much of TeX's memory you used:
- 31695 strings out of 475171
- 617860 string characters out of 5767095
- 1029397 words of memory out of 5000000
- 53922 multiletter control sequences out of 15000+600000
+ 31773 strings out of 475171
+ 619769 string characters out of 5767095
+ 1034427 words of memory out of 5000000
+ 53958 multiletter control sequences out of 15000+600000
  709944 words of font info for 139 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 131i,15n,135p,541b,971s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,15n,135p,541b,1189s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on main.pdf (27 pages, 1499047 bytes).
+Output written on main.pdf (30 pages, 1866402 bytes).
 PDF statistics:
- 704 PDF objects out of 1000 (max. 8388607)
- 614 compressed objects within 7 object streams
- 182 named destinations out of 1000 (max. 500000)
- 521 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 819 PDF objects out of 1000 (max. 8388607)
+ 724 compressed objects within 8 object streams
+ 224 named destinations out of 1000 (max. 500000)
+ 630 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -3,7 +3,7 @@
 
 \graphicspath{ {/home/ford/Projects/transcripts/t2a/mea-pugna/img} }
 
-\title{Hola mundo}
+\title{Título provisional}
 \author{Marcos Ávila Navas}
 \affiliation{I.E.S Los Colegiales}
 
@@ -157,28 +157,42 @@ números reales es precisamente requerir que toda secuencia (\href{https://ncatl
 \begin{definition}[Secuencia Cauchy]
   Se dice que una secuencia es \textit{Cauchy} cuando los números se acercan aribtrariamente. Si $ f : \mathbb{N} \rightarrow \mathbb{R} $ es una secuencia Cauchy:
 
-  \[ \forall \epsilon \in \mathbb{R}, \exists N \in \mathbb{R}, \forall m, n \ge N. | f(m) - f(n) | < \epsilon  \]
+  \[ \forall \epsilon \in \mathbb{R}. \exists N \in \mathbb{R}. \forall m, n \ge N. \; | f(m) - f(n) | < \epsilon  \]
 \end{definition}
 
 Con esta definición a mano, el límite de una función $ f $ cuando tiende a $ a $ es simplemente a lo que converja el aplicarle $ f $ a una secuencia Cauchy que converja a $ a $:
 
 \begin{definition}[Límite de una función]
-  Se dice que $ \lim_{x \to a} f(x) = L $ sí:
+  Se dice que $ \lim_{x \to a} f(x) = L $ si:
 
-  \[ \forall \epsilon > 0, \exists \delta > 0. | a - x | < \delta \Rightarrow | L - f(x) | < \epsilon \]
+  \[ \forall \epsilon > 0, \exists \delta > 0.\; | a - x | < \delta \Rightarrow | L - f(x) | < \epsilon \]
 \end{definition}
 
 En la práctica, hay veces que nos interesa investigar secuencias Cauchy que siempre sean mayores o menores que el número al que convergen:
 
 \begin{definition}[Límites laterales de una función]
-  Se dice que $ \lim_{x \to a^+} f(x) = L $ (convergencia por la derecha) sí:
+  Se dice que $ \lim_{x \to a^+} f(x) = L $ (convergencia por la derecha) si:
 
   \[ \forall \epsilon > 0, \exists \delta > 0. a < x < a +\delta \Rightarrow | L - f(x) | < \epsilon \]
 
-  Dualmente, se dice que $ \lim_{x \to a^-} f(x) = L $ (convergencia por la izquierda) sí:
+  Dualmente, se dice que $ \lim_{x \to a^-} f(x) = L $ (convergencia por la izquierda) si:
 
   \[ \forall \epsilon > 0, \exists \delta > 0. a - \delta < x < a \Rightarrow | L - f(x) | < \epsilon \]
 \end{definition}
+
+También no son pocas las ocasiones donde nos interesa considerar el comportamiento de una función para números ``cada vez más grandes'':
+
+\begin{definition}[Límites al infinito]
+  Se dice que $ \lim_{x \to +\infty} f(x) = L $ si:
+
+  \[ \forall \epsilon > 0. \exists N \in \mathbb{R}.\; x > N \Rightarrow | f(x) - L | < \epsilon \]
+
+  Dualmente, se dice que $ \lim_{x \to -\infty} f(x) = L $ si:
+
+  \[ \forall \epsilon > 0. \exists N \in \mathbb{R}.\; x < N \Rightarrow | f(x) - L | < \epsilon \]
+\end{definition}
+
+Todas estas definiciones serán unificadas para la resolución de problemas en lo que podemos llamar \textit{el algebra de los reales extendidos} ($ \bar{\mathbb{R}} $).
 
 Finalmente, cabe replantear la definción de continuidad utilizando límties, ya que esta es la utilizada en la selectividad:
 
@@ -188,9 +202,77 @@ Finalmente, cabe replantear la definción de continuidad utilizando límties, ya
   \[ \lim_{x \to a^-} f(x) = f(a) = \lim_{x \to a^+} f(x) \]
 \end{definition}
 
+\subsubsection{Algebra de los reales extendidos}
+
+Empezamos definiendo el conjunto sobre el cual definiremos las operaciones aptas para el cálculo de límites:
+
+\begin{definition}[Los reales extendidos]
+  Llamese $ \bar{\mathbb{R}} $ o ``reales extendidos'' al conjunto:
+  \[ \bar{\mathbb{R}} = \mathbb{R} \cup \{+\infty, -\infty, \text{``Indet.''}, \text{``No existe.''}\}  \]
+\end{definition}
+
+Para describir el álgebra que nos interesa sobre el anterior conjunto, basta con definir cómo particípan los nuevos símbolos, y es que no modificamos las operaciones sobre
+los números reales. Para este fin, basta con decir que los símbolos de infinito operan cómo uno esperaría ($ k + (\pm \infty) = \pm \infty $, $ k(\pm\infty) = \pm \infty $ \dots).
+Los únicos casos donde la anterior intuición falla son en los casos ``indeterminados''.  % encontrar una lista de casos indeterminados para selectividad
+Por último, el símbolo ``No existe'' viene a funcionar cómo un indicador de la divergencia de lo que se está intentando cálcular. Por ejemplo $ \cos{\pm\infty} = \text{``No existe''} $.
+
+% Explicar el álgebra a fondo
+
+\subsubsection{En la práctica}
+
+Falta por explicar cómo pasar del cálculo de un límite a operar en el álgebra anteriormente descrito. Para lo cuál es suficiente decir que si se tiene $ \lim{x \to \alpha} f(x) $,
+donde $ \alpha $ es o un real o un infinito, basta con sustituir $ \alpha $ por $ x $ en $ f(x) $ y operar siguiendo las reglas ya dichas. Si el resultado de operar es otra cosa
+que no sea ``Indet.'', hemos terminado. En caso de un ``Indet.'', debemos trabajar $ f(x) $ hasta conseguir una expresión que al sustituir nos de el resultado deseado.
+
+% Explicar transformaciones algebraicas típicas para arreglar f(x)
+
 \subsection{Derivadas}
 
+
+
+\subsection{Análisis de una función}
+
 \subsection{Integrales}
+
+\subsection{Ejercicios selectividad resueltos}
+
+\begin{enumerate}
+  \item \textbf{Madrid. Ordinaria 2025. Pregunta 2}: Un muro rectangular de la biblioteca pública del barrio se va a pintar con la ayuda de unos grafiteros. La dimensión del muro es de 3 metros de
+        alto y 12 metros de largo. Colocando la esquina inferior izquierda del muro en el origen de coordenadas, se va a utilizar la curva
+        \[ f(x) = \cos(\frac{\pi x}{9}) + 2 \]
+        para diferenciar dos regiones del muro que serán pintadas con dos colores distintos. Se sabe que con un bote de spray se pueden pintar 3 metros cuadrados de superficie.
+        \begin{enumerate}
+          \item (0.75 puntos) Halle el valor máximo y el valor mínimo de la función $ f(x) $ en el intervalo $[0, 12]$. ¿Está la curva en este intervalo $ [0, 12] $ contenida completamente en el muro?
+          \item (1.25 puntos) Halle el área que tienen que pintar de cada color.
+          \item (0.5 puntos) Cuántos botes de spray se tienen que comprar como mínimo para pintar toda el área bajo la curva $ f(x) $?
+        \end{enumerate}
+
+        \begin{proof} % cambiar a ``solution''
+          Por el teorema de Weierstrass, basta con estudiar los extremos del dominio y los máximos relativos para determinar los máximos y mínimos. Para este fin, nótese que $ f $ se define
+          cómo una composición de funciones derivables, por lo que es derivable (asimismo continua). Por lo cuál, derivamos:
+          \[ \frac{d}{dx} f = \frac{d}{dx} \cos(\frac{\pi x}{9}) + 2 = -\frac{\pi}{9} \sin(\frac{\pi x}{9}) \]
+          A continuación, averiguamos los puntos críticos:
+          \[ f'(x) = 0; \ -\frac{\pi}{9} \sin(\frac{\pi x}{9}) = 0; \ \frac{\pi x}{9} = n\pi; \ x = 9n \quad \text{donde } n \in \mathbb{Z} \]
+          En concreto, en nuestro dominio encontramos dos puntos críticos, cuando $ n = 0 $ y $ n = 1 $.
+
+          Desde este punto, basta con ordenar los valores de los puntos que nos interesan y tomar el mayor y el menor:
+          \[ f(0) = 3 > f(12) = 1.5 > f(9) > 1 \]
+          Por tanto, el valor máximo y mínimo de $ f $ es $ 3 $ y $ 1 $ cuando $ x = 0 $ y $ x = 9 $ respectivamente. Ya que $ 3, 1 \in [0, 3] $ y que $ f $ es continua,
+          $ f $ es contenida completamente en el muro.
+        \end{proof}
+
+        \begin{proof}
+          Para calcular el área de cada color, integramos y utilizamos la geometría rectangular del gráfico para derivar una área de otra:
+          \[ A_1 = \int_0^{12} f(x) dx = \int_0^{12} \cos(\frac{\pi x}{9}) + 2 dx = \left[\frac{9}{\pi}\sin(\frac{\pi x}{9}) + 2x\right]_0^{12} \approx 21.51 m \]
+          \[ A_T = A_1 + A_2; \ A_2 = A_T - A_1 = bh - A_1 \approx 14.48 m \]
+        \end{proof}
+
+        \begin{proof}
+          Averiguamos la cantidad de botes utilizando que un bote puede pintar hasta 3 metros cuadrados de superficie:
+          \[ n_{\text{botes}} = \lceil \frac{A_1}{\text{area}\backslash\text{bote}} \rceil = 8 \text{ botes}\]
+        \end{proof}
+\end{enumerate}
+
 
 \section{Geometría}
 
@@ -204,9 +286,9 @@ Finalmente, cabe replantear la definción de continuidad utilizando límties, ya
 
 \section{Preludio}
 
-Las áreas de la física pertinentes a la selectividad son \dots : \textbf{Campo gravitatorio y campo eléctrico}, \dots.
+Las áreas de la física pertinentes a la selectividad son \dots : \textbf{Campo gravitatorio, campo eléctrico y campo magnético}, \dots.
 
-\section{Campo gravitatorio}
+\section{Campo}
 
 \subsection{Mecánica clásica}
 
@@ -260,18 +342,9 @@ $$ L = r p \sin{\alpha} = r p \sin{90} = r p = r m v $$
 \subsubsection{Energía y trabajo}
 
 \begin{definition}[Trabajo]
-  Capacidad que tiene un cuerpo para realizar trabajo. La energía mecánica es aquella asociada al movimiento:
+  El trabajo se define de la siguiente forma:
 
-  \begin{itemize}
-    \item \textbf{Energía cinética}: Energía que tiene un cuerpo en virtud a su velocidad: 
-      \[ E_C = \frac{1}{2}mv^2 \]
-    \item \textbf{Energía potencial}: Energía que tiene un cuerpo en virtud a su posición respecto a una masa:
-      \[ E_P = G \frac{M}{r} \]
-  \end{itemize}
-  
-  La suma de estas dos anteriores es la \textbf{energía mecánica}: 
-
-  \[ E_M = E_C + E_P \]
+  \[ W = \int_i^f \vec{F} \cdot d\vec{r} \]
 
 \end{definition}
 
@@ -280,9 +353,11 @@ $$ L = r p \sin{\alpha} = r p \sin{90} = r p = r m v $$
 
   \begin{itemize}
     \item \textbf{Energía cinética}: Energía que tiene un cuerpo en virtud a su velocidad: 
-      \[ E_C = \frac{1}{2}mv^2 \]
-    \item \textbf{Energía potencial}: Energía que tiene un cuerpo en virtud a su posición respecto a una masa:
-      \[ E_P = G \frac{M}{r} \]
+      \[ W = \int_i^f \vec{F} \cdot d\vec{r} = \int_i^f m\vec{a} \cdot d \vec{r} = \int_i^f m \frac{d\vec{v}}{dt} \cdot d \vec{r} = \int_i^f m \vec{v} \cdot d\vec{v} 
+      = \frac{1}{2}m\left[v^2\right]_i^f = \Delta E_C \]
+      \[ \implies E_C = \frac{1}{2} m v^2 \]
+    \item \textbf{Energía potencial}: Energía que tiene un cuerpo en virtud a su posición en un campo conservativo:
+      \[ W = -\Delta E_P \]
   \end{itemize}
   
   La suma de estas dos anteriores es la \textbf{energía mecánica}: 
@@ -291,28 +366,60 @@ $$ L = r p \sin{\alpha} = r p \sin{90} = r p = r m v $$
 
 \end{definition}
 
-\subsection{Campo gravitatorio creado por masas puntuales}
+\subsection{Campo gravitatorio}
+
+\subsubsection{Campo gravitatorio creado por masas puntuales}
 
 \begin{definition}[Fuerza gravitacional]
   Fuerza resultante de las perturbaciones del campo gravitatorio.
-  \[ \vec{F_g} = G \frac{M m}{r^2} \]
+  \[ \vec{F_g} = -G \frac{M m}{r^2} \hat{u_r} \]
 \end{definition}
 
 \begin{definition}[Intensidad del campo gravitatorio]
   Fuerza resultante por el campo gravitatorio por unidad de masa.
-  \[ \vec{g} = \frac{\vec{F_g}}{m} = G \frac{M}{r^2} \]
+  \[ \vec{g} = \frac{\vec{F_g}}{m} = -G \frac{M}{r^2} \hat{u_r} \]
 \end{definition}
 
 \begin{remark}
   El principio de superposición aplica:
-  \[ \vec{g_T} = \sum_i \vec{g_i} = G \sum_i \frac{M_i}{r^2_i} \hat{u_{ri}} \]
+  \[ \vec{g_T} = \sum_i \vec{g_i} = -G \sum_i \frac{M_i}{r^2_i} \hat{u_{ri}} \]
 \end{remark}
 
-\subsection{Campo gravitatorio de los cuerpos celestes}
+\subsubsection{Energía asociada al campo gravitatorio}
+
+El campo gravitatorio es uno conservativo, por tanto:
+
+\[ W = \int_i^f \vec{F_g} \cdot d\vec{r} = \int_i^f -G \frac{M m}{r^2} \hat{u_r} \cdot d\vec{r} = \int_i^f -G \frac{M m}{r^2} dr = -G M m \left[\frac{-1}{r}\right]_i^f = -\Delta E_P  \]
+
+\[ \implies E_P = -G \frac{M m}{r} \]
+
+\subsubsection{Potencial gravitatorio}
+
+Considerar lo que hace una unidad de masa en el campo, así creando un ``espacio de gravedad'', nos lleva al concepto de potencial gravitatorio:
+
+\begin{definition}[Potencial gravitatorio]
+  Trabajo necesario para llevar una unidad de masa hasta el infinito a velocidad constante:
+
+  \[ V = E_{P \infty} - E_P = G \frac{M}{r} \]
+\end{definition}
+
+Es fácil conectar la definción y la intuición considerando la expresión $ V m $.
+
+\subsubsection{Campo gravitatorio de los cuerpos celestes}
 
 El campo gravitatorio tal y cómo lo hemos presentado puede utilizarse para operar con cuerpos celestes (aproximadamente).
 
-\subsection{Leyes de Kepler}
+Para este fin, solemos igualar la fuerza centrípeta y la fuerza gravitatoria y desarrollar hasta tener una expresión en términos de los datos dados.
+
+\begin{remark}
+  La velocidad que obtenemos de esta manera es la órbital:
+  \[ \vec{F_C} = \vec{F_G}; \ F_C = F_G; \ m \frac{v_o^2}{r} = G \frac{M m}{r^2}; \ v_o = \sqrt{G\frac{M}{r}}  \]
+  El cálculo de la velocidad de escape, por ejemplo, se hace utilizando la ley de la conservación de la energía:
+  \[ \Delta E_M \ge 0; \ \Delta E_C + \Delta E_P \ge 0; \frac{1}{2} m v_e^2 - G \frac{M m}{r} \ge 0; \ v_e \ge \sqrt{2 G \frac{M}{r}} \]
+  Asimismo podemos proceder de la manera presentada para el cálculo de algún parametro para la transición entre órbitas.
+\end{remark}
+
+\subsubsection{Leyes de Kepler}
 
 \begin{itemize}
   \item \textbf{Primera ley}: Todos los planetas se mueven alrededor del Sol siguiendo órbitas elípticas, y el Sol está en uno de los focos de la elipse.
@@ -323,13 +430,11 @@ El campo gravitatorio tal y cómo lo hemos presentado puede utilizarse para oper
 
 El punto más alejado de una órbita elíptica es el afelio y el más cercano es el perihelio.
 
-\subsection{Leyes de Kepler}
+\subsection{Campo Eléctroestático}
 
 El campo eléctrico es un campo vectorial al igual que el campo gravitatorio.
 
-\section{Campo Eléctroestático}
-
-\subsection{Intensidad del campo electroestático}
+\subsubsection{Intensidad del campo electroestático}
 
 \begin{definition}[Fuerza Eléctrica, Ley de Coulomb]
   La fuerza eléctrica es la resultante de las perturbaciones del campo electroestático.
@@ -363,7 +468,7 @@ El campo eléctrico es un campo vectorial al igual que el campo gravitatorio.
   \[ \vec{E_T} = \sum_{i} \vec{E_i} = K \sum_{i} \frac{Q_i}{r^2_i} \cdot \hat{u_{ri}}  \]
 \end{remark}
 
-\subsection{Energía asociada al campo eléctrico}
+\subsubsection{Energía asociada al campo eléctrico}
 
 En la situación descrita, podemos llegar a una forma cerrada para el trabajo dentro del campo electroestático:
 
@@ -378,7 +483,7 @@ En la situación descrita, podemos llegar a una forma cerrada para el trabajo de
 Intuitivamente, la energía potencial eléctrica es comparable a la gravitacional solo que cargas positivas ``suben el terreno'' mientras que cargas negativas lo bajan. De la misma manera que con los campos
 gravitatorios, es fructífero considerar energía potencial por unidad de carga (A ser explicado a continuación).
 
-\subsection{Potencial eléctrico}
+\subsubsection{Potencial eléctrico}
 
 \begin{definition}[Potencial eléctrico]
   Trabajo necesario para llevar una unidad de carga hasta el infinito a velocidad constante:
@@ -394,6 +499,8 @@ gravitatorios, es fructífero considerar energía potencial por unidad de carga 
     \end{itemize}
   Mientras que lo contrario es cierto si $ Q $ y $ q $ tienen distinto signo.
 \end{remark}
+
+\subsection{Campo magnético}
 
 \newpage
 
@@ -532,7 +639,7 @@ La termodinámica es la rama de la física que estudia las relaciones entre el c
     \[ U := \sum E_c^{\text{partíc.}} \qquad\qquad \text{(Def. no utilizada en el temario)} \]
 \end{definition}
 
-\subsection{Principios de la termodinámica}
+A continuación, enumeramos los 3 principios básicos de la termodinámica:
 
 \begin{enumerate}
     \item \textbf{Ley de la conservación de la energía}: La energía interna ($ U $) incrementa al añadir energía térmica al sistema, y hacer que el sistema realice trabajo la disminuye, ergo postulamos:
@@ -542,8 +649,6 @@ La termodinámica es la rama de la física que estudia las relaciones entre el c
 \end{enumerate}
 
 Solo usaremos el primer principio para lo que prosigue.
-
-\newpage
 
 \subsection{Transformaciones termodinámicas en los gases}
 
@@ -653,11 +758,11 @@ En cuanto a la gráfica $p$-$V$:
 \end{tikzpicture}
 \end{center}
 
-\section{Procesos reversibles e irreversibles}
+\subsection{Procesos reversibles e irreversibles}
 
 Llamamos proceso reversible a aquel en el cuál en el proceso de transformación $ (p_0, V_0, T_0) \rightarrow (p, V, T) $ todos los estados intermedios son estables. Es decir, la transformación es lenta.
 
-\subsection{Motores térmicos y máquinas frigoríficas}
+\subsubsection{Motores térmicos y máquinas frigoríficas}
 
 Una máquina térmica basa su funcionamiento en el flujo de energía calorífica entre dos focos. Si saca calor de un foco caliente, lo vierte en otro frío, y aprovecha el trabajo resultante de la transformación, se llama \textbf{motor térmico}. Si por el otro lado saca calor de un foco frío utilizando trabajo y lo vierte en otro caliente, se llama \textbf{máquina frigorífica}.
 
@@ -667,7 +772,7 @@ En esta situación,
 
 \[ \eta := \frac{E_u}{E_a} = \frac{W}{Q_c} = 1 - \frac{Q_f}{Q_c} \]
 
-\subsection{Ciclo ideal de Carnot}
+\subsubsection{Ciclo ideal de Carnot}
 
 Máximo rendimiento que se puede extraer de dos focos. El rendimiento es comúnmente aproximado tal que:
 
@@ -689,8 +794,6 @@ Asumimos la transmisión calorífica perfecta en las expansiones y el aislamient
 
 \end{tikzpicture}
 \end{center}
-
-\section{Motores térmicos}
 
 \subsection{Motores de combustión interna}
 
@@ -828,11 +931,88 @@ Su utilidad es la generación eléctrica y de propulsor de aviones.
     \end{tikzpicture}
 \end{center}
 
+
+\subsection{Bombas de calor}
+
+La transmisión de calor de un foco frío a uno caliente no es espontánea. Por lo cual necesitamos realizar trabajo para que esto ocurra. Este trabajo será igual a la diferencia de calor de los
+focos $ W = Q_C - Q_F $.
+
+\subsubsection{Ciclo de refrigeración de Carnot}
+
+Máxima eficiencia que se puede extraer de dos focos. El rendimiento es comúnmente aproximado tal que:
+
+\[ \epsilon = \frac{E_u}{E_a} = \frac{Q_F}{W} = \frac{Q_C}{Q_C - Q_F} \approx \frac{T_C}{T_C - T_F} \]
+
+Asumimos la transmisión calorífica perfecta en las expansiones y el aislamiento perfecto en las compresiones:
+
+\begin{enumerate}
+  \item \textbf{Compresión adiabática} Se realiza el trabajo comprimiendo el émbolo. Aumenta la temperatura y presión del gas.
+  \item \textbf{Compresión isotérmica} Se aplica el foco caliente, que toma calor del gas.
+  \item \textbf{Expansión isotérmica} Se retira el foco caliente, causando que el gas se expanda y disminuya su temperatura.
+  \item \textbf{Compresión isotérmica} Se aplica el foco frío, que retira calor del gas.
+\end{enumerate}
+
+\begin{center}
+    \begin{tikzpicture}[>=latex,scale=1.1]
+      \draw[->] (0,0) -- (4,0) node[right] {$V$};
+      \draw[->] (0,0) -- (0,3) node[above] {$p$};
+    \end{tikzpicture}
+\end{center}
+
+\subsubsection{Ciclo de Rankine inverso}
+
+\begin{enumerate}
+  \item \textbf{Compresión adiabática}: El vapor saturado procedente del evaporador llega al compresor; aumenta su temperatura hasta alcanzar el punto
+    correspondiente al vapor recalentado. Esta transformación se realiza con la aportación de trabajo externo ($ W $).
+  \item \textbf{Transformación isobárica}: En el condensador, el vapor está a una temperatura mayor que la del ambiente, por tanto cede calor ($ Q_C $), manteniendo constante
+    la presión, mientras se produce, primero, un enfriamiento seguido de una condensación hasta convertirse en líquido saturado. Al pasar de vapor a líquido hay una gran reducción
+    de volumen, con lo cual el fluido pasa a un estado líquido a alta presión.
+  \item \textbf{Expansión adiabática}: Se hace pasar el fluido por la válvula de expansión, donde se produce una transformación adiabática con un ligero aumento del volumen y
+    gran disminución de presión y temperatura. Una parte del líquido se vaporiza, y en el punto 4 hay vapor húmedo.
+  \item \textbf{Transformación isobárica} El vapor húmedo, a su paso por el evaporador, que se encuentra en el recinto que queremos refrigerar, absorbe calor del foco frío ($ Q_F $)
+    por encontrarse a menor temperatura que éste. Se completa la vaporización del fluido a medida que aumenta su volumen hasta llegar a la entrada del compresor, donde comienza de
+    nuevo el ciclo.
+\end{enumerate}
+
+Este ciclo puede servir tanto para refrescar en verano ($ Q_C = $ \textit{exterior}, $ Q_F =  $ \textit{interior}) como calentar en invierno ($ Q_C = $ \textit{interior},
+$ Q_F =  $ \textit{exterior}). Asimismo tanto el evaporador como el condensador pueden intercambiar funciones. Concluimos que solo es necesario alternar el flujo del refrigerante
+para alternar funciones.
+
+\begin{center}
+    \begin{tikzpicture}[>=latex,scale=1.1]
+      \draw[->] (0,0) -- (4,0) node[right] {$V$};
+      \draw[->] (0,0) -- (0,3) node[above] {$p$};
+    \end{tikzpicture}
+\end{center}
+
+Cabe enumerar los distintos elementos presentes en la refrigeración por vapor. Estos son: compresor (puede ser centrífugo o volumétrico), condensador o evaporador (intercambiadores
+de calor), válvula de expansión (mantiene la presión constante del refrigerante que se dirige hacia el evaporador).
+
+\begin{center}
+  \includegraphics[scale=0.5]{Ciclo_de_Rankine_inverso.png}
+\end{center}
+
 \newpage
 
-\part{Filosofía}
+\part{Historia de la Filosofía}
 
 \section{Preludio}
+
+Los autores filosóficos pertinentes a la selectividad son: \textbf{Platón, Descartes, Nietzsche y Ortega} (si se elige el bloque
+de problemas ontológicos y epistemológicos).
+
+\subsection{Áreas de la filosofía}
+
+Antes de tratar la Historia de la Filosofía, es encomiable repasar los contenidos de esta. La filosofía ($ \phi \iota \lambda o \text{- ``amor'', } \sigma o \phi \iota \alpha \text{- ``sabiduría''} $)
+es el estudio racional de los constituyentes fundamentales de la realidad y del ser humano. Es, en cierto sentido, el conjunto de axiomas que suponemos para el desarrollo de los demás conocimientos.
+
+\subsubsection{Metafísica}
+
+\subsubsection{Epistemología}
+
+\subsubsection{Ética}
+
+\subsubsection{Política}
 
 \newpage
 
