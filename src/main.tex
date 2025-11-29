@@ -1,9 +1,12 @@
 \documentclass[10pt]{article}
-\usepackage{/home/ford/Projects/transcripts/t2a/mea-pugna/NotesTeXV3/NotesTeX}
+\usepackage{../NotesTeX}
 
-\graphicspath{ {/home/ford/Projects/transcripts/t2a/mea-pugna/img} }
+\newcommand{\diff}{\mathrm{d}}
 
-\title{Título provisional}
+\graphicspath{ {../img} }
+
+\title{Lorem Ipsum}
+
 \author{Marcos Ávila Navas}
 \affiliation{I.E.S Los Colegiales}
 
@@ -430,9 +433,17 @@ Para este fin, solemos igualar la fuerza centrípeta y la fuerza gravitatoria y 
 
 El punto más alejado de una órbita elíptica es el afelio y el más cercano es el perihelio.
 
-\subsection{Campo Eléctroestático}
+\subsection{Campo elécrico}
 
-El campo eléctrico es un campo vectorial al igual que el campo gravitatorio.
+El campo magnético ($ \vec{E} $) es uno de los dos campos que resultan cuando se fija unas coordenadas espacio-tiempo para el electromagnetismo.
+\sn{Más sobre en esto en ncatlab}
+A este asociamos dos ecuaciones \textit{de Maxwell}\sn{Las ecuaciones de Maxwell son la sintésis de nuestro conocimiento sobre electromagnetismo}:
+
+\[ \nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0} \iff \oint \vec{E} \cdot \diff \vec{A} = \frac{q}{\epsilon_0} \]
+\[ \nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t} \iff \oint \vec{E} \cdot d\vec{l} = - \int \frac{\partial \vec{B}}{\partial t} \cdot d \vec{a} \]
+
+El campo eléctrico es un campo vectorial al igual que el campo gravitatorio, que pertine a las interacción resultadas por la propiedad
+conocida como \textit{carga eléctrica}.
 
 \subsubsection{Intensidad del campo electroestático}
 
@@ -501,6 +512,85 @@ gravitatorios, es fructífero considerar energía potencial por unidad de carga 
 \end{remark}
 
 \subsection{Campo magnético}
+
+El campo magnético ($ \vec{B} $) es uno de los dos campos que resultan cuando se fija unas coordenadas espacio-tiempo para el electromagnetismo.
+A diferencia que el campo eléctrico, el campo magnético no tiene una \textit{unidad activa}, con lo que debe existir un \textit{polo norte} y un \textit{polo sur} para que dicha
+interacción tenga lugar.
+Las cargas eléctricas, las estudiadas en el apartado anterior, también serán influida por el campo magnético, siempre y cuando se encuentren
+en movimiento. Conversamente, el movimiento de cuerpos cargados eléctricamente produce un campo magnético.
+
+A este campo le corresponden las otras dos ecuaciones de Maxwell:
+
+\[ \nabla \cdot \vec{B} = 0 \iff \oint \vec{E} \cdot \diff \vec{A} = 0 \]
+\[ \nabla \times \vec{B} = -\upsilon_0 \vec{J} + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t} \iff \oint -\upsilon_0 I + \mu_0 \epsilon_0 \int \frac{\partial \vec{E}}{\partial t}\]
+
+\subsubsection{Sobre una carga en movimiento}
+
+Experimentalmente se descubrió que cargas en movimiento producen un campo magnético. Puesto que es así, la \textbf{Ley de Lorentz} viene a determinar el valor de la fuerza magnética
+sobre una carga en movimiento:
+
+\begin{theorem}[Ley de Lorentz]
+  La fuerza magnética ($ F_B $) es perpendicular al campo magnético y al movimiento. Además depende de la carga del cuerpo, su velocidad, y
+  la intensidad del campo magnético:
+
+  \[ \vec{F}_B = q \vec{v} \times \vec{B} \]
+\end{theorem}
+
+
+En caso de coexistir con un campo eléctrico, la Ley de Lorentz además implica:
+
+\[ \vec{F}_{EM} = q (\vec{E} + v \times \vec{B}) \]
+
+Recordamos que para realizar el producto vectorial es conveniente utilizar la regla de la mano derecha.
+
+\begin{remark}
+  La Ley de Lorentz sugiere que esta fuerza siempre será perpendicular al movimiento (dicho de otra manera, siempre será \textbf{centrípeta}). Por mecánica, dicha fuerza nunca alterará
+  el módulo de la velocidad, y únicamemente afectará a la trayectoria.
+\end{remark}
+
+La unidad del campo magnético son los \textit{Teslas}:
+\[ \vec{B} : T = \frac{1 N}{1 C \cdot 1 \frac{m}{s}} \]
+Cabe destacar que un tesla raramente se da en la naturaleza (los imánes permanentes están comprendidos entre $ 0.01 T $ y $ 0.5 T $).
+
+\subsubsection{Sobre una corriente eléctrica}
+
+Una corriente eléctrica no es más que el flujo de cargas. Consecuentemente, se verá afectado por el campo magnético. La expresión que determina dicha interacción es conocida como la 
+\textit{Primera Ley de Laplace}.
+
+Primero observamos que una carga circula a través de su conductor tal que:
+
+\[ \vec{v} = \frac{d\vec{l}}{\diff t} \]
+
+A continuación, demostramos que intensidad por diferencial de longiud es lo mismo que velocidad por diferencial de carga:
+
+\[ I := \frac{\diff q}{\diff t}; \ I \diff\vec{l} = \frac{\diff q}{\diff t} \diff \vec{l} = \diff q \cdot \diff \vec{l} \]
+
+Con todo esto, concluimos la Primera Ley de Laplace:
+
+\[ \diff \vec{F} = \diff q(\vec{v} \times \vec{B}) = (\vec{v} \diff q) \times \vec{B} = I \diff \vec{l} \times \vec{B} \]
+
+Para lo que segundo de bachillerato corresponde, tanto B como I serán constantes. Con lo que llegamos a la fórmula aplicable en la selectividad:
+
+\[ \diff \vec{F} = I \diff \vec{l} \times \vec{B}; \ \vec{F} = \int I \diff \vec{l} \times \vec{B} = I \left( \int \diff \vec{l} \right) \times \vec{B} = I \vec{l} \times \vec{B} \]
+
+Experimentalmente, Biot y Savart concluyeron que el campo magnético elemental ($ \diff \vec{B} $) creado por un elemento de corriente ($ I \diff \vec{l} $) en un punto, cuya posición
+respecto al elemento de corriente viene dado por $ \vec{r} $, es:
+
+\[ \diff \vec{B} = \frac{\mu_0}{4 \pi} \frac{I \diff \vec{l} \times \hat{u_r}}{r^2} \]
+
+Donde $ \mu_0 $ es una constante para el vacío.
+
+El que el conductor sea finito y rectilíneo implica que podemos operar la anterior expresión y llegar a una expresión concisa y aplicable a la selectividad:
+
+\[ B = \frac{\mu_0}{2\pi} \frac{I}{r} \]
+
+Además podemos utiliza la otra regla de la mano derecha para determinar la orientación del campo magnético en estas circunstancias.
+
+\begin{remark}
+  Puede darse el caso donde debamos considerar de dos conductores rectilíneos paralelos el campo que generan uno sobre otro. Para lo cuál con basta aplicar las reglas ya mencionadas en 
+  ambos conductores desde el conductor recíproco. Debe cumplirse que el que ambos conductores se atraigan implica que el flujo por ambos conductores tenga el mismo sentido y lo opuesto
+  cuando los conductores se repelan.
+\end{remark}
 
 \newpage
 
@@ -1003,6 +1093,8 @@ de problemas ontológicos y epistemológicos).
 
 \subsection{Áreas de la filosofía}
 
+Para todos los autores a presentar es ponderable leer sus obras cuando sea factible.
+
 Antes de tratar la Historia de la Filosofía, es encomiable repasar los contenidos de esta. La filosofía ($ \phi \iota \lambda o \text{- ``amor'', } \sigma o \phi \iota \alpha \text{- ``sabiduría''} $)
 es el estudio racional de los constituyentes fundamentales de la realidad y del ser humano. Es, en cierto sentido, el conjunto de axiomas que suponemos para el desarrollo de los demás conocimientos.
 
@@ -1013,6 +1105,87 @@ es el estudio racional de los constituyentes fundamentales de la realidad y del 
 \subsubsection{Ética}
 
 \subsubsection{Política}
+
+\section{Platón}
+
+\begin{center}
+  \includegraphics[scale=0.1]{Platon.jpg}
+\end{center}
+
+\begin{center}
+  \textit{Toda la filosofía occidental es una serie de notas a pie de página de Platón}
+  
+  Alfred North Whitehead
+\end{center}
+
+La influencia que ha tenido la filosofía de Platón sobre la filosofía y todas sus vertientes y todos los que beben de ellas, que en última
+instancia es la humanidad completa, escapa de todo remarque. La posición maximalista de dicha proposición afirma que tras Platón,
+\textit{nihil novum sub sole}.
+
+Algunos Padres de la Iglesia miraron a Platón con gran veneración, y las sublimes verdades que se encierran en sus escritos y formaron tan
+grandes filósofos, tuvieron bastante fuerza para arrancar de la docta pluma de San Agustín, hablando de éstos, aquella fuerte hipérbole: 
+que en mudando algunas proposiciones y unos pocos términos se convertirían en hombres cristianos.
+
+Cabe destacar que la distribución de contenidos de la presente exposición no sigue la del mismo Platón. No es hasta Aristóteles que se
+conoce una manera sistemática de la presentación de la filosofía. Platón en particular presentaba sus obras en forma de diáogos (cuyo 
+personaje principal suele ser Sócrates), que con libertad fluían entre distintos temas.
+
+\subsection{Metafísica}
+
+Resulta que la filosofía platónica propone un esquema a aplicar en distintas áreas del saber, el llamado \textit{dualismo Platónico}. Ya que
+es así, exponemos el esquema general aquí y lo instanciamos posteriormente en las áreas pertinentes.
+
+La etimología de dualismo ya sugiere el fundamento que profesa, a saber: la existencia de dos principios fundamentales que componen un
+sistema. El dualismo platónico además precisa la esencia de estos dos principios, o \textit{mundos} y la relación entre ellos. Aplica el
+dualismo Platónico donde hay un mundo inferior (\textit{contingente, sensible, perecedero, \dots}, en definitiva, \textit{Hericlíteo})
+tiene una cierta correspondencia o subordinación (\textit{participación, imitación}) a otro superior (\textit{inmutable, inteligible, 
+eterno}, en definitiva, \textit{Parménico}) que además es independiente y en cierto sentido anterior.
+
+La aplicación del anterior método a la metafísica resulta en la llamada \textit{Teoría de las ideas}. Dicha teoría toma en el esquema
+anterior \textit{lo perceptible por los sentidos} como \textit{mundo inferior}. Asimismo, el correspondiente mundo superior es el 
+\textit{mundo de las ideas}. Dicho mundo, también postulado por Platón, es constituido integramente por \textit{ideas}.
+
+% Bien como la idea perfecta, el Sol de este mundo
+
+\subsection{Antropología}
+
+La tan reconocida distincción entre cuerpo y mente (\textit{alma}) proviene al instanciar el dualismo platónico al humano. Siendo el alma
+el mundo superior, se deriva: la imperativa al asceticismo, que el cuerpo sirve como prisión para el alma, el ciclo de reencarnación 
+(metensicosis) \dots . Es aquí donde es posible trazar una influencia hacia los Pitagóricos y a su vez hacia el orfismo.
+
+\subsubsection{Alma}
+
+El alma, según Platón, tiene carácter divino
+
+\subsubsection{Cuerpo}
+
+Siendo el cuerpo el antítesis del alma, 
+
+\subsection{Epistemología}
+
+% teoría de la redención
+
+\subsection{Política}
+
+La misión última de la filosofía política de Platón es la justicia. Su más magna obra expuesta para este fin es \textit{La República}.
+
+Justicia se ha de entender por este nombre lo que en común llamamos virtud, y de otro modo hombría de bien, o concierto y armonía universal
+de las acciones; es decir, aquel hábito de vivir en un todo conforme al dictamen de la recta razón que constituye al que le posee en la 
+clase de hombre justo. Tomada la justicia en este sentido generalísimo, se identifica con la república concertada y estrechamente unida, de
+forma que parezca no más de una sola alma; y la verdadera república equivale a la justicia de todos los ciudadanos , por la cual cada uno 
+desempeña su cargo u oficio como es debido. En algo, no obstante, pueden distinguirse, e cuanto a la república es como el argumento y 
+manteria de que se vale, y la justicia es como el fin y término; de modo que Platón toma por objeto una república, con el fin de manifestar
+en rande, en términos que a nadie se le oculte, la naturaleza de la justicia.
+
+Cinco puntos insinúa Platón en la introducción de su diálogo, que son como otras tantas piedras fundamentales sobre que se sustenta una
+república; a saber: las solemnidades sagradas, la amistad, la prudencia y consejo de los ancianos, el afecto moderado de las riquezas, y
+la utilidad de ellas para sostener los derechos de la verdad, compañera inseparable de la justicia.
+\sn{
+  En este primer punto, con la oración y la adoración, sacrificios y votos de los asistentes a las solemnidades sagradas, se indican la
+  piedad y religión dos frmes fundamentos del Estado y de la justicia y demás virtudes necesarias a la sociedad; añadiendose a estos como
+  terero la esperanza de los premios y temor de las penas que acaso es el más poderoso de los tres para contener la multitud.
+}
+
 
 \newpage
 

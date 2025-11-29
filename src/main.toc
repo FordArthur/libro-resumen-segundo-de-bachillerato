@@ -30,45 +30,54 @@
 \contentsline {subsubsection}{\numberline {8.2.3}Potencial gravitatorio}{10}{subsubsection.8.2.3}%
 \contentsline {subsubsection}{\numberline {8.2.4}Campo gravitatorio de los cuerpos celestes}{10}{subsubsection.8.2.4}%
 \contentsline {subsubsection}{\numberline {8.2.5}Leyes de Kepler}{10}{subsubsection.8.2.5}%
-\contentsline {subsection}{\numberline {8.3}Campo Eléctroestático}{11}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.3}Campo elécrico}{11}{subsection.8.3}%
 \contentsline {subsubsection}{\numberline {8.3.1}Intensidad del campo electroestático}{11}{subsubsection.8.3.1}%
 \contentsline {subsubsection}{\numberline {8.3.2}Energía asociada al campo eléctrico}{11}{subsubsection.8.3.2}%
 \contentsline {subsubsection}{\numberline {8.3.3}Potencial eléctrico}{12}{subsubsection.8.3.3}%
 \contentsline {subsection}{\numberline {8.4}Campo magnético}{12}{subsection.8.4}%
-\contentsline {part}{IV\hspace {1em}Tecnología}{13}{part.4}%
-\contentsline {section}{\numberline {9}Preludio}{13}{section.9}%
-\contentsline {section}{\numberline {10}Materiales y sus propiedades}{13}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Propiedades mecánicas de los materiales}{13}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Ensayos de propiedades mecánicas}{13}{subsection.10.2}%
-\contentsline {subsubsection}{\numberline {10.2.1}De tracción}{13}{subsubsection.10.2.1}%
-\contentsline {subsubsection}{\numberline {10.2.2}De dureza}{14}{subsubsection.10.2.2}%
-\contentsline {subsection}{\numberline {10.3}De resilencia}{15}{subsection.10.3}%
-\contentsline {section}{\numberline {11}Máquinas térmicas}{15}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Principios fundamentales de termodinámica}{15}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Transformaciones termodinámicas en los gases}{16}{subsection.11.2}%
-\contentsline {subsubsection}{\numberline {11.2.1}Transformaciones isobáricas (presión constante)}{16}{subsubsection.11.2.1}%
-\contentsline {subsubsection}{\numberline {11.2.2}Transformaciones isotérmicas (temperatura constante)}{16}{subsubsection.11.2.2}%
-\contentsline {subsubsection}{\numberline {11.2.3}Transformaciones isocóricas (volumen constante)}{17}{subsubsection.11.2.3}%
-\contentsline {subsubsection}{\numberline {11.2.4}Transformaciones adiabáticas}{17}{subsubsection.11.2.4}%
-\contentsline {subsection}{\numberline {11.3}Procesos reversibles e irreversibles}{17}{subsection.11.3}%
-\contentsline {subsubsection}{\numberline {11.3.1}Motores térmicos y máquinas frigoríficas}{18}{subsubsection.11.3.1}%
-\contentsline {subsubsection}{\numberline {11.3.2}Ciclo ideal de Carnot}{18}{subsubsection.11.3.2}%
-\contentsline {subsection}{\numberline {11.4}Motores de combustión interna}{18}{subsection.11.4}%
-\contentsline {subsubsection}{\numberline {11.4.1}Motores de explosión}{19}{subsubsection.11.4.1}%
-\contentsline {subsubsection}{\numberline {11.4.2}Motores de diesel}{20}{subsubsection.11.4.2}%
-\contentsline {subsubsection}{\numberline {11.4.3}Parámetros y magnitudes características}{21}{subsubsection.11.4.3}%
-\contentsline {subsection}{\numberline {11.5}Motores de combustión externa}{21}{subsection.11.5}%
-\contentsline {subsubsection}{\numberline {11.5.1}Ciclo de Rankine (Turbina de vapor)}{21}{subsubsection.11.5.1}%
-\contentsline {subsubsection}{\numberline {11.5.2}Ciclo de Brayton (Turbina de gas)}{22}{subsubsection.11.5.2}%
-\contentsline {subsection}{\numberline {11.6}Bombas de calor}{22}{subsection.11.6}%
-\contentsline {subsubsection}{\numberline {11.6.1}Ciclo de refrigeración de Carnot}{22}{subsubsection.11.6.1}%
-\contentsline {subsubsection}{\numberline {11.6.2}Ciclo de Rankine inverso}{23}{subsubsection.11.6.2}%
-\contentsline {part}{V\hspace {1em}Historia de la Filosofía}{25}{part.5}%
-\contentsline {section}{\numberline {12}Preludio}{25}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Áreas de la filosofía}{25}{subsection.12.1}%
-\contentsline {subsubsection}{\numberline {12.1.1}Metafísica}{25}{subsubsection.12.1.1}%
-\contentsline {subsubsection}{\numberline {12.1.2}Epistemología}{25}{subsubsection.12.1.2}%
-\contentsline {subsubsection}{\numberline {12.1.3}Ética}{25}{subsubsection.12.1.3}%
-\contentsline {subsubsection}{\numberline {12.1.4}Política}{25}{subsubsection.12.1.4}%
-\contentsline {part}{VI\hspace {1em}Lengua}{26}{part.6}%
-\contentsline {section}{\numberline {13}Preludio}{26}{section.13}%
+\contentsline {subsubsection}{\numberline {8.4.1}Sobre una carga en movimiento}{12}{subsubsection.8.4.1}%
+\contentsline {subsubsection}{\numberline {8.4.2}Sobre una corriente eléctrica}{13}{subsubsection.8.4.2}%
+\contentsline {part}{IV\hspace {1em}Tecnología}{15}{part.4}%
+\contentsline {section}{\numberline {9}Preludio}{15}{section.9}%
+\contentsline {section}{\numberline {10}Materiales y sus propiedades}{15}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Propiedades mecánicas de los materiales}{15}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Ensayos de propiedades mecánicas}{15}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}De tracción}{15}{subsubsection.10.2.1}%
+\contentsline {subsubsection}{\numberline {10.2.2}De dureza}{16}{subsubsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.3}De resilencia}{17}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Máquinas térmicas}{17}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Principios fundamentales de termodinámica}{17}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Transformaciones termodinámicas en los gases}{18}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Transformaciones isobáricas (presión constante)}{18}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Transformaciones isotérmicas (temperatura constante)}{18}{subsubsection.11.2.2}%
+\contentsline {subsubsection}{\numberline {11.2.3}Transformaciones isocóricas (volumen constante)}{19}{subsubsection.11.2.3}%
+\contentsline {subsubsection}{\numberline {11.2.4}Transformaciones adiabáticas}{19}{subsubsection.11.2.4}%
+\contentsline {subsection}{\numberline {11.3}Procesos reversibles e irreversibles}{19}{subsection.11.3}%
+\contentsline {subsubsection}{\numberline {11.3.1}Motores térmicos y máquinas frigoríficas}{20}{subsubsection.11.3.1}%
+\contentsline {subsubsection}{\numberline {11.3.2}Ciclo ideal de Carnot}{20}{subsubsection.11.3.2}%
+\contentsline {subsection}{\numberline {11.4}Motores de combustión interna}{20}{subsection.11.4}%
+\contentsline {subsubsection}{\numberline {11.4.1}Motores de explosión}{21}{subsubsection.11.4.1}%
+\contentsline {subsubsection}{\numberline {11.4.2}Motores de diesel}{22}{subsubsection.11.4.2}%
+\contentsline {subsubsection}{\numberline {11.4.3}Parámetros y magnitudes características}{23}{subsubsection.11.4.3}%
+\contentsline {subsection}{\numberline {11.5}Motores de combustión externa}{23}{subsection.11.5}%
+\contentsline {subsubsection}{\numberline {11.5.1}Ciclo de Rankine (Turbina de vapor)}{23}{subsubsection.11.5.1}%
+\contentsline {subsubsection}{\numberline {11.5.2}Ciclo de Brayton (Turbina de gas)}{24}{subsubsection.11.5.2}%
+\contentsline {subsection}{\numberline {11.6}Bombas de calor}{24}{subsection.11.6}%
+\contentsline {subsubsection}{\numberline {11.6.1}Ciclo de refrigeración de Carnot}{24}{subsubsection.11.6.1}%
+\contentsline {subsubsection}{\numberline {11.6.2}Ciclo de Rankine inverso}{25}{subsubsection.11.6.2}%
+\contentsline {part}{V\hspace {1em}Historia de la Filosofía}{27}{part.5}%
+\contentsline {section}{\numberline {12}Preludio}{27}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Áreas de la filosofía}{27}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}Metafísica}{27}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.2}Epistemología}{27}{subsubsection.12.1.2}%
+\contentsline {subsubsection}{\numberline {12.1.3}Ética}{27}{subsubsection.12.1.3}%
+\contentsline {subsubsection}{\numberline {12.1.4}Política}{27}{subsubsection.12.1.4}%
+\contentsline {section}{\numberline {13}Platón}{27}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Metafísica}{28}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Antropología}{28}{subsection.13.2}%
+\contentsline {subsubsection}{\numberline {13.2.1}Alma}{28}{subsubsection.13.2.1}%
+\contentsline {subsubsection}{\numberline {13.2.2}Cuerpo}{28}{subsubsection.13.2.2}%
+\contentsline {subsection}{\numberline {13.3}Epistemología}{28}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Política}{29}{subsection.13.4}%
+\contentsline {part}{VI\hspace {1em}Lengua}{30}{part.6}%
+\contentsline {section}{\numberline {14}Preludio}{30}{section.14}%

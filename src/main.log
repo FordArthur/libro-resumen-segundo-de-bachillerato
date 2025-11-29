@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.1)  11 NOV 2025 19:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.22)  29 NOV 2025 18:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,9 +23,9 @@ File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen141
-) (/home/ford/Projects/transcripts/t2a/mea-pugna/NotesTeXV3/NotesTeX.sty
+) (../NotesTeX.sty
 
-LaTeX Warning: You have requested package `/home/ford/Projects/transcripts/t2a/mea-pugna/NotesTeXV3/NotesTeX',
+LaTeX Warning: You have requested package `../NotesTeX',
                but the package provides `NotesTeXV3'.
 
 Package: NotesTeXV3 2021/10/22 rV3
@@ -866,24 +866,24 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 )) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count369
@@ -903,7 +903,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 10.
+Package hyperref Info: Link coloring ON on input line 13.
  (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -983,7 +983,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 12.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 15.
 (/usr/share/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -997,7 +997,7 @@ Package JHEP Warning: E-mails are missing.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
-Package marginnote Info: Using workaround for absolute page number on input line 12.
+Package marginnote Info: Using workaround for absolute page number on input line 15.
  (./main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -1043,16 +1043,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 [3]
-Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 18.
-Package marginnote Info: right page because not two side mode on input line 18.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 18.
+Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 21.
+Package marginnote Info: right page because not two side mode on input line 21.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 21.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 18.
+(Font)              <24.88> on input line 21.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 18.
+(Font)              <20.74> on input line 21.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 18.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 22.
+(Font)              <17.28> on input line 21.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 25.
  (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1060,20 +1060,20 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [1
 
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-Package marginnote Info: Using workaround for absolute page number on input line 34.
-Package marginnote Info: Margin note 8.1 is on absolute page 8 on input line 36.
-Package marginnote Info: right page because not two side mode on input line 36.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 36.
+Package marginnote Info: Using workaround for absolute page number on input line 37.
+Package marginnote Info: Margin note 8.1 is on absolute page 8 on input line 39.
+Package marginnote Info: right page because not two side mode on input line 39.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 39.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 65.
+(Font)              <8> on input line 68.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 65.
+(Font)              <6> on input line 68.
 
 
 [2{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
 
 [3]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 114.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 117.
 
 
 [4]
@@ -1082,136 +1082,167 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [5]
-Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 251.
+Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 254.
 
 
 [6{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 
 [7]
-Package marginnote Info: Margin note 14.1 is on absolute page 14 on input line 285.
-Package marginnote Info: right page because not two side mode on input line 285.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 285.
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 308.
+Package marginnote Info: Margin note 14.1 is on absolute page 14 on input line 288.
+Package marginnote Info: right page because not two side mode on input line 288.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 288.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 311.
 
 
 [8]
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 384.
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 387.
 
 
 [9]
 
 [10]
+Underfull \hbox (badness 1603) in paragraph at lines 440--440
+[]$[]$ \T1/lmr/m/it/8 Las ecua-ciones de Maxwell
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 440--440
+\T1/lmr/m/it/8 son la sin-té-sis de nue-stro
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 440--440
+\T1/lmr/m/it/8 conocimiento so-bre elec-tro-mag-
+ []
+
+
+LaTeX Warning: Marginpar on page 11 moved.
+
+
 
 [11]
 
 [12]
-Package marginnote Info: Margin note 19.1 is on absolute page 19 on input line 507.
-Package marginnote Info: right page because not two side mode on input line 507.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 507.
-
 
 [13]
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 599.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 599.
-
-
-
 [14]
+Package marginnote Info: Margin note 21.1 is on absolute page 21 on input line 597.
+Package marginnote Info: right page because not two side mode on input line 597.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 597.
+
 
 [15]
 
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 689.
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 689.
+
+
+
 [16]
-Overfull \hbox (14.33403pt too wide) in paragraph at lines 763--764
+
+[17]
+
+[18]
+Overfull \hbox (14.33403pt too wide) in paragraph at lines 853--854
 \T1/lmr/m/n/10 Llamamos pro-ceso re-versible a aquel en el cuál en el pro-ceso de trans-for-ma-ción $\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 p[]; V[]; T[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 !
  []
 
 
 
-[17]
-</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG, id=585, 472.01344pt x 235.63031pt>
-File: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG Graphic file (type jpg)
-<use /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG>
-Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG  used on input line 809.
+[19]
+<../img/Ciclo_de_4_tiempos.JPG, id=646, 472.01344pt x 235.63031pt>
+File: ../img/Ciclo_de_4_tiempos.JPG Graphic file (type jpg)
+<use ../img/Ciclo_de_4_tiempos.JPG>
+Package pdftex.def Info: ../img/Ciclo_de_4_tiempos.JPG  used on input line 899.
 (pdftex.def)             Requested size: 236.00613pt x 117.81487pt.
 
 
-[18]
-</home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg, id=594, 1451.4225pt x 929.4725pt>
-File: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg Graphic file (type jpg)
-<use /home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg>
-Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg  used on input line 828.
+[20]
+<../img/Esquema-de-2-tiempos.jpg, id=655, 1451.4225pt x 929.4725pt>
+File: ../img/Esquema-de-2-tiempos.jpg Graphic file (type jpg)
+<use ../img/Esquema-de-2-tiempos.jpg>
+Package pdftex.def Info: ../img/Esquema-de-2-tiempos.jpg  used on input line 918.
 (pdftex.def)             Requested size: 290.27936pt x 185.8912pt.
 
 
-[19 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg>]
+[21 <../img/Ciclo_de_4_tiempos.JPG> <../img/Esquema-de-2-tiempos.jpg>]
 
-[20]
-</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg, id=615, 1284.8pt x 722.7pt>
-File: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg Graphic file (type jpg)
-<use /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg>
-Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg  used on input line 898.
+[22]
+<../img/Ciclo_de_Rankine.jpg, id=678, 1284.8pt x 722.7pt>
+File: ../img/Ciclo_de_Rankine.jpg Graphic file (type jpg)
+<use ../img/Ciclo_de_Rankine.jpg>
+Package pdftex.def Info: ../img/Ciclo_de_Rankine.jpg  used on input line 988.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-Overfull \hbox (4.58308pt too wide) in paragraph at lines 898--899
+Overfull \hbox (4.58308pt too wide) in paragraph at lines 988--989
  [] 
  []
 
 
 
-[21 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg>]
-</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png, id=625, 513.92pt x 296.10625pt>
-File: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png Graphic file (type png)
-<use /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png>
-Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png  used on input line 918.
+[23 <../img/Ciclo_de_Rankine.jpg>]
+<../img/Ciclo_de_Brayton.png, id=687, 513.92pt x 296.10625pt>
+File: ../img/Ciclo_de_Brayton.png Graphic file (type png)
+<use ../img/Ciclo_de_Brayton.png>
+Package pdftex.def Info: ../img/Ciclo_de_Brayton.png  used on input line 1008.
 (pdftex.def)             Requested size: 256.95937pt x 148.05275pt.
 
 
-[22 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png>]
+[24 <../img/Ciclo_de_Brayton.png>]
 
-[23]
-</home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png, id=646, 642.4pt x 596.2275pt>
-File: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png Graphic file (type png)
-<use /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png>
-Package pdftex.def Info: /home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png  used on input line 992.
+[25]
+<../img/Ciclo_de_Rankine_inverso.png, id=708, 642.4pt x 596.2275pt>
+File: ../img/Ciclo_de_Rankine_inverso.png Graphic file (type png)
+<use ../img/Ciclo_de_Rankine_inverso.png>
+Package pdftex.def Info: ../img/Ciclo_de_Rankine_inverso.png  used on input line 1082.
 (pdftex.def)             Requested size: 321.19922pt x 298.11302pt.
 
 
-[24 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png>]
-Package marginnote Info: Margin note 31.1 is on absolute page 31 on input line 997.
-Package marginnote Info: right page because not two side mode on input line 997.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 997.
+[26 <../img/Ciclo_de_Rankine_inverso.png>]
+Package marginnote Info: Margin note 33.1 is on absolute page 33 on input line 1087.
+Package marginnote Info: right page because not two side mode on input line 1087.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 1087.
+<../img/Platon.jpg, id=713, 2007.5pt x 1962.33125pt>
+File: ../img/Platon.jpg Graphic file (type jpg)
+<use ../img/Platon.jpg>
+Package pdftex.def Info: ../img/Platon.jpg  used on input line 1112.
+(pdftex.def)             Requested size: 200.76175pt x 196.24461pt.
 
 
-[25]
-Package marginnote Info: Margin note 32.1 is on absolute page 32 on input line 1019.
-Package marginnote Info: right page because not two side mode on input line 1019.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 1019.
+[27 <../img/Platon.jpg>]
+
+[28]
+
+[29]
+Package marginnote Info: Margin note 36.1 is on absolute page 36 on input line 1192.
+Package marginnote Info: right page because not two side mode on input line 1192.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 1192.
 
 
-[26] (./main.aux)
+[30] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2EA55C83491BF21A91187D84DC630FD8;13162.
+(rerunfilecheck)             Checksum: BD813F54F48E71013BE667B666B0DBA4;14315.
  ) 
 Here is how much of TeX's memory you used:
- 31773 strings out of 475171
- 619769 string characters out of 5767095
- 1034427 words of memory out of 5000000
- 53958 multiletter control sequences out of 15000+600000
+ 31816 strings out of 475171
+ 618651 string characters out of 5767094
+ 1034329 words of memory out of 5000000
+ 53979 multiletter control sequences out of 15000+600000
  709944 words of font info for 139 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  131i,15n,135p,541b,1189s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on main.pdf (30 pages, 1866402 bytes).
+Output written on main.pdf (34 pages, 2339700 bytes).
 PDF statistics:
- 819 PDF objects out of 1000 (max. 8388607)
- 724 compressed objects within 8 object streams
- 224 named destinations out of 1000 (max. 500000)
- 630 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 894 PDF objects out of 1000 (max. 8388607)
+ 794 compressed objects within 8 object streams
+ 246 named destinations out of 1000 (max. 500000)
+ 707 words of extra memory for PDF output out of 10000 (max. 10000000)
 
