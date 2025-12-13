@@ -65,7 +65,8 @@ y un ``predicado'' (\textit{lo que se postula que las variables satisfacen}). Se
 Típicamente nos interesan proposiciones sin variables libres, ya que es imposible deducir el valor de verdad de ``\textit{\underline{x} es mortal}'' si no sabemos de donde
 procede \textit{x} (es decir, deberíamos añadir ``\textit{cualquier humano, llamese x, para el que \dots}'' o ``\textit{existe un humano, llamese x, para el que \dots}'').
 
-El compendio anterior quizás no es suficiente para alguien no ya algo expuesto al lenguaje matemático. Para comprobar, uno debería de ser capaz de ``leer'' las siguientes ``oraciones''. \sn{La notación $ x \in X $ se introducirá en la sección posterior, significa ``x pertenece a X'' }
+El compendio anterior quizás no es suficiente para alguien no ya algo expuesto al lenguaje matemático. Para comprobar, uno debería de ser capaz de ``leer'' las siguientes ``oraciones''.
+\sn{La notación $ x \in X $ se introducirá en la sección posterior, significa ``x pertenece a X'' }
 
 \begin{enumerate}
 
@@ -119,9 +120,16 @@ de los números reales, podemos considerar la noción de \textbf{continuidad}:
   tal que $ f(U) \subseteq V $.
 \end{definition}
 
+\begin{center}
+  \includegraphics[scale=0.2]{Continuidad_topologica.png}
+\end{center}
+
 Esta definición no es la estándar (la utilizada en selectividad será definida en la sección sobre límites). Sin embargo, nos da una buena intuición sobre lo que significa continuidad:
 si pensamos en un intervalo abierto cómo una zona cercana a algún punto, una función continua, según esta definición, es aquella que zonas cercanas en el codominio se corresponden a
 zonas cercanas en el dominio. Dicho de otra manera, si $ x $ está cercano a $ y $ en el dominio, $ f(x) $ esta cercano a $ f(y) $ en la imagen.
+
+Por conveniencia, definimos la función $ \text{cont} : (X \to \mathbb{R}) \to \mathcal{P} \mathbb{R} $, que a cada función real asocia el subconjunto $ \text{cont} f \subseteq X $ en el cuál
+f es continua.
 
 \subsubsection{En práctica}
 
@@ -129,21 +137,21 @@ En la selectividad no es raro un ejercicio que requiera calcular el dominio de u
 restringir hasta que la imagen de la función que les sirve cómo argumento caiga en el dominio de estas funciones ``problemáticas''. A continuación una tabla con reglas de inferencia para los dominios:
 
 \begin{center}
-\begin{tabular}{| c | c |} 
- \hline
- $ f(x) $ & dom $ f $ \\
- \hline
- $ f_1(x) + f_2(x) $ & $ \text{dom} f_1 \cap \text{dom} f_2 $ \\
- $ f_1(x)f_2(x) $ & $ \text{dom} f_1 \cap \text{dom} f_2 $ \\
- $ f_1(x)/f_2(x) $ & $ (\text{dom} f_1 \cap \text{dom} f_2) \backslash \{f_2(x) = 0\} $ \\
- $ ax^b $ & $ \mathbb{R} $ \\
- $ \sqrt[2n]{x} $ & $ [0, +\infty) $ \\
- $ \sqrt[2n+1]{x} $ & $ \mathbb{R} $ \\
- $ a^x $ & $ \mathbb{R} $ \\
- $ \ln(x) $ & $ (0, +\infty) $ \\
- $ |x| $ & $ \mathbb{R} $ \\
- \hline
-\end{tabular}
+  \begin{tabular}{| c | c |} 
+    \hline
+    $ f(x) $ & dom $ f $ \\
+    \hline
+    $ f_1(x) + f_2(x) $ & $ \text{dom} f_1 \cap \text{dom} f_2 $ \\
+    $ f_1(x)f_2(x) $ & $ \text{dom} f_1 \cap \text{dom} f_2 $ \\
+    $ f_1(x)/f_2(x) $ & $ (\text{dom} f_1 \cap \text{dom} f_2) \backslash \{f_2(x) = 0\} $ \\
+    $ ax^b $ & $ \mathbb{R} $ \\
+    $ \sqrt[2n]{x} $ & $ [0, +\infty) $ \\
+    $ \sqrt[2n+1]{x} $ & $ \mathbb{R} $ \\
+    $ a^x $ & $ \mathbb{R} $ \\
+    $ \ln(x) $ & $ (0, +\infty) $ \\
+    $ |x| $ & $ \mathbb{R} $ \\
+    \hline
+  \end{tabular}
 \end{center}
 
 \subsection{Límites}
@@ -216,10 +224,12 @@ Empezamos definiendo el conjunto sobre el cual definiremos las operaciones aptas
 
 Para describir el álgebra que nos interesa sobre el anterior conjunto, basta con definir cómo particípan los nuevos símbolos, y es que no modificamos las operaciones sobre
 los números reales. Para este fin, basta con decir que los símbolos de infinito operan cómo uno esperaría ($ k + (\pm \infty) = \pm \infty $, $ k(\pm\infty) = \pm \infty $ \dots).
-Los únicos casos donde la anterior intuición falla son en los casos ``indeterminados''.  % encontrar una lista de casos indeterminados para selectividad
-Por último, el símbolo ``No existe'' viene a funcionar cómo un indicador de la divergencia de lo que se está intentando cálcular. Por ejemplo $ \cos{\pm\infty} = \text{``No existe''} $.
+Los únicos casos donde la anterior intuición falla son en los casos ``indeterminados''. Dichos casos son: $ \frac{\infty}{\infty} $, $ \frac{0}{0} $, $ 0 \cdot \infty $, $ \infty - \infty $, 
+$ 1^\infty $, $ 0^0 $, $ 0^\infty $. Para lo que la selectividad concierne, solo nos interesan los 4 primeros casos.
 
-% Explicar el álgebra a fondo
+Por último, el símbolo ``No existe'' viene a funcionar cómo un indicador de la divergencia de lo que se está intentando cálcular. Por ejemplo $ \cos(+\infty) = \text{``No existe''} $.
+
+% Explicar el álgebra a fondo (?)
 
 \subsubsection{En la práctica}
 
@@ -227,15 +237,79 @@ Falta por explicar cómo pasar del cálculo de un límite a operar en el álgebr
 donde $ \alpha $ es o un real o un infinito, basta con sustituir $ \alpha $ por $ x $ en $ f(x) $ y operar siguiendo las reglas ya dichas. Si el resultado de operar es otra cosa
 que no sea ``Indet.'', hemos terminado. En caso de un ``Indet.'', debemos trabajar $ f(x) $ hasta conseguir una expresión que al sustituir nos de el resultado deseado.
 
-% Explicar transformaciones algebraicas típicas para arreglar f(x)
+Una técnica que suele funcionar es transformar todos los casos en $ \frac{0}{0} $ o $ \frac{\infty}{\infty} $. Para $ 0 \cdot \infty $ la transformación es directa ($ 0 \cdot \infty =
+\frac{1}{\infty} \cdot \infty = \frac{\infty}{\infty} $). Para $ \infty - \infty $ uno suele multiplicar y dividir por el conjugado de la expresión. Una vez en uno de estos dos casos,
+suele ser posible sacar factor común tanto en el denominador como en el numerador o se puede aplicar \textit{L'Hopital}, a ser explicado en la siguiente sección.
 
 \subsection{Derivadas}
 
+En muchas situaciones nos interesa conocer la tasa de variación de una función en un intervalo, para lo cuál, tenemos la siguiente definición:
 
+\begin{definition}[Tasa de Variacion Media, TVM]
+  La \textit{Tasa de Varaición Media} de una función real $ f $ en el intervalo $ \left[a, b\right] $ se define como:
+  \[ TV\!M_a^b f := \frac{f(b) - f(a)}{b - a} \]
+\end{definition}
+
+Ocurre que, asimismo, es interesante investigar cuando $ \left[a, b\right] $ ``es un punto''. Es decir, cuando $ a $ y $ b $ estén arbitrariamente cerca, que es lo mismo que
+$ b = \lim_{h \to 0} a + h $. Siguiendo esta intuición, llegamos al concepto de \textit{derivada}:
+
+\begin{definition}[Derivada en un punto y función derivada]
+  Sea $ f $ una función real. La \textit{derivada de $ f $ en $ x $} se define por:
+  \[ f'(x) := \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \]
+
+  Nótese que $ f'(x)$ es sólo un símbolo. No obstante es posible definir la \textit{función derivada}, que a cada $ x \in \text{cont} f$ asocia a su correspondiente $ f'(x) $.
+\end{definition}
+
+\begin{remark}
+  Es posible que f no sea derivable en un punto pero si sea continua (por ejemplo, $ f(x) = |x| $ para $ x = 0 $). En general, por tanto, $ x \in \text{der} f \Rightarrow x \in \text{cont} f $, 
+  pero la conversa es falsa.
+\end{remark}
+
+Definimos $ \text{der} : (X \to \mathbb{R}) \to \mathcal{P} \mathbb{R} $ de manera similar a cont.
+
+La función derivada $ f' $ de otra, al ser una función real, puede asimismo ser derivada indefinidamente. Resultando en lo que llamamos la \textit{n-ésima derivada de $ f $}. 
+\sn{Una función $ \infty $-derivable se denomina \textit{suave}.}
+
+Las nociones anteriores también son útiles para el cálculo de límites gracias a la \textit{regla de L'Hopital}:
+
+\begin{theorem}[Regla de L'Hopital]
+  Sean $ f $ y $ g $ funciones reales para las que $ \lim_{x \to \alpha} \frac{f(x)}{g(x)} $ sea $ 0 $ o $ \infty $. Se cumple que:
+  \[ \lim_{x \to \alpha} \frac{f(x)}{g(x)} = \lim_{x \to \alpha} \frac{f'(x)}{g'(x)}\]
+\end{theorem}
 
 \subsection{Análisis de una función}
 
+Podemos utilizar los conceptos anteriores como herramientas para investigar el comportamiento de una función \textit{localmente}.
+
+\subsubsection{Monotonía}
+
+La monotonía concierne a los intervalos de la función donde se tiene un mismo signo de cambio. Es decir, donde crece y decrece la función. Para este fin, por cada tramo continuo de nuestra función,
+investigamos el signo de $ f'(x) $ para $ x $ en dicho tramo. Que $ f'(x) > 0 $ significa que la función tiene tendencia a crecer cerca de $ x $, y lo opuesto es verdad si $ f'(x) < 0 $. Cuando
+$ f'(x) = 0 $ estamos ante un \textit{punto crítico}, punto donde la función cambia de signo de cambio.
+
+\subsubsection{Curvatura}
+
+La curvatura concierne a los intervalos de la función donde la gráfica de la tangente se encuentra en una misma posición relativa a la gráfica de la función (a saber: por arriba o por debajo).
+Los mismos principios de monotonía aplican a curvatura, ya que estudiar la curvatura de $ f $ es equivalente a estudiar la monotonía de $ f' $.
+
 \subsection{Integrales}
+
+En ciertas circunstancias podemos agregar información local de un espacio en un proceso que llamamos \textit{integración}. Para funciones reales, podemos definir la llamada \textit{integración de 
+Riemann}. Conceptualmente, la integral de Riemann ($ \int_a^b f(x) \diff x $) calcula una ``media'' de los valores de $ f(x), x \in \left[a, b\right] $.
+
+Ocurre que la integración y la derivación son procesos inversos:
+
+\begin{theorem}[Teorema fundamental del cálculo]
+  Sea $ f $ una función real y $ C $ un número real, llamado ``\textit{constante de derivación}''. Entonces:
+  \[ \frac{\diff}{\diff x} \left(\int_a^b f(x) \diff x + C\right) = f(x) \]
+\end{theorem}
+
+De la misma manera que buscar una función inversa a otra no es trivial, buscar una \textit{primitiva} \sn{una función real $ F $ es una antiderivada, o primitiva, de otra $ f $ si la derivada de 
+$ F $ es $ f $ }, es decir, integrar una función, suele requerir utilizar ciertas técnicas falibles (conque no es un proceso mecánico como la diferenciación).
+
+\subsubsection{Integración por partes}
+
+\subsubsection{Integración de racionales}
 
 \subsection{Ejercicios selectividad resueltos}
 
@@ -521,8 +595,8 @@ en movimiento. Conversamente, el movimiento de cuerpos cargados eléctricamente 
 
 A este campo le corresponden las otras dos ecuaciones de Maxwell:
 
-\[ \nabla \cdot \vec{B} = 0 \iff \oint \vec{E} \cdot \diff \vec{A} = 0 \]
-\[ \nabla \times \vec{B} = -\upsilon_0 \vec{J} + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t} \iff \oint -\upsilon_0 I + \mu_0 \epsilon_0 \int \frac{\partial \vec{E}}{\partial t}\]
+\[ \nabla \cdot \vec{B} = 0 \iff \oint \vec{B} \cdot \diff \vec{A} = 0 \]
+\[ \nabla \times \vec{B} = -\mu_0 \vec{J} + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t} \iff \oint \vec{B} \cdot \diff \vec{l} =  -\mu_0 I + \mu_0 \epsilon_0 \int \frac{\partial \vec{E}}{\partial t}\]
 
 \subsubsection{Sobre una carga en movimiento}
 
@@ -590,6 +664,37 @@ Además podemos utiliza la otra regla de la mano derecha para determinar la orie
   Puede darse el caso donde debamos considerar de dos conductores rectilíneos paralelos el campo que generan uno sobre otro. Para lo cuál con basta aplicar las reglas ya mencionadas en 
   ambos conductores desde el conductor recíproco. Debe cumplirse que el que ambos conductores se atraigan implica que el flujo por ambos conductores tenga el mismo sentido y lo opuesto
   cuando los conductores se repelan.
+\end{remark}
+
+\subsection{Inducción electromagnética}
+
+% introducir flujo eléctrico y magnético anteriormente
+
+El cambio de un flujo magnético \textit{induce} una fuerza electromotriz sobre la superficie dada. Esto se deduce desde la Ley de Inducción de Faraday:
+
+Llegando a la expresión que utilizaremos para calcular dicha fuerza:
+
+\begin{theorem}[Fuerza electromagnetica]
+  La fuerza electromagnética, definida tal que:
+  \[ \mathcal{E} := \oint_C \vec{E} \cdot \diff \vec{l} \]
+
+  cuando inducida, viene dada por la expresión:
+  \[ \mathcal{E} = - \frac{\diff \Phi_B}{\diff t} \]
+\end{theorem}
+
+\begin{proof}
+  \begin{align*}
+    \mathcal{E} &:= \oint_C \vec{E} \cdot \diff \vec{l} \\
+                &= \int_S (\nabla \times E) \cdot \diff \vec{A} && \text{Teorema de Stokes} \\
+                &= - \int_S \frac{\partial \vec{B}}{\partial t} \cdot \diff \vec{A} && \text{Ley de inducción de Faraday} \\
+                &=: - \frac{\diff \Phi_B}{\diff t} && \text{Definición de flujo magnético}
+  \end{align*}
+
+\end{proof}
+
+\begin{remark}
+  El signo negativo de la expresión de la fuerza electromagnética es explicado por la \textit{Ley de Lenz}. Dicha ley establece que el sentido del campo magnético inducido se opone a la causa
+  que lo produce.
 \end{remark}
 
 \newpage
@@ -1082,6 +1187,85 @@ de calor), válvula de expansión (mantiene la presión constante del refrigeran
   \includegraphics[scale=0.5]{Ciclo_de_Rankine_inverso.png}
 \end{center}
 
+\section{Hidráulica y neumática}
+
+\subsection{Elementos de los circuitos neumáticos}
+
+Los circuitos neumáticos utilizan aire para su funcionamiento. Naturalmente, necesitaremos elementos que capten el aire, lo compriman, lo almacenen, regulen su presión, etc.
+Por otra parte, elementos para dispensar del aire son innecesarios o muy simples.
+
+\subsubsection{Compresores}
+
+Encontramos dos tipos de compresores:
+
+\begin{itemize}
+  \item \textbf{Volumétricos}: Reducen el volumen que ocupa el aire, aumentando la presión, según la ley de Boyle. Podemos distinguir a su vez entre 
+    alternativos o de pistón y rotativos.
+  \item \textbf{Dinámicos}: Aumentan la energía cinética del aire que, al frenar contra el fluido ya existente en su salida hace que su velocidad se 
+    transforme en presión de empuje según la ecuación de Bernoulli. Los tipos que existen son: radiales o centrífugos y axiales.
+\end{itemize}
+
+\subsubsection{Acondicionadores del aire}
+
+% ...
+
+\subsubsection{Actuadores neumáticos}
+
+Diferenciamos entre actuadores rotativos (motores, usos escasos), y actuadores lineales (cilíndros). Nos centraremos en los lineales, los cuáles se subdividen en 2 tipos:
+
+\begin{itemize}
+  \item \textbf{De simple efecto}: El aire solo puede realizar una acción (típicamente la de extensión del pistón). El retorno se realiza por un muelle.
+  \item \textbf{De doble efecto}: Tanto el avance como el retroceso viene dado por aire.
+\end{itemize}
+
+Nos suele interesar el cálculo de la fuerza y el consumo de aire.
+
+La fuerza teórica viene dada por:
+
+\[ F_t = p S \]
+
+Donde $ S = S_e - S_v  $ en el retroceso de un pistón de doble efecto y $ S = S_e $ de lo contrario.
+
+No obstante, uno debe tener en cuenta tanto la fuerza de rozamiento como el muelle, conque:
+
+\[ F = F_t - F_r - F_m \]
+
+Donde $ F_m = K \Delta x $. En otras ocasiones, $ F $ se toma de un porcentaje de $ F_t $.
+
+El consumo de aire es precisamente el volumen de aire implicado en la acción del cilíndro, es decir, la carrera $ l $ por la superficie $ S $ (Con las consideraciones anteriores
+de que es la superficie). 
+
+\subsubsection{Válvulas distribuidoras}
+
+Sirven para dirigir y regular la dirección del aire comprimido a través de los circuitos. Se nombran según el número de vías u orificios que tengan, el número de estados,
+y su accionamiento.
+
+\begin{center}
+  \includegraphics[scale=0.8]{Tabla_Distribuidoras.jpg}
+\end{center}
+
+\subsubsection{Otras válvulas}
+
+\subsection{Circuitos prácticos neumáticos}
+
+\subsection{Circuitos hidráulicos}
+
+Son circuitos que emplean el aceite como fluido. Consecuentemente, podremos lograr mayor fuerza y sostener estados intermedios (fluido incompresible), 
+tener mejor control caudal y velocidad, pero necesitaremos tuberías de recogida y habrá peligro de contaminación por fugas.
+
+\subsubsection{Cálculo de parámetros en un circuito}
+
+El principio de Pascal asevera que la presión ejercida sobre un fluido incompresible se transmite instantáneamente y por igual a todos los puntos de dicho fluido
+($ p_1 = p_2 $ y $ V_1 = V_2 $). Por lo tanto, el caudal $ Q $ se mantiene a lo largo del circuito, conque la potencia hidráulica puede ser calculada tal que $ P = F v = p S v = p Q $.
+
+Según la ley de la conservación de la energía, tenemos:
+
+\[ E_P + E_C + E_{Pr} = E_P' + E_C' + E_{Pr}' \Rightarrow mgh + \frac{1}{2}mv^2 + pS = mgh' + \frac{1}{2}mv'^2 + pS' \]
+
+Conque llegamos a la ecuación de Bernoulli:
+
+\[ \rho gh + \frac{1}{2} \rhbo v^2 + p = \rho gh' \frac{1}{2} \rho v'^2 + p' \]
+
 \newpage
 
 \part{Historia de la Filosofía}
@@ -1106,10 +1290,12 @@ es el estudio racional de los constituyentes fundamentales de la realidad y del 
 
 \subsubsection{Política}
 
+\newpage
+
 \section{Platón}
 
 \begin{center}
-  \includegraphics[scale=0.1]{Platon.jpg}
+  \includegraphics[scale=0.1]{platon.jpg}
 \end{center}
 
 \begin{center}
@@ -1132,20 +1318,57 @@ personaje principal suele ser Sócrates), que con libertad fluían entre distint
 
 \subsection{Metafísica}
 
-Resulta que la filosofía platónica propone un esquema a aplicar en distintas áreas del saber, el llamado \textit{dualismo Platónico}. Ya que
-es así, exponemos el esquema general aquí y lo instanciamos posteriormente en las áreas pertinentes.
+La filosofía platónica propone un esquema a aplicar en distintas áreas del saber, el llamado \textit{dualismo Platónico}, el cuál está expuesto 
+con el símil de la caverna. La etimología de dualismo ya sugiere el fundamento que profesa, a saber: la existencia de dos principios fundamentales que
+componen un sistema. El dualismo platónico además precisa la esencia de estos dos principios, o \textit{mundos} y la relación entre ellos. 
 
-La etimología de dualismo ya sugiere el fundamento que profesa, a saber: la existencia de dos principios fundamentales que componen un
-sistema. El dualismo platónico además precisa la esencia de estos dos principios, o \textit{mundos} y la relación entre ellos. Aplica el
-dualismo Platónico donde hay un mundo inferior (\textit{contingente, sensible, perecedero, \dots}, en definitiva, \textit{Hericlíteo})
-tiene una cierta correspondencia o subordinación (\textit{participación, imitación}) a otro superior (\textit{inmutable, inteligible, 
-eterno}, en definitiva, \textit{Parménico}) que además es independiente y en cierto sentido anterior.
+En metafísica, se postula un mundo sensible, inferior, el cuál es contingente, perecedero, imperfecto \dots (en definitiva, \textit{Hericlíteo}), que
+se corresponde al mundo formal, superior, el cuál es inmutable, eterno, perfecto \dots (en definitiva, \textit{Parménico}), mediante participación e imitación.
+Lo cuál quiere decir que el mundo sensible, compuesto de particulares, participa en sus correspondientes universales (exhibiendose como ejemplos del universal)
+e imita la ideosincrasia de sus universales. Se deduce, además, que ambos mundos son independientes y, en cierto sentido, el mundo formal es anterior.
 
-La aplicación del anterior método a la metafísica resulta en la llamada \textit{Teoría de las ideas}. Dicha teoría toma en el esquema
-anterior \textit{lo perceptible por los sentidos} como \textit{mundo inferior}. Asimismo, el correspondiente mundo superior es el 
-\textit{mundo de las ideas}. Dicho mundo, también postulado por Platón, es constituido integramente por \textit{ideas}.
+La aplicación del dualismo platónico a la metafísica resulta en la llamada \textit{Teoría de las ideas}, que es la previamente expuesta. Es por su primacía en
+las ideas que esta teoría constituye la primera filosofía idealista en la Historia de la Filosofía.
 
-% Bien como la idea perfecta, el Sol de este mundo
+A este nivel cabe destacar además la existencia de una Idea suprema: el Bien. Para Platón esta es la Idea que da sentido al resto. En el simil de la caverna
+el Bien se identifica con el sol puesto que proporciona la luz por la que podemos dislumbrar el resto de Formas. Resulta esto importante ya que en la genealogía
+de Dios dicha concepción es primordial. En este símil también cabe la explicación de una característica crucial de esta concepción de Bien. A saber, Platón concibe
+de un Bien que es inefable, el cuál es exclusivo a la revelación mística.
+
+\subsubsection{Ontología}
+
+En misma correspondencia con los anteriores mundos, encontramos dos tipos de cosas que ``son'': Lo \textit{particular} y lo \textit{universal}. Platón distingue al
+menos en 4 maneras entre estas dos categorías, a saber: multiplicidad, siendo lo universal único y lo particular múltiple, tal que un único fenómeno pueda presentar
+distintos ejemplos; mutabilidad, puesto que lo universal es rígido e inmóvil mientras que lo particular es contingente; materialidad, de manera que las Formas
+transcienden cualquier marco material, opuestamente a la manera en la que lo particular se encuentra ligado a la materia; sensibilidad, tal que el órgano que percibe
+las Ideas es la mente, el \textit{alma}, y el que percibe los particulares son los sentidos.
+
+De esta manera, la perfección es una cualidad exclusiva a los universales, puesto que el ejemplo siempre carece de algo respecto a su Idea (cf. ejemplo del triángulo).
+
+% \subsubsection{Cosmología} (Demiurgo)
+
+\subsection{Epistemología}
+
+Platón distingue rigurosamente entre lo que puede ser objeto de conocimiento auténtico (\textit{epistéme}) y lo que pertenece al campo de la opinión (\textit{doxa}). 
+El conocimiento verdadero no trata de particulares sensibles, cambiantes y engañosos, sino de las Formas o Ideas, entidades inmutables y universales que constituyen la
+realidad ontológicamente prioritaria. Así, epistemológicamente, conocer equivale a participar intelectualmente en la Forma correspondiente: no basta la percepción sensorial
+para aprehender la esencia de las cosas.
+
+Dos figuras explicitan este pensamiento: el mito de la caverna y la \textit{línea dividida}. En la línea dividida Platón traza, de menor a mayor grado de verdad, los segmentos de
+la imaginación y la creencia (los cuales remiten al mundo sensible), y los de la comprensión matemática y la dialéctica (propios del mundo inteligible). La dialéctica, entendida 
+como arte del diálogo y de la refutación sistemática, culmina en la intuición racional de las Formas y, sobre todo, en la contemplación del Bien, que ilumina y legitima todo saber: 
+conocer el Bien es, en última instancia, conocer la condición de posibilidad de la verdad.
+
+\begin{center}
+  \includegraphics[scale=0.5]{Simil_de_la_linea.png}
+\end{center}
+
+Otra tesis epistemológica central es la Teoría de la reminiscencia o \textit{anamnésis}: el alma, al ser inmortal y haber contemplado las Formas antes de su encarnación, 
+recuerda mediante la correcta interrogación y el ejercicio intelectual lo que ya en ella existe latente. La educación, por tanto, no es mera transmisión de información sino 
+recolocación (o evocación) de la verdad que el alma ya posee; la mayéutica socrática es la técnica educativa que facilita esa recolección de la verdad mediante preguntas dirigidas.
+
+Platón jerarquiza también las disciplinas: las matemáticas ocupan un lugar preparatorio, pues habituan la mente a la abstracción, mientras que la dialéctica constituye 
+la forma suprema de conocimiento, puesto que por ella se trasciende el plano hipotético y se alcanza el conocimiento de los principios primeros.
 
 \subsection{Antropología}
 
@@ -1155,15 +1378,39 @@ el mundo superior, se deriva: la imperativa al asceticismo, que el cuerpo sirve 
 
 \subsubsection{Alma}
 
-El alma, según Platón, tiene carácter divino
+El alma, según Platón, tiene carácter divino y es ontológicamente prioritaria respecto del cuerpo. Es inmortal, preexistente y capaz de contemplar las Formas; 
+su caída al cuerpo es lo que origina el olvido y la necesidad de aprendizaje que, en realidad, es recolocación. Moralmente, el alma es tripartita, conforme a la 
+célebre división de \emph{La República}:
+
+\begin{itemize}
+  \item \textbf{La parte racional} (\textit{logistikon}): orientada al conocimiento, ama la verdad y debe gobernar por su capacidad para discernir el Bien.
+  \item \textbf{La parte irascible o espirituosa} (\textit{thymoeides}): vinculada al ánimo, al honor y al valor; su función es auxiliar a la razón y sostener la firmeza moral. 
+  \item \textbf{La parte concupiscible} (\textit{epithymetikon}): relacionada con apetitos y placeres corporales; exige moderación.
+\end{itemize}
+
+Platón relaciona la anterior división con las 4 virtudes griegas \textit{cardinales} (a saber: prudencia, justicia, coraje y templanza) de la siguiente manera:
+
+\begin{itemize}
+  \item Que haya \textbf{prudencia} significa que la parte racional sea la autoridad suprema y guie al resto.
+  \item Que haya \textbf{coraje} significa que la parte irascible se someta la parte racional. Puesto que son valientes aquellos que, sabiendo lo que es bueno, actuan
+        de manera acorde.
+  \item Que haya \textbf{templanza} significa que la parte concupiscible sepa moderar su apetito, así subordinandose a la razón.
+\end{itemize}
+
+Por último, la justicia, en el alma, se define como la armonía y el correcto ordenamiento entre estas partes: cada una desempeña su función sin usurpar la propia de las otras, bajo la dirección 
+de la razón. En el plano antropológico-religioso, Platón postula el ciclo de transmigraciones y la posibilidad de purificación moral del alma (cf. el mito de Er), donde la conducta 
+en la vida determina su suerte posterior.
 
 \subsubsection{Cuerpo}
 
-Siendo el cuerpo el antítesis del alma, 
+Siendo el cuerpo la antítesis del alma, Platón lo presenta como principio mortal, ligado a la generación y la corrupción, y como fuente de pasiones, deseos y errores perceptivos. 
+Los sentidos remiten al mundo cambiante y, por tanto, son instrumentos limitados y frecuentemente engañosos para acceder a la verdad. La presencia del cuerpo impone sobre el alma 
+tentaciones que desordenan su jerarquía, la concupiscencia puede subyugar a la razón si no mediatiza la educación y la disciplina moral; por eso Platón adopta, en sus consecuencias 
+prácticas, una inclinación hacia el ascetismo moderado y la purificación.
 
-\subsection{Epistemología}
-
-% teoría de la redención
+No obstante, Platón no reduce el cuerpo a mero estorbo: reconoce su papel en la acción política y social y en la formación del carácter. El proyecto educativo que propone orienta y 
+regula los impulsos corporales mediante gimnasia, música y disciplina, integrándolos de modo que sirvan a la excelencia del alma. La medicina del alma, como metáfora, exige ordenar 
+y domesticar las apetencias para que la polis y la vida individual alcancen la armonía justa.
 
 \subsection{Política}
 
@@ -1186,6 +1433,34 @@ la utilidad de ellas para sostener los derechos de la verdad, compañera insepar
   terero la esperanza de los premios y temor de las penas que acaso es el más poderoso de los tres para contener la multitud.
 }
 
+La estructura política ideal platónica deriva directamente de la antropología tripartita: la ciudad perfecta replica en lo social el orden del alma justa. 
+Así se distinguen tres clases sociales análogas a las partes del alma:
+
+\begin{itemize}
+  \item \textbf{Gobernantes (filósofos–reyes)}: corresponden a la parte racional. Solo aquellos que han alcanzado la comprensión de las Formas, y en última 
+    instancia del Bien, son aptos para gobernar. La filosofía, convertida en virtud política, legitima el poder.
+  \item \textbf{Auxiliares (guardianes guerreros)}: corresponden a la parte irascible. Su función es defender la ciudad y aplicar las decisiones de los gobernantes; 
+    deben poseer coraje y lealtad.
+  \item \textbf{Proveedores o productores (agricultores, artesanos, comerciantes)}: corresponden a la parte concupiscible. Su tarea es sostener materialmente la 
+    polis mediante el trabajo y la producción.
+\end{itemize}
+
+La justicia política, por tanto, consiste en que cada clase realice la función para la cual está naturalmente más capacitada, bajo la guía de la razón gobernante. 
+Para asegurar este orden, Platón propone medidas educativas y institucionales singulares: una educación pública y estricta para los guardianes, la formación filosófica 
+progresiva de los futuros gobernantes, la supresión de la propiedad privada y de la familia entre los guardianes (con el fin de evitar intereses particulares), y la censura 
+rigurosa de la poesía y los mitos que puedan corromper las costumbres. Es notorio el recurso del llamado \emph{mito de las clases} o \emph{mito de las raíces de metales} 
+(el “noble engaño”), mediante el cual se mantiene la cohesión social y la aceptación del orden.
+
+También es relevante la defensa platónica de la igualdad de capacidades: las mujeres aptas para el papel de guardián han de recibir la misma educación que los hombres en la 
+ciudad ideal, quedando subordinada la selección al mérito y no al sexo.
+
+Platón analiza asimismo la dinámica de degeneración política: la ciudad ideal puede decaer en distintos regímenes (timocracia, oligarquía, democracia) hasta culminar en la tiranía, 
+cada uno con su psicología moral y sus vicios correspondientes. La causa última de este declive es el desorden interior del alma colectiva: cuando la razón deja de mandar, los apetitos 
+y los intereses particulares toman el poder, provocando corrupción y violencia.
+
+Finalmente, la figura del filósofo-rey sintetiza la aspiración platónica: un gobernante que no busca el poder por interés personal sino por saber y por amor a la verdad, capaz de 
+orientar la polis hacia el bien común. La política platónica, aunque aristocrática en su designio (gobierno de los mejores en conocimiento), está animada por la idea de que el saber 
+auténtico es condición de la legitimidad y la virtud públicas.
 
 \newpage
 

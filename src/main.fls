@@ -1,4 +1,4 @@
-PWD /home/ford/Projects/apuntes/corpus-bachilleratus/src
+PWD /home/ford/Projects/transcripts/t2a/mea-pugna/src
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT main.tex
@@ -477,6 +477,10 @@ INPUT /usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmbxi10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
+INPUT ../img/Continuidad_topologica.png
+INPUT ../img/Continuidad_topologica.png
+INPUT ../img/Continuidad_topologica.png
+INPUT ../img/Continuidad_topologica.png
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT ../img/Ciclo_de_4_tiempos.JPG
 INPUT ../img/Ciclo_de_4_tiempos.JPG
@@ -498,10 +502,18 @@ INPUT ../img/Ciclo_de_Rankine_inverso.png
 INPUT ../img/Ciclo_de_Rankine_inverso.png
 INPUT ../img/Ciclo_de_Rankine_inverso.png
 INPUT ../img/Ciclo_de_Rankine_inverso.png
+INPUT ../img/Tabla_Distribuidoras.jpg
+INPUT ../img/Tabla_Distribuidoras.jpg
+INPUT ../img/Tabla_Distribuidoras.jpg
+INPUT ../img/Tabla_Distribuidoras.jpg
 INPUT ../img/Platon.jpg
 INPUT ../img/Platon.jpg
 INPUT ../img/Platon.jpg
 INPUT ../img/Platon.jpg
+INPUT ../img/Simil_de_la_linea.png
+INPUT ../img/Simil_de_la_linea.png
+INPUT ../img/Simil_de_la_linea.png
+INPUT ../img/Simil_de_la_linea.png
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
