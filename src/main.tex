@@ -2,6 +2,13 @@
 \usepackage{../NotesTeX}
 
 \newcommand{\diff}{\mathrm{d}}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\cod}{\mathrm{cod}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
 
 \graphicspath{ {../img} }
 
@@ -65,21 +72,6 @@ y un ``predicado'' (\textit{lo que se postula que las variables satisfacen}). Se
 Típicamente nos interesan proposiciones sin variables libres, ya que es imposible deducir el valor de verdad de ``\textit{\underline{x} es mortal}'' si no sabemos de donde
 procede \textit{x} (es decir, deberíamos añadir ``\textit{cualquier humano, llamese x, para el que \dots}'' o ``\textit{existe un humano, llamese x, para el que \dots}'').
 
-El compendio anterior quizás no es suficiente para alguien no ya algo expuesto al lenguaje matemático. Para comprobar, uno debería de ser capaz de ``leer'' las siguientes ``oraciones''.
-\sn{La notación $ x \in X $ se introducirá en la sección posterior, significa ``x pertenece a X'' }
-
-\begin{enumerate}
-
-  \item \[ \forall x, y \in X.\; f(x) = f(y) \Rightarrow x = y \]
-
-  \item \[ \forall y \in Y.\; \exists x \in X. \text{ tal que } f(x) = y \]
-
-  \item \[ \exists \epsilon \in \mathscr{G}. \text{ tal que } \forall x \in \mathscr{G}.\; x \cdot \epsilon = \epsilon \cdot x = x \]
-
-  \item \[ \forall \epsilon > 0.\; \exists \delta > 0. \text{ tal que } 0 < | x - a | < \delta \Rightarrow | f(x) - L | < \epsilon \]
-
-\end{enumerate}
-
 \subsection{Conjuntos}
 
 En esencia, lo que las matemáticas clásicas \sn{Existen otras ``matemáticas'', por ejemplo la \href{https://ncatlab.org/nlab/show/constructive+mathematics}{constructiva}} son es el
@@ -88,31 +80,42 @@ La notación básica de un conjunto es separar los elementos por comas y encapsu
 
 Sobre los conjuntos nos interesa fundamentalmente una cuestión: si algo pertenece a él o no. Esto se representa con un predicado el cuál se representa con la notación $ x \in X $
 (se puede leer como ``x pertenece a X''). Por ejemplo, si $ X = \{2, 3, abc, \{\star\}\}  $ entonces $ 2 \in X $, pero no $ \star \in X $, lo correcto sería $ \{\star\} \in X $.
+Uno además puede preguntar si todos los elementos de un conjunto pertenecen a otro, con la notación $ X \subseteq Y $, definida
+tal que:
 
-De aquí derivamos el concepto de función. Decimos que $ f : X \rightarrow Y $ es una función del conjunto $ X $ al conjunto $ Y $ a la asociación de cada elemento de $ X $ a un único
-elemento de $ Y $. Por ejemplo, podemos considerar una función $ \chi : X \rightarrow Y $ de $ X = \{2, 3, abc, \{\star\}\} $ a $ Y = \{\text{true}, \text{false}\} $ que asocia a los
-números de $ X $ a true y al resto de elementos a false. Otras veces consideramos funciones definidas por alguna fórmula. Si $ \mathbb{N} $ es el conjunto de números naturales,
-$ \text{siguiente} : \mathbb{N} \rightarrow \mathbb{N} $ definida por $ \text{siguiente}(n) = n + 1 $ es una función.
+\[ X \subseteq Y \iff \forall x \in X, \ x \in Y \]
+
+\begin{remark}
+  Aunque por convenio utilizamos mayúsculas para denotar conjuntos y minúsculas para elementos, en realidad, las matemáticas
+  clásicas\sn{Las basadas en Zermelo-Frankel con el axioma de elección} solo consideran conjuntos. Conque elementos de conjuntos
+  son, a su vez, conjuntos, patrón que se repite hasta terminar con el conjunto vacío cuya existencia es postulada 
+  axiomáticamente.
+\end{remark}
+
+Con todo esto, derivamos el concepto de función. Decimos que $ f : X \to Y $ es una función del conjunto $ X $ al conjunto $ Y $ a la asociación de cada elemento de $ X $ a un único
+elemento de $ Y $. Por ejemplo, podemos considerar una función $ \chi : X \to Y $ de $ X = \{2, 3, abc, \{\star\}\} $ a $ Y = \{\text{true}, \text{false}\} $ que asocia a los
+números de $ X $ a true y al resto de elementos a false. Otras veces consideramos funciones definidas por alguna fórmula. Si $ \N $ es el conjunto de números naturales,
+$ \text{siguiente} : \N \to \N $ definida por $ \text{siguiente}(n) = n + 1 $ es una función.
 
 Sobre las funciones es ineresante sacar 3 conjuntos:
 
 \begin{itemize}
-  \item El \textbf{dominio} ($\text{dom} f $): Si $ f : X \rightarrow Y $ es una función, $ \text{dom} f = X $ (es decir, el conjunto sobre el que $ f $ se define).
-  \item El \textbf{codominio} ($\text{cod} f $): Si $ f : X \rightarrow Y $ es una función, $ \text{cod} f = Y $ (es decir, el conjunto al que $ f $ llega).
-  \item La \textbf{imagen} ($\text{im} f $): Si $ f : X \rightarrow Y $ es una función, $ \text{im} f = f(X) $ (es decir, el conjunto en $ Y $ que $ f $ produce).
+  \item El \textbf{dominio} ($\dom f $): Si $ f : X \to Y $ es una función, $ \dom f = X $ (es decir, el conjunto sobre el que $ f $ se define).
+  \item El \textbf{codominio} ($\cod f $): Si $ f : X \to Y $ es una función, $ \cod f = Y $ (es decir, el conjunto al que $ f $ llega).
+  \item La \textbf{imagen} ($\im f $): Si $ f : X \to Y $ es una función, $ \im f = f(X) $ (es decir, el conjunto en $ Y $ que $ f $ produce).
 \end{itemize}
 
 \newpage
 
 \section{Análisis real}
 
-El \textbf{análisis real} investiga los números reales, secuencias de estos, y funciones reales (funciones con dominio en $\mathbb{R}$).
+El \textbf{análisis real} investiga los números reales, secuencias de estos, y funciones reales (funciones con dominio en $\R$).
 
 \subsection{Funciones reales}
 
-Una función real $ f $  es aquella tal que $ \text{dom} f =  X \subseteq \mathbb{R} $, es decir, cuyo dominio es $ \mathbb{R} $ o un subconjunto de este. 
+Una función real $ f $  es aquella tal que $ \dom f =  X \subseteq \R $, es decir, cuyo dominio es $ \R $ o un subconjunto de este. 
 Gracias a la estructura (\textit{topológica}) 
-\sn{La topología es el estudio de espacios construidos por conjuntos. En topología $ \mathbb{R} $ se suele considerar como ``el espacio de la recta'', ``\textbf{la recta real}''}
+\sn{La topología es el estudio de espacios construidos por conjuntos. En topología $ \R $ se suele considerar como ``el espacio de la recta'', ``\textbf{la recta real}''}
 de los números reales, podemos considerar la noción de \textbf{continuidad}:
 
 \begin{definition}[Continuidad topológica]
@@ -128,8 +131,34 @@ Esta definición no es la estándar (la utilizada en selectividad será definida
 si pensamos en un intervalo abierto cómo una zona cercana a algún punto, una función continua, según esta definición, es aquella que zonas cercanas en el codominio se corresponden a
 zonas cercanas en el dominio. Dicho de otra manera, si $ x $ está cercano a $ y $ en el dominio, $ f(x) $ esta cercano a $ f(y) $ en la imagen.
 
-Por conveniencia, definimos la función $ \text{cont} : (X \to \mathbb{R}) \to \mathcal{P} \mathbb{R} $, que a cada función real asocia el subconjunto $ \text{cont} f \subseteq X $ en el cuál
+Por conveniencia, definimos la función $ \text{cont} : (X \to \R) \to \mathcal{P} \R $, que a cada función real asocia el subconjunto $ \text{cont} f \subseteq X $ en el cuál
 f es continua.
+
+Además de estas propiedades \textit{topológicas}, nos suelen interesar otras propiedades más \textit{algebraicas}, a saber:
+\textit{simetría} y \textit{periodicidad}.
+
+\begin{definition}[Simetría]
+  Sea $ a \in \R $ y $ f $ una función real, la línea descrita por $ x = a $ en el plano cartesiano se llama
+  \textit{eje de simetría par} del gráfico de una función $ f $ si:
+  
+  \[ \forall x \in \R, \  f(a + x) = f(a - x) \]
+  
+  Y se llama \textit{eje de simetría impar} si:
+
+  \[ \forall x \in \R, \  f(a + x) = -f(a - x) \]
+\end{definition}
+
+El caso más común y el que asumimos si no se nos da un eje de simetría es para cuando $ a = 0 $.
+
+\begin{definition}[Periodicidad]
+  Sea $ T \in \R $ y $ f $ una función real, se dice que $ f $ tiene periodo $ T $ si:
+
+  \[ \forall x \in \R, \ f(x + T) = f(x)  \]
+\end{definition}
+
+Conque, por inducción, para función con periodo $ T $:
+
+\[ \forall n \in \Z, \ \forall x \in \R, \ f(x + nT) = f(x) \]
 
 \subsubsection{En práctica}
 
@@ -137,38 +166,38 @@ En la selectividad no es raro un ejercicio que requiera calcular el dominio de u
 restringir hasta que la imagen de la función que les sirve cómo argumento caiga en el dominio de estas funciones ``problemáticas''. A continuación una tabla con reglas de inferencia para los dominios:
 
 \begin{center}
-  \begin{tabular}{| c | c |} 
+  \begin{tabular}{| c | c | c |} 
     \hline
-    $ f(x) $ & dom $ f $ \\
+    $ f(x) $ & dom $ f $ & cod $ f $ \\
     \hline
-    $ f_1(x) + f_2(x) $ & $ \text{dom} f_1 \cap \text{dom} f_2 $ \\
-    $ f_1(x)f_2(x) $ & $ \text{dom} f_1 \cap \text{dom} f_2 $ \\
-    $ f_1(x)/f_2(x) $ & $ (\text{dom} f_1 \cap \text{dom} f_2) \backslash \{f_2(x) = 0\} $ \\
-    $ ax^b $ & $ \mathbb{R} $ \\
+    $ f_1(x) + f_2(x) $ & $ \dom f_1 \cap \dom f_2 $ &  \\
+    $ f_1(x)f_2(x) $ & $ \dom f_1 \cap \dom f_2 $ \\
+    $ f_1(x)/f_2(x) $ & $ (\dom f_1 \cap \dom f_2) \backslash \{f_2(x) = 0\} $ \\
+    $ ax^b $ & $ \R $ \\
     $ \sqrt[2n]{x} $ & $ [0, +\infty) $ \\
-    $ \sqrt[2n+1]{x} $ & $ \mathbb{R} $ \\
-    $ a^x $ & $ \mathbb{R} $ \\
+    $ \sqrt[2n+1]{x} $ & $ \R $ \\
+    $ a^x $ & $ \R $ \\
     $ \ln(x) $ & $ (0, +\infty) $ \\
-    $ |x| $ & $ \mathbb{R} $ \\
+    $ |x| $ & $ \R $ \\
     \hline
   \end{tabular}
 \end{center}
 
 \subsection{Límites}
 
-Los límites son la propiedad característica de los números reales \sn{Todo ``campo completo ordenado'' es isomórfico a $ \mathbb{R} $. }: el salto de los números racionales a los
+Los límites son la propiedad característica de los números reales \sn{Todo ``campo completo ordenado'' es isomórfico a $ \R $. }: el salto de los números racionales a los
 números reales es precisamente requerir que toda secuencia (\href{https://ncatlab.org/nlab/show/Cauchy+sequence}{\textit{Cauchy}}) converja.
 
 \begin{definition}[Secuencia]
-  Una secuencia (de números reales) es una función de $ \mathbb{N} $ a $ \mathbb{R} $.
+  Una secuencia (de números reales) es una función de $ \N $ a $ \R $.
 
   Equivalentemente es una lista ordenada e infinita de números reales.
 \end{definition}
 
 \begin{definition}[Secuencia Cauchy]
-  Se dice que una secuencia es \textit{Cauchy} cuando los números se acercan aribtrariamente. Si $ f : \mathbb{N} \rightarrow \mathbb{R} $ es una secuencia Cauchy:
+  Se dice que una secuencia es \textit{Cauchy} cuando los números se acercan aribtrariamente. Si $ f : \N \to \R $ es una secuencia Cauchy:
 
-  \[ \forall \epsilon \in \mathbb{R}. \exists N \in \mathbb{R}. \forall m, n \ge N. \; | f(m) - f(n) | < \epsilon  \]
+  \[ \forall \epsilon > 0. \exists N \in \R. \forall m, n \ge N. \; | f(m) - f(n) | < \epsilon  \]
 \end{definition}
 
 Con esta definición a mano, el límite de una función $ f $ cuando tiende a $ a $ es simplemente a lo que converja el aplicarle $ f $ a una secuencia Cauchy que converja a $ a $:
@@ -176,7 +205,7 @@ Con esta definición a mano, el límite de una función $ f $ cuando tiende a $ 
 \begin{definition}[Límite de una función]
   Se dice que $ \lim_{x \to a} f(x) = L $ si:
 
-  \[ \forall \epsilon > 0, \exists \delta > 0.\; | a - x | < \delta \Rightarrow | L - f(x) | < \epsilon \]
+  \[ \forall \epsilon > 0, \exists \delta > 0.\; | a - x | < \delta \to | L - f(x) | < \epsilon \]
 \end{definition}
 
 En la práctica, hay veces que nos interesa investigar secuencias Cauchy que siempre sean mayores o menores que el número al que convergen:
@@ -184,11 +213,11 @@ En la práctica, hay veces que nos interesa investigar secuencias Cauchy que sie
 \begin{definition}[Límites laterales de una función]
   Se dice que $ \lim_{x \to a^+} f(x) = L $ (convergencia por la derecha) si:
 
-  \[ \forall \epsilon > 0, \exists \delta > 0. a < x < a +\delta \Rightarrow | L - f(x) | < \epsilon \]
+  \[ \forall \epsilon > 0, \exists \delta > 0. a < x < a +\delta \to | L - f(x) | < \epsilon \]
 
   Dualmente, se dice que $ \lim_{x \to a^-} f(x) = L $ (convergencia por la izquierda) si:
 
-  \[ \forall \epsilon > 0, \exists \delta > 0. a - \delta < x < a \Rightarrow | L - f(x) | < \epsilon \]
+  \[ \forall \epsilon > 0, \exists \delta > 0. a - \delta < x < a \to | L - f(x) | < \epsilon \]
 \end{definition}
 
 También no son pocas las ocasiones donde nos interesa considerar el comportamiento de una función para números ``cada vez más grandes'':
@@ -196,14 +225,14 @@ También no son pocas las ocasiones donde nos interesa considerar el comportamie
 \begin{definition}[Límites al infinito]
   Se dice que $ \lim_{x \to +\infty} f(x) = L $ si:
 
-  \[ \forall \epsilon > 0. \exists N \in \mathbb{R}.\; x > N \Rightarrow | f(x) - L | < \epsilon \]
+  \[ \forall \epsilon > 0. \exists N \in \R.\; x > N \to | f(x) - L | < \epsilon \]
 
   Dualmente, se dice que $ \lim_{x \to -\infty} f(x) = L $ si:
 
-  \[ \forall \epsilon > 0. \exists N \in \mathbb{R}.\; x < N \Rightarrow | f(x) - L | < \epsilon \]
+  \[ \forall \epsilon > 0. \exists N \in \R.\; x < N \to | f(x) - L | < \epsilon \]
 \end{definition}
 
-Todas estas definiciones serán unificadas para la resolución de problemas en lo que podemos llamar \textit{el algebra de los reales extendidos} ($ \bar{\mathbb{R}} $).
+Todas estas definiciones serán unificadas para la resolución de problemas en lo que podemos llamar \textit{el algebra de los reales extendidos} ($ \bar{\R} $).
 
 Finalmente, cabe replantear la definción de continuidad utilizando límties, ya que esta es la utilizada en la selectividad:
 
@@ -218,8 +247,8 @@ Finalmente, cabe replantear la definción de continuidad utilizando límties, ya
 Empezamos definiendo el conjunto sobre el cual definiremos las operaciones aptas para el cálculo de límites:
 
 \begin{definition}[Los reales extendidos]
-  Llamese $ \bar{\mathbb{R}} $ o ``reales extendidos'' al conjunto:
-  \[ \bar{\mathbb{R}} = \mathbb{R} \cup \{+\infty, -\infty, \text{``Indet.''}, \text{``No existe.''}\}  \]
+  Llamese $ \bar{\R} $ o ``reales extendidos'' al conjunto:
+  \[ \bar{\R} = \R \cup \{+\infty, -\infty, \text{``Indet.''}, \text{``No existe.''}\}  \]
 \end{definition}
 
 Para describir el álgebra que nos interesa sobre el anterior conjunto, basta con definir cómo particípan los nuevos símbolos, y es que no modificamos las operaciones sobre
@@ -261,11 +290,11 @@ $ b = \lim_{h \to 0} a + h $. Siguiendo esta intuición, llegamos al concepto de
 \end{definition}
 
 \begin{remark}
-  Es posible que f no sea derivable en un punto pero si sea continua (por ejemplo, $ f(x) = |x| $ para $ x = 0 $). En general, por tanto, $ x \in \text{der} f \Rightarrow x \in \text{cont} f $, 
+  Es posible que f no sea derivable en un punto pero si sea continua (por ejemplo, $ f(x) = |x| $ para $ x = 0 $). En general, por tanto, $ x \in \text{der} f \to x \in \text{cont} f $, 
   pero la conversa es falsa.
 \end{remark}
 
-Definimos $ \text{der} : (X \to \mathbb{R}) \to \mathcal{P} \mathbb{R} $ de manera similar a cont.
+Definimos $ \text{der} : (X \to \R) \to \mathcal{P} \R $ de manera similar a cont.
 
 La función derivada $ f' $ de otra, al ser una función real, puede asimismo ser derivada indefinidamente. Resultando en lo que llamamos la \textit{n-ésima derivada de $ f $}. 
 \sn{Una función $ \infty $-derivable se denomina \textit{suave}.}
@@ -307,9 +336,40 @@ Ocurre que la integración y la derivación son procesos inversos:
 De la misma manera que buscar una función inversa a otra no es trivial, buscar una \textit{primitiva} \sn{una función real $ F $ es una antiderivada, o primitiva, de otra $ f $ si la derivada de 
 $ F $ es $ f $ }, es decir, integrar una función, suele requerir utilizar ciertas técnicas falibles (conque no es un proceso mecánico como la diferenciación).
 
+\subsubsection{Integración por cambio de variable}
+
+\begin{theorem}[Cambio de variable]
+  Sea $ t = \Phi(x) $ una substitución y $ f $ una función real integrable. Para una integral en términos de $ x $, entonces:
+  
+  \[ \int f(x) \cdot \diff x = \int f(\Phi^{-1}(t)) \cdot \frac{\diff t}{\Phi'(\Phi^{-1}(t))}  \]
+\end{theorem}
+
 \subsubsection{Integración por partes}
 
-\subsubsection{Integración de racionales}
+\begin{theorem}[Por partes]
+  Sea $ f $ una función real integrable tal ue $ f(x) = u(x) v'(x) $. Se cumple que:
+
+  \[ \int f(x) \cdot \diff x = u(x) v(x) - \int v(x) u'(x) \diff x  \]
+\end{theorem}
+
+\begin{remark}
+  Podemos recordar el anterior resultado con la expresión $ \int u \diff v = uv - \int v \diff u $ a la cuál le asociamos
+  la regla memotécnica: ``\textit{Un dia vi una vaca sin rabo vestida de uniforme}''.
+\end{remark}
+
+\subsubsection{Integración por fracciones simples}
+
+\begin{theorem}[Fracciones simples]
+  Sea $ f $ una función racional para la cuál el grado del denominador $ n $ sea mayor a la del numerador y sean
+  $ r_1 \dots r_n $ las raíces del denominador, podemos descomponer $ f $
+  tal que:
+
+  \[ f(x) = \frac{P(x)}{Q(x)} = \sum_{i = 1} \frac{A_i}{(x - r_i)^\alpha }\]
+
+  Donde $ A_1 \dots A_n $ son coeficientes reales y $ \alpha $ es la multiplicidad de la raíz $ r_i $.
+\end{theorem}
+
+Conque podemos integrar funciones racionales como aquella desomposición.
 
 \subsection{Ejercicios selectividad resueltos}
 
@@ -329,7 +389,7 @@ $ F $ es $ f $ }, es decir, integrar una función, suele requerir utilizar ciert
           cómo una composición de funciones derivables, por lo que es derivable (asimismo continua). Por lo cuál, derivamos:
           \[ \frac{d}{dx} f = \frac{d}{dx} \cos(\frac{\pi x}{9}) + 2 = -\frac{\pi}{9} \sin(\frac{\pi x}{9}) \]
           A continuación, averiguamos los puntos críticos:
-          \[ f'(x) = 0; \ -\frac{\pi}{9} \sin(\frac{\pi x}{9}) = 0; \ \frac{\pi x}{9} = n\pi; \ x = 9n \quad \text{donde } n \in \mathbb{Z} \]
+          \[ f'(x) = 0; \ -\frac{\pi}{9} \sin(\frac{\pi x}{9}) = 0; \ \frac{\pi x}{9} = n\pi; \ x = 9n \quad \text{donde } n \in \Z \]
           En concreto, en nuestro dominio encontramos dos puntos críticos, cuando $ n = 0 $ y $ n = 1 $.
 
           Desde este punto, basta con ordenar los valores de los puntos que nos interesan y tomar el mayor y el menor:
@@ -350,7 +410,6 @@ $ F $ es $ f $ }, es decir, integrar una función, suele requerir utilizar ciert
         \end{proof}
 \end{enumerate}
 
-
 \section{Geometría}
 
 \section{Algebra}
@@ -364,8 +423,6 @@ $ F $ es $ f $ }, es decir, integrar una función, suele requerir utilizar ciert
 \section{Preludio}
 
 Las áreas de la física pertinentes a la selectividad son \dots : \textbf{Campo gravitatorio, campo eléctrico y campo magnético}, \dots.
-
-\section{Campo}
 
 \subsection{Mecánica clásica}
 
@@ -585,6 +642,26 @@ gravitatorios, es fructífero considerar energía potencial por unidad de carga 
   Mientras que lo contrario es cierto si $ Q $ y $ q $ tienen distinto signo.
 \end{remark}
 
+\subsection{Flujo eléctrico}
+
+Cuando uno considera una cierta superficie y considera la cantidad de campo eléctrico que fluye através de dicha superficie,
+uno esta pensando en el flujo eléctrico $ \Phi_E $. Este concepto nos permite formular una ley equivalente a la de Coulomb
+un tanto más útil en ciertas circunstancias, la \textit{ley de Gauss}.
+
+El flujo eléctrico en una parte infinitesímal de una superficie debe ser el producto del componente perpendicular del campo
+eléctrico (la parte que sale o entra) con el vector superficie. Es decir:
+
+\[ \diff \Phi_E = \vec{B} \cdot \diff \vec{S} = B S \cos \theta \]
+
+Lo cuál implica la definición de flujo eléctrico:
+
+\begin{definition}[Flujo eléctrico]
+  Para una superficie $ \vec{S} $ y un campo eléctrico $ \vec{E} $, el flujo eléctrico se define tal que:
+
+  \[ \Phi_E := \int \vec{E} \cdot \diff \vec{S} \]
+\end{definition}
+
+
 \subsection{Campo magnético}
 
 El campo magnético ($ \vec{B} $) es uno de los dos campos que resultan cuando se fija unas coordenadas espacio-tiempo para el electromagnetismo.
@@ -666,19 +743,27 @@ Además podemos utiliza la otra regla de la mano derecha para determinar la orie
   cuando los conductores se repelan.
 \end{remark}
 
+\subsubsection{Flujo magnético}
+
+El flujo magnético $ \Phi_B $ se define de la misma manera que el flujo eléctrico, es decir:
+
+\begin{definition}[Flujo magnético]
+  Para una superficie $ \vec{S} $ y un campo magnético $ \vec{B} $, el flujo magnético se define tal que:
+
+  $ \Phi_B := \int \vec{B} \cdot \diff \vec{S} $
+\end{definition}
+
 \subsection{Inducción electromagnética}
 
 % introducir flujo eléctrico y magnético anteriormente
 
 El cambio de un flujo magnético \textit{induce} una fuerza electromotriz sobre la superficie dada. Esto se deduce desde la Ley de Inducción de Faraday:
 
-Llegando a la expresión que utilizaremos para calcular dicha fuerza:
-
 \begin{theorem}[Fuerza electromagnetica]
-  La fuerza electromagnética, definida tal que:
+  La fuerza electromotriz, definida tal que:
   \[ \mathcal{E} := \oint_C \vec{E} \cdot \diff \vec{l} \]
 
-  cuando inducida, viene dada por la expresión:
+  puede ser expresada equivalentemente con la expresión:
   \[ \mathcal{E} = - \frac{\diff \Phi_B}{\diff t} \]
 \end{theorem}
 
@@ -693,8 +778,8 @@ Llegando a la expresión que utilizaremos para calcular dicha fuerza:
 \end{proof}
 
 \begin{remark}
-  El signo negativo de la expresión de la fuerza electromagnética es explicado por la \textit{Ley de Lenz}. Dicha ley establece que el sentido del campo magnético inducido se opone a la causa
-  que lo produce.
+  El signo negativo de la expresión de la fuerza electromagnética es explicado por la \textit{Ley de Lenz}. Dicha ley establece
+  que el sentido del campo magnético inducido se opone a la causa que lo produce.
 \end{remark}
 
 \newpage
@@ -856,7 +941,7 @@ Asumimos la Ley de los gases ideales:
 
 \subsubsection{Transformaciones isobáricas (presión constante)}
 
-\[ pV = nRT; \; \frac{p}{nR} = \frac{V}{T} = cte. \; \Rightarrow \frac{V_1}{T_1} = \frac{V_2}{T_2} \]
+\[ pV = nRT; \; \frac{p}{nR} = \frac{V}{T} = cte. \; \to \frac{V_1}{T_1} = \frac{V_2}{T_2} \]
 
 Por la definición de presión ($ p := \frac{F}{S} $), tenemos:
 
@@ -879,7 +964,7 @@ En cuanto a la gráfica $p$-$V$:
 
 \subsubsection{Transformaciones isotérmicas (temperatura constante)}
 
-\[ pV = nRT = cte. \; \Rightarrow p_1V_1 = p_2V_2 \quad \text{ó} \quad \frac{p_1}{p_2} = \frac{V_2}{V_1} \]
+\[ pV = nRT = cte. \; \to p_1V_1 = p_2V_2 \quad \text{ó} \quad \frac{p_1}{p_2} = \frac{V_2}{V_1} \]
 
 Dado que, en estas condiciones, $ p = \frac{n R T}{V} $
 
@@ -907,11 +992,11 @@ En cuanto a la gráfica $p$-$V$:
 
 \subsubsection{Transformaciones isocóricas (volumen constante)}
 
-\[ pV = nRT; \; \frac{V}{nR} = \frac{T}{p} = cte. \; \Rightarrow \frac{T_1}{p_1} = \frac{T_2}{p_2} \]
+\[ pV = nRT; \; \frac{V}{nR} = \frac{T}{p} = cte. \; \to \frac{T_1}{p_1} = \frac{T_2}{p_2} \]
 
 Es fácil ver que $ W = 0 $ ya que $ \Delta V = 0 $.
 
-\[ Q = n C_V \Delta T \Rightarrow  (p_1 > p_2 \Leftrightarrow Q_1 > Q_2)\]
+\[ Q = n C_V \Delta T \to  (p_1 > p_2 \Leftto Q_1 > Q_2)\]
 
 En cuanto a la gráfica $p$-$V$:
 
@@ -955,7 +1040,7 @@ En cuanto a la gráfica $p$-$V$:
 
 \subsection{Procesos reversibles e irreversibles}
 
-Llamamos proceso reversible a aquel en el cuál en el proceso de transformación $ (p_0, V_0, T_0) \rightarrow (p, V, T) $ todos los estados intermedios son estables. Es decir, la transformación es lenta.
+Llamamos proceso reversible a aquel en el cuál en el proceso de transformación $ (p_0, V_0, T_0) \to (p, V, T) $ todos los estados intermedios son estables. Es decir, la transformación es lenta.
 
 \subsubsection{Motores térmicos y máquinas frigoríficas}
 
@@ -1126,7 +1211,6 @@ Su utilidad es la generación eléctrica y de propulsor de aviones.
     \end{tikzpicture}
 \end{center}
 
-
 \subsection{Bombas de calor}
 
 La transmisión de calor de un foco frío a uno caliente no es espontánea. Por lo cual necesitamos realizar trabajo para que esto ocurra. Este trabajo será igual a la diferencia de calor de los
@@ -1205,9 +1289,22 @@ Encontramos dos tipos de compresores:
     transforme en presión de empuje según la ecuación de Bernoulli. Los tipos que existen son: radiales o centrífugos y axiales.
 \end{itemize}
 
+Los compresores suelen guardar el aire comprimido en un depósito.
+
 \subsubsection{Acondicionadores del aire}
 
-% ...
+Con tal de no desgastar los elementos involucrados en el circuito, el aire pasa por un proceso de acondicionado:
+
+\begin{enumerate}
+  \item \textbf{Secador}: reduce el contenido de vapor de agua en el aire.
+  \item \textbf{Filtro}: retiene las impurezas arrastradas por el aire.
+  \item \textbf{Regulador de presión}: mantiene el valor de la presión constante.
+  \item \textbf{Lubricador}: pulveriza una pequeña cantidad de aceite en el aire. Evita la corrosión y el desgaste interno
+    de las piezas.
+\end{enumerate}
+
+La combinación de las tres últimas unidades dan lugar a la \textbf{unidad de mantenimiento}. Y la combinación de todos los
+elementos, junto con el compresor, dan la \textbf{toma de aire a presión}.
 
 \subsubsection{Actuadores neumáticos}
 
@@ -1246,7 +1343,33 @@ y su accionamiento.
 
 \subsubsection{Otras válvulas}
 
+% poner imagenes
+
+\begin{center}
+  \begin{tabular}{| c | c | c |} 
+    \hline
+    Nombre & Uso & Imagen \\
+    \hline
+    Válvula antirretorno & Deja pasar el aire en un solo sentido & \\
+    Válvula reguladora bidireccional & Regula el caudal del aire & \\
+    Válvula reguladora unidireccional & Regula el caudal del aire en un solo sentido & \\
+    Válvula selectora de circuitos & Tiene una función lógica de OR & \\
+    Válvula de simultaneidad & Tiene una función lógica de AND & \\
+    Válvula temporizadora & Aplica un retardo en el pase del aire & \\
+    \hline
+  \end{tabular}
+\end{center}
+
 \subsection{Circuitos prácticos neumáticos}
+
+% poner imagenes
+
+\begin{itemize}
+  \item \textbf{Mando de un cilindro de simple efecto con regulación de velocidad en el vástago}
+  \item \textbf{Mando condicional de simple efecto}
+  \item \textbf{Mando semiautomático de un cilindro de doble efecto}
+  \item \textbf{Mando automático de un cilindro de doble efecto}
+\end{itemize}
 
 \subsection{Circuitos hidráulicos}
 
@@ -1260,11 +1383,11 @@ El principio de Pascal asevera que la presión ejercida sobre un fluido incompre
 
 Según la ley de la conservación de la energía, tenemos:
 
-\[ E_P + E_C + E_{Pr} = E_P' + E_C' + E_{Pr}' \Rightarrow mgh + \frac{1}{2}mv^2 + pS = mgh' + \frac{1}{2}mv'^2 + pS' \]
+\[ E_P + E_C + E_{Pr} = E_P' + E_C' + E_{Pr}' \to mgh + \frac{1}{2}mv^2 + pS = mgh' + \frac{1}{2}mv'^2 + pS' \]
 
-Conque llegamos a la ecuación de Bernoulli:
+Conque, diviendo entre $ V $, llegamos a la ecuación de Bernoulli:
 
-\[ \rho gh + \frac{1}{2} \rhbo v^2 + p = \rho gh' \frac{1}{2} \rho v'^2 + p' \]
+\[ \rho gh + \frac{1}{2} \rho v^2 + p = \rho gh' \frac{1}{2} \rho v'^2 + p' \]
 
 \newpage
 

@@ -4,7 +4,7 @@
 \contentsline {part}{II\hspace {1em}Matemáticas}{2}{part.2}%
 \contentsline {section}{\numberline {2}Preludio}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Lógica proposicional de primer orden}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Conjuntos}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Conjuntos}{2}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Análisis real}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Funciones reales}{4}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}En práctica}{4}{subsubsection.3.1.1}%
@@ -16,84 +16,86 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Monotonía}{7}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Curvatura}{7}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}Integrales}{8}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Integración por partes}{8}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Integración de racionales}{8}{subsubsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.6}Ejercicios selectividad resueltos}{8}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Geometría}{9}{section.4}%
-\contentsline {section}{\numberline {5}Algebra}{9}{section.5}%
-\contentsline {section}{\numberline {6}Estadística y probabilidad}{9}{section.6}%
-\contentsline {part}{III\hspace {1em}Física}{10}{part.3}%
-\contentsline {section}{\numberline {7}Preludio}{10}{section.7}%
-\contentsline {section}{\numberline {8}Campo}{10}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Mecánica clásica}{10}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}Momento lineal y angular}{10}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Energía y trabajo}{11}{subsubsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.2}Campo gravitatorio}{11}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {8.2.1}Campo gravitatorio creado por masas puntuales}{11}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2}Energía asociada al campo gravitatorio}{12}{subsubsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {8.2.3}Potencial gravitatorio}{12}{subsubsection.8.2.3}%
-\contentsline {subsubsection}{\numberline {8.2.4}Campo gravitatorio de los cuerpos celestes}{12}{subsubsection.8.2.4}%
-\contentsline {subsubsection}{\numberline {8.2.5}Leyes de Kepler}{12}{subsubsection.8.2.5}%
-\contentsline {subsection}{\numberline {8.3}Campo elécrico}{13}{subsection.8.3}%
-\contentsline {subsubsection}{\numberline {8.3.1}Intensidad del campo electroestático}{13}{subsubsection.8.3.1}%
-\contentsline {subsubsection}{\numberline {8.3.2}Energía asociada al campo eléctrico}{13}{subsubsection.8.3.2}%
-\contentsline {subsubsection}{\numberline {8.3.3}Potencial eléctrico}{14}{subsubsection.8.3.3}%
-\contentsline {subsection}{\numberline {8.4}Campo magnético}{14}{subsection.8.4}%
-\contentsline {subsubsection}{\numberline {8.4.1}Sobre una carga en movimiento}{14}{subsubsection.8.4.1}%
-\contentsline {subsubsection}{\numberline {8.4.2}Sobre una corriente eléctrica}{15}{subsubsection.8.4.2}%
-\contentsline {subsection}{\numberline {8.5}Inducción electromagnética}{16}{subsection.8.5}%
-\contentsline {part}{IV\hspace {1em}Tecnología}{17}{part.4}%
-\contentsline {section}{\numberline {9}Preludio}{17}{section.9}%
-\contentsline {section}{\numberline {10}Materiales y sus propiedades}{17}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Propiedades mecánicas de los materiales}{17}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Ensayos de propiedades mecánicas}{17}{subsection.10.2}%
-\contentsline {subsubsection}{\numberline {10.2.1}De tracción}{17}{subsubsection.10.2.1}%
-\contentsline {subsubsection}{\numberline {10.2.2}De dureza}{18}{subsubsection.10.2.2}%
-\contentsline {subsection}{\numberline {10.3}De resilencia}{19}{subsection.10.3}%
-\contentsline {section}{\numberline {11}Máquinas térmicas}{19}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Principios fundamentales de termodinámica}{19}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Transformaciones termodinámicas en los gases}{20}{subsection.11.2}%
-\contentsline {subsubsection}{\numberline {11.2.1}Transformaciones isobáricas (presión constante)}{20}{subsubsection.11.2.1}%
-\contentsline {subsubsection}{\numberline {11.2.2}Transformaciones isotérmicas (temperatura constante)}{20}{subsubsection.11.2.2}%
-\contentsline {subsubsection}{\numberline {11.2.3}Transformaciones isocóricas (volumen constante)}{21}{subsubsection.11.2.3}%
-\contentsline {subsubsection}{\numberline {11.2.4}Transformaciones adiabáticas}{21}{subsubsection.11.2.4}%
-\contentsline {subsection}{\numberline {11.3}Procesos reversibles e irreversibles}{21}{subsection.11.3}%
-\contentsline {subsubsection}{\numberline {11.3.1}Motores térmicos y máquinas frigoríficas}{22}{subsubsection.11.3.1}%
-\contentsline {subsubsection}{\numberline {11.3.2}Ciclo ideal de Carnot}{22}{subsubsection.11.3.2}%
-\contentsline {subsection}{\numberline {11.4}Motores de combustión interna}{22}{subsection.11.4}%
-\contentsline {subsubsection}{\numberline {11.4.1}Motores de explosión}{23}{subsubsection.11.4.1}%
-\contentsline {subsubsection}{\numberline {11.4.2}Motores de diesel}{24}{subsubsection.11.4.2}%
-\contentsline {subsubsection}{\numberline {11.4.3}Parámetros y magnitudes características}{25}{subsubsection.11.4.3}%
-\contentsline {subsection}{\numberline {11.5}Motores de combustión externa}{25}{subsection.11.5}%
-\contentsline {subsubsection}{\numberline {11.5.1}Ciclo de Rankine (Turbina de vapor)}{25}{subsubsection.11.5.1}%
-\contentsline {subsubsection}{\numberline {11.5.2}Ciclo de Brayton (Turbina de gas)}{26}{subsubsection.11.5.2}%
-\contentsline {subsection}{\numberline {11.6}Bombas de calor}{26}{subsection.11.6}%
-\contentsline {subsubsection}{\numberline {11.6.1}Ciclo de refrigeración de Carnot}{26}{subsubsection.11.6.1}%
-\contentsline {subsubsection}{\numberline {11.6.2}Ciclo de Rankine inverso}{27}{subsubsection.11.6.2}%
-\contentsline {section}{\numberline {12}Hidráulica y neumática}{28}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Elementos de los circuitos neumáticos}{28}{subsection.12.1}%
-\contentsline {subsubsection}{\numberline {12.1.1}Compresores}{29}{subsubsection.12.1.1}%
-\contentsline {subsubsection}{\numberline {12.1.2}Acondicionadores del aire}{29}{subsubsection.12.1.2}%
-\contentsline {subsubsection}{\numberline {12.1.3}Actuadores neumáticos}{29}{subsubsection.12.1.3}%
-\contentsline {subsubsection}{\numberline {12.1.4}Válvulas distribuidoras}{29}{subsubsection.12.1.4}%
-\contentsline {subsubsection}{\numberline {12.1.5}Otras válvulas}{30}{subsubsection.12.1.5}%
-\contentsline {subsection}{\numberline {12.2}Circuitos prácticos neumáticos}{30}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}Circuitos hidráulicos}{30}{subsection.12.3}%
-\contentsline {subsubsection}{\numberline {12.3.1}Cálculo de parámetros en un circuito}{30}{subsubsection.12.3.1}%
-\contentsline {part}{V\hspace {1em}Historia de la Filosofía}{31}{part.5}%
-\contentsline {section}{\numberline {13}Preludio}{31}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Áreas de la filosofía}{31}{subsection.13.1}%
-\contentsline {subsubsection}{\numberline {13.1.1}Metafísica}{31}{subsubsection.13.1.1}%
-\contentsline {subsubsection}{\numberline {13.1.2}Epistemología}{31}{subsubsection.13.1.2}%
-\contentsline {subsubsection}{\numberline {13.1.3}Ética}{31}{subsubsection.13.1.3}%
-\contentsline {subsubsection}{\numberline {13.1.4}Política}{31}{subsubsection.13.1.4}%
-\contentsline {section}{\numberline {14}Platón}{32}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Metafísica}{32}{subsection.14.1}%
-\contentsline {subsubsection}{\numberline {14.1.1}Ontología}{33}{subsubsection.14.1.1}%
-\contentsline {subsection}{\numberline {14.2}Epistemología}{33}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}Antropología}{34}{subsection.14.3}%
-\contentsline {subsubsection}{\numberline {14.3.1}Alma}{34}{subsubsection.14.3.1}%
-\contentsline {subsubsection}{\numberline {14.3.2}Cuerpo}{35}{subsubsection.14.3.2}%
-\contentsline {subsection}{\numberline {14.4}Política}{35}{subsection.14.4}%
-\contentsline {part}{VI\hspace {1em}Lengua}{37}{part.6}%
-\contentsline {section}{\numberline {15}Preludio}{37}{section.15}%
+\contentsline {subsubsection}{\numberline {3.5.1}Integración por cambio de variable}{8}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Integración por partes}{8}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Integración por fracciones simples}{8}{subsubsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.6}Ejercicios selectividad resueltos}{9}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Geometría}{10}{section.4}%
+\contentsline {section}{\numberline {5}Algebra}{10}{section.5}%
+\contentsline {section}{\numberline {6}Estadística y probabilidad}{10}{section.6}%
+\contentsline {part}{III\hspace {1em}Física}{11}{part.3}%
+\contentsline {section}{\numberline {7}Preludio}{11}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Mecánica clásica}{11}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Momento lineal y angular}{11}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Energía y trabajo}{12}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Campo gravitatorio}{12}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Campo gravitatorio creado por masas puntuales}{12}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Energía asociada al campo gravitatorio}{13}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Potencial gravitatorio}{13}{subsubsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.4}Campo gravitatorio de los cuerpos celestes}{13}{subsubsection.7.2.4}%
+\contentsline {subsubsection}{\numberline {7.2.5}Leyes de Kepler}{13}{subsubsection.7.2.5}%
+\contentsline {subsection}{\numberline {7.3}Campo elécrico}{14}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Intensidad del campo electroestático}{14}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Energía asociada al campo eléctrico}{14}{subsubsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3}Potencial eléctrico}{15}{subsubsection.7.3.3}%
+\contentsline {subsection}{\numberline {7.4}Flujo eléctrico}{15}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Campo magnético}{16}{subsection.7.5}%
+\contentsline {subsubsection}{\numberline {7.5.1}Sobre una carga en movimiento}{16}{subsubsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.2}Sobre una corriente eléctrica}{16}{subsubsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.3}Flujo magnético}{17}{subsubsection.7.5.3}%
+\contentsline {subsection}{\numberline {7.6}Inducción electromagnética}{17}{subsection.7.6}%
+\contentsline {part}{IV\hspace {1em}Tecnología}{19}{part.4}%
+\contentsline {section}{\numberline {8}Preludio}{19}{section.8}%
+\contentsline {section}{\numberline {9}Materiales y sus propiedades}{19}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Propiedades mecánicas de los materiales}{19}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Ensayos de propiedades mecánicas}{19}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}De tracción}{19}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}De dureza}{20}{subsubsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.3}De resilencia}{21}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Máquinas térmicas}{21}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Principios fundamentales de termodinámica}{21}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Transformaciones termodinámicas en los gases}{22}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}Transformaciones isobáricas (presión constante)}{22}{subsubsection.10.2.1}%
+\contentsline {subsubsection}{\numberline {10.2.2}Transformaciones isotérmicas (temperatura constante)}{22}{subsubsection.10.2.2}%
+\contentsline {subsubsection}{\numberline {10.2.3}Transformaciones isocóricas (volumen constante)}{23}{subsubsection.10.2.3}%
+\contentsline {subsubsection}{\numberline {10.2.4}Transformaciones adiabáticas}{23}{subsubsection.10.2.4}%
+\contentsline {subsection}{\numberline {10.3}Procesos reversibles e irreversibles}{23}{subsection.10.3}%
+\contentsline {subsubsection}{\numberline {10.3.1}Motores térmicos y máquinas frigoríficas}{24}{subsubsection.10.3.1}%
+\contentsline {subsubsection}{\numberline {10.3.2}Ciclo ideal de Carnot}{24}{subsubsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.4}Motores de combustión interna}{24}{subsection.10.4}%
+\contentsline {subsubsection}{\numberline {10.4.1}Motores de explosión}{25}{subsubsection.10.4.1}%
+\contentsline {subsubsection}{\numberline {10.4.2}Motores de diesel}{26}{subsubsection.10.4.2}%
+\contentsline {subsubsection}{\numberline {10.4.3}Parámetros y magnitudes características}{27}{subsubsection.10.4.3}%
+\contentsline {subsection}{\numberline {10.5}Motores de combustión externa}{27}{subsection.10.5}%
+\contentsline {subsubsection}{\numberline {10.5.1}Ciclo de Rankine (Turbina de vapor)}{27}{subsubsection.10.5.1}%
+\contentsline {subsubsection}{\numberline {10.5.2}Ciclo de Brayton (Turbina de gas)}{28}{subsubsection.10.5.2}%
+\contentsline {subsection}{\numberline {10.6}Bombas de calor}{28}{subsection.10.6}%
+\contentsline {subsubsection}{\numberline {10.6.1}Ciclo de refrigeración de Carnot}{28}{subsubsection.10.6.1}%
+\contentsline {subsubsection}{\numberline {10.6.2}Ciclo de Rankine inverso}{29}{subsubsection.10.6.2}%
+\contentsline {section}{\numberline {11}Hidráulica y neumática}{30}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Elementos de los circuitos neumáticos}{30}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Compresores}{31}{subsubsection.11.1.1}%
+\contentsline {subsubsection}{\numberline {11.1.2}Acondicionadores del aire}{31}{subsubsection.11.1.2}%
+\contentsline {subsubsection}{\numberline {11.1.3}Actuadores neumáticos}{31}{subsubsection.11.1.3}%
+\contentsline {subsubsection}{\numberline {11.1.4}Válvulas distribuidoras}{32}{subsubsection.11.1.4}%
+\contentsline {subsubsection}{\numberline {11.1.5}Otras válvulas}{32}{subsubsection.11.1.5}%
+\contentsline {subsection}{\numberline {11.2}Circuitos prácticos neumáticos}{32}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Circuitos hidráulicos}{32}{subsection.11.3}%
+\contentsline {subsubsection}{\numberline {11.3.1}Cálculo de parámetros en un circuito}{32}{subsubsection.11.3.1}%
+\contentsline {part}{V\hspace {1em}Historia de la Filosofía}{33}{part.5}%
+\contentsline {section}{\numberline {12}Preludio}{33}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Áreas de la filosofía}{33}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}Metafísica}{33}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.2}Epistemología}{33}{subsubsection.12.1.2}%
+\contentsline {subsubsection}{\numberline {12.1.3}Ética}{33}{subsubsection.12.1.3}%
+\contentsline {subsubsection}{\numberline {12.1.4}Política}{33}{subsubsection.12.1.4}%
+\contentsline {section}{\numberline {13}Platón}{34}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Metafísica}{34}{subsection.13.1}%
+\contentsline {subsubsection}{\numberline {13.1.1}Ontología}{35}{subsubsection.13.1.1}%
+\contentsline {subsection}{\numberline {13.2}Epistemología}{35}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Antropología}{36}{subsection.13.3}%
+\contentsline {subsubsection}{\numberline {13.3.1}Alma}{36}{subsubsection.13.3.1}%
+\contentsline {subsubsection}{\numberline {13.3.2}Cuerpo}{36}{subsubsection.13.3.2}%
+\contentsline {subsection}{\numberline {13.4}Política}{37}{subsection.13.4}%
+\contentsline {part}{VI\hspace {1em}Lengua}{39}{part.6}%
+\contentsline {section}{\numberline {14}Preludio}{39}{section.14}%
