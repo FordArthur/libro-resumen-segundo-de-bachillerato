@@ -134,7 +134,7 @@ zonas cercanas en el dominio. Dicho de otra manera, si $ x $ está cercano a $ y
 Por conveniencia, definimos la función $ \text{cont} : (X \to \R) \to \mathcal{P} \R $, que a cada función real asocia el subconjunto $ \text{cont} f \subseteq X $ en el cuál
 f es continua.
 
-Además de estas propiedades \textit{topológicas}, nos suelen interesar otras propiedades más \textit{algebraicas}, a saber:
+Además de estas propiedad \textit{topológica}, nos suelen interesar otras propiedades más \textit{algebraicas}, a saber:
 \textit{simetría} y \textit{periodicidad}.
 
 \begin{definition}[Simetría]
@@ -166,11 +166,11 @@ En la selectividad no es raro un ejercicio que requiera calcular el dominio de u
 restringir hasta que la imagen de la función que les sirve cómo argumento caiga en el dominio de estas funciones ``problemáticas''. A continuación una tabla con reglas de inferencia para los dominios:
 
 \begin{center}
-  \begin{tabular}{| c | c | c |} 
+  \begin{tabular}{| c | c |} 
     \hline
-    $ f(x) $ & dom $ f $ & cod $ f $ \\
+    $ f(x) $ & dom $ f $ \\
     \hline
-    $ f_1(x) + f_2(x) $ & $ \dom f_1 \cap \dom f_2 $ &  \\
+    $ f_1(x) + f_2(x) $ & $ \dom f_1 \cap \dom f_2 $ \\
     $ f_1(x)f_2(x) $ & $ \dom f_1 \cap \dom f_2 $ \\
     $ f_1(x)/f_2(x) $ & $ (\dom f_1 \cap \dom f_2) \backslash \{f_2(x) = 0\} $ \\
     $ ax^b $ & $ \R $ \\
@@ -207,6 +207,10 @@ Con esta definición a mano, el límite de una función $ f $ cuando tiende a $ 
 
   \[ \forall \epsilon > 0, \exists \delta > 0.\; | a - x | < \delta \to | L - f(x) | < \epsilon \]
 \end{definition}
+
+\begin{center}
+  \includegraphics[scale=0.25]{Limite.png}
+\end{center}
 
 En la práctica, hay veces que nos interesa investigar secuencias Cauchy que siempre sean mayores o menores que el número al que convergen:
 
@@ -330,7 +334,7 @@ Ocurre que la integración y la derivación son procesos inversos:
 
 \begin{theorem}[Teorema fundamental del cálculo]
   Sea $ f $ una función real y $ C $ un número real, llamado ``\textit{constante de derivación}''. Entonces:
-  \[ \frac{\diff}{\diff x} \left(\int_a^b f(x) \diff x + C\right) = f(x) \]
+  \[ \frac{\diff}{\diff x} \left(\int f(x) \diff x + C\right) = f(x) \]
 \end{theorem}
 
 De la misma manera que buscar una función inversa a otra no es trivial, buscar una \textit{primitiva} \sn{una función real $ F $ es una antiderivada, o primitiva, de otra $ f $ si la derivada de 
@@ -415,6 +419,28 @@ Conque podemos integrar funciones racionales como aquella desomposición.
 \section{Algebra}
 
 \section{Estadística y probabilidad}
+
+La \textbf{estadística y probabilidad} estudia modelos matemáticos que exhiben una falta de información o \textit{aleatoriedad}.
+
+\begin{definition}[$ \sigma $-álgebra]
+  Dado un conjunto $ \Omega $, una $ \sigma $-algebra es una colección de subconjuntos de $ \Omega $ cerrada ante complementación, y unión e intersección de familias contables.
+\end{definition}
+
+Conque un elemento de una $ \sigma $-álgebra $ \mathcal{F} $ podría ser visto como un \textit{suceso}: Si pasan sucesos $ A, B \in \mathcal{F} $, siempre podremos preguntar
+cuando pasa $ A $ y $ B $ ($ A \cap B $), $ A $ o $ B $ ($ A \cup B $), y cuando no pasa $ A $ ($ \bar{A} $).
+
+\begin{definition}[Espacio de probabilidad]
+  Un espacio de probabilidad es un triple $ (\Omega, \mathcal{F}, p) $ donde $ \mathcal{F} $ es una $ \sigma $-álgebra sobre $ \Omega $ y $ p : \mathcal{F} \to \left[0, 1\right] $
+  es la función de probabilidad, que satisface los \textit{axiomas de Kolmogorov}:
+  \begin{enumerate}
+    \item \[ p(\Omega) = 1 \]
+    \item \[ \forall (A_1 \dots A_n \in \mathcal{F},\ A_i \cup A_j = \emptyset \implies i = j). \ p(\bigcup_i^n A_i) = \sum_i^n p(A_i) \]
+  \end{enumerate}
+\end{definition}
+
+\begin{remark}
+  Dado que estamos trabajando en matemáticas clásicas, es fácil demostrar las \textit{leyes de De Morgan}.
+\end{remark}
 
 \newpage
 
@@ -1350,25 +1376,47 @@ y su accionamiento.
     \hline
     Nombre & Uso & Imagen \\
     \hline
-    Válvula antirretorno & Deja pasar el aire en un solo sentido & \\
-    Válvula reguladora bidireccional & Regula el caudal del aire & \\
-    Válvula reguladora unidireccional & Regula el caudal del aire en un solo sentido & \\
-    Válvula selectora de circuitos & Tiene una función lógica de OR & \\
-    Válvula de simultaneidad & Tiene una función lógica de AND & \\
-    Válvula temporizadora & Aplica un retardo en el pase del aire & \\
+    Válvula antirretorno & Deja pasar el aire en un solo sentido & \includegraphics[scale=0.25]{Valvula_antirretorno.png} \\
+    \hline
+    Válvula reguladora bidireccional & Regula el caudal del aire & \includegraphics[scale=0.75]{Valvula_reguladora_bidireccional.png} \\
+    \hline
+    Válvula reguladora unidireccional & Regula el caudal del aire en un solo sentido & \includegraphics[scale=0.25]{Valvula_reguladora_unidireccional.jpg} \\
+    \hline
+    Válvula selectora de circuitos & Tiene una función lógica de OR & \includegraphics[scale=0.25]{Valvula_OR.png}\\
+    \hline
+    Válvula de simultaneidad & Tiene una función lógica de AND & \includegraphics[scale=0.25]{Valvula_AND.png} \\
+    \hline
+    Válvula temporizadora & Aplica un retardo en el pase del aire & \includegraphics[scale=0.25]{Valvula_temporizadora.jpg} \\
     \hline
   \end{tabular}
 \end{center}
 
 \subsection{Circuitos prácticos neumáticos}
 
-% poner imagenes
-
 \begin{itemize}
   \item \textbf{Mando de un cilindro de simple efecto con regulación de velocidad en el vástago}
+
+\begin{center}
+  \includegraphics[scale=0.5]{Mando1.jpg}
+\end{center}
+
   \item \textbf{Mando condicional de simple efecto}
+
+\begin{center}
+  \includegraphics[scale=3.0]{Mando2.jpg}
+\end{center}
+
   \item \textbf{Mando semiautomático de un cilindro de doble efecto}
+
+\begin{center}
+  \includegraphics[scale=0.5]{Mando3.png}
+\end{center}
+
   \item \textbf{Mando automático de un cilindro de doble efecto}
+
+\begin{center}
+  \includegraphics[scale=0.5]{Mando4.png}
+\end{center}
 \end{itemize}
 
 \subsection{Circuitos hidráulicos}
