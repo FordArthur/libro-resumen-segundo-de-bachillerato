@@ -47,7 +47,7 @@ potencial gravitatorio tiende a 0 en el infinito, el lector será dirigido a la 
 
 \section{Preludio}
 
-Las areas de las matemáticas pertinentes a la selectividad son 4: \textbf{análisis real}, \textbf{geometría}, \textbf{algebra}, \textbf{probabilidad y estadísica}.
+Las areas de las matemáticas pertinentes a la selectividad son 4: \textbf{análisis real}, \textbf{geometría}, \textbf{álgebra}, \textbf{probabilidad y estadísica}.
 
 \subsection{Lógica proposicional de primer orden}
 
@@ -236,7 +236,7 @@ También no son pocas las ocasiones donde nos interesa considerar el comportamie
   \[ \forall \epsilon > 0. \exists N \in \R.\; x < N \to | f(x) - L | < \epsilon \]
 \end{definition}
 
-Todas estas definiciones serán unificadas para la resolución de problemas en lo que podemos llamar \textit{el algebra de los reales extendidos} ($ \bar{\R} $).
+Todas estas definiciones serán unificadas para la resolución de problemas en lo que podemos llamar \textit{el álgebra de los reales extendidos} ($ \bar{\R} $).
 
 Finalmente, cabe replantear la definción de continuidad utilizando límties, ya que esta es la utilizada en la selectividad:
 
@@ -246,7 +246,7 @@ Finalmente, cabe replantear la definción de continuidad utilizando límties, ya
   \[ \lim_{x \to a^-} f(x) = f(a) = \lim_{x \to a^+} f(x) \]
 \end{definition}
 
-\subsubsection{Algebra de los reales extendidos}
+\subsubsection{Álgebra de los reales extendidos}
 
 Empezamos definiendo el conjunto sobre el cual definiremos las operaciones aptas para el cálculo de límites:
 
@@ -416,7 +416,69 @@ Conque podemos integrar funciones racionales como aquella desomposición.
 
 \section{Geometría}
 
-\section{Algebra}
+\section{Álgebra}
+
+\subsection{De monoide a espacio vectorial}
+
+El álgebra, en definitiva, es la manipulación de símbolos de manera sintética y abstracta. En álgebra equipamos a conjuntos
+con ciertas operaciones que cumplen ciertas propiedades. La estructura más simple que se le puede dar a un conjunto es un
+\textbf{magma}, no obstante dicha estructura no aparece tanto como los monoides:
+
+\begin{definition}[Monoide]
+  Sea $ \mathcal{M} $ un conjunto. Un \textit{monoide} es un triple $ \left(\mathcal{M}, \cdot, \epsilon \right) $ donde
+  $ \cdot : \mathcal{M} \times \mathcal{M} \to \mathcal{M} $ es una función y $ \epsilon \in \mathcal{M} $ es el 
+  \textit{elemento neutro}, es decir:
+  \[ \forall a \in \mathcal{M}, \ a \cdot \epsilon = \epsilon \cdot a = a \]
+\end{definition}
+
+Monoides ya encontramos muchos naturalmente en matemáticas (por ejemplo: $ (\N, +, 0)$, $(\Z, \times, 1)$, 
+$ (\text{End}(X), \circ, 1_X) $ donde $ X $ es un conjunto \dots). Y aún así, nos interesa añadir más estructura, hasta llegar
+al concepto de \textit{espacio vectorial}.
+
+\begin{definition}[Grupos]
+  Sea $ \mathcal{G} $ un conjunto. Un \textit{grupo} es un monoide para el que: 
+  \[ \forall x \in \mathcal{G}, \ \exist x^{-1} \in \mathcal{G}, \ x \cdot x^{-1} = x^{-1} \cdot x = \epsilon \]
+  Llamamos a dicho $ x^{-1} $ la inversa de $ x $.
+
+  Si es verdad que $ \forall x, y \in \mathcal{G} x \cdot y = y \cdot x $ llamamos al grupo \textit{abeliano}.
+\end{definition}
+
+El ejemplo de grupo canónico es el conjunto de biiyecciones de algún conjunto a sí mismo.
+
+\begin{definition}[Anillos]
+  Sea $ \mathfrak{R} $ un conjunto. Un anillo es un grupo abeliano $ \left(\mathcal{G}, +, 0\right) $ junto con un monoide
+  $ \left( \mathcal{G}, \cdot, 1 \right) $ tal que la \textit{suma sea distributiva sobre la multiplicación}:
+  \[ \forall a, b, c \in \mathfrak{R}, \ a \cdot (b + c) = a \cdot b + a \cdot c \]
+  y
+  \[ \forall a, b, c \in \mathfrak{R}, \ (b + c) \cdot a = b \cdot a + c \cdot a \]
+
+  Técnicamente, lo anterior es un \textit{anillo unitario}. Cuando ocurre que el monoide de la multiplicación es, además,
+  un grupo, entonces tenemos un \textit{cuerpo}.
+\end{definition}
+
+Los números enteros con la suma y la multiplicación entera forman un anillo. El ejemplo de anillo canónico es el conjunto
+de funciones sobre algún espacio.
+
+\begin{definition}[Modulo sobre un anillo]
+  Un modulo $ V $ sobre un anillo $ \mathfrak{R} $ es un monoide abeliano equipado con una acción
+  $ \cdot : \mathfrak{R} \times V \to V $ compatible con la estructura de anillo de $ \mathfrak{R} $:
+  \[ \forall r, s \in \mathfrak{R}, \ \forall v \in V, \ (r + s) \cdot v = r \cdot v + s \cdot v \]
+  \[ \forall r \in \mathfrak{R}, \ \forall v, w \in V, \ r \cdot (v + w) = r \cdot v + r \cdot w \]
+  \[ \forall r, s \in \mathfrak{R}, \ \forall v \in V, \ (r \cdot s) \cdot v = r \cdot (v \cdot s) \]
+  \[ \forall v \in V, \ 1 \cdot v = v \]
+\end{definition}
+
+Cuando $ \mathfrak{R} $ es además un cuerpo, $ V $ es un \textit{espacio vectorial}.
+
+\subsection{Espacios vectoriales}
+
+\subsubsection{Bases}
+
+\subsubsection{Transformaciones lineales}
+
+\subsection{Espacios con producto interno}
+
+\subsubsection{Métrica}
 
 \section{Estadística y probabilidad}
 
@@ -449,6 +511,8 @@ cuando pasa $ A $ y $ B $ ($ A \cap B $), $ A $ o $ B $ ($ A \cup B $), y cuando
 \section{Preludio}
 
 Las áreas de la física pertinentes a la selectividad son \dots : \textbf{Campo gravitatorio, campo eléctrico y campo magnético}, \dots.
+
+\section{Campo gravitatorio}
 
 \subsection{Mecánica clásica}
 
@@ -590,9 +654,9 @@ Para este fin, solemos igualar la fuerza centrípeta y la fuerza gravitatoria y 
 
 El punto más alejado de una órbita elíptica es el afelio y el más cercano es el perihelio.
 
-\subsection{Campo elécrico}
+\section{Campo elécrico}
 
-El campo magnético ($ \vec{E} $) es uno de los dos campos que resultan cuando se fija unas coordenadas espacio-tiempo para el electromagnetismo.
+El campo eléctrico ($ \vec{E} $) es uno de los dos campos que resultan cuando se fija unas coordenadas espacio-tiempo para el electromagnetismo.
 \sn{Más sobre en esto en ncatlab}
 A este asociamos dos ecuaciones \textit{de Maxwell}\sn{Las ecuaciones de Maxwell son la sintésis de nuestro conocimiento sobre electromagnetismo}:
 
@@ -688,7 +752,7 @@ Lo cuál implica la definición de flujo eléctrico:
 \end{definition}
 
 
-\subsection{Campo magnético}
+\section{Campo magnético}
 
 El campo magnético ($ \vec{B} $) es uno de los dos campos que resultan cuando se fija unas coordenadas espacio-tiempo para el electromagnetismo.
 A diferencia que el campo eléctrico, el campo magnético no tiene una \textit{unidad activa}, con lo que debe existir un \textit{polo norte} y un \textit{polo sur} para que dicha
@@ -779,7 +843,7 @@ El flujo magnético $ \Phi_B $ se define de la misma manera que el flujo eléctr
   $ \Phi_B := \int \vec{B} \cdot \diff \vec{S} $
 \end{definition}
 
-\subsection{Inducción electromagnética}
+\section{Inducción electromagnética}
 
 % introducir flujo eléctrico y magnético anteriormente
 
@@ -807,6 +871,10 @@ El cambio de un flujo magnético \textit{induce} una fuerza electromotriz sobre 
   El signo negativo de la expresión de la fuerza electromagnética es explicado por la \textit{Ley de Lenz}. Dicha ley establece
   que el sentido del campo magnético inducido se opone a la causa que lo produce.
 \end{remark}
+
+\section{Ondas}
+
+Una onda se define como la alteración harmónica de alguna propiedad a lo largo del espacio o del tiempo.
 
 \newpage
 
