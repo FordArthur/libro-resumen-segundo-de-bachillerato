@@ -1,18 +1,21 @@
 \documentclass[10pt]{article}
 \usepackage{../NotesTeX}
+\usepackage{tikz-cd}
 
 \newcommand{\diff}{\mathrm{d}}
-\newcommand{\dom}{\mathrm{dom}}
-\newcommand{\cod}{\mathrm{cod}}
-\newcommand{\im}{\mathrm{im}}
+\newcommand{\dom}{\mathrm{dom}\:}
+\newcommand{\cod}{\mathrm{cod}\:}
+\newcommand{\im}{\mathrm{im}\:}
+\newcommand{\spn}{\mathrm{span}\:}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 
 \graphicspath{ {../img} }
 
-\title{Lorem Ipsum}
+\title{Apuntes}
 
 \author{Marcos Ávila Navas}
 \affiliation{I.E.S Los Colegiales}
@@ -78,6 +81,30 @@ En esencia, lo que las matemáticas clásicas \sn{Existen otras ``matemáticas''
 estudio de ``conjuntos''. Un conjunto se puede pensar intuitivamente cómo un saco: una agrupación, desordenada, de elementos únicos (es decir, no permitimos elementos repetidos).
 La notación básica de un conjunto es separar los elementos por comas y encapsular la enumeración con llaves, por ejemplo: $ \{2, 3, abc, \{\star\} \} $.
 
+Formalmente, tenemos los axiomas Zermelo--Frankel:
+
+\begin{definition}[ZFC]
+  Llamamos ZFC a los siguientes axiomas:
+  \begin{itemize}
+    \item \textbf{Extensionalidad}: dos conjuntos son iguales si (y solo si) tienen los mismos elementos.
+      \[ X = Y \iff \forall x.\ (x \in X \iff x \in Y) \]
+    \item \textbf{Conjunto vacío}: existe un conjunto sin elementos, denotado $\emptyset$.
+      \[ \exists \emptyset.\ \forall x.\ x \notin \emptyset \]
+    \item \textbf{Par}: dados $x, y$ existe $\{x,y\}$.
+      \[ \forall X, Y.\  \exists \{X, Y\}.\ \forall x.\ (x \in \{X, Y\} \iff x = X \vee x = Y)) \]
+    \item \textbf{Unión}: dado $X$ existe $\bigcup X$.
+      \[ \forall X.\ \exists \bigcup X.\ \forall u.\ (u \in \bigcup X \iff \exists x.\ (u \in x \wedge x \in X)) \]
+    \item \textbf{Comprensión restringida}: se pueden formar subconjuntos definidos por predicados.
+    \item \textbf{Reemplazo}: imágenes de funciones definibles son conjuntos.
+    \item \textbf{Infinito}: existe un conjunto infinito.
+    \item \textbf{Conjunto potencia}: la clase de todos los subconjuntos de un conjunto es un conjunto.
+    \item \textbf{Elección}: toda familia de conjuntos no vacíos tiene una función de elección.
+  \end{itemize}
+\end{definition}
+
+No obstante, raramente nos preocupan los específicos de los axiomas. La excepción a esto es el axioma de elección, ya que es equivalente a muchos teoremas cruciales para
+muchas áreas de las matemáticas (y sin embargo es el axioma más controversial).
+
 Sobre los conjuntos nos interesa fundamentalmente una cuestión: si algo pertenece a él o no. Esto se representa con un predicado el cuál se representa con la notación $ x \in X $
 (se puede leer como ``x pertenece a X''). Por ejemplo, si $ X = \{2, 3, abc, \{\star\}\}  $ entonces $ 2 \in X $, pero no $ \star \in X $, lo correcto sería $ \{\star\} \in X $.
 Uno además puede preguntar si todos los elementos de un conjunto pertenecen a otro, con la notación $ X \subseteq Y $, definida
@@ -86,24 +113,169 @@ tal que:
 \[ X \subseteq Y \iff \forall x \in X, \ x \in Y \]
 
 \begin{remark}
-  Aunque por convenio utilizamos mayúsculas para denotar conjuntos y minúsculas para elementos, en realidad, las matemáticas
-  clásicas\sn{Las basadas en Zermelo-Frankel con el axioma de elección} solo consideran conjuntos. Conque elementos de conjuntos
-  son, a su vez, conjuntos, patrón que se repite hasta terminar con el conjunto vacío cuya existencia es postulada 
-  axiomáticamente.
+  Aunque por convenio utilizamos mayúsculas para denotar conjuntos y minúsculas para elementos, en realidad, las matemáticas clásicas solo consideran conjuntos. Conque elementos de
+  conjuntos son, a su vez, conjuntos, patrón que se repite hasta terminar con el conjunto vacío cuya existencia es postulada axiomáticamente.
 \end{remark}
 
-Con todo esto, derivamos el concepto de función. Decimos que $ f : X \to Y $ es una función del conjunto $ X $ al conjunto $ Y $ a la asociación de cada elemento de $ X $ a un único
-elemento de $ Y $. Por ejemplo, podemos considerar una función $ \chi : X \to Y $ de $ X = \{2, 3, abc, \{\star\}\} $ a $ Y = \{\text{true}, \text{false}\} $ que asocia a los
-números de $ X $ a true y al resto de elementos a false. Otras veces consideramos funciones definidas por alguna fórmula. Si $ \N $ es el conjunto de números naturales,
-$ \text{siguiente} : \N \to \N $ definida por $ \text{siguiente}(n) = n + 1 $ es una función.
+\subsection{Relaciones}
 
-Sobre las funciones es ineresante sacar 3 conjuntos:
+Ocurre que en muchos contextos nos gustaría tener un sentido de igualdad un tanto diferente al que hemos postulado en los axiomas ZFC (por ejemplo, identificar un triángulo
+$ \widehat{ABC} $ a ``otro'' $ \widehat{BAC} $). Toda noción de igualdad debe complir:
 
 \begin{itemize}
-  \item El \textbf{dominio} ($\dom f $): Si $ f : X \to Y $ es una función, $ \dom f = X $ (es decir, el conjunto sobre el que $ f $ se define).
-  \item El \textbf{codominio} ($\cod f $): Si $ f : X \to Y $ es una función, $ \cod f = Y $ (es decir, el conjunto al que $ f $ llega).
-  \item La \textbf{imagen} ($\im f $): Si $ f : X \to Y $ es una función, $ \im f = f(X) $ (es decir, el conjunto en $ Y $ que $ f $ produce).
+  \item \textbf{Reflexividad}: $x = x$.
+  \item \textbf{Simetría}: si $x = y$ entonces $y = x$.
+  \item \textbf{Transitividad}: si $x = y$ e $y = z$ entonces $x = z$.
 \end{itemize}
+
+Estas propiedades definen lo que se conoce como una \textbf{relación de equivalencia}.
+
+\begin{definition}
+Sea $ X $ un conjunto. Una \textbf{relación} en $ X $ es un subconjunto $ R \subseteq X \times X $.
+Decimos que $ R $ es una \textbf{relación de equivalencia} si satisface reflexividad, simetría y transitividad.
+\end{definition}
+
+Dada una relación de equivalencia $\sim$ sobre $X$ y un elemento $x \in X$, definimos la \textbf{clase de equivalencia} de $x$ como:
+
+\[
+[x] := \{ y \in X \mid y \sim x \}
+\]
+
+\begin{example}
+  Al calcular una \textit{integral} realmente calculamos una clase de equivalencia:
+  \[ \int f(x) \cdot \diff x = \{ F \in \R \to \R \mid \frac{\diff}{\diff x}F = f \} \]
+  Dada por la relación de equivalencia:
+  \[ f \sim g \iff \exists C \in \R.\ f(x) + C = g(x)  \]
+\end{example}
+
+\begin{theorem}
+Las clases de equivalencia de una relación de equivalencia $\sim$ sobre $X$ forman una partición de $X$.
+\end{theorem}
+
+\begin{proof}
+La reflexividad implica que todo elemento pertenece a su propia clase, luego la unión de todas las clases es $X$.
+La simetría y transitividad implican que dos clases o bien son disjuntas o bien coinciden.
+\end{proof}
+
+El conjunto de todas las clases de equivalencia se denota por $X/{\sim}$ y se llama el \textbf{conjunto cociente}.
+Este proceso es ubicuo en matemáticas: construcción de los números racionales, reales, espacios topológicos, grupos cociente, etc.
+
+\subsection{Producto cartesiano}
+
+Dados dos conjuntos $X$ e $Y$, definimos su \textbf{producto cartesiano} como:
+
+\[ X \times Y := \{ (x,y) \mid x \in X, y \in Y \} \]
+
+\begin{remark}
+ Formalmente, un par ordenado $(x,y)$ se puede definir como el conjunto $\{\{x\},\{x,y\}\}$ (per Kuratowski).
+ Esto garantiza que $(x,y)=(x',y')$ si y solo si $x=x'$ e $y=y'$.
+\end{remark}
+
+Los productos cartesianos vienen determinados por su \textbf{propiedad universal}. Utilizando conceptos de la siguiente sección, escribimos $ \pi_1 : X \times Y \to X $ para la
+función que descarta su segundo componente y $ \pi_2 : X \times Y \to Y $ para la función que descarta su primer componente. Conque tenemos el diagrama:
+
+\begin{center}
+  \begin{tikzcd}
+  & X \times Y \arrow[ld, "\pi_1"'] \arrow[rd, "\pi_2"] &   \\
+    X &                                                     & Y
+  \end{tikzcd}
+\end{center}
+
+La propiedad universal del producto cartesiano es la siguiente: para cualquier diagrama de la forma:
+
+\begin{center}
+  \begin{tikzcd}
+  & C \arrow[ldd, "p_1"'] \arrow[rdd, "p_2"]            &   \\
+  & X \times Y \arrow[ld, "\pi_1"'] \arrow[rd, "\pi_2"] &   \\
+    X &                                                     & Y
+  \end{tikzcd}
+\end{center}
+
+Existe una función $ \theta : C \to X \times Y $ que hace el siguiente diagrama conmutar (es decir, $ p_1 = \pi_1 \circ \theta $ y  $ p_2 = \pi_2 \circ \theta $):
+
+\begin{center}
+  \begin{tikzcd}
+  & C \arrow[ldd, "p_1"'] \arrow[rdd, "p_2"] \arrow[d, "\theta" description, dashed] &   \\
+  & X \times Y \arrow[ld, "\pi_1"'] \arrow[rd, "\pi_2"]                              &   \\
+    X &                                                                                  & Y
+  \end{tikzcd}
+\end{center}
+
+\subsection{Funciones}
+
+Con todo esto, derivamos el concepto de función. Decimos que $ f : X \to Y $ es una función del conjunto $ X $ al conjunto $ Y $ a la asociación de cada elemento de $ X $ a un único
+elemento de $ Y $. Formalmente:
+
+\begin{definition}[Función]
+  Una función $f : X \to Y$ se define via el conjunto $G_f \subseteq X \times Y$ tal que:
+
+  \[ \forall x \in X.\ \exists! f(x) \in Y.\ (x, f(x)) \in G_f \]
+
+  Nótese que $ f(x) $ es solo un símbolo, aunque es trivial de aquí derivar el concepto intuitivo de función que teníamos.
+\end{definition}
+
+\begin{example}
+  Por ejemplo, podemos considerar una función $ \chi : X \to Y $ de $ X = \{2, 3, abc, \{\star\}\} $ a $ Y = \{0, 1\} $ que asocia a los
+  números de $ X $ a $ 1 $ y al resto de elementos a $ 0 $. Si ``\textit{tiramos hacia atrás}'' por la función $ \text{true} : \{\star\} \to Y $ que manda $ \star \mapsto 1 $
+  obtendremos el subconjunto de $ X $ de los elementos que son números.
+\end{example}
+
+La idea tras el anterior ejemplo no será utilizada a este nivel. No obstante, Tanto el mecanismo general (\textit{límites en el sentido de teoría de categorías}) como el ejemplo
+en sí (\textit{clasificador de subobjetos en el sentido de teoría de topos}) son de extremada importancia para las matemáticas modernas.
+
+De las funciones nos interesa sacar 3 conjuntos:
+
+\begin{definition}
+  \begin{itemize}
+    \item El \textbf{dominio} ($\dom f $): Si $ f : X \to Y $ es una función, $ \dom f = X $ (es decir, el conjunto sobre el que $ f $ se define).
+    \item El \textbf{codominio} ($\cod f $): Si $ f : X \to Y $ es una función, $ \cod f = Y $ (es decir, el conjunto al que $ f $ llega).
+    \item La \textbf{imagen} ($\im f $): Si $ f : X \to Y $ es una función, $ \im f = f(X) $ (es decir, el conjunto en $ Y $ que $ f $ produce).
+  \end{itemize}
+\end{definition}
+
+Además, podemos categorizar las funciones en 3 tipos:
+
+\begin{definition}
+  Decimos que:
+  \begin{itemize}
+    \item $f$ es \textbf{inyectiva} si $ \forall x, y \in X.\ f(x) = f(y) \implies x = y $.
+    \item $f$ es \textbf{sobreyectiva} si $\forall y \in Y,\ \exists x \in X.\ f(x) = y$.
+    \item $f$ es \textbf{biyectiva} si es inyectiva y sobreyectiva.
+  \end{itemize}
+\end{definition}
+
+\begin{theorem}
+  Una función $f : X \to Y$ es biyectiva si y solo si existe una función $f^{-1} : Y \to X$ tal que:
+  \[ f^{-1} \circ f = \mathrm{id}_X \quad \text{y} \quad f \circ f^{-1} = \mathrm{id}_Y \]
+
+  Llamamos a $ f^{-1} $ la \textbf{inversa} de $ f $.
+\end{theorem}
+
+\begin{proof}
+  Si $f$ es biyectiva, definimos $g(y)$ como el único $x$ tal que $f(x)=y$. La unicidad viene de la inyectividad y la existencia de la sobreyectividad.
+
+  El otro sentido es inmediato.
+\end{proof}
+
+En este caso decimos que $X$ e $Y$ son \textbf{isomorfos como conjuntos} y escribimos $X \cong Y$.
+
+\subsection{Construcción de los números naturales}
+
+El axioma del infinito postula precisamente la existencia del conjunto de números naturales. Dicho axioma utiliza la construcción von Neumann para su representación como conjuntos:
+
+\[ 0 := \emptyset, \quad n+1 := n \cup \{n\} \]
+
+Así:
+\[ 0 = \emptyset,\quad 1=\{0\},\quad 2=\{0,1\},\quad 3=\{0,1,2\},\dots \]
+
+\begin{theorem}[Inducción]
+Sea $P(n)$ una propiedad sobre $\N$. Si:
+\begin{itemize}
+  \item $P(0)$ es cierta,
+  \item $\forall n, P(n) \implies P(n+1)$,
+\end{itemize}
+entonces $P(n)$ es cierta para todo $n \in \N$.
+\end{theorem}
 
 \newpage
 
@@ -160,6 +332,10 @@ Conque, por inducción, para función con periodo $ T $:
 
 \[ \forall n \in \Z, \ \forall x \in \R, \ f(x + nT) = f(x) \]
 
+\begin{remark}
+  Si $f$ es periódica de periodo $T$, entonces basta estudiar su comportamiento en cualquier intervalo de longitud $T$, por ejemplo $[0,T]$.
+\end{remark}
+
 \subsubsection{En práctica}
 
 En la selectividad no es raro un ejercicio que requiera calcular el dominio de una función. Para este fin, debemos identificar el dominio e imagen de todas las funciones con dominios restringidos involucradas y
@@ -186,7 +362,8 @@ restringir hasta que la imagen de la función que les sirve cómo argumento caig
 \subsection{Límites}
 
 Los límites son la propiedad característica de los números reales \sn{Todo ``campo completo ordenado'' es isomórfico a $ \R $. }: el salto de los números racionales a los
-números reales es precisamente requerir que toda secuencia (\href{https://ncatlab.org/nlab/show/Cauchy+sequence}{\textit{Cauchy}}) converja.
+números reales es precisamente requerir que toda secuencia (\href{https://ncatlab.org/nlab/show/Cauchy+sequence}{\textit{Cauchy}}) converja. \sn{Estos son los llamados
+los reales Cauchy, también existen los reales Dedekind. En matemáticas constructivas los reales Dedekind contienen ``más números''.}
 
 \begin{definition}[Secuencia]
   Una secuencia (de números reales) es una función de $ \N $ a $ \R $.
@@ -207,6 +384,23 @@ Con esta definición a mano, el límite de una función $ f $ cuando tiende a $ 
 
   \[ \forall \epsilon > 0, \exists \delta > 0.\; | a - x | < \delta \to | L - f(x) | < \epsilon \]
 \end{definition}
+
+\begin{theorem}[Unicidad del límite]
+  Si $\lim_{x \to a} f(x) = L$ y $\lim_{x \to a} f(x) = M$, entonces $L = M$.
+\end{theorem}
+
+\begin{proof}
+  Supóngase $L \neq M$. Tomando $\epsilon = |L-M|/2$ se obtiene una contradicción.
+\end{proof}
+
+\begin{theorem}[Caracterización secuencial]
+  $\lim_{x \to a} f(x) = L$ si y solo si para toda sucesión $(x_n)$ con $x_n \to a$ y $x_n \neq a$,
+  se tiene $f(x_n) \to L$.
+\end{theorem}
+
+\begin{remark}
+  Esta equivalencia es específica de espacios métricos de primer numerable como $\R$.
+\end{remark}
 
 \begin{center}
   \includegraphics[scale=0.25]{Limite.png}
@@ -246,14 +440,26 @@ Finalmente, cabe replantear la definción de continuidad utilizando límties, ya
   \[ \lim_{x \to a^-} f(x) = f(a) = \lim_{x \to a^+} f(x) \]
 \end{definition}
 
+\begin{theorem}
+  Si $f : X \subseteq \R \to \R$ es continua en $a$ en el sentido $\epsilon$--$\delta$, entonces es continua en $a$ en el sentido topológico, y viceversa.
+\end{theorem}
+
+\begin{proof}
+  En $\R$ los abiertos son uniones de intervalos abiertos. Traducir un entorno abierto en una condición $\epsilon$--$\delta$ es trivial.
+\end{proof}
+
+
 \subsubsection{Álgebra de los reales extendidos}
 
 Empezamos definiendo el conjunto sobre el cual definiremos las operaciones aptas para el cálculo de límites:
 
 \begin{definition}[Los reales extendidos]
   Llamese $ \bar{\R} $ o ``reales extendidos'' al conjunto:
-  \[ \bar{\R} = \R \cup \{+\infty, -\infty, \text{``Indet.''}, \text{``No existe.''}\}  \]
+  \[ \bar{\R} = \R \cup \{+\infty, -\infty, \text{``Indet.''}, \text{``No existe.''}\} \]
 \end{definition}
+
+Estos dos últimos valores no vienen en la construcción clásica de los \href{https://ncatlab.org/nlab/show/extended+real+numbers}{reales extendidos}, son valores que añadimos
+ya que nuestra construcción de $ \bar{\R} $ va orientada al cálculo de límites.
 
 Para describir el álgebra que nos interesa sobre el anterior conjunto, basta con definir cómo particípan los nuevos símbolos, y es que no modificamos las operaciones sobre
 los números reales. Para este fin, basta con decir que los símbolos de infinito operan cómo uno esperaría ($ k + (\pm \infty) = \pm \infty $, $ k(\pm\infty) = \pm \infty $ \dots).
@@ -293,12 +499,24 @@ $ b = \lim_{h \to 0} a + h $. Siguiendo esta intuición, llegamos al concepto de
   Nótese que $ f'(x)$ es sólo un símbolo. No obstante es posible definir la \textit{función derivada}, que a cada $ x \in \text{cont} f$ asocia a su correspondiente $ f'(x) $.
 \end{definition}
 
+Definimos $ \text{der} : (X \to \R) \to \mathcal{P} \R $ de manera similar a cont.
+
 \begin{remark}
-  Es posible que f no sea derivable en un punto pero si sea continua (por ejemplo, $ f(x) = |x| $ para $ x = 0 $). En general, por tanto, $ x \in \text{der} f \to x \in \text{cont} f $, 
-  pero la conversa es falsa.
+  Es posible que f no sea derivable en un punto pero si sea continua (por ejemplo, $ f(x) = |x| $ para $ x = 0 $). En general, por tanto, 
+  $ x \in \text{der} f \to x \in \text{cont} f $, pero la conversa es falsa.
 \end{remark}
 
-Definimos $ \text{der} : (X \to \R) \to \mathcal{P} \R $ de manera similar a cont.
+En general:
+
+\begin{theorem}
+  Si $f$ es derivable en $a$, entonces es continua en $a$.
+\end{theorem}
+
+\begin{proof}
+  Escribimos:
+  \[ f(x) = f(a) + (x-a)\frac{f(x)-f(a)}{x-a} \]
+  y tomamos límite cuando $x \to a$.
+\end{proof}
 
 La función derivada $ f' $ de otra, al ser una función real, puede asimismo ser derivada indefinidamente. Resultando en lo que llamamos la \textit{n-ésima derivada de $ f $}. 
 \sn{Una función $ \infty $-derivable se denomina \textit{suave}.}
@@ -307,7 +525,7 @@ Las nociones anteriores también son útiles para el cálculo de límites gracia
 
 \begin{theorem}[Regla de L'Hopital]
   Sean $ f $ y $ g $ funciones reales para las que $ \lim_{x \to \alpha} \frac{f(x)}{g(x)} $ sea $ 0 $ o $ \infty $. Se cumple que:
-  \[ \lim_{x \to \alpha} \frac{f(x)}{g(x)} = \lim_{x \to \alpha} \frac{f'(x)}{g'(x)}\]
+  \[ \lim_{x \to \alpha} \frac{f(x)}{g(x)} = \lim_{x \to \alpha} \frac{f'(x)}{g'(x)} \]
 \end{theorem}
 
 \subsection{Análisis de una función}
@@ -320,9 +538,26 @@ La monotonía concierne a los intervalos de la función donde se tiene un mismo 
 investigamos el signo de $ f'(x) $ para $ x $ en dicho tramo. Que $ f'(x) > 0 $ significa que la función tiene tendencia a crecer cerca de $ x $, y lo opuesto es verdad si $ f'(x) < 0 $. Cuando
 $ f'(x) = 0 $ estamos ante un \textit{punto crítico}, punto donde la función cambia de signo de cambio.
 
+En resumen:
+
+\begin{theorem}
+  Sea $f$ continua en $[a,b]$ y derivable en $(a,b)$.
+  \begin{itemize}
+    \item Si $f'(x) \ge 0$ en $(a,b)$, entonces $f$ es creciente.
+    \item Si $f'(x) \le 0$ en $(a,b)$, entonces $f$ es decreciente.
+  \end{itemize}
+\end{theorem}
+
 \subsubsection{Curvatura}
 
 La curvatura concierne a los intervalos de la función donde la gráfica de la tangente se encuentra en una misma posición relativa a la gráfica de la función (a saber: por arriba o por debajo).
+
+\begin{definition}
+  Decimos que $f$ es cóncava hacia arriba en un intervalo si $f''(x) > 0$,
+  y cóncava hacia abajo si $f''(x) < 0$.
+  Un punto donde $f''(x)=0$ y cambia de signo se llama punto de inflexión.
+\end{definition}
+
 Los mismos principios de monotonía aplican a curvatura, ya que estudiar la curvatura de $ f $ es equivalente a estudiar la monotonía de $ f' $.
 
 \subsection{Integrales}
@@ -337,8 +572,17 @@ Ocurre que la integración y la derivación son procesos inversos:
   \[ \frac{\diff}{\diff x} \left(\int f(x) \diff x + C\right) = f(x) \]
 \end{theorem}
 
-De la misma manera que buscar una función inversa a otra no es trivial, buscar una \textit{primitiva} \sn{una función real $ F $ es una antiderivada, o primitiva, de otra $ f $ si la derivada de 
-$ F $ es $ f $ }, es decir, integrar una función, suele requerir utilizar ciertas técnicas falibles (conque no es un proceso mecánico como la diferenciación).
+De la misma manera que buscar una función inversa a otra no es trivial, buscar una \textit{primitiva} \sn{una función real $ F $ es una antiderivada, o primitiva, de otra 
+$ f $ si la derivada de $ F $ es $ f $ }, es decir, integrar una función, suele requerir utilizar ciertas técnicas falibles (conque no es un proceso mecánico como la diferenciación).
+
+El teorema anterior es una instancia del teorema más general de Stokes.
+
+\begin{theorem}[Teorema de Stokes]
+  Sea  $ X $ una \textit{variedad diferencial}, $ \omega : X $ una \textit{forma diferencial}, y $ \sigma $ un \textit{símplice suave}. Entonces:
+  \[ \int_{\partial \sigma} \omega = \int_\sigma \diff \omega \]
+\end{theorem}
+
+Tomando $ X = [a, b] $ y el canónico 1-símplice suave $ \sigma : \Delta^1 \to [a, b] $ recuperamos el teorema fundamental del cálculo.
 
 \subsubsection{Integración por cambio de variable}
 
@@ -414,8 +658,6 @@ Conque podemos integrar funciones racionales como aquella desomposición.
         \end{proof}
 \end{enumerate}
 
-\section{Geometría}
-
 \section{Álgebra}
 
 \subsection{De monoide a espacio vectorial}
@@ -431,19 +673,33 @@ con ciertas operaciones que cumplen ciertas propiedades. La estructura más simp
   \[ \forall a \in \mathcal{M}, \ a \cdot \epsilon = \epsilon \cdot a = a \]
 \end{definition}
 
-Monoides ya encontramos muchos naturalmente en matemáticas (por ejemplo: $ (\N, +, 0)$, $(\Z, \times, 1)$, 
-$ (\text{End}(X), \circ, 1_X) $ donde $ X $ es un conjunto \dots). Y aún así, nos interesa añadir más estructura, hasta llegar
-al concepto de \textit{espacio vectorial}.
+\begin{example}[Monoides]
+  Monoides ya encontramos muchos naturalmente en matemáticas:
+  \begin{itemize}
+    \item $(\N, +, 0)$: los números naturales con la suma.
+    \item $(\Z_{\ge 0}, \times, 1)$: números naturales incluyendo el 0 con la multiplicación.
+    \item $(\text{End}(X), \circ, 1_X)$: el conjunto de endomorfismos de un conjunto $X$ con composición de funciones.
+    \item $(\mathcal{P}(X), \cup, \emptyset)$: el conjunto de subconjuntos de $X$ con unión.
+  \end{itemize}
+\end{example}
 
 \begin{definition}[Grupos]
   Sea $ \mathcal{G} $ un conjunto. Un \textit{grupo} es un monoide para el que: 
-  \[ \forall x \in \mathcal{G}, \ \exist x^{-1} \in \mathcal{G}, \ x \cdot x^{-1} = x^{-1} \cdot x = \epsilon \]
+  \[ \forall x \in \mathcal{G}, \ \exists x^{-1} \in \mathcal{G}, \ x \cdot x^{-1} = x^{-1} \cdot x = \epsilon \]
   Llamamos a dicho $ x^{-1} $ la inversa de $ x $.
 
   Si es verdad que $ \forall x, y \in \mathcal{G} x \cdot y = y \cdot x $ llamamos al grupo \textit{abeliano}.
 \end{definition}
 
-El ejemplo de grupo canónico es el conjunto de biiyecciones de algún conjunto a sí mismo.
+\begin{example}[Grupos]
+  Los grupos son otro objeto matemático estudiado extensamente. Ejempos de grupos:
+  \begin{itemize}
+    \item $(\Z, +, 0)$: enteros con suma, grupo abeliano.
+    \item $(\R^*, \times, 1)$: reales distintos de cero con multiplicación.
+    \item $S_n$ con composición: el grupo simétrico de permutaciones de $n$ elementos.
+    \item $(\mathbb{C}, +, 0)$: números complejos con suma.
+  \end{itemize}
+\end{example}
 
 \begin{definition}[Anillos]
   Sea $ \mathfrak{R} $ un conjunto. Un anillo es un grupo abeliano $ \left(\mathcal{G}, +, 0\right) $ junto con un monoide
@@ -456,8 +712,25 @@ El ejemplo de grupo canónico es el conjunto de biiyecciones de algún conjunto 
   un grupo, entonces tenemos un \textit{cuerpo}.
 \end{definition}
 
-Los números enteros con la suma y la multiplicación entera forman un anillo. El ejemplo de anillo canónico es el conjunto
-de funciones sobre algún espacio.
+\begin{example}[Anillos]
+ El ejemplo de anillo canónico es el conjunto de funciones sobre algún espacio a algún otro anillo. Ejemplos de anillos:
+  \begin{itemize}
+    \item $(\Z, +, \cdot)$: enteros con suma y multiplicación.
+    \item $(\mathbb{R}[x], +, \cdot)$: polinomios reales.
+    \item $(\mathcal{M}_{n \times n}(\R), +, \cdot)$: matrices cuadradas con suma y multiplicación usual.
+  \end{itemize}
+\end{example}
+
+\begin{example}[Cuerpos]
+  Ejemplos de cuerpos:
+  \begin{itemize}
+    \item $(\Q, +, \cdot)$: números racionales.
+    \item $(\R, +, \cdot)$: números reales.
+    \item $(\mathbb{C}, +, \cdot)$: números complejos.
+    \item $\mathbb{F}_p$ con $p$ primo: cuerpo finito con operaciones módulo $p$.
+  \end{itemize}
+\end{example}
+
 
 \begin{definition}[Modulo sobre un anillo]
   Un modulo $ V $ sobre un anillo $ \mathfrak{R} $ es un monoide abeliano equipado con una acción
@@ -470,15 +743,326 @@ de funciones sobre algún espacio.
 
 Cuando $ \mathfrak{R} $ es además un cuerpo, $ V $ es un \textit{espacio vectorial}.
 
+\begin{example}[Módulos]
+  Ejemplos de módulos:
+  \begin{itemize}
+    \item $\Z^n$ como módulo sobre $\Z$.
+    \item $\R^n$ como espacio vectorial sobre $\R$.
+    \item $\mathbb{C}^n$ como espacio vectorial sobre $\C$.
+    \item El conjunto de polinomios $\R[x]$ como módulo sobre $\R$.
+  \end{itemize}
+\end{example}
+
 \subsection{Espacios vectoriales}
 
 \subsubsection{Bases}
 
+Una base es un subconjunto del espacio vectorial que genera al resto de elementos. Asumiendo el axioma de la elección \sn{\url{https://ncatlab.org/nlab/show/axiom+of+choice}}
+todo espacio vectorial tiene una base. Antes de definir formalmente una base, debemos ser precisos con que significa que ``generen'' el espacio vectorial:
+
+\begin{definition}[Combinación lineal]
+  Sea $ V $ un espacio vectorial sobre un cuerpo $ k $ y $ U \subseteq V $ un subconjunto. Definimos el conjunto $ \spn U \subseteq V $ como:
+  \[ \spn U := \left\{ \sum_{a_i \in k,\, \vec{v_i} \in U} a_i \vec{v_i} \right\} \]
+  Decimos que un elemento de $ \spn U $ es una combinación lineal de $ U $.
+\end{definition}
+
+Asimismo, una base $ B \subseteq V $ debería de ser un subconjunto mínimo con la propiedad de que $ \spn B = V $:
+
+\begin{definition}[Independencia lineal]
+  Sea $ V $ un espacio vectorial sobre un cuerpo $ k $ y $ U \subseteq V $ un subconjunto finito. Decimos que $ U $ es linealmente independiente si:
+  \[ \sum_{a_i \in k,\, \vec{v_i} \in U} a_i \vec{v_i} = 0 \Rightarrow a_i = 0 \]
+\end{definition}
+
+En total:
+
+\begin{definition}[Base]
+  Sea $ V $ un espacio vectorial sobre un cuerpo $ k $ y $ B \subseteq V $ un subconjunto (posiblemente infinito). Decimos que $ B $ es una base para $ V $ si $ \spn B = V $
+  y si cualquier subconjunto finito de B es linealmente independiente.
+\end{definition}
+
+Es un teorema que cualquier base para un mismo espacio vectorial tiene una misma cardinalidad. Así, si aceptamos que todo espacio vectorial tiene una base, podemos definir una noción
+de dimensión del espacio de manera sencilla:
+
+\begin{definition}[Dimensión]
+  La cardinalidad $ \kappa $ de una base es la dimensión de un espacio vectorial.
+\end{definition}
+
 \subsubsection{Transformaciones lineales}
+
+Una transformación lineal es un $ k $-homomorfismo entre espacios vectoriales, esto es:
+
+\begin{definition}[Transformación lineal]
+  Sea $ V, W $ espacios vectoriales sobre el mismo cuerpo $ k $. Una función $ T : V \to W $ es una transformación lineal si:
+  \begin{enumerate}
+    \item \[ \forall a \in k,\ \forall \vec{v} \in V,\ T(a\vec{v}) =  aT(\vec{v}) \]
+    \item \[ \forall \vec{v, w} \in V,\ T(\vec{v} + \vec{w}) = T(\vec{v}) + T(\vec{w}) \]
+  \end{enumerate}
+  equivalentemente,
+  \[ \forall a \in k,\ \forall \vec{v, w} \in V,\ T(a\vec{v} + \vec{w}) = aT(\vec{v}) + T(\vec{w}) \]
+\end{definition}
+
+\subsubsection{Matríces}
+
+Toda transformación lineal es equivalentemente una \textit{matríz}:
+
+\begin{definition}[Matríz $ n \times m $]
+  Una matríz (real, compleja\dots) $ n \times m $ donde $ n, m $ son cardinales (típicamente finitos) es una función $ n \times m \to \R \, (\C, \Q\dots) $. No obstante,
+  ``matríz'' implica que debemos representar dicha función como una tabla de $ n $ filas y $ m $ columnas cuyas entradas son valores en el objeto algebraico apropiado (los reales,
+  por ejemplo):
+  \begin{center}
+    \[ A = (a_{ij}) = 
+    \begin{pmatrix}
+      a_{11} & \dots & a_{1m} \\
+      \vdots & \ddots & \vdots \\
+      a_{n1} & \dots & a_{nm} \\
+    \end{pmatrix}
+    \in \mathcal{M}_{n \times m}
+  \]
+  \end{center}
+\end{definition}
+
+La correspondencia entre matríz y transformación lineal viene dada por el hecho de que una transformación lineal sea esencialmente determinada por su acción en una alguna base de 
+su dominio. Así, cada columna de la matríz es el resultado de aplicar la transformación a un elemento de la base.
+
+Estudiar transformaciones lineales por medio de matríces hace más claro y computacional lo que prosigue. Además, el concepto de matríz escapa el de transformación lineal, siendo una
+manera útil de representar distintos fenómenos.
+
+\subsubsection{Tipos de matrices}
+
+\begin{definition}[Matriz cuadrada]
+  Una matriz $A \in \mathcal{M}_{n \times n}$ tiene igual número de filas y columnas.
+\end{definition}
+
+\begin{definition}[Matriz diagonal]
+  Una matriz cuadrada $A = (a_{ij})$ es diagonal si $a_{ij} = 0$ para todo $i \neq j$.
+\end{definition}
+
+\begin{definition}[Matriz identidad]
+  La matriz identidad $I_n$ es diagonal con todos los elementos de la diagonal iguales a $1$.
+\end{definition}
+
+\begin{definition}[Matriz nula]
+  Una matriz $A$ es nula si $a_{ij} = 0$ para todo $i,j$.
+\end{definition}
+
+\begin{definition}[Matriz triangular]
+  \begin{itemize}
+    \item $A$ es triangular superior si $a_{ij} = 0$ para todo $i > j$.
+    \item $A$ es triangular inferior si $a_{ij} = 0$ para todo $i < j$.
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[Matriz simétrica y antisimétrica]
+  \begin{itemize}
+    \item $A$ es simétrica si $A^T = A$.
+    \item $A$ es antisimétrica si $A^T = -A$.
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[Matriz invertible]
+  Una matriz $A$ es invertible si existe $B$ tal que $AB = BA = I_n$.
+\end{definition}
+
+\subsubsection{Resultados sobre matrices}
+
+\begin{theorem}[Determinante de matriz triangular]
+  Sea $A$ triangular (superior o inferior). Entonces:
+  \[ \det(A) = \prod_{i=1}^n a_{ii} \]
+\end{theorem}
+
+\begin{theorem}[Invertibilidad y determinante]
+  Una matriz cuadrada $A$ es invertible si y sólo si $\det(A) \neq 0$.
+\end{theorem}
+
+\begin{theorem}[Producto de matrices]
+  Sean $A,B \in \mathcal{M}_{n \times n}$. Entonces:
+  \[ \det(AB) = \det(A)\det(B) \quad\text{y}\quad (AB)^T = B^T A^T \]
+\end{theorem}
+
+\begin{theorem}[Regla de Cramer]
+  Sea $Ax = b$ un sistema lineal con $A$ invertible. Entonces, para cada $i$:
+  \[ x_i = \frac{\det(A_i)}{\det(A)} \]
+  donde $A_i$ es $A$ reemplazando la columna $i$ por $b$.
+\end{theorem}
+
+\begin{theorem}[Teorema espectral para matrices simétricas]
+  Sea $A$ simétrica real. Entonces $A$ es diagonalizable por una matriz ortogonal $P$:
+  \[ P^T A P = D \]
+  donde $D$ es diagonal con los valores propios de $A$.
+\end{theorem}
+
+\section{Geometría}
 
 \subsection{Espacios con producto interno}
 
+Un espacio con producto interno es un espacio vectorial con una noción de ``geometría''. El producto interno es una operación que nos permite medir la longitud de vectores y ángulos
+entre vectores.
+
+\begin{definition}[Espacio con producto interno]
+  Un espacio con producto interno $ V $ sobre $ k $ es un espacio vectorial equipado con un producto interno $ \langle -, - \rangle : V \times V \to k $:
+  \begin{enumerate}
+    \item \[ \forall \vec{v}, \vec{w} \in V,\ \langle \vec{v}, \vec{w} \rangle = \langle \vec{v}, \vec{w} \rangle \]
+    \item \[ \forall a, b \in k,\ \forall \vec{x}, \vec{y}, \vec{w} \in V,\ \langle a\vec{x} + b\vec{y}, \vec{w} \rangle = a\langle \vec{x}, \vec{w} \rangle + b\langle \vec{y}, \vec{w} \rangle \]
+    \item \[ \forall \vec{v} \in V,\ \langle \vec{v}, \vec{v} \rangle \geq 0 \]
+    \item \[ \forall \vec{v} \in V,\ \langle \vec{v}, \vec{v} \rangle = 0 \iff \vec{v} = \vec{0} \]
+  \end{enumerate}
+\end{definition}
+
 \subsubsection{Métrica}
+
+El producto interno induce de manera natural una noción de longitud.
+
+\begin{definition}[Norma inducida]
+  Sea $V$ un espacio con producto interno. Definimos la \textit{norma} $\|-\| : V \to k^+ $ de un vector $\vec{v} \in V$ como:
+  \[ \|\vec{v}\| := \sqrt{\langle \vec{v}, \vec{v} \rangle} \]
+\end{definition}
+
+\begin{theorem}
+  La norma satisface:
+  \begin{enumerate}
+    \item 
+      \[ \forall \vec{v} \in V.\ \|\vec{v}\| = 0 \iff \vec{v} = \vec{0} \]
+    \item 
+      \[ \forall a \in k.\ \forall \vec{v} \in V.\ \|a\vec{v}\| = |a|\|\vec{v}\| \]
+    \item 
+      \[ \forall \vec{v}, \vec{w} \in V.\ \|\vec{v} + \vec{w}\| \le \|\vec{v}\| + \|\vec{w}\| \].
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  Las dos primeras proposiciones son mero cómputo.
+
+  La tercera propiedad se deduce de la desigualdad de Cauchy--Schwarz.
+\end{proof}
+
+\begin{theorem}[Desigualdad de Cauchy--Schwarz]
+  Para todo $\vec{v}, \vec{w} \in V$:
+  \[ |\langle \vec{v}, \vec{w} \rangle| \le \|\vec{v}\| \cdot \|\vec{w}\| \]
+\end{theorem}
+
+\begin{proof}
+  Se considera $\langle \vec{v} - t\vec{w}, \vec{v} - t\vec{w} \rangle \ge 0$ y se estudia como polinomio en $t$.
+\end{proof}
+
+A partir de la norma se define una noción de distancia.
+
+\begin{definition}[Distancia]
+  Definimos la distancia entre dos vectores como:
+  \[ d(\vec{v}, \vec{w}) := \|\vec{v} - \vec{w}\| \]
+\end{definition}
+
+Finalmente, podemos definir ángulos entre vectores tal que:
+
+\begin{definition}[Ángulo entre vectores]
+  Para $\vec{v}, \vec{w} \neq \vec{0}$ definimos el ángulo $\theta$ entre ellos por:
+  \[ \theta = \arccos(\frac{\langle \vec{v}, \vec{w} \rangle}{\|\vec{v}\|\|\vec{w}\|}) \]
+\end{definition}
+
+\subsection{Ortogonalidad y proyecciones}
+
+\begin{definition}[Ortogonalidad]
+  Dos vectores $\vec{v}, \vec{w}$ son \textit{ortogonales} si:
+  \[ \langle \vec{v}, \vec{w} \rangle = 0 \]
+\end{definition}
+
+\begin{example}
+  En $\R^2$ con el producto escalar usual,
+  \[ \vec{v} = (1,0), \quad \vec{w} = (0,1) \]
+  son ortogonales.
+\end{example}
+
+\begin{definition}[Proyección ortogonal]
+  Sea $\vec{u} \neq \vec{0}$. La proyección ortogonal de $\vec{v}$ sobre $\vec{u}$ es:
+  \[ \mathrm{proj}_{\vec{u}}(\vec{v}) := \frac{\langle \vec{v}, \vec{u} \rangle}{\langle \vec{u}, \vec{u} \rangle} \vec{u} \]
+\end{definition}
+
+\begin{remark}
+  Esta operación es fundamental en mínimos cuadrados y aparece implícitamente
+  en el análisis de errores experimentales.
+\end{remark}
+
+\subsection{Bases ortonormales}
+
+\begin{definition}[Base ortonormal]
+  Una base $B = \{\vec{e}_i\}$ es \textit{ortonormal} si:
+  \[
+    \langle \vec{e}_i, \vec{e}_j \rangle =
+    \begin{cases}
+      1 & i = j \\
+      0 & i \neq j
+    \end{cases}
+  \]
+\end{definition}
+
+\begin{theorem}[Proceso de Gram--Schmidt]
+  Sea $(\vec{v}_1,\dots,\vec{v}_n)$ una familia linealmente independiente.
+  Entonces existe una base ortonormal $(\vec{e}_1,\dots,\vec{e}_n)$ que genera el mismo subespacio.
+\end{theorem}
+
+\begin{proof}
+  Se define inductivamente:
+  \[
+    \vec{u}_k := \vec{v}_k - \sum_{i=1}^{k-1} \mathrm{proj}_{\vec{e}_i}(\vec{v}_k),
+    \quad
+    \vec{e}_k := \frac{\vec{u}_k}{\|\vec{u}_k\|}
+  \]
+\end{proof}
+
+\subsection{Geometría analítica}
+
+En $ \R^n $, la geometría se puede describir mediante ecuaciones que ``esculpen'' subespacios dentro de $ \R^n $.
+
+\subsubsection{Rectas}
+
+\begin{definition}[Recta vectorial]
+  Una recta que pasa por $\vec{p}$ con dirección $\vec{v} \neq 0$ es:
+  \[ r(t) = \vec{p} + t\vec{v} \]
+\end{definition}
+
+\begin{theorem}
+  Dos rectas son paralelas si y solo si sus vectores directores son linealmente dependientes.
+\end{theorem}
+
+\subsubsection{Planos}
+
+\begin{definition}[Plano]
+  Un plano en $\R^3$ puede describirse como:
+  \[
+    \langle \vec{n}, \vec{x} - \vec{p} \rangle = 0
+  \]
+  donde $\vec{n}$ es un vector normal.
+\end{definition}
+
+\begin{theorem}
+  La distancia de un punto $\vec{x}$ a un plano es:
+  \[
+    d = \frac{|\langle \vec{n}, \vec{x} - \vec{p} \rangle|}{\|\vec{n}\|}
+  \]
+\end{theorem}
+
+\subsection{Isometrías}
+
+\begin{definition}[Isometría]
+  Una transformación lineal $T : V \to V$ es una isometría si:
+  \[
+    \langle T(\vec{v}), T(\vec{w}) \rangle = \langle \vec{v}, \vec{w} \rangle
+  \]
+\end{definition}
+
+\begin{example}
+  Rotaciones y reflexiones en $\R^2$ y $\R^3$.
+\end{example}
+
+\begin{theorem}
+  Una matriz representa una isometría si y solo si es ortogonal:
+  \[
+    A^T A = I
+  \]
+\end{theorem}
+
+\begin{remark}
+  El conjunto de matrices ortogonales forma un grupo de especial importancia para la física, $ O(n) $.
+\end{remark}
 
 \section{Estadística y probabilidad}
 
@@ -500,8 +1084,172 @@ cuando pasa $ A $ y $ B $ ($ A \cap B $), $ A $ o $ B $ ($ A \cup B $), y cuando
   \end{enumerate}
 \end{definition}
 
+\subsection{Consecuencias básicas de los axiomas}
+
+A partir de los axiomas de Kolmogorov se deducen inmediatamente propiedades fundamentales.
+
+\begin{theorem}
+  Sea $(\Omega, \mathcal{F}, p)$ un espacio de probabilidad. Entonces:
+  \begin{enumerate}
+    \item $p(\emptyset) = 0$,
+    \item si $A \subseteq B$, entonces $p(A) \le p(B)$,
+    \item $p(\bar{A}) = 1 - p(A)$,
+    \item $p(A \cup B) = p(A) + p(B) - p(A \cap B)$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  Todas se deducen usando la aditividad finita y las leyes de De Morgan.
+\end{proof}
+
+\subsection{Probabilidad condicionada e independencia}
+
+\begin{definition}[Probabilidad condicionada]
+  Sea $A, B \in \mathcal{F}$ con $p(B) > 0$. Definimos la probabilidad de $A$ condicionada a $B$ como:
+  \[
+    p(A \mid B) := \frac{p(A \cap B)}{p(B)}
+  \]
+\end{definition}
+
 \begin{remark}
-  Dado que estamos trabajando en matemáticas clásicas, es fácil demostrar las \textit{leyes de De Morgan}.
+  Intuitivamente, estamos restringiendo el espacio muestral a $B$ y \textit{renormalizando}.
+
+  Alternativamente, $ p(B)p(A \mid B) = p(A \cap B) $ es una especie de \textit{modus ponens}.
+\end{remark}
+
+\begin{definition}[Independencia]
+  Dos sucesos $A, B \in \mathcal{F}$ son independientes si:
+  \[
+    p(A \cap B) = p(A)p(B)
+  \]
+\end{definition}
+
+\begin{example}
+  En el lanzamiento de dos monedas justas, el suceso “cara en la primera” es independiente del suceso “cara en la segunda”.
+
+  No obstante, dada una serie de resultados, no podemos deducir la independencia de dos sucesos por este tipo de razonamiento externo en general.
+\end{example}
+
+\begin{theorem}[Fórmula de Bayes]
+  Si $p(B) > 0$, entonces:
+  \[
+    p(A \mid B) = \frac{p(B \mid A)p(A)}{p(B)}
+  \]
+\end{theorem}
+
+\subsection{Variables aleatorias}
+
+Ha resultado conveniente estudiar funciones sobre el espacio de probabilidad a algún cuerpo ordenado como $ \R $.
+
+\begin{definition}[Variable aleatoria]
+  Una variable aleatoria es una función medible:
+  \[ X : \Omega \to \R \]
+\end{definition}
+
+\subsubsection{Distribución}
+
+\begin{definition}[Distribución de una variable aleatoria]
+  La distribución de $X$ es la medida inducida:
+  \[ p_X(A) := p(X^{-1}(A)) \]
+\end{definition}
+
+\subsection{Esperanza y varianza}
+
+\begin{definition}[Esperanza matemática]
+  Sea $X$ una variable aleatoria discreta. Definimos su esperanza como:
+  \[
+    \mathbb{E}[X] := \sum_x x \, p(X = x)
+  \]
+\end{definition}
+
+\begin{definition}[Varianza]
+  La varianza de $X$ se define como:
+  \[
+    \mathrm{Var}(X) := \mathbb{E}\left[(X - \mathbb{E}[X])^2\right]
+  \]
+\end{definition}
+
+\begin{theorem}
+  \[
+    \mathrm{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2
+  \]
+\end{theorem}
+
+\begin{remark}
+  La esperanza es lineal:
+  \[
+    \mathbb{E}[aX + bY] = a\mathbb{E}[X] + b\mathbb{E}[Y]
+  \]
+\end{remark}
+
+\subsection{Distribuciones clásicas}
+
+\subsubsection{Distribución binomial}
+
+\begin{definition}[Distribución binomial]
+  Una variable aleatoria $X$ sigue una distribución binomial $B(n,p)$ si:
+  \[
+    p(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+  \]
+\end{definition}
+
+\begin{example}
+  Número de caras al lanzar $ n $ monedas justas.
+\end{example}
+
+\subsubsection{Distribución normal}
+
+\begin{definition}[Distribución normal]
+  Una variable aleatoria continua $X$ sigue una distribución normal si tiene densidad:
+  \[
+    f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+  \]
+\end{definition}
+
+\begin{remark}
+  Dicha distribución aparece como límite universal en muchos procesos aleatorios.
+\end{remark}
+
+\subsection{Teoremas fundamentales}
+
+\begin{theorem}[Ley de los grandes números]
+  Sea $(X_n)$ una sucesión de variables aleatorias independientes e idénticamente distribuidas con esperanza finita.
+  Entonces:
+  \[
+    \frac{1}{n}\sum_{i=1}^n X_i \xrightarrow{n \to \infty} \mathbb{E}[X_1]
+  \]
+\end{theorem}
+
+\begin{theorem}[Teorema central del límite]
+  Bajo las mismas hipótesis, la suma normalizada:
+  \[
+    \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n\sigma^2}}
+  \]
+  converge en distribución a una normal estándar.
+\end{theorem}
+
+\begin{remark}
+  Este resultado explica la omnipresencia de la distribución normal en la naturaleza.
+\end{remark}
+
+\subsection{Estadística descriptiva}
+
+Dada una muestra $(x_1,\dots,x_n)$, definimos:
+
+\begin{definition}[Media muestral]
+  \[
+    \bar{x} := \frac{1}{n}\sum_{i=1}^n x_i
+  \]
+\end{definition}
+
+\begin{definition}[Varianza muestral]
+  \[
+    s^2 := \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2
+  \]
+\end{definition}
+
+\begin{remark}
+  Estos son estimadores de la esperanza y la varianza poblacionales.
 \end{remark}
 
 \newpage
@@ -511,8 +1259,6 @@ cuando pasa $ A $ y $ B $ ($ A \cap B $), $ A $ o $ B $ ($ A \cup B $), y cuando
 \section{Preludio}
 
 Las áreas de la física pertinentes a la selectividad son \dots : \textbf{Campo gravitatorio, campo eléctrico y campo magnético}, \dots.
-
-\section{Campo gravitatorio}
 
 \subsection{Mecánica clásica}
 
@@ -590,9 +1336,9 @@ $$ L = r p \sin{\alpha} = r p \sin{90} = r p = r m v $$
 
 \end{definition}
 
-\subsection{Campo gravitatorio}
+\section{Campo gravitatorio}
 
-\subsubsection{Campo gravitatorio creado por masas puntuales}
+\subsection{Creado por masas puntuales}
 
 \begin{definition}[Fuerza gravitacional]
   Fuerza resultante de las perturbaciones del campo gravitatorio.
@@ -609,7 +1355,7 @@ $$ L = r p \sin{\alpha} = r p \sin{90} = r p = r m v $$
   \[ \vec{g_T} = \sum_i \vec{g_i} = -G \sum_i \frac{M_i}{r^2_i} \hat{u_{ri}} \]
 \end{remark}
 
-\subsubsection{Energía asociada al campo gravitatorio}
+\subsection{Energía asociada al campo gravitatorio}
 
 El campo gravitatorio es uno conservativo, por tanto:
 
@@ -629,7 +1375,7 @@ Considerar lo que hace una unidad de masa en el campo, así creando un ``espacio
 
 Es fácil conectar la definción y la intuición considerando la expresión $ V m $.
 
-\subsubsection{Campo gravitatorio de los cuerpos celestes}
+\subsection{Campo gravitatorio de los cuerpos celestes}
 
 El campo gravitatorio tal y cómo lo hemos presentado puede utilizarse para operar con cuerpos celestes (aproximadamente).
 
@@ -666,7 +1412,7 @@ A este asociamos dos ecuaciones \textit{de Maxwell}\sn{Las ecuaciones de Maxwell
 El campo eléctrico es un campo vectorial al igual que el campo gravitatorio, que pertine a las interacción resultadas por la propiedad
 conocida como \textit{carga eléctrica}.
 
-\subsubsection{Intensidad del campo electroestático}
+\subsection{Creado por cargas puntuales}
 
 \begin{definition}[Fuerza Eléctrica, Ley de Coulomb]
   La fuerza eléctrica es la resultante de las perturbaciones del campo electroestático.
@@ -700,7 +1446,7 @@ conocida como \textit{carga eléctrica}.
   \[ \vec{E_T} = \sum_{i} \vec{E_i} = K \sum_{i} \frac{Q_i}{r^2_i} \cdot \hat{u_{ri}}  \]
 \end{remark}
 
-\subsubsection{Energía asociada al campo eléctrico}
+\subsection{Energía asociada al campo eléctrico}
 
 En la situación descrita, podemos llegar a una forma cerrada para el trabajo dentro del campo electroestático:
 
@@ -765,7 +1511,7 @@ A este campo le corresponden las otras dos ecuaciones de Maxwell:
 \[ \nabla \cdot \vec{B} = 0 \iff \oint \vec{B} \cdot \diff \vec{A} = 0 \]
 \[ \nabla \times \vec{B} = -\mu_0 \vec{J} + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t} \iff \oint \vec{B} \cdot \diff \vec{l} =  -\mu_0 I + \mu_0 \epsilon_0 \int \frac{\partial \vec{E}}{\partial t}\]
 
-\subsubsection{Sobre una carga en movimiento}
+\subsection{Sobre una carga en movimiento}
 
 Experimentalmente se descubrió que cargas en movimiento producen un campo magnético. Puesto que es así, la \textbf{Ley de Lorentz} viene a determinar el valor de la fuerza magnética
 sobre una carga en movimiento:
@@ -793,7 +1539,7 @@ La unidad del campo magnético son los \textit{Teslas}:
 \[ \vec{B} : T = \frac{1 N}{1 C \cdot 1 \frac{m}{s}} \]
 Cabe destacar que un tesla raramente se da en la naturaleza (los imánes permanentes están comprendidos entre $ 0.01 T $ y $ 0.5 T $).
 
-\subsubsection{Sobre una corriente eléctrica}
+\subsection{Sobre una corriente eléctrica}
 
 Una corriente eléctrica no es más que el flujo de cargas. Consecuentemente, se verá afectado por el campo magnético. La expresión que determina dicha interacción es conocida como la 
 \textit{Primera Ley de Laplace}.
@@ -814,6 +1560,8 @@ Para lo que segundo de bachillerato corresponde, tanto B como I serán constante
 
 \[ \diff \vec{F} = I \diff \vec{l} \times \vec{B}; \ \vec{F} = \int I \diff \vec{l} \times \vec{B} = I \left( \int \diff \vec{l} \right) \times \vec{B} = I \vec{l} \times \vec{B} \]
 
+\subsection{Creado por una corriente eléctrica}
+
 Experimentalmente, Biot y Savart concluyeron que el campo magnético elemental ($ \diff \vec{B} $) creado por un elemento de corriente ($ I \diff \vec{l} $) en un punto, cuya posición
 respecto al elemento de corriente viene dado por $ \vec{r} $, es:
 
@@ -833,7 +1581,7 @@ Además podemos utiliza la otra regla de la mano derecha para determinar la orie
   cuando los conductores se repelan.
 \end{remark}
 
-\subsubsection{Flujo magnético}
+\subsection{Flujo magnético}
 
 El flujo magnético $ \Phi_B $ se define de la misma manera que el flujo eléctrico, es decir:
 
@@ -844,8 +1592,6 @@ El flujo magnético $ \Phi_B $ se define de la misma manera que el flujo eléctr
 \end{definition}
 
 \section{Inducción electromagnética}
-
-% introducir flujo eléctrico y magnético anteriormente
 
 El cambio de un flujo magnético \textit{induce} una fuerza electromotriz sobre la superficie dada. Esto se deduce desde la Ley de Inducción de Faraday:
 
@@ -874,7 +1620,424 @@ El cambio de un flujo magnético \textit{induce} una fuerza electromotriz sobre 
 
 \section{Ondas}
 
-Una onda se define como la alteración harmónica de alguna propiedad a lo largo del espacio o del tiempo.
+Una onda, intuitivamente, es la alteración armónica de alguna propiedad a lo largo del espacio o del tiempo.
+
+\subsection{Movimiento armónico simple}
+
+ El ejemplo más sencillo de onda es el movimiento armónico simple (MAS).
+
+\begin{definition}[Movimiento armónico simple]
+  Un Movimiento Armónico Simple es un movimiento periódico en el que la fuerza (o aceleración) es directamente proporcional al desplazamiento respecto a la posición
+  de equilibrio y de sentido contrario:
+  \begin{enumerate}
+    \item \[ F(x) = -kx \]
+    \item \[ a (x)= -\omega^2 x \]
+  \end{enumerate}
+\end{definition}
+
+\begin{remark}
+  Es fácil demostrar que, para una amplitud $ A $, una velocidad angular $ \omega $, y un desfase $ \phi $:
+  \begin{itemize}
+    \item La \textbf{posición} en un MAS en un tiempo $ t $ es:
+      \[ x(t) = A\sin(\omega t + \phi) \]
+    \item La \textbf{velocidad}:
+      \[ v(t) = A\omega\cos(\omega t + \phi) \]
+    \item La \textbf{aceleración}:
+      \[ x(t) = -A\omega^2\sin(\omega t + \phi) \]
+  \end{itemize}
+\end{remark}
+
+Un movimiento armónico simple se define por las siguientes magnitudes:
+\begin{itemize}
+  \item \textbf{Amplitud} $A$: valor máximo del desplazamiento respecto a la posición de equilibrio.
+  \item \textbf{Periodo} $T$: tiempo necesario para completar una oscilación.
+  \item \textbf{Frecuencia} $f$: número de oscilaciones por unidad de tiempo, relacionada con el periodo mediante
+    \[ f = \frac{1}{T} \]
+  \item \textbf{Frecuencia angular} $\omega$, definida como
+    \[ \omega = 2\pi f \]
+\end{itemize}
+
+\begin{example}[Sistemas que realizan MAS]
+  Son ejemplos clásicos de movimiento armónico simple:
+  \begin{enumerate}
+    \item Un sistema masa--muelle, cuya frecuencia angular viene dada por:
+      \[ \omega = \sqrt{\frac{k}{m}} \]
+      siendo $k$ la constante elástica del muelle y $m$ la masa.
+    \item Un péndulo simple para pequeñas oscilaciones, con:
+      \[ \omega = \sqrt{\frac{g}{\ell}} \]
+      donde $\ell$ es la longitud del péndulo y $g$ la aceleración de la gravedad.
+  \end{enumerate}
+\end{example}
+
+\subsection{Movimiento ondulatorio}
+
+\begin{definition}[Onda]
+  Una onda es la propagación de una perturbación que transporta energía a través del espacio sin transporte neto de materia.
+\end{definition}
+
+Dada una onda armónica, se definen:
+\begin{itemize}
+  \item \textbf{Longitud de onda} $\lambda$: distancia mínima entre dos puntos que oscilan en fase.
+  \item \textbf{Periodo} $T$ y \textbf{frecuencia} $f$, con la relación $f = 1/T$.
+  \item \textbf{Velocidad de propagación} $v$, que satisface:
+    \[ v = \lambda f \]
+\end{itemize}
+
+\begin{definition}[Ecuación de una onda armónica]
+  La expresión matemática de una onda armónica que se propaga en el sentido positivo del eje $x$ es:
+  \[ y(x,t) = A \sin(\omega t - kx + \phi) \]
+  donde el número de onda $k$ viene dado por:
+  \[ k = \frac{2\pi}{\lambda} \]
+\end{definition}
+
+\subsection{Ondas sonoras}
+
+\begin{definition}[Onda sonora]
+  El sonido es una onda mecánica longitudinal producida por variaciones de presión que se propaga únicamente en medios materiales.
+\end{definition}
+
+\begin{remark}
+  La velocidad de propagación del sonido depende del medio. En el aire, a temperatura ambiente, su valor aproximado es:
+  \[ v \approx 343\,\mathrm{m\,s^{-1}} \]
+\end{remark}
+
+\begin{definition}[Efecto Doppler]
+  El efecto Doppler es la variación aparente de la frecuencia de una onda percibida por un observador cuando existe movimiento relativo entre la fuente emisora y el observador.
+\end{definition}
+
+\begin{theorem}[Efecto Doppler para ondas sonoras]
+  Si $v$ es la velocidad de propagación del sonido, $v_o$ la velocidad del observador y $v_s$ la de la fuente, la frecuencia observada viene dada por:
+  \[ f' = f \frac{v \pm v_o}{v \mp v_s} \]
+  donde los signos se eligen según si el movimiento es de acercamiento o alejamiento.
+\end{theorem}
+
+\section{Óptica}
+
+La óptica es la rama de la física que estudia el comportamiento y las propiedades de la luz, así como su interacción con la materia.
+
+\subsection{Naturaleza y propagación de la luz}
+
+\begin{definition}[Luz]
+  La luz es una radiación electromagnética capaz de propagarse tanto en el vacío como en medios materiales, caracterizada por una velocidad finita y constante en el vacío.
+\end{definition}
+
+\begin{remark}
+  En el vacío, la velocidad de la luz tiene el valor
+  \[ c = 3{,}00 \times 10^{8}\,\mathrm{m\,s^{-1}} \].
+\end{remark}
+
+\begin{definition}[Índice de refracción]
+  El índice de refracción $n$ de un medio se define como el cociente entre la velocidad de la luz en el vacío y su velocidad en dicho medio:
+  \[ n = \frac{c}{v} \].
+\end{definition}
+
+\subsection{Óptica geométrica}
+
+Cuando las dimensiones características de los obstáculos son mucho mayores que la longitud de onda de la luz, esta puede describirse mediante rayos, dando lugar a la óptica geométrica.
+
+\begin{definition}[Principios de la óptica geométrica]
+  La óptica geométrica se fundamenta en los siguientes principios:
+  \begin{enumerate}
+    \item La luz se propaga en línea recta en medios homogéneos.
+    \item Los rayos luminosos son independientes entre sí.
+    \item El camino seguido por la luz es reversible.
+  \end{enumerate}
+\end{definition}
+
+\subsection{Reflexión de la luz}
+
+\begin{definition}[Reflexión]
+  La reflexión es el fenómeno por el cual la luz, al incidir sobre una superficie, regresa al medio del que procede.
+\end{definition}
+
+\begin{theorem}[Leyes de la reflexión]
+  En un fenómeno de reflexión se verifican las siguientes leyes:
+  \begin{enumerate}
+    \item El rayo incidente, el rayo reflejado y la normal a la superficie pertenecen al mismo plano.
+    \item El ángulo de incidencia es igual al ángulo de reflexión:
+      \[ \theta_i = \theta_r \]
+  \end{enumerate}
+\end{theorem}
+
+\subsection{Refracción de la luz}
+
+\begin{definition}[Refracción]
+  La refracción es el cambio de dirección y velocidad que experimenta la luz al pasar de un medio a otro con distinto índice de refracción.
+\end{definition}
+
+\begin{theorem}[Ley de Snell]
+  Si un rayo de luz pasa de un medio de índice $n_1$ a otro de índice $n_2$, los ángulos de incidencia y refracción verifican:
+  \[ n_1 \sin \theta_1 = n_2 \sin \theta_2 \]
+\end{theorem}
+
+\begin{definition}[Ángulo límite]
+  Se denomina ángulo límite $\theta_L$ al ángulo de incidencia para el cual el ángulo de refracción es $90^\circ$, cumpliéndose:
+  \[ \sin \theta_L = \frac{n_2}{n_1}, \qquad n_1 > n_2 \]
+\end{definition}
+
+\begin{remark}
+  Para ángulos de incidencia mayores que el ángulo límite se produce el fenómeno de reflexión total.
+\end{remark}
+
+\subsection{Sistemas ópticos}
+
+\subsubsection{Espejos}
+
+\begin{definition}[Espejos esféricos]
+  Un espejo esférico es una superficie reflectante que forma parte de una esfera. Puede ser cóncavo o convexo según la orientación de su superficie reflectante.
+\end{definition}
+
+\begin{theorem}[Ecuación fundamental de los espejos]
+  Para un espejo esférico se cumple la relación:
+  \[ \frac{1}{f} = \frac{1}{s} + \frac{1}{s'} \]
+  donde $f$ es la distancia focal, $s$ la distancia del objeto y $s'$ la distancia de la imagen.
+\end{theorem}
+
+\subsubsection{Lentes}
+
+\begin{definition}[Lentes delgadas]
+  Una lente delgada es un sistema óptico transparente limitado por dos superficies, capaz de desviar los rayos luminosos por refracción.
+\end{definition}
+
+\begin{theorem}[Ecuación de las lentes delgadas]
+  En una lente delgada se verifica la ecuación:
+  \[ \frac{1}{f} = \frac{1}{s} + \frac{1}{s'} \]
+\end{theorem}
+
+\begin{definition}[Aumento lateral]
+  El aumento lateral $A$ de una lente o espejo se define como el cociente entre el tamaño de la imagen y el del objeto:
+  \[ A = \frac{y'}{y} = -\frac{s'}{s} \]
+\end{definition}
+
+\section{Física moderna}
+
+La física moderna surge a comienzos del siglo XX para dar explicación a fenómenos que no podían ser descritos adecuadamente por la física clásica, introduciendo una nueva concepción de la energía, la radiación y la materia.
+
+\subsection{Crisis de la física clásica}
+
+\begin{remark}
+  A finales del siglo XIX se pusieron de manifiesto diversas discrepancias entre los resultados experimentales y las predicciones de la física clásica, especialmente en el estudio de la radiación electromagnética y de la estructura de la materia.
+\end{remark}
+
+\subsection{Cuantización de la energía}
+
+\begin{definition}[Hipótesis de Planck]
+  La energía intercambiada entre la radiación electromagnética y la materia no puede tomar cualquier valor continuo, sino que se emite o absorbe en cantidades discretas llamadas cuantos.
+\end{definition}
+
+\begin{theorem}[Relación de Planck]
+  La energía asociada a un cuanto de radiación de frecuencia $f$ viene dada por:
+  \[ E = hf \]
+  donde $h$ es la constante de Planck.
+\end{theorem}
+
+\subsection{Efecto fotoeléctrico}
+
+\begin{definition}[Efecto fotoeléctrico]
+  El efecto fotoeléctrico consiste en la emisión de electrones por la superficie de un metal cuando sobre él incide radiación electromagnética de frecuencia suficientemente elevada.
+\end{definition}
+
+\begin{theorem}[Ecuación del efecto fotoeléctrico]
+  La energía del fotón incidente se reparte entre el trabajo de extracción del metal y la energía cinética máxima de los electrones emitidos, de acuerdo con la expresión:
+  \[ hf = W_0 + E_c \]
+  donde $W_0$ es el trabajo de extracción.
+\end{theorem}
+
+\begin{remark}
+  Del estudio experimental del efecto fotoeléctrico se deducen las siguientes conclusiones:
+  \begin{itemize}
+    \item Existe una frecuencia umbral por debajo de la cual no se produce emisión de electrones.
+    \item La energía cinética de los electrones depende de la frecuencia, no de la intensidad de la radiación.
+    \item La emisión es prácticamente instantánea.
+  \end{itemize}
+\end{remark}
+
+\subsection{Naturaleza corpuscular de la luz}
+
+\begin{definition}[Fotón]
+  El fotón es el cuanto de energía asociado a la radiación electromagnética, caracterizado por carecer de masa en reposo y propagarse a la velocidad de la luz en el vacío.
+\end{definition}
+
+\begin{remark}
+  El fotón posee cantidad de movimiento, cuyo valor viene dado por:
+  \[ p = \frac{E}{c} = \frac{hf}{c} \]
+\end{remark}
+
+\subsection{Dualidad onda--partícula}
+
+\begin{definition}[Hipótesis de De Broglie]
+  A toda partícula material de cantidad de movimiento $p$ se le puede asociar una onda cuya longitud de onda viene dada por:
+  \[ \lambda = \frac{h}{p} \]
+\end{definition}
+
+\begin{remark}
+  La hipótesis de De Broglie extiende la dualidad onda--partícula, inicialmente atribuida a la luz, a toda la materia.
+\end{remark}
+
+\subsection{Principio de incertidumbre}
+
+\begin{theorem}[Principio de incertidumbre de Heisenberg]
+  No es posible determinar simultáneamente con precisión arbitraria la posición y la cantidad de movimiento de una partícula. Es decir,
+  \[ \Delta x\, \Delta p \geq \frac{h}{4\pi} \]
+\end{theorem}
+
+\begin{remark}
+  Este principio no se debe a limitaciones experimentales, sino que es una consecuencia fundamental de la naturaleza ondulatoria de la materia.
+\end{remark}
+
+\section{Física nuclear}
+
+\subsection{Estructura del núcleo atómico}
+
+Los átomos están formados por tres partículas: \textit{protones}, \textit{neutrones} y \textit{electrones}. Estas dos primeras partículas constituyen los ``\textit{nucleones}''. Distintos tipos de nucleones son llamados ``\textit{núclidos}''.
+
+La masa del átomo se concentra en el núcleo. Esta se mide en unidades de masa atómica (u), que se define cómo la doceava parte del átomo de carbono-12.
+
+Se define el número másico (A) como el número de nucleones en una partícula, y se define el número atómico (Z) como el número de protones que posee un átomo (este número caracteriza a un elemento).
+
+Dos núclidos pueden ser:
+
+\begin{enumerate}
+    \item \textbf{Isótopos}: Si se diferencian en el número de neutrones.
+    \item \textbf{Isóbaros}: Si se diferencian en el número de protones.
+    \item \textbf{Isótonos}: Si tienen el mismo número de neutrones.
+    \item \textbf{Isómeros}: Si solo se diferencian en el estado energético.
+\end{enumerate}
+
+\subsection{Estabilidad del Núcleo}
+
+Utilizamos la \textbf{interacción nuclear fuerte} para explicar la estabilidad del núcleo pese a la aparente repulsión por las cargas de los protones que desintegrarían el núcleo.
+
+La masa de los núclidos es menor que la suma de las masas de los nucleones que los componen. Este \textbf{defecto de masa ($\Delta m$)} se calcula así:
+$$ \Delta m = \sum m_{nucleon.} - m_{nuclid.} = [Z \cdot m_{prot.} + (A - Z) \cdot m_{neut.}] - m_{nuclid.} $$
+
+\begin{figure}
+	\centering 
+	\includegraphics[width=\textwidth]{nuclear_prop1.jpg}
+	\caption{Defecto de masa al constituir un núclido} 
+\end{figure}
+
+Cuando se forma el núcleo a partir de los nucleones, su mayor estabilidad implica que se libere energía. Es decir, la energía del núcleo es menor que la de los nucleones por separado.
+La energía liberada se llama \textbf{energía de enlace}:
+$$ E_{enl.} = \Delta  E = \Delta m \cdot c ^{2} = (\sum m_{nucleon.} - m_{nuclid.}) \cdot c^{2} $$
+
+Se llama \textbf{energía de enlace por nucleón} al cociente entre la energía de enlace y el número másico y nos informa de la estabilidad de ese núclido:
+$$\frac{E_{enlace}}{nucleon} = \frac{E_{enlace}}{A}$$
+
+\subsection{Radiactividad Natural}
+
+\subsubsection{Núcleos inestables}
+
+Los núcleos requieren de neutrones para ser estables. Esto se debe a que la fuerza electroestática entre los protones desintegraría el núcleo. Por tanto, para mantenerse estables, se necesita de una partícula capaz de aportar las interacciones nucleares fuertes sin añadir más carga, precisamente neutrones.
+
+Ya que los neutrones son inestables si no coexisten con protones, si el núcleo es muy grande no hay los suficientes protones para garantizar la estabilización de todos los neutrones.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.75\textwidth, height=10cm]{14ef6742153f8812d0e3bf47e4fc10be4a038219.png}
+    \caption{Gráfica energía de enlace por nucleón}
+    \label{fig_mom0}
+\end{figure}
+
+\subsubsection{Concepto y tipos de radiactividad natural}
+
+Podemos identificar 3 tipos de radiación:
+
+\begin{enumerate}
+    \item \textbf{Rayos $ \alpha $}: Son núcleos de helio $ ^{4}_{2}He $, tienen carga positiva, se mueven a $ 16 000km/s $, y tienen muy poco poder de penetración.
+    \item \textbf{Rayos $ \beta $}: Son electrones beta $ ^{0}_{-1}\beta $, tienen carga negativa, se mueven a $ 260000 km/s $, y tienen un mayor poder de penetración.
+    \item \textbf{Rayos $ \gamma $}: Son radiaciones electromagnéticas, no tienen carga, van a $ c = vel. luz $, y tienen gran poder de penetración.
+\end{enumerate}
+
+Cuando un núclido se transforma en otro de otro elemento diferente se dice que ha \textbf{transmutado}.
+
+\subsubsection{Leyes del desplazamiento radiactivo}
+
+Nos permiten computar los efectos de la radiación en átomos:
+
+\begin{enumerate}
+    \item \textbf{Primera ley}: Dado X, Y un átomos, A y Z números másicos y atómicos respectivamente: $ ^{A}_{Z} X \xrightarrow{\alpha} \ ^{A - 4}_{Z - 2} Y $ (donde $ \xrightarrow{\alpha} $ significa que también se ha producido una partícula $ \alpha $).
+    \item \textbf{Segunda ley}: Dado X, Y átomos, A y Z números másicos y atómicos respectivamente: $ ^{A}_{Z} X \xrightarrow{^{0}_{-1}\beta} \ ^{A}_{Z + 1} Y $, por lo que X e Y son isóbaros. También es posible, de manera artificial, conseguir una desintegración beta positiva: $ ^{A}_{Z} X \xrightarrow{^{0}_{+1}\beta} \ ^{A}_{Z - 1} Y $.
+    \item \textbf{Tercera ley}: Dado X un átomo, A y Z su número másico y atómico respectivamente: $ ^{A}_{Z} X \xrightarrow{\gamma} \ ^{A}_{Z} X^{*} $. Donde $ X^{*} $ indica un cambio de estado energético en $ X $.
+\end{enumerate}
+
+\subsubsection{Series o familias radiactivas}
+
+Los núcleos, antes de alcanzar la estabilidad, se desintegran en diferentes núcleos intermedios. Esto lo hacen formando una serie o cadena reactiva.
+
+\subsection{Cinética de la Desintegración Radiactiva}
+
+\subsubsection{Actividad radiactiva}
+
+Llamamos actividad radiactiva (A) al número de núclidos que se desintegran por unidad de tiempo:
+
+$$ A = -\frac{dN}{dt} = \lambda \cdot N $$
+
+Donde $ \lambda $ es la constante de desintegración: la probabilidad de desintegración de un núclido por unidad de tiempo (en $ s^{-1}$ en el SI).
+
+La actividad radiactiva se mide en \textbf{Becquerelio (Bq)}. Donde $ 1Bq = 1 des./s $.
+
+\subsubsection{Núclidos en función del tiempo}
+
+Si inicialmente hay $ N_0 $ núclidos, luego de un tiempo $ t $ habrá:
+
+$$ N = N_0 \cdot e^{-\lambda t} \quad \quad A = A_0 \cdot e^{-\lambda t} $$
+
+\begin{figure}
+	\centering 
+	\includegraphics[width=0.75\textwidth, height=6.5cm]{Radioactive_Decay_Law_Decay_Constants.png}
+	\caption{Gráfica energía de enlace por nucleón} 
+\end{figure}
+
+\subsubsection{Periodo de semidesintegración}
+
+Llamamos \textbf{periodo de semidesintegración ($ T_{1/2} $)} al tiempo que tarda en desintegrarse la mitad de los núcleos que había en la muestra.
+
+Es fácil ver que:
+
+$$ T_{1/2} = \frac{\ln2}{\lambda} $$
+
+\subsubsection{Vida media}
+
+Llamamos \textbf{vida media ($\tau$)} al promedio de vida de un núcleo o partícula subatómica libre antes de desintegrarse:
+
+$$ \tau = \frac{1}{\lambda} = \frac{T_{1/2}}{\ln 2} $$
+
+\subsection{Radiactividad artificial}
+
+Se denomina \textbf{radiactividad artificial} a la que resulta de núclidos radiactivos que se obtienen en el laboratorio al bombardear núclidos estables con partículas $ \alpha $, $ \beta $, neutrones, etc.
+
+Este proceso de irradiar núclidos estables puede llegar a producir elementos químicos que no existen en la naturaleza (\textit{sintéticos}).
+
+En las reacciones nucleares se conserva:
+\begin{enumerate}
+    \item La carga eléctrica
+    \item El número de nucleones
+    \item El momento lineal
+    \item El conjunto mas energía: $\Delta E = \Delta m \cdot c ^{2}$
+\end{enumerate}
+
+\subsubsection{Mecanismo de la Fisión Nuclear}
+
+La \textbf{fisión nuclear} es un proceso en el que un núclido se rompe en dos fracciones más pequeñas.
+
+Un núcleo a punto de fisionarse, porque ha absorbido un neutrón, se encuentra excitado y deformado. Cuando las fuerzas de atracción son menores que las de repulsión, el núcleo se fisiona, emitiendo con cierta velocidad, más los núcleos resultantes, neutrones.
+
+Estos neutrones luego son capaces de provocar la misma fisión en otros núcleos, ocurriendo una \textbf{reacción en cadena}.
+
+\subsubsection{La Energía de la Fisión Nuclear}
+
+La resultante de la fisión nuclear es ligeramente inferior a la masa de las sustancias que reaccionan. Este defecto de masa se libera en forma de energía. Las reacciones nucleares son las más exoenergéticas, sirviendo como gran fuente de energía. Esto también implica que se deba utilizar mecanismos para controlar la fisión.
+
+\subsubsection{Mecanismo de la Fusión Nuclear}
+
+La fusión nuclear es un proceso en el que dos núclidos de masa baja se unen dando un núclido de masa más alta.
+
+La masa de los productos es ligeramente inferior a la masa de los reactivos, siendo esta perdida convertida en energía.
+
+\subsubsection{Energía de la Fusión Nuclear}
+
+La fusión nuclear que tiene lugar en estas estrellas transcurre en estado de plasma: gas ionizado a millones de grado centígrados. Como resultado, se genera una gran cantidad de energía.
 
 \newpage
 
@@ -1090,7 +2253,7 @@ En cuanto a la gráfica $p$-$V$:
 
 Es fácil ver que $ W = 0 $ ya que $ \Delta V = 0 $.
 
-\[ Q = n C_V \Delta T \to  (p_1 > p_2 \Leftto Q_1 > Q_2)\]
+\[ Q = n C_V \Delta T \to (p_1 > p_2 \Leftarrow Q_1 > Q_2)\]
 
 En cuanto a la gráfica $p$-$V$:
 
@@ -1539,7 +2702,7 @@ es el estudio racional de los constituyentes fundamentales de la realidad y del 
 
 \begin{center}
   \textit{Toda la filosofía occidental es una serie de notas a pie de página de Platón}
-  
+
   Alfred North Whitehead
 \end{center}
 
@@ -1548,107 +2711,131 @@ instancia es la humanidad completa, escapa de todo remarque. La posición maxima
 \textit{nihil novum sub sole}.
 
 Algunos Padres de la Iglesia miraron a Platón con gran veneración, y las sublimes verdades que se encierran en sus escritos y formaron tan
-grandes filósofos, tuvieron bastante fuerza para arrancar de la docta pluma de San Agustín, hablando de éstos, aquella fuerte hipérbole: 
+grandes filósofos, tuvieron bastante fuerza para arrancar de la docta pluma de San Agustín, hablando de éstos, aquella fuerte hipérbole:
 que en mudando algunas proposiciones y unos pocos términos se convertirían en hombres cristianos.
 
 Cabe destacar que la distribución de contenidos de la presente exposición no sigue la del mismo Platón. No es hasta Aristóteles que se
-conoce una manera sistemática de la presentación de la filosofía. Platón en particular presentaba sus obras en forma de diáogos (cuyo 
-personaje principal suele ser Sócrates), que con libertad fluían entre distintos temas.
+conoce una manera sistemática de la presentación de la filosofía. Platón en particular presentaba sus obras en forma de diálogos (cuyo
+personaje principal suele ser Sócrates), que con libertad fluían entre distintos temas. Su pensamiento se forja en un \textbf{contexto sociopolítico} 
+marcado por la guerra del Peloponeso, la corrupción de los Treinta Tiranos (entre los que figuraron parientes suyos) y, de manera decisiva, la condena
+a muerte de Sócrates, hecho que lo alejó de la política activa y lo entregó al cultivo de la filosofía.
 
 \subsection{Metafísica}
 
-La filosofía platónica propone un esquema a aplicar en distintas áreas del saber, el llamado \textit{dualismo Platónico}, el cuál está expuesto 
+La filosofía platónica propone un esquema a aplicar en distintas áreas del saber, el llamado \textit{dualismo Platónico}, el cuál está expuesto
 con el símil de la caverna. La etimología de dualismo ya sugiere el fundamento que profesa, a saber: la existencia de dos principios fundamentales que
-componen un sistema. El dualismo platónico además precisa la esencia de estos dos principios, o \textit{mundos} y la relación entre ellos. 
+componen un sistema. El dualismo platónico además precisa la esencia de estos dos principios, o \textit{mundos} y la relación entre ellos.
 
-En metafísica, se postula un mundo sensible, inferior, el cuál es contingente, perecedero, imperfecto \dots (en definitiva, \textit{Hericlíteo}), que
-se corresponde al mundo formal, superior, el cuál es inmutable, eterno, perfecto \dots (en definitiva, \textit{Parménico}), mediante participación e imitación.
-Lo cuál quiere decir que el mundo sensible, compuesto de particulares, participa en sus correspondientes universales (exhibiendose como ejemplos del universal)
-e imita la ideosincrasia de sus universales. Se deduce, además, que ambos mundos son independientes y, en cierto sentido, el mundo formal es anterior.
+En metafísica, se postula un mundo sensible, inferior, el cuál es contingente, perecedero, imperfecto \dots (en definitiva, \textit{Heraclíteo}), que
+se corresponde al mundo inteligible (o formal), superior, el cuál es inmutable, eterno, perfecto \dots (en definitiva, \textit{Parménico}). La relación
+entre ambos se da mediante participación (\textit{methexis}) e imitación (\textit{mimesis}).
+Lo cuál quiere decir que el mundo sensible, compuesto de particulares, participa en sus correspondientes universales (exhibiéndose como ejemplos del universal)
+e imita la idiosincrasia de sus universales. Se deduce, además, que ambos mundos son independientes y, en cierto sentido, el mundo formal es anterior.
 
-La aplicación del dualismo platónico a la metafísica resulta en la llamada \textit{Teoría de las ideas}, que es la previamente expuesta. Es por su primacía en
-las ideas que esta teoría constituye la primera filosofía idealista en la Historia de la Filosofía.
+La aplicación del dualismo platónico a la metafísica resulta en la llamada \textit{Teoría de las ideas}. Las Ideas o Formas son esencias inmateriales, únicas, 
+eternas e inmutables, que existen separadas de las cosas particulares y constituyen el auténtico objeto del pensamiento. Es por su primacía de las ideas que esta
+teoría constituye la primera filosofía idealista en la Historia de la Filosofía. El mundo inteligible está jerarquizado: en la cúspide se halla la Idea del Bien; 
+le siguen ideas generales (Ser, Quietud, Movimiento); luego las de las virtudes; después las de seres vivos y objetos naturales; y finalmente, los entes matemáticos.
 
-A este nivel cabe destacar además la existencia de una Idea suprema: el Bien. Para Platón esta es la Idea que da sentido al resto. En el simil de la caverna
-el Bien se identifica con el sol puesto que proporciona la luz por la que podemos dislumbrar el resto de Formas. Resulta esto importante ya que en la genealogía
+A este nivel cabe destacar además la existencia de una Idea suprema: el Bien. Para Platón esta es la Idea que da sentido al resto. En el símil de la caverna
+el Bien se identifica con el sol puesto que proporciona la luz por la que podemos vislumbrar el resto de Formas. Resulta esto importante ya que en la genealogía
 de Dios dicha concepción es primordial. En este símil también cabe la explicación de una característica crucial de esta concepción de Bien. A saber, Platón concibe
-de un Bien que es inefable, el cuál es exclusivo a la revelación mística.
+un Bien que es inefable, el cuál es exclusivo a la revelación mística. En sus diálogos, la idea suprema no es unívoca: en la \textit{República} es el Bien; en el 
+\textit{Banquete}, la Belleza; en el \textit{Parménides}, el Uno; en el \textit{Sofista}, el Ser, lo que indica una evolución y cierta indecisión en su pensamiento.
 
 \subsubsection{Ontología}
 
 En misma correspondencia con los anteriores mundos, encontramos dos tipos de cosas que ``son'': Lo \textit{particular} y lo \textit{universal}. Platón distingue al
 menos en 4 maneras entre estas dos categorías, a saber: multiplicidad, siendo lo universal único y lo particular múltiple, tal que un único fenómeno pueda presentar
 distintos ejemplos; mutabilidad, puesto que lo universal es rígido e inmóvil mientras que lo particular es contingente; materialidad, de manera que las Formas
-transcienden cualquier marco material, opuestamente a la manera en la que lo particular se encuentra ligado a la materia; sensibilidad, tal que el órgano que percibe
+trascienden cualquier marco material, opuestamente a la manera en la que lo particular se encuentra ligado a la materia; sensibilidad, tal que el órgano que percibe
 las Ideas es la mente, el \textit{alma}, y el que percibe los particulares son los sentidos.
 
-De esta manera, la perfección es una cualidad exclusiva a los universales, puesto que el ejemplo siempre carece de algo respecto a su Idea (cf. ejemplo del triángulo).
+De esta manera, la perfección es una cualidad exclusiva a los universales, puesto que el ejemplo siempre carece de algo respecto a su Idea (cf. ejemplo del triángulo). 
+El propio Platón sometió su teoría a una revisión crítica, planteándose problemas como la existencia de ideas de objetos sin valor (pelo, barro) y las dificultades lógicas 
+de los conceptos de participación e imitación, que podrían llevar a una regresión infinita. No obstante, mantuvo la necesidad de las ideas como fundamento del conocimiento racional.
 
-% \subsubsection{Cosmología} (Demiurgo)
+\subsubsection{Cosmología}
+Platón expone su cosmología principalmente en el diálogo \textit{Timeo}. El cosmos tiene un origen teleológico, fruto de la acción de un Demiurgo (artífice divino) que, movido por la 
+bondad, ordena una materia originaria caótica y preexistente dentro de un espacio vacío (receptáculo), tomando como modelo las Ideas eternas. El Demiurgo no es un creador \textit{ex nihilo},
+sino un ordenador. El cosmos resultante es un ser vivo dotado de alma, de forma esférica, con la Tierra en el centro y esferas concéntricas para los astros. Su cuerpo está compuesto 
+de los cuatro elementos (fuego, tierra, agua, aire; influencia de Empédocles), a los que Platón asocia los sólidos platónicos o poliedros regulares (tetraedro, hexaedro, octaedro, icosaedro),
+estableciendo así una identificación entre cuerpo físico y estructura matemática (influencia pitagórica). El alma del cosmos, creada también por el Demiurgo, gobierna sus movimientos mediante
+armonías musicales y proporciones numéricas.
 
 \subsection{Epistemología}
 
-Platón distingue rigurosamente entre lo que puede ser objeto de conocimiento auténtico (\textit{epistéme}) y lo que pertenece al campo de la opinión (\textit{doxa}). 
+Platón distingue rigurosamente entre lo que puede ser objeto de conocimiento auténtico (\textit{epistéme}) y lo que pertenece al campo de la opinión (\textit{doxa}).
 El conocimiento verdadero no trata de particulares sensibles, cambiantes y engañosos, sino de las Formas o Ideas, entidades inmutables y universales que constituyen la
 realidad ontológicamente prioritaria. Así, epistemológicamente, conocer equivale a participar intelectualmente en la Forma correspondiente: no basta la percepción sensorial
 para aprehender la esencia de las cosas.
 
 Dos figuras explicitan este pensamiento: el mito de la caverna y la \textit{línea dividida}. En la línea dividida Platón traza, de menor a mayor grado de verdad, los segmentos de
-la imaginación y la creencia (los cuales remiten al mundo sensible), y los de la comprensión matemática y la dialéctica (propios del mundo inteligible). La dialéctica, entendida 
-como arte del diálogo y de la refutación sistemática, culmina en la intuición racional de las Formas y, sobre todo, en la contemplación del Bien, que ilumina y legitima todo saber: 
-conocer el Bien es, en última instancia, conocer la condición de posibilidad de la verdad.
+la imaginación (\textit{eikasia}) y la creencia (\textit{pistis}) (los cuales remiten al mundo sensible), y los de la comprensión matemática o conocimiento discursivo (\textit{dianoia})
+y la dialéctica (\textit{noesis}) (propios del mundo inteligible). La dialéctica, entendida inicialmente como el método socrático de preguntas y respuestas, evoluciona en Platón hasta
+convertirse en el arte supremo que, sin recurrir a imágenes ni hipótesis, asciende hasta los principios no hipotéticos (las Ideas) y, tras contemplar la Idea del Bien,
+desciende deductivamente encadenando todo el saber. La dialéctica culmina en la intuición racional de las Formas y, sobre todo, en la contemplación del Bien, que ilumina y legitima 
+todo saber: conocer el Bien es, en última instancia, conocer la condición de posibilidad de la verdad.
 
 \begin{center}
-  \includegraphics[scale=0.5]{Simil_de_la_linea.png}
+\includegraphics[scale=0.5]{Simil_de_la_linea.png}
 \end{center}
 
-Otra tesis epistemológica central es la Teoría de la reminiscencia o \textit{anamnésis}: el alma, al ser inmortal y haber contemplado las Formas antes de su encarnación, 
-recuerda mediante la correcta interrogación y el ejercicio intelectual lo que ya en ella existe latente. La educación, por tanto, no es mera transmisión de información sino 
-recolocación (o evocación) de la verdad que el alma ya posee; la mayéutica socrática es la técnica educativa que facilita esa recolección de la verdad mediante preguntas dirigidas.
+Otra tesis epistemológica central es la Teoría de la reminiscencia o \textit{anamnésis}: el alma, al ser inmortal y haber contemplado las Formas antes de su encarnación (preexistencia del alma),
+recuerda mediante la correcta interrogación y el ejercicio intelectual lo que ya en ella existe latente. La educación, por tanto, no es mera transmisión de información 
+sino recolocación (o evocación) de la verdad que el alma ya posee; la mayéutica socrática es la técnica educativa que facilita esa recolección de la verdad mediante preguntas dirigidas.
 
-Platón jerarquiza también las disciplinas: las matemáticas ocupan un lugar preparatorio, pues habituan la mente a la abstracción, mientras que la dialéctica constituye 
+Platón jerarquiza también las disciplinas: las matemáticas ocupan un lugar preparatorio, pues habituan la mente a la abstracción, mientras que la dialéctica constituye
 la forma suprema de conocimiento, puesto que por ella se trasciende el plano hipotético y se alcanza el conocimiento de los principios primeros.
+
+Finalmente, en el \textit{Banquete}, Platón presenta a Eros (el Amor) como un demon intermedio entre lo humano y lo divino, hijo de la Pobreza (\textit{Penia}) y la Abundancia (\textit{Poros}).
+Eros simboliza la filosofía misma: el anhelo y la fuerza motriz que impulsa al alma desde el amor a la belleza sensible, ascendiendo gradualmente (amor a los cuerpos, a las almas,
+a las instituciones, a las ciencias) hasta el amor y conocimiento de la Belleza en sí, la Idea eterna y perfecta. El amor platónico es, así, amor a la perfección de lo ideal.
 
 \subsection{Antropología}
 
-La tan reconocida distincción entre cuerpo y mente (\textit{alma}) proviene al instanciar el dualismo platónico al humano. Siendo el alma
-el mundo superior, se deriva: la imperativa al asceticismo, que el cuerpo sirve como prisión para el alma, el ciclo de reencarnación 
-(metensicosis) \dots . Es aquí donde es posible trazar una influencia hacia los Pitagóricos y a su vez hacia el orfismo.
+La tan reconocida distinción entre cuerpo y mente (\textit{alma}) proviene al instanciar el dualismo platónico al humano. Siendo el alma
+el mundo superior, se deriva: la imperativa al ascetismo, que el cuerpo sirve como prisión para el alma, el ciclo de reencarnación
+(metempsicosis o transmigración) \dots . Es aquí donde es posible trazar una influencia hacia los Pitagóricos y a su vez hacia el orfismo.
 
 \subsubsection{Alma}
 
-El alma, según Platón, tiene carácter divino y es ontológicamente prioritaria respecto del cuerpo. Es inmortal, preexistente y capaz de contemplar las Formas; 
-su caída al cuerpo es lo que origina el olvido y la necesidad de aprendizaje que, en realidad, es recolocación. Moralmente, el alma es tripartita, conforme a la 
-célebre división de \emph{La República}:
+El alma, según Platón, tiene carácter divino y es ontológicamente prioritaria respecto del cuerpo. Es inmortal, preexistente y capaz de contemplar las Formas;
+su caída al cuerpo es lo que origina el olvido y la necesidad de aprendizaje que, en realidad, es recolocación. Moralmente, el alma es tripartita, conforme a la
+célebre división de \emph{La República} y al mito del carro alado del \textit{Fedro}:
 
 \begin{itemize}
-  \item \textbf{La parte racional} (\textit{logistikon}): orientada al conocimiento, ama la verdad y debe gobernar por su capacidad para discernir el Bien.
+  \item \textbf{La parte racional} (\textit{logistikon}): orientada al conocimiento, ama la verdad y debe gobernar por su capacidad para discernir el Bien. Es inmortal, de naturaleza
+    divina y se sitúa en el cerebro.
   \item \textbf{La parte irascible o espirituosa} (\textit{thymoeides}): vinculada al ánimo, al honor y al valor; su función es auxiliar a la razón y sostener la firmeza moral. 
-  \item \textbf{La parte concupiscible} (\textit{epithymetikon}): relacionada con apetitos y placeres corporales; exige moderación.
+    Es mortal, fuente de pasiones nobles, inseparable del cuerpo y se sitúa en el tórax.
+  \item \textbf{La parte concupiscible} (\textit{epithymetikon}): relacionada con apetitos y placeres corporales; exige moderación. Es mortal, fuente de pasiones innobles, inseparable
+    del cuerpo y se sitúa en el abdomen.
 \end{itemize}
 
 Platón relaciona la anterior división con las 4 virtudes griegas \textit{cardinales} (a saber: prudencia, justicia, coraje y templanza) de la siguiente manera:
 
 \begin{itemize}
-  \item Que haya \textbf{prudencia} significa que la parte racional sea la autoridad suprema y guie al resto.
-  \item Que haya \textbf{coraje} significa que la parte irascible se someta la parte racional. Puesto que son valientes aquellos que, sabiendo lo que es bueno, actuan
-        de manera acorde.
-  \item Que haya \textbf{templanza} significa que la parte concupiscible sepa moderar su apetito, así subordinandose a la razón.
+  \item Que haya \textbf{prudencia} (\textit{phronesis}) significa que la parte racional sea la autoridad suprema y guíe al resto.
+  \item Que haya \textbf{coraje} o \textbf{fortaleza} (\textit{andreia}) significa que la parte irascible se someta a la parte racional. Puesto que son valientes aquellos que, 
+    sabiendo lo que es bueno, actúan de manera acorde.
+  \item Que haya \textbf{templanza} o \textbf{moderación} (\textit{sophrosyne}) significa que la parte concupiscible sepa moderar su apetito, así subordinándose a la razón.
 \end{itemize}
 
-Por último, la justicia, en el alma, se define como la armonía y el correcto ordenamiento entre estas partes: cada una desempeña su función sin usurpar la propia de las otras, bajo la dirección 
-de la razón. En el plano antropológico-religioso, Platón postula el ciclo de transmigraciones y la posibilidad de purificación moral del alma (cf. el mito de Er), donde la conducta 
-en la vida determina su suerte posterior.
+Por último, la justicia (\textit{dikaiosyne}), en el alma, se define como la armonía y el correcto ordenamiento entre estas partes: cada una desempeña su función sin usurpar
+la propia de las otras, bajo la dirección de la razón. La tarea del alma unida al cuerpo es la purificación (\textit{katharsis}), un alejamiento de lo sensible y un acercamiento
+a lo inteligible. En el plano antropológico-religioso, Platón postula el ciclo de transmigraciones (influencia pitagórica) y la posibilidad de purificación moral del alma
+(cf. el mito de Er en la \textit{República}), donde la conducta en la vida determina su suerte posterior y la posibilidad de liberarse definitivamente del ciclo para contemplar las Ideas.
 
 \subsubsection{Cuerpo}
 
-Siendo el cuerpo la antítesis del alma, Platón lo presenta como principio mortal, ligado a la generación y la corrupción, y como fuente de pasiones, deseos y errores perceptivos. 
-Los sentidos remiten al mundo cambiante y, por tanto, son instrumentos limitados y frecuentemente engañosos para acceder a la verdad. La presencia del cuerpo impone sobre el alma 
-tentaciones que desordenan su jerarquía, la concupiscencia puede subyugar a la razón si no mediatiza la educación y la disciplina moral; por eso Platón adopta, en sus consecuencias 
+Siendo el cuerpo la antítesis del alma, Platón lo presenta como principio mortal, ligado a la generación y la corrupción, y como fuente de pasiones, deseos y errores perceptivos.
+Los sentidos remiten al mundo cambiante y, por tanto, son instrumentos limitados y frecuentemente engañosos para acceder a la verdad. La presencia del cuerpo impone sobre el alma
+tentaciones que desordenan su jerarquía; la concupiscencia puede subyugar a la razón si no media la educación y la disciplina moral; por eso Platón adopta, en sus consecuencias
 prácticas, una inclinación hacia el ascetismo moderado y la purificación.
 
-No obstante, Platón no reduce el cuerpo a mero estorbo: reconoce su papel en la acción política y social y en la formación del carácter. El proyecto educativo que propone orienta y 
-regula los impulsos corporales mediante gimnasia, música y disciplina, integrándolos de modo que sirvan a la excelencia del alma. La medicina del alma, como metáfora, exige ordenar 
+No obstante, Platón no reduce el cuerpo a mero estorbo: reconoce su papel en la acción política y social y en la formación del carácter. El proyecto educativo que propone orienta y
+regula los impulsos corporales mediante gimnasia, música y disciplina, integrándolos de modo que sirvan a la excelencia del alma. La medicina del alma, como metáfora, exige ordenar
 y domesticar las apetencias para que la polis y la vida individual alcancen la armonía justa.
 
 \subsection{Política}
@@ -1656,50 +2843,54 @@ y domesticar las apetencias para que la polis y la vida individual alcancen la a
 La misión última de la filosofía política de Platón es la justicia. Su más magna obra expuesta para este fin es \textit{La República}.
 
 Justicia se ha de entender por este nombre lo que en común llamamos virtud, y de otro modo hombría de bien, o concierto y armonía universal
-de las acciones; es decir, aquel hábito de vivir en un todo conforme al dictamen de la recta razón que constituye al que le posee en la 
+de las acciones; es decir, aquel hábito de vivir en un todo conforme al dictamen de la recta razón que constituye al que le posee en la
 clase de hombre justo. Tomada la justicia en este sentido generalísimo, se identifica con la república concertada y estrechamente unida, de
-forma que parezca no más de una sola alma; y la verdadera república equivale a la justicia de todos los ciudadanos , por la cual cada uno 
-desempeña su cargo u oficio como es debido. En algo, no obstante, pueden distinguirse, e cuanto a la república es como el argumento y 
-manteria de que se vale, y la justicia es como el fin y término; de modo que Platón toma por objeto una república, con el fin de manifestar
-en rande, en términos que a nadie se le oculte, la naturaleza de la justicia.
+forma que parezca no más de una sola alma; y la verdadera república equivale a la justicia de todos los ciudadanos, por la cual cada uno
+desempeña su cargo u oficio como es debido. En algo, no obstante, pueden distinguirse, en cuanto a la república es como el argumento y
+materia de que se vale, y la justicia es como el fin y término; de modo que Platón toma por objeto una república, con el fin de manifestar
+en grande, en términos que a nadie se le oculte, la naturaleza de la justicia.
 
 Cinco puntos insinúa Platón en la introducción de su diálogo, que son como otras tantas piedras fundamentales sobre que se sustenta una
 república; a saber: las solemnidades sagradas, la amistad, la prudencia y consejo de los ancianos, el afecto moderado de las riquezas, y
 la utilidad de ellas para sostener los derechos de la verdad, compañera inseparable de la justicia.
 \sn{
-  En este primer punto, con la oración y la adoración, sacrificios y votos de los asistentes a las solemnidades sagradas, se indican la
-  piedad y religión dos frmes fundamentos del Estado y de la justicia y demás virtudes necesarias a la sociedad; añadiendose a estos como
-  terero la esperanza de los premios y temor de las penas que acaso es el más poderoso de los tres para contener la multitud.
+En este primer punto, con la oración y la adoración, sacrificios y votos de los asistentes a las solemnidades sagradas, se indican la
+piedad y religión, dos firmes fundamentos del Estado y de la justicia y demás virtudes necesarias a la sociedad; añadiéndose a estos como
+tercero la esperanza de los premios y temor de las penas que acaso es el más poderoso de los tres para contener la multitud.
 }
 
-La estructura política ideal platónica deriva directamente de la antropología tripartita: la ciudad perfecta replica en lo social el orden del alma justa. 
-Así se distinguen tres clases sociales análogas a las partes del alma:
+La estructura política ideal platónica deriva directamente de la antropología tripartita: la ciudad perfecta replica en lo social el orden del alma justa, estableciendo una correlación entre el alma y el Estado. Así se distinguen tres clases sociales análogas a las partes del alma, regidas por el principio de especialización funcional (cada uno debe realizar la función para la que está naturalmente mejor dotado):
 
 \begin{itemize}
-  \item \textbf{Gobernantes (filósofos–reyes)}: corresponden a la parte racional. Solo aquellos que han alcanzado la comprensión de las Formas, y en última 
-    instancia del Bien, son aptos para gobernar. La filosofía, convertida en virtud política, legitima el poder.
-  \item \textbf{Auxiliares (guardianes guerreros)}: corresponden a la parte irascible. Su función es defender la ciudad y aplicar las decisiones de los gobernantes; 
-    deben poseer coraje y lealtad.
-  \item \textbf{Proveedores o productores (agricultores, artesanos, comerciantes)}: corresponden a la parte concupiscible. Su tarea es sostener materialmente la 
-    polis mediante el trabajo y la producción.
+  \item \textbf{Gobernantes (filósofos–reyes)}: corresponden a la parte racional. Solo aquellos que han alcanzado la comprensión de las Formas, y en última instancia del Bien, 
+    son aptos para gobernar. La filosofía, convertida en virtud política, legitima el poder. Deben ser célibes y carecer de propiedad privada para evitar intereses particulares.
+  \item \textbf{Auxiliares o Guardianes (guerreros y policías)}: corresponden a la parte irascible. Su función es defender la ciudad y aplicar las decisiones de los gobernantes; 
+    deben poseer coraje y lealtad. También viven en régimen comunitario, sin propiedad privada ni familia.
+  \item \textbf{Proveedores o Productores (agricultores, artesanos, comerciantes)}: corresponden a la parte concupiscible. Su tarea es sostener materialmente la polis mediante el 
+    trabajo y la producción. A ellos se les permite la propiedad privada y la familia.
 \end{itemize}
 
-La justicia política, por tanto, consiste en que cada clase realice la función para la cual está naturalmente más capacitada, bajo la guía de la razón gobernante. 
-Para asegurar este orden, Platón propone medidas educativas y institucionales singulares: una educación pública y estricta para los guardianes, la formación filosófica 
-progresiva de los futuros gobernantes, la supresión de la propiedad privada y de la familia entre los guardianes (con el fin de evitar intereses particulares), y la censura 
-rigurosa de la poesía y los mitos que puedan corromper las costumbres. Es notorio el recurso del llamado \emph{mito de las clases} o \emph{mito de las raíces de metales} 
-(el “noble engaño”), mediante el cual se mantiene la cohesión social y la aceptación del orden.
+La justicia política, por tanto, consiste en que cada clase realice la función para la cual está naturalmente más capacitada, bajo la guía de la razón gobernante. Un Estado justo es 
+aquel con gobernantes prudentes, guardianes fuertes y productores moderados.
+Para asegurar este orden, Platón diseña un riguroso sistema educativo público en dos etapas: una primera (hasta los 20 años) de gimnasia y música para todos los futuros guardianes; y 
+una segunda (de los 20 a los 35) de formación matemática y filosófica para los seleccionados como futuros gobernantes. La educación tiene como objetivo desarrollar las capacidades 
+naturales y asegurar la estabilidad del orden social. Platón, además, defiende la igualdad de capacidades entre hombres y mujeres: las mujeres aptas deben recibir la misma educación 
+y acceder a las funciones de guardián o gobernante.
 
-También es relevante la defensa platónica de la igualdad de capacidades: las mujeres aptas para el papel de guardián han de recibir la misma educación que los hombres en la 
-ciudad ideal, quedando subordinada la selección al mérito y no al sexo.
+Para mantener la cohesión social, Platón recurre al «mito de las razas» o «mito de los metales» (oro, plata, bronce/hierro), un «noble engaño» que justifica la estructura jerárquica 
+como de origen divino. Asimismo, propone la comunidad de mujeres e hijos entre guardianes y gobernantes, abolendo la familia tradicional para que su lealtad sea exclusiva al Estado.
 
-Platón analiza asimismo la dinámica de degeneración política: la ciudad ideal puede decaer en distintos regímenes (timocracia, oligarquía, democracia) hasta culminar en la tiranía, 
-cada uno con su psicología moral y sus vicios correspondientes. La causa última de este declive es el desorden interior del alma colectiva: cuando la razón deja de mandar, los apetitos 
-y los intereses particulares toman el poder, provocando corrupción y violencia.
+El sistema de gobierno propuesto es una monarquía o aristocracia absoluta de los más sabios. Platón desconfía de las leyes fijas, pues podrían obstaculizar el juicio sapiente del 
+filósofo-rey, aunque en su último diálogo, \textit{Las Leyes}, matiza esta posición.
 
-Finalmente, la figura del filósofo-rey sintetiza la aspiración platónica: un gobernante que no busca el poder por interés personal sino por saber y por amor a la verdad, capaz de 
-orientar la polis hacia el bien común. La política platónica, aunque aristocrática en su designio (gobierno de los mejores en conocimiento), está animada por la idea de que el saber 
-auténtico es condición de la legitimidad y la virtud públicas.
+Platón analiza asimismo la dinámica de degeneración política: la ciudad ideal (aristocracia) puede decaer en timocracia (gobierno de los ambiciosos), luego en oligarquía 
+(gobierno de los ricos), después en democracia (gobierno de la multitud) y finalmente en tiranía (gobierno del déspota). Cada régimen tiene su psicología moral y sus vicios correspondientes. 
+La causa última de este declive es el desorden interior del alma colectiva: cuando la razón deja de mandar, los apetitos y los intereses particulares toman el poder, provocando corrupción 
+y violencia.
+
+Finalmente, la figura del filósofo-rey sintetiza la aspiración platónica: un gobernante que no busca el poder por interés personal sino por saber y por amor a la verdad, capaz de orientar 
+la polis hacia el bien común. La política platónica, aunque aristocrática en su designio (gobierno de los mejores en conocimiento), está animada por la idea de que el saber auténtico es 
+condición de la legitimidad y la virtud públicas. Su propuesta inaugura el género de la utopía política, un modelo ideal que sirve de crítica a la realidad existente.
 
 \newpage
 
