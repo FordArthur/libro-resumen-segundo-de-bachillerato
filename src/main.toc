@@ -1,0 +1,169 @@
+\contentsline {part}{I\hspace {1em}Preambulo}{1}{part.1}%
+\contentsline {section}{\numberline {1}Sobre este libro}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Cómo leer este libro}{1}{subsection.1.1}%
+\contentsline {part}{II\hspace {1em}Matemáticas}{2}{part.2}%
+\contentsline {section}{\numberline {2}Preludio}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Lógica proposicional de primer orden}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Conjuntos}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Relaciones}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Producto cartesiano}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Funciones}{5}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Construcción de los números naturales}{6}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Análisis real}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Funciones reales}{7}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}En práctica}{8}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Límites}{8}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Álgebra de los reales extendidos}{10}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}En la práctica}{10}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Derivadas}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Análisis de una función}{11}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Monotonía}{11}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Curvatura}{12}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Integrales}{12}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Integración por cambio de variable}{12}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Integración por partes}{13}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Integración por fracciones simples}{13}{subsubsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.6}Ejercicios selectividad resueltos}{13}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Álgebra}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}De monoide a espacio vectorial}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Espacios vectoriales}{16}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Bases}{16}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Transformaciones lineales}{16}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Matríces}{17}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Tipos de matrices}{17}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Resultados sobre matrices}{18}{subsubsection.4.2.5}%
+\contentsline {section}{\numberline {5}Geometría}{18}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Espacios con producto interno}{18}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Métrica}{19}{subsubsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.2}Ortogonalidad y proyecciones}{20}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Bases ortonormales}{20}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Geometría analítica}{20}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Rectas}{20}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Planos}{21}{subsubsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.5}Isometrías}{21}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Estadística y probabilidad}{21}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Consecuencias básicas de los axiomas}{22}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Probabilidad condicionada e independencia}{22}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Variables aleatorias}{22}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Distribución}{23}{subsubsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.4}Esperanza y varianza}{23}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Distribuciones clásicas}{23}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}Distribución binomial}{23}{subsubsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.2}Distribución normal}{23}{subsubsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.6}Teoremas fundamentales}{23}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Estadística descriptiva}{24}{subsection.6.7}%
+\contentsline {part}{III\hspace {1em}Física}{25}{part.3}%
+\contentsline {section}{\numberline {7}Preludio}{25}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Mecánica clásica}{25}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Momento lineal y angular}{25}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Energía y trabajo}{26}{subsubsection.7.1.2}%
+\contentsline {section}{\numberline {8}Campo gravitatorio}{26}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Creado por masas puntuales}{26}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Energía asociada al campo gravitatorio}{27}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Potencial gravitatorio}{27}{subsubsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.3}Campo gravitatorio de los cuerpos celestes}{27}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}Leyes de Kepler}{27}{subsubsection.8.3.1}%
+\contentsline {section}{\numberline {9}Campo elécrico}{28}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Creado por cargas puntuales}{28}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Energía asociada al campo eléctrico}{29}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Potencial eléctrico}{29}{subsubsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.3}Flujo eléctrico}{29}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Campo magnético}{30}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Sobre una carga en movimiento}{30}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Sobre una corriente eléctrica}{31}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Creado por una corriente eléctrica}{31}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Flujo magnético}{31}{subsection.10.4}%
+\contentsline {section}{\numberline {11}Inducción electromagnética}{32}{section.11}%
+\contentsline {section}{\numberline {12}Ondas}{32}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Movimiento armónico simple}{32}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Movimiento ondulatorio}{33}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Ondas sonoras}{34}{subsection.12.3}%
+\contentsline {section}{\numberline {13}Óptica}{34}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Naturaleza y propagación de la luz}{35}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Óptica geométrica}{35}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Reflexión de la luz}{35}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Refracción de la luz}{36}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Sistemas ópticos}{36}{subsection.13.5}%
+\contentsline {subsubsection}{\numberline {13.5.1}Espejos}{36}{subsubsection.13.5.1}%
+\contentsline {subsubsection}{\numberline {13.5.2}Lentes}{36}{subsubsection.13.5.2}%
+\contentsline {section}{\numberline {14}Física moderna}{37}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Crisis de la física clásica}{37}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Cuantización de la energía}{37}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Efecto fotoeléctrico}{37}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Naturaleza corpuscular de la luz}{38}{subsection.14.4}%
+\contentsline {subsection}{\numberline {14.5}Dualidad onda--partícula}{38}{subsection.14.5}%
+\contentsline {subsection}{\numberline {14.6}Principio de incertidumbre}{38}{subsection.14.6}%
+\contentsline {section}{\numberline {15}Física nuclear}{38}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Estructura del núcleo atómico}{38}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Estabilidad del Núcleo}{39}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Radiactividad Natural}{39}{subsection.15.3}%
+\contentsline {subsubsection}{\numberline {15.3.1}Núcleos inestables}{39}{subsubsection.15.3.1}%
+\contentsline {subsubsection}{\numberline {15.3.2}Concepto y tipos de radiactividad natural}{40}{subsubsection.15.3.2}%
+\contentsline {subsubsection}{\numberline {15.3.3}Leyes del desplazamiento radiactivo}{40}{subsubsection.15.3.3}%
+\contentsline {subsubsection}{\numberline {15.3.4}Series o familias radiactivas}{41}{subsubsection.15.3.4}%
+\contentsline {subsection}{\numberline {15.4}Cinética de la Desintegración Radiactiva}{41}{subsection.15.4}%
+\contentsline {subsubsection}{\numberline {15.4.1}Actividad radiactiva}{41}{subsubsection.15.4.1}%
+\contentsline {subsubsection}{\numberline {15.4.2}Núclidos en función del tiempo}{41}{subsubsection.15.4.2}%
+\contentsline {subsubsection}{\numberline {15.4.3}Periodo de semidesintegración}{42}{subsubsection.15.4.3}%
+\contentsline {subsubsection}{\numberline {15.4.4}Vida media}{42}{subsubsection.15.4.4}%
+\contentsline {subsection}{\numberline {15.5}Radiactividad artificial}{42}{subsection.15.5}%
+\contentsline {subsubsection}{\numberline {15.5.1}Mecanismo de la Fisión Nuclear}{42}{subsubsection.15.5.1}%
+\contentsline {subsubsection}{\numberline {15.5.2}La Energía de la Fisión Nuclear}{42}{subsubsection.15.5.2}%
+\contentsline {subsubsection}{\numberline {15.5.3}Mecanismo de la Fusión Nuclear}{42}{subsubsection.15.5.3}%
+\contentsline {subsubsection}{\numberline {15.5.4}Energía de la Fusión Nuclear}{43}{subsubsection.15.5.4}%
+\contentsline {part}{IV\hspace {1em}Tecnología}{44}{part.4}%
+\contentsline {section}{\numberline {16}Preludio}{44}{section.16}%
+\contentsline {section}{\numberline {17}Materiales y sus propiedades}{44}{section.17}%
+\contentsline {subsection}{\numberline {17.1}Propiedades mecánicas de los materiales}{44}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}Ensayos de propiedades mecánicas}{44}{subsection.17.2}%
+\contentsline {subsubsection}{\numberline {17.2.1}De tracción}{44}{subsubsection.17.2.1}%
+\contentsline {subsubsection}{\numberline {17.2.2}De dureza}{45}{subsubsection.17.2.2}%
+\contentsline {subsection}{\numberline {17.3}De resilencia}{46}{subsection.17.3}%
+\contentsline {section}{\numberline {18}Máquinas térmicas}{46}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Principios fundamentales de termodinámica}{46}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}Transformaciones termodinámicas en los gases}{47}{subsection.18.2}%
+\contentsline {subsubsection}{\numberline {18.2.1}Transformaciones isobáricas (presión constante)}{47}{subsubsection.18.2.1}%
+\contentsline {subsubsection}{\numberline {18.2.2}Transformaciones isotérmicas (temperatura constante)}{47}{subsubsection.18.2.2}%
+\contentsline {subsubsection}{\numberline {18.2.3}Transformaciones isocóricas (volumen constante)}{48}{subsubsection.18.2.3}%
+\contentsline {subsubsection}{\numberline {18.2.4}Transformaciones adiabáticas}{48}{subsubsection.18.2.4}%
+\contentsline {subsection}{\numberline {18.3}Procesos reversibles e irreversibles}{48}{subsection.18.3}%
+\contentsline {subsubsection}{\numberline {18.3.1}Motores térmicos y máquinas frigoríficas}{49}{subsubsection.18.3.1}%
+\contentsline {subsubsection}{\numberline {18.3.2}Ciclo ideal de Carnot}{49}{subsubsection.18.3.2}%
+\contentsline {subsection}{\numberline {18.4}Motores de combustión interna}{49}{subsection.18.4}%
+\contentsline {subsubsection}{\numberline {18.4.1}Motores de explosión}{50}{subsubsection.18.4.1}%
+\contentsline {subsubsection}{\numberline {18.4.2}Motores de diesel}{51}{subsubsection.18.4.2}%
+\contentsline {subsubsection}{\numberline {18.4.3}Parámetros y magnitudes características}{52}{subsubsection.18.4.3}%
+\contentsline {subsection}{\numberline {18.5}Motores de combustión externa}{52}{subsection.18.5}%
+\contentsline {subsubsection}{\numberline {18.5.1}Ciclo de Rankine (Turbina de vapor)}{52}{subsubsection.18.5.1}%
+\contentsline {subsubsection}{\numberline {18.5.2}Ciclo de Brayton (Turbina de gas)}{53}{subsubsection.18.5.2}%
+\contentsline {subsection}{\numberline {18.6}Bombas de calor}{53}{subsection.18.6}%
+\contentsline {subsubsection}{\numberline {18.6.1}Ciclo de refrigeración de Carnot}{53}{subsubsection.18.6.1}%
+\contentsline {subsubsection}{\numberline {18.6.2}Ciclo de Rankine inverso}{54}{subsubsection.18.6.2}%
+\contentsline {section}{\numberline {19}Hidráulica y neumática}{55}{section.19}%
+\contentsline {subsection}{\numberline {19.1}Elementos de los circuitos neumáticos}{55}{subsection.19.1}%
+\contentsline {subsubsection}{\numberline {19.1.1}Compresores}{56}{subsubsection.19.1.1}%
+\contentsline {subsubsection}{\numberline {19.1.2}Acondicionadores del aire}{56}{subsubsection.19.1.2}%
+\contentsline {subsubsection}{\numberline {19.1.3}Actuadores neumáticos}{56}{subsubsection.19.1.3}%
+\contentsline {subsubsection}{\numberline {19.1.4}Válvulas distribuidoras}{57}{subsubsection.19.1.4}%
+\contentsline {subsubsection}{\numberline {19.1.5}Otras válvulas}{57}{subsubsection.19.1.5}%
+\contentsline {subsection}{\numberline {19.2}Circuitos prácticos neumáticos}{58}{subsection.19.2}%
+\contentsline {subsection}{\numberline {19.3}Circuitos hidráulicos}{59}{subsection.19.3}%
+\contentsline {subsubsection}{\numberline {19.3.1}Cálculo de parámetros en un circuito}{60}{subsubsection.19.3.1}%
+\contentsline {part}{V\hspace {1em}Historia de la Filosofía}{61}{part.5}%
+\contentsline {section}{\numberline {20}Preludio}{61}{section.20}%
+\contentsline {subsection}{\numberline {20.1}Áreas de la filosofía}{61}{subsection.20.1}%
+\contentsline {subsubsection}{\numberline {20.1.1}Metafísica}{61}{subsubsection.20.1.1}%
+\contentsline {subsubsection}{\numberline {20.1.2}Epistemología}{61}{subsubsection.20.1.2}%
+\contentsline {subsubsection}{\numberline {20.1.3}Ética}{61}{subsubsection.20.1.3}%
+\contentsline {subsubsection}{\numberline {20.1.4}Política}{61}{subsubsection.20.1.4}%
+\contentsline {section}{\numberline {21}Platón}{62}{section.21}%
+\contentsline {subsection}{\numberline {21.1}Metafísica}{62}{subsection.21.1}%
+\contentsline {subsubsection}{\numberline {21.1.1}Ontología}{63}{subsubsection.21.1.1}%
+\contentsline {subsubsection}{\numberline {21.1.2}Cosmología}{63}{subsubsection.21.1.2}%
+\contentsline {subsection}{\numberline {21.2}Epistemología}{64}{subsection.21.2}%
+\contentsline {subsection}{\numberline {21.3}Antropología}{65}{subsection.21.3}%
+\contentsline {subsubsection}{\numberline {21.3.1}Alma}{65}{subsubsection.21.3.1}%
+\contentsline {subsubsection}{\numberline {21.3.2}Cuerpo}{65}{subsubsection.21.3.2}%
+\contentsline {subsection}{\numberline {21.4}Política}{66}{subsection.21.4}%
+\contentsline {part}{VI\hspace {1em}Lengua}{68}{part.6}%
+\contentsline {section}{\numberline {22}Preludio}{68}{section.22}%
