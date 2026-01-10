@@ -1,5 +1,5 @@
 \documentclass[10pt]{article}
-\usepackage{../NotesTeX}
+\usepackage{NotesTeX}
 \usepackage{tikz-cd}
 
 \newcommand{\diff}{\mathrm{d}}
@@ -13,7 +13,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 
-\graphicspath{ {../img} }
+\graphicspath{ {img/} }
 
 \title{Apuntes}
 
@@ -39,9 +39,9 @@ en el I.E.S Los Colegiales.
 \subsection{Cómo leer este libro}
 
 Este libro intenta da una explicación profunda tal que el estudiante sea capaz de comprender la intuición que lleva al planteamiento de los problemas, el razonamiento tras los distintos resultados,
-o las conclusiones del autor en cuestión. Cómo es así, mucho del contenido no es esencial y funciona para profundizar en el tema. Por lo tanto, lo único con valor de estudiar serán las secciones ``prácticas'' o ``resumen''.
+o las conclusiones del autor en cuestión.
 
-Cabe también remarcar que el orden de los temas no es casualidad: de tanto en tanto se utilizarán conceptos ya trabajados en partes anteriores, tal que, por ejemplo, para mejor comprender por qué el
+Cabe remarcar que el orden de los temas no es casualidad: de tanto en tanto se utilizarán conceptos ya trabajados en partes anteriores, tal que, por ejemplo, para mejor comprender por qué el
 potencial gravitatorio tiende a 0 en el infinito, el lector será dirigido a la parte donde se trata tales cuestiones.
 
 \newpage
@@ -300,7 +300,7 @@ de los números reales, podemos considerar la noción de \textbf{continuidad}:
 \end{center}
 
 Esta definición no es la estándar (la utilizada en selectividad será definida en la sección sobre límites). Sin embargo, nos da una buena intuición sobre lo que significa continuidad:
-si pensamos en un intervalo abierto cómo una zona cercana a algún punto, una función continua, según esta definición, es aquella que zonas cercanas en el codominio se corresponden a
+si pensamos en un intervalo abierto cómo una zona cercana a algún punto, una función continua, según esta definición, es aquella en la que zonas cercanas en el codominio se corresponden a
 zonas cercanas en el dominio. Dicho de otra manera, si $ x $ está cercano a $ y $ en el dominio, $ f(x) $ esta cercano a $ f(y) $ en la imagen.
 
 Por conveniencia, definimos la función $ \text{cont} : (X \to \R) \to \mathcal{P} \R $, que a cada función real asocia el subconjunto $ \text{cont} f \subseteq X $ en el cuál
@@ -685,10 +685,10 @@ con ciertas operaciones que cumplen ciertas propiedades. La estructura más simp
 
 \begin{definition}[Grupos]
   Sea $ \mathcal{G} $ un conjunto. Un \textit{grupo} es un monoide para el que: 
-  \[ \forall x \in \mathcal{G}, \ \exists x^{-1} \in \mathcal{G}, \ x \cdot x^{-1} = x^{-1} \cdot x = \epsilon \]
+  \[ \forall x \in \mathcal{G}, \ \exists x^{-1} \in \mathcal{G}. \ x \cdot x^{-1} = x^{-1} \cdot x = \epsilon \]
   Llamamos a dicho $ x^{-1} $ la inversa de $ x $.
 
-  Si es verdad que $ \forall x, y \in \mathcal{G} x \cdot y = y \cdot x $ llamamos al grupo \textit{abeliano}.
+  Si es verdad que $ \forall x, y \in \mathcal{G}.\ x \cdot y = y \cdot x $ llamamos al grupo \textit{abeliano}.
 \end{definition}
 
 \begin{example}[Grupos]
@@ -801,7 +801,7 @@ Una transformación lineal es un $ k $-homomorfismo entre espacios vectoriales, 
   \[ \forall a \in k,\ \forall \vec{v, w} \in V,\ T(a\vec{v} + \vec{w}) = aT(\vec{v}) + T(\vec{w}) \]
 \end{definition}
 
-\subsubsection{Matríces}
+\subsubsection{Matrices}
 
 Toda transformación lineal es equivalentemente una \textit{matríz}:
 
@@ -822,9 +822,10 @@ Toda transformación lineal es equivalentemente una \textit{matríz}:
 \end{definition}
 
 La correspondencia entre matríz y transformación lineal viene dada por el hecho de que una transformación lineal sea esencialmente determinada por su acción en una alguna base de 
-su dominio. Así, cada columna de la matríz es el resultado de aplicar la transformación a un elemento de la base.
+su dominio. Así, cada columna de la matríz es el resultado de aplicar la transformación a un elemento de la base. Dicho lo cuál, es fácil derivar los cálculos asociados a aplicar
+una transformación a un elemento utilizando matrices (\textit{multiplicación matríz--vector}) y otras operaciones como composición de matrices (\textit{multiplicación matríz--matríz}).
 
-Estudiar transformaciones lineales por medio de matríces hace más claro y computacional lo que prosigue. Además, el concepto de matríz escapa el de transformación lineal, siendo una
+Estudiar transformaciones lineales por medio de matrices hace más claro y computacional lo que prosigue. Además, el concepto de matríz escapa el de transformación lineal, siendo una
 manera útil de representar distintos fenómenos.
 
 \subsubsection{Tipos de matrices}
@@ -2892,11 +2893,468 @@ Finalmente, la figura del filósofo-rey sintetiza la aspiración platónica: un 
 la polis hacia el bien común. La política platónica, aunque aristocrática en su designio (gobierno de los mejores en conocimiento), está animada por la idea de que el saber auténtico es 
 condición de la legitimidad y la virtud públicas. Su propuesta inaugura el género de la utopía política, un modelo ideal que sirve de crítica a la realidad existente.
 
-\newpage
-
-\part{Lengua}
-
-\section{Preludio}
+% \section{Descartes} % Esta sección fue realizada con IA. Futuras revisiones buscarán suprimir los errores que esto conlleva.
+% 
+% René Descartes (1596-1650) es considerado el \textbf{fundador de la filosofía moderna}. Su obra marca una ruptura consciente con la tradición escolástica y aristotélica, proponiendo un nuevo
+% método para alcanzar un conocimiento \textbf{certero e indubitable}, inspirado en el modelo deductivo de las matemáticas. El contexto de la Revolución Científica (Galileo, Kepler) y el clima
+% de escepticismo heredado del siglo XVI (Montaigne) son esenciales para comprender su proyecto: construir un \textbf{saber universal y firme} desde los cimientos.
+% 
+% \subsection{Epistemología}
+% 
+% El punto de partida de Descartes es \textbf{epistemológico}. Su objetivo es superar la duda y encontrar un \textbf{fundamento absoluto} para el conocimiento.
+% 
+% \subsubsection{El Método Cartesiano}
+% Descartes propone un \textbf{método universal} de cuatro reglas, expuesto en el \textit{Discurso del Método} (1637):
+% 
+% \begin{enumerate}
+%     \item \textbf{Regla de la Evidencia}: "No admitir jamás cosa alguna como verdadera sin haber conocido con evidencia que así era". Solo aceptar lo que se presente al espíritu de modo
+%       \textbf{claro} (presente y manifiesto) y \textbf{distinto} (preciso y diferenciado de todo lo demás). Esta captación inmediata es la \textbf{intuición intelectual}.
+%     \item \textbf{Regla del Análisis}: "Dividir cada una de las dificultades [\dots] en tantas partes como fuera posible". Descomponer los problemas complejos en elementos simples hasta llegar a
+%       \textbf{naturalezas simples} evidentes por sí mismas.
+%     \item \textbf{Regla de la Síntesis}: "Conducir por orden mis pensamientos, comenzando por los objetos más simples [\dots] para ascender poco a poco [\dots] hasta el conocimiento de los más
+%       compuestos". Reconstruir deductivamente el conocimiento a partir de los elementos simples.
+%     \item \textbf{Regla de la Enumeración}: "Hacer en todo unos recuentos tan completos [\dots] que pudiese estar seguro de no omitir nada". Comprobación exhaustiva para garantizar que no se ha
+%       omitido ningún paso.
+% \end{enumerate}
+% 
+% \subsubsection{La Duda Metódica}
+% Para aplicar la primera regla y encontrar la primera evidencia, es necesario eliminar todos los prejuicios. Descartes emprende una \textbf{duda metódica, universal e hiperbólica} como instrumento
+% (no como fin). Se duda sucesivamente de:
+% \begin{itemize}
+%     \item Los \textbf{sentidos}, por ser a veces engañosos.
+%     \item La \textbf{distinción entre vigilia y sueño}, al carecer de un criterio infalible para diferenciarlos.
+%     \item Hasta de las \textbf{verdades matemáticas}, mediante la hipótesis del \textbf{genio maligno} (\textit{genium malignum}), un engañador todopoderoso que podría hacerme errar incluso en lo
+%       más evidente.
+% \end{itemize}
+% 
+% \subsubsection{El \textit{Cogito} y el Criterio de Verdad}
+% En el abismo de esta duda radical, Descartes descubre que hay una verdad que resiste: la propia duda es un pensamiento, y para que haya pensamiento debe existir un sujeto que piense. De aquí
+% surge la primera certeza absoluta: \textbf{\textit{Cogito, ergo sum}} ("Pienso, luego existo"). No es un silogismo, sino una \textbf{intuición inmediata} de la propia existencia como 
+% \textbf{cosa pensante} (\textit{res cogitans}).
+% 
+% Esta primera verdad establece también el \textbf{criterio de verdad}: es verdadero todo aquello que se percibe con la misma \textbf{claridad y distinción} con la que percibo mi existencia como
+% cosa pensante.
+% 
+% \subsubsection{Clasificación de las Ideas}
+% Al analizar el contenido de su mente, Descartes distingue tres tipos de ideas:
+% \begin{itemize}
+%     \item \textbf{Ideas Adventicias}: Parecen provenir de la experiencia externa (ej.: el sonido de un trueno). Son sospechosas para la fundamentación.
+%     \item \textbf{Ideas Facticias}: Construidas por la imaginación a partir de otras ideas (ej.: un centauro).
+%     \item \textbf{Ideas Innatas}: Nacen con el pensamiento mismo, son claras y distintas, y constituyen el fundamento del conocimiento verdadero (ej.: la idea de \textbf{Yo}, de \textbf{Pensamiento}, de \textbf{Perfección}, de \textbf{Infinito}, de \textbf{Dios}).
+% \end{itemize}
+% 
+% \subsection{Metafísica}
+% 
+% Desde la certeza del \textit{cogito}, Descartes busca recuperar el mundo exterior. Para ello, debe demostrar la existencia de un \textbf{Dios veraz} que garantice la fiabilidad de nuestras 
+% facultades cognoscitivas.
+% 
+% \subsubsection{Demostraciones de la Existencia de Dios}
+% Descartes ofrece dos pruebas principales, basadas en el análisis de la \textbf{idea innata de Dios} (Ser Perfecto e Infinito):
+% 
+% \begin{enumerate}
+%     \item \textbf{Prueba por la Causalidad de la Idea de Perfección} (Vía Causal):
+%     \begin{itemize}
+%         \item Tengo en mí la idea de un ser infinito y perfecto.
+%         \item Yo soy un ser finito e imperfecto.
+%         \item El principio de causalidad (la causa debe tener al menos tanta realidad formal como el efecto) exige que esta idea no pueda haber sido producida por mí, ni por nada finito.
+%         \item Luego, debe existir una causa adecuada a esta idea: un \textbf{Ser realmente infinito y perfecto} (Dios).
+%     \end{itemize}
+%     \item \textbf{Prueba Ontológica} (por la Esencia Necesaria):
+%     \begin{itemize}
+%         \item La esencia de Dios implica la \textbf{existencia necesaria}, del mismo modo que la esencia del triángulo implica que sus ángulos sumen 180º.
+%         \item La existencia es una \textbf{perfección}. Un ser sumamente perfecto no puede carecer de perfección alguna.
+%         \item Por tanto, Dios existe necesariamente.
+%     \end{itemize}
+% \end{enumerate}
+% 
+% La existencia de un \textbf{Dios perfecto y veraz} es la segunda certeza fundamental. Su perfección excluye que sea un engañador; por tanto, \textbf{garantiza la fiabilidad de nuestra razón}
+% cuando juzgamos con claridad y distinción, y permite recuperar la confianza en la realidad del mundo material.
+% 
+% \subsubsection{La Teoría de las Tres Sustancias}
+% 
+% Una sustancia es "una cosa que existe de tal manera que no necesita de ninguna otra cosa para existir". En rigor, solo \textbf{Dios es sustancia en sentido absoluto}. No obstante, Descartes
+% admite dos sustancias creadas, definidas por sus atributos esenciales:
+% 
+% \begin{enumerate}
+%     \item \textbf{Sustancia Infinita (Dios)}. Atributo principal: \textbf{La Perfección}.
+%     \item \textbf{Sustancia Pensante (\textit{Res Cogitans})}. Atributo principal: \textbf{El Pensamiento} (dudar, entender, afirmar, querer, imaginar, sentir). Es el \textit{yo} descubierto en el \textit{cogito}.
+%     \item \textbf{Sustancia Extensa (\textit{Res Extensa})}. Atributo principal: \textbf{La Extensión} (longitud, anchura, profundidad). Es la esencia de toda realidad material o corpórea.
+% \end{enumerate}
+% 
+% \begin{center}
+%     % Aquí una imagen sobre: Esquema de las tres sustancias cartesianas.
+%     % Sugerencia: un diagrama con Dios en la cúspide, y debajo, en dos columnas separadas, la Res Cogitans (con un icono de cerebro/mente) y la Res Extensa (con un icono geométrico o del mundo físico).
+%     \includegraphics[width=0.7\textwidth]{sustancias_cartesianas.png}
+% \end{center}
+% 
+% El mundo físico, incluido el cuerpo humano y los animales (considerados por Descartes \textbf{autómatas} complejos), se reduce a \textit{res extensa}: pura geometría y movimiento, gobernado por leyes mecanicistas.
+% 
+% \section{Antropología Filosófica: El Problema del Dualismo}
+% 
+% El ser humano es un \textbf{compuesto problemático} de dos sustancias radicalmente heterogéneas: un \textbf{alma} (\textit{res cogitans}) y un \textbf{cuerpo} (\textit{res extensa}). Este \textbf{dualismo sustancial} es el núcleo de la antropología cartesiana.
+% 
+% \subsection{El Problema de la Interacción Mente-Cuerpo}
+% La cuestión central es: ¿cómo pueden dos realidades de naturaleza opuesta (inmaterial/material, inextensa/extensa) \textbf{interactuar} e influirse mutuamente? En la experiencia común, parece claro que el alma mueve el cuerpo (ej.: decidir caminar) y el cuerpo afecta al alma (ej.: sentir dolor).
+% 
+% \subsection{La Solución Inestable: La Glándula Pineal}
+% Para explicar esta interacción, Descartes postula un \textbf{punto de unión} en el cerebro: la \textbf{glándula pineal}. Allí, los "espíritus animales" (partículas materiales muy sutiles del cuerpo) transmitirían los impulsos sensoriales al alma, y las voliciones del alma moverían el cuerpo. Esta solución es \textbf{insatisfactoria} desde su propio marco metafísico, pues supone que una sustancia inextensa puede actuar localmente sobre lo extenso, violando las leyes de la física mecanicista que él mismo propuso.
+% 
+% \subsection{Consecuencias del Dualismo}
+% \begin{itemize}
+%     \item \textbf{Identidad personal}: La verdadera identidad del ser humano radica en el alma pensante. El cuerpo es una "máquina" o "vestidura".
+%     \item \textbf{Teoría de las cualidades sensibles}: Los colores, sonidos, sabores, etc., no son propiedades del mundo, sino \textbf{modificaciones confusas del pensamiento} producidas en el alma por la interacción con el cuerpo. Solo la extensión y el movimiento son propiedades objetivas de los cuerpos.
+%     \item \textbf{Legado problemático}: Este dualismo generó el célebre \textbf{problema mente-cuerpo}, que dominó la filosofía posterior, dando pie a soluciones como el \textbf{ocasionalismo} (Malebranche) o el \textbf{paralelismo} (Spinoza).
+% \end{itemize}
+% 
+% \section{Ética: La Moral Provisional}
+% 
+% Mientras construía su sistema filosófico definitivo, Descartes propuso en el \textit{Discurso del Método} una \textbf{ética provisional} para guiar la vida práctica. Se basa en tres (o cuatro) máximas de carácter \textbf{estoico}:
+% 
+% \begin{enumerate}
+%     \item \textbf{Obedecer las leyes y costumbres} del país y seguir la religión revelada.
+%     \item \textbf{Ser firme y decidido} en la acción una vez tomada una decisión, actuando con la mayor resolución posible ("seguir incluso las dudas más improbables, una vez decidido").
+%     \item \textbf{Procurar vencerse a sí mismo antes que a la fortuna}, y cambiar los propios deseos antes que el orden del mundo.
+%     \item (Implícita) \textbf{Dedicar toda la vida a cultivar la razón} y avanzar en el conocimiento de la verdad, que es el mayor de los bienes.
+% \end{enumerate}
+% 
+% Esta ética enfatiza el \textbf{autocontrol}, la \textbf{adaptación pragmática} y la primacía de la vida racional, mientras se espera a fundar una ética definitiva sobre bases metafísicas sólidas (proyecto que Descartes no llegó a completar sistemáticamente).
+% 
+% \section{Ciencia y Física: El Mecanicismo y la Geometría Analítica}
+% 
+% El proyecto cartesiano es unitario: su método debía unificar todo el saber.
+% 
+% \subsection{El Mecanicismo Universal}
+% Descartes aplica su modelo a la física: todo fenómeno natural debe explicarse por el \textbf{movimiento y colisión} de partículas de \textit{res extensa}, regidas por leyes matemáticas. Rechaza las \textbf{causas finales} aristotélicas. El universo es una gran máquina.
+% 
+% \subsection{La Geometría Analítica}
+% Es su contribución científica más perdurable. En \textit{La Géométrie} (1637) unió álgebra y geometría al representar curvas mediante ecuaciones con \textbf{coordenadas cartesianas}. Este método revolucionó las matemáticas y sentó las bases para el cálculo infinitesimal.
+% 
+% \begin{center}
+%     % Aquí una imagen sobre: Representación del plano cartesiano con una curva.
+%     % Sugerencia: un gráfico clásico del plano X-Y con los ejes perpendiculares y una parábola representada por la ecuación y=x^2.
+%     \includegraphics[width=0.5\textwidth]{plano_cartesiano.jpg}
+% \end{center}
+% 
+% \section{Influencia y Críticas Fundamentales}
+% 
+% El cartesianismo generó una escuela poderosa y también objeciones cruciales que moldearon la filosofía posterior.
+% 
+% \subsection{Principales Críticas}
+% \begin{itemize}
+%     \item \textbf{El "Círculo Cartesiano"}: Arnaud y otros acusaron a Descartes de razonar en círculo: para probar a Dios usa la claridad y distinción, pero la fiabilidad de este criterio solo está garantizada por la veracidad de Dios, cuya existencia se intenta demostrar.
+%     \item \textbf{La sustancialidad del \textit{cogito}}: Pensadores como Gassendi o, posteriormente, Kant, objetaron que del acto de pensar solo se infiere la existencia del pensamiento actual, no la de una \textbf{sustancia pensante} permanente (el "yo" como sustancia).
+%     \item \textbf{El problema de la interacción}: La princesa Isabel de Bohemia le planteó a Descartes la dificultad de explicar cómo el alma, inextensa, puede mover el cuerpo. Esta crítica señaló la mayor debilidad de su sistema.
+%     \item \textbf{El Innatismo}: Empiristas como Locke negarán la existencia de ideas innatas, argumentando que la mente es una \textit{tabula rasa} al nacer.
+% \end{itemize}
+% 
+% \subsection{Legado}
+% A pesar de las críticas, Descartes instauró problemas capitales de la modernidad: la \textbf{búsqueda del fundamento absoluto del conocimiento}, la \textbf{autonomía de la razón subjetiva}, el \textbf{dualismo mente-cuerpo} y el ideal de una \textbf{ciencia unificada} bajo la matemática. Su sombra es alargada en el racionalismo continental (Spinoza, Leibniz), en la fenomenología (Husserl) y en buena parte de la filosofía de la mente contemporánea.
+% 
+% \section{Ortega y Gasset: La Razón Vital y la Circunstancia} % Esta sección fue realizada con IA. Futuras revisiones buscarán suprimir los errores que esto conlleva.
+% 
+% \begin{center}
+%     % Aquí una imagen sobre: Retrato de José Ortega y Gasset.
+%     % Sugerencia: Fotografía clásica de Ortega, preferiblemente en su estudio o dando una conferencia.
+%     \includegraphics[width=0.35\textwidth]{ortega_retrato.jpg}
+% \end{center}
+% 
+% \vspace{5mm}
+% \begin{center}
+%     \textit{"Yo soy yo y mi circunstancia, y si no la salvo a ella no me salvo yo"}
+% \end{center}
+% \vspace{5mm}
+% 
+% \subsection{Introducción: Contexto y Propósito}
+% 
+% José Ortega y Gasset (1883-1955) es la figura cumbre de la filosofía española del siglo XX y uno de los pensadores europeos más influyentes de su tiempo. Su pensamiento, denominado \textbf{Raciovitalismo} o \textbf{Vitalismo Racional}, surge como respuesta crítica a dos tradiciones que considera agotadas: el \textbf{Racionalismo} (especialmente el cartesiano y el idealista) y el \textbf{Vitalismo Irracionalista} (como el de Nietzsche). Su proyecto central es superar la escisión entre razón pura y vida, proponiendo una nueva razón —la \textbf{razón vital}— que tenga su fundamento y su fin en la vida humana concreta. El contexto de la crisis europea de entreguerras, la deshumanización del arte y la política de masas son telón de fondo de su filosofía.
+% 
+% \subsection{Metafísica: El Raciovitalismo y la Vida como Realidad Radical}
+% 
+% Ortega propone una metafísica centrada no en el ser abstracto, sino en la vida humana como hecho primario e irreductible.
+% 
+% \subsubsection{La Vida como Realidad Radical}
+% Para Ortega, la realidad primordial no es la conciencia pura (el \textit{cogito} cartesiano) ni la materia, sino \textbf{mi vida}, la vida de cada cual. "La vida es lo \textbf{radical}" porque es el hecho en el que todos los demás hechos aparecen y tienen sentido. Esta vida no es un concepto biológico, sino \textbf{existencial}: es el "drama" o el "quehacer" de cada persona, un proyecto que hay que realizar. La vida es \textbf{facción} (hacer) y, por tanto, \textbf{libertad} y \textbf{responsabilidad}.
+% 
+% \subsubsection{Crítica al Idealismo y al Realismo}
+% Ortega critica el \textbf{idealismo} (de Descartes a Kant) por reducir la realidad a contenidos de conciencia (\textit{ego cogito}), olvidando que el yo existe en un mundo. Critica igualmente el \textbf{realismo} ingenuo por suponer una realidad independiente del sujeto. Su fórmula "Yo soy yo y mi circunstancia" sintetiza la superación de ambos: no hay yo sin mundo (circunstancia) ni mundo sin yo que lo viva y signifique.
+% 
+% \begin{center}
+%     % Aquí una imagen sobre: Esquema de la relación Yo-Circunstancia.
+%     % Sugerencia: Un diagrama circular donde "Yo" y "Circunstancia" sean dos mitades interdependientes de un círculo mayor titulado "Vida (Realidad Radical)".
+%     \includegraphics[width=0.65\textwidth]{yo_circunstancia.png}
+% \end{center}
+% 
+% \subsection{Epistemología: La Razón Vital y la Razón Histórica}
+% 
+% La teoría del conocimiento de Ortega se deriva de su metafísica vitalista. El entendimiento no es una facultad separada de la vida, sino su instrumento.
+% 
+% \subsubsection{De la Razón Pura a la Razón Vital}
+% Ortega denuncia la \textbf{razón pura} (física-matemática) como una razón abstracta, desvitalizada, que mutila la realidad. Frente a ella, propone la \textbf{razón vital}, que es la razón que la vida usa para entenderse a sí misma. No es contraria a la razón, sino su ampliación: es una razón narrativa, comprensiva, que da cuenta de lo individual, lo cambiante y lo histórico. Su lema es: "La vida es razón vital".
+% 
+% \subsubsection{La Razón Histórica}
+% La razón vital se concreta como \textbf{razón histórica}. La vida humana es esencialmente histórica; el hombre no tiene una naturaleza fija, sino una \textbf{historia}. Para comprendernos, necesitamos razonar históricamente, entendiendo las circunstancias y las "creencias" de cada época. La historia no es un mero relato del pasado, sino el \textbf{sistema de experiencias} desde el que el hombre proyecta su futuro.
+% 
+% \subsubsection{Las Ideas y las Creencias}
+% Ortega establece una distinción capital:
+% \begin{itemize}
+%     \item \textbf{Las Ideas}: Son pensamientos que nosotros elaboramos activamente, de las que somos conscientes y que discutimos (ej.: una teoría científica). "Tenemos ideas".
+%     \item \textbf{Las Creencias}: Son el repertorio de certidumbres tácitas y pre-reflexivas sobre las que descansa nuestra vida. No las pensamos, sino que \textbf{estamos en ellas}; constituyen el "suelo" o el "mundo" en que vivimos (ej.: la creencia en que el sol saldrá mañana). "Las creencias nos tienen a nosotros". Las crisis históricas son crisis de creencias.
+% \end{itemize}
+% 
+% \subsection{Antropología: El Hombre como Ser Circunstancial y Proyectivo}
+% 
+% La antropología de Ortega es la aplicación concreta de su metafísica raciovitalista.
+% 
+% \subsubsection{Estructura de la Vida: Yo, Circunstancia, Proyecto}
+% La vida humana tiene una estructura trinitaria:
+% \begin{enumerate}
+%     \item \textbf{Yo}: No es una sustancia (como en Descartes), sino un \textbf{proyecto}, una posibilidad. El yo se hace a sí mismo viviendo.
+%     \item \textbf{Circunstancia}: Es el conjunto de cosas con que el yo cuenta: cuerpo, paisaje, sociedad, tiempo histórico, tradición, etc. La circunstancia no es un mero entorno, sino el \textbf{campo de posibilidades} y los \textbf{límites} desde los que el yo se proyecta. Es lo "dado".
+%     \item \textbf{Quehacer (Proyecto)}: La vida es \textbf{facción} y \textbf{decisión}. El hombre se encuentra forzado a elegir, entre las posibilidades que la circunstancia le ofrece, un proyecto vital para realizarse. La vida es, por tanto, \textbf{libertad} en situación, un \textbf{drama} que hay que representar.
+% \end{enumerate}
+% 
+% \subsubsection{La Vida como Naufragio y Salvación}
+% Ortega describe la vida como un \textbf{naufragio}. El hombre se encuentra "arrojado" a una circunstancia que no ha elegido. La misión vital no es solo salvarse a sí mismo (el yo), sino \textbf{salvar la circunstancia}, darle sentido, fecundarla con el proyecto personal. De ahí la célebre frase: "yo soy yo y mi circunstancia, y si no la salvo a ella no me salvo yo".
+% 
+% \subsection{Ética y Sociología: La Vocación y la Rebelión de las Masas}
+% 
+% La reflexión ética y social de Ortega se desprende de su concepción del hombre como ser proyectivo y circunstancial.
+% 
+% \subsubsection{La Vocación y la Vida Auténtica}
+% La ética orteguiana es una ética de la \textbf{autenticidad} y la \textbf{vocación}. La vida auténtica es aquella en la que el individuo elige fielmente el proyecto que responde a su \textbf{vocación} personal (su "llamada" íntima), asumiendo con esfuerzo (\textbf{ilusión}) la tarea de realizarlo frente a las dificultades de la circunstancia. La vida inauténtica es la que se vive por inercia, adoptando proyectos prefabricados por la sociedad.
+% 
+% \subsubsection{La Sociedad de Masas y el Hombre-Masa}
+% En su obra más famosa, \textit{La rebelión de las masas} (1930), Ortega analiza la crisis de la sociedad moderna.
+% \begin{itemize}
+%     \item \textbf{Masa y Minoría}: Distingue no entre clases sociales, sino entre \textbf{hombres-masa} y \textbf{minorías selectas}. El hombre-masa no es el pobre, sino aquel que se siente vulgar y, sin embargo, se afirma a sí mismo tal cual, sin aspirar a más. Carece de vocación, de esfuerzo y de autocrítica. La \textbf{minoría selecta} es la formada por quienes exigen más de sí mismos, los que viven para un servicio (ciencia, arte, política responsable).
+%     \item \textbf{La Rebelión}: La crisis moderna es la \textbf{rebelión de las masas}: el hombre-masa, antes pasivo, ha tomado el poder social, imponiendo su mediocridad, su falta de normas y su directo imperio (\textbf{hiperdemocracia}). Esto amenaza la civilización, que siempre fue obra de minorías.
+%     \item \textbf{Europeísmo}: Frente al particularismo (nacionalismo), Ortega defiende un proyecto \textbf{supra-nacional} basado en la unidad de la cultura europea, cuyo núcleo es la razón vital y la libertad.
+% \end{itemize}
+% 
+% \begin{center}
+%     % Aquí una imagen sobre: Portada de "La rebelión de las masas" o una ilustración que represente la multitud anónima vs. el individuo.
+%     \includegraphics[width=0.5\textwidth]{rebelion_masas.jpg}
+% \end{center}
+% 
+% \subsection{Estética: La Deshumanización del Arte}
+% 
+% En \textit{La deshumanización del arte} (1925), Ortega analiza el arte de vanguardia (como el cubismo o el surrealismo). Su tesis es que este nuevo arte no pretende representar la realidad humana (\textbf{deshumanización}), sino crear un objeto artístico autónomo, pura forma y juego. Es un arte \textbf{minoritario} que divide al público, alejándose de lo sentimental y lo anecdótico. Para Ortega, esto refleja una actitud lúdica y una nueva sensibilidad hacia la pura forma.
+% 
+% \subsection{Legado e Influencia}
+% 
+% El pensamiento de Ortega ejerció una influencia decisiva en la filosofía española posterior (la Escuela de Madrid) y en el existencialismo hispánico. Su crítica al racionalismo abstracto y su énfasis en la vida, la historia y la circunstancia anticiparon temas centrales del existencialismo (Heidegger, cuyos análisis del \textit{Dasein} tienen paralelos con la vida orteguiana, aunque con diferencias profundas). Su diagnóstico sociológico sobre la sociedad de masas sigue siendo de una vigencia notable. Las principales críticas a su pensamiento señalan un posible \textbf{aristocratismo} en su distinción masa/minoría y cierta \textbf{impresición terminológica}. No obstante, su proyecto de una razón anclada en la vida humana concreta y histórica constituye una de las aportaciones más originales de la filosofía en español.
+% 
+% \section{Nietzsche: La Transvaloración de Todos los Valores}
+% 
+% \begin{center}
+%     % Aquí una imagen sobre: Retrato de Friedrich Nietzsche.
+%     % Sugerencia: La famosa fotografía de Nietzsche de Gustav Schultze (Naumburg, 1882) o el dibujo de Hans Olde.
+%     \includegraphics[width=0.35\textwidth]{nietzsche_retrato.jpg}
+% \end{center}
+% 
+% \vspace{5mm}
+% \begin{center}
+%     \textit{"Dios ha muerto. [...] Y nosotros lo hemos matado."}
+% \end{center}
+% \vspace{5mm}
+% 
+% \subsection{Introducción: Contexto y Propósito de una Filosofía a Martillazos}
+% 
+% Friedrich Nietzsche (1844-1900) es el gran crítico y disolvente de la cultura occidental. Su pensamiento, radical y aforístico, no construye un sistema, sino que ejecuta una \textbf{destrucción genealógica} de los valores que han regido Europa (el platonismo, el cristianismo, la moral, la racionalidad) para abrir paso a una nueva posibilidad de existencia: el \textbf{superhombre} (\textit{Übermensch}) que afirme la vida en su totalidad. Su filosofía es un \textbf{vitalismo trágico-dionisíaco} que se expresa mediante metáforas, aforismos y una prosa combativa. El contexto de la crisis del positivismo y el nihilismo europeo finisecular es esencial para comprender su obra.
+% 
+% \subsection{Crítica de la Cultura Occidental: Nihilismo y Muerte de Dios}
+% 
+% Nietzsche diagnostica que la cultura occidental está enferma de \textbf{nihilismo} (la desvalorización de los valores supremos, la sensación de que "todo carece de sentido"). Su obra es una genealogía (estudio del origen histórico-psicológico, no lógico) de esta enfermedad.
+% 
+% \subsubsection{La "Muerte de Dios"}
+% Es la metáfora central de su crítica. "Dios" representa aquí todo el mundo suprasensible de la metafísica platónico-cristiana: el Bien, la Verdad, el Orden moral objetivo. Su "muerte" significa el colapso de estos pilares fundamentales. No es un triunfo, sino una catástrofe que deja al hombre ante el abismo del sin-sentido. La pregunta nietzscheana es: ¿qué haremos tras este asesinato?
+% 
+% \subsubsection{Crítica a la Metafísica y al Platonismo}
+% Nietzsche identifica en Sócrates y Platón el origen del error fatal: la invención de un \textbf{mundo verdadero} (el de las Ideas, el Bien, Dios) por oposición a este mundo, el de la vida, el cambio y los sentidos (\textbf{mundo aparente}). Esta metafísica es síntoma de una \textbf{decadencia vital}: los débiles y los frustrados (los "sacerdotes") inventan un "más allá" para vengarse de la vida y de los fuertes que la afirman. Es una filosofía del \textbf{resentimiento}.
+% 
+% \subsubsection{Crítica a la Moral Cristiana}
+% Aplicando el método genealógico en \textit{La genealogía de la moral}, Nietzsche distingue dos tipos de moral:
+% \begin{itemize}
+%     \item \textbf{Moral de señores}: Propia de los nobles, los fuertes, los que afirman la vida. Sus valores son la \textbf{fuerza}, el \textbf{orgullo}, la \textbf{salud}, la \textbf{belleza} y la \textbf{afirmación de sí mismos} (lo "bueno" es lo que soy y hago).
+%     \item \textbf{Moral de esclavos}: Inventada por los débiles, los oprimidos, los sacerdotes. Es la moral del \textbf{resentimiento}. Invierte los valores de los señores: llama "bueno" a lo que les es útil para sobrevivir (\textbf{humildad}, \textbf{piedad}, \textbf{mansedumbre}, \textbf{compasión}) y llama "malo" a la fuerza y la salud de los señores. Esta moral triunfa históricamente con el judaísmo y el cristianismo, en una "rebelión de esclavos" que ha envenenado a Europa.
+% \end{itemize}
+% La moral cristiana es, por tanto, una \textbf{moral anti-vida} que niega los instintos, glorifica el sufrimiento y predica la igualdad para debilitar a los más excelentes.
+% 
+% \subsubsection{Crítica a la Razón y la Ciencia}
+% Nietzsche ve en la razón y la ciencia moderna no la superación, sino la \textbf{heredera secular} del ideal ascético cristiano. Ambas persiguen una "verdad" objetiva y desinteresada, lo que es otra forma de negar la perspectiva vital, los instintos y la voluntad de poder. La ciencia cree en un "orden verdadero" del mundo, repitiendo así el esquema metafísico.
+% 
+% \subsection{Epistemología: Perspectivismo y Voluntad de Poder}
+% 
+% La teoría del conocimiento de Nietzsche es un radical \textbf{perspectivismo}.
+% 
+% \subsubsection{No Hay Hechos, Solo Interpretaciones}
+% Nietzsche niega la posibilidad de un conocimiento objetivo, neutro y desinteresado. Todo conocimiento es una \textbf{interpretación} desde una determinada \textbf{perspectiva} vital, impulsada por necesidades, instintos y valores. La "verdad" es solo un ejército de metáforas móviles, una ficción útil para la vida que ha sido petrificada como dogma.
+% 
+% \subsubsection{La Voluntad de Poder (\textit{Der Wille zur Macht}) como Fundamento}
+% El principio último que mueve toda realidad, y por tanto todo conocimiento, no es la "voluntad de vivir" (Schopenhauer), sino la \textbf{voluntad de poder}: un impulso primordial de expansión, crecimiento, dominio y superación. En el hombre, se manifiesta no solo como deseo de poder político, sino en todas sus actividades: el arte, el conocimiento, la moral. El conocimiento mismo es un instrumento de la voluntad de poder, una forma de apropiarse e interpretar el mundo para fortalecer la vida.
+% 
+% \begin{center}
+%     % Aquí una imagen sobre: Representación de la Voluntad de Poder como fuerza ascendente.
+%     % Sugerencia: Una ilustración abstracta que sugiera un flujo de energía, expansión o una escalada.
+%     \includegraphics[width=0.6\textwidth]{voluntad_poder.png}
+% \end{center}
+% 
+% \subsection{Filosofía Positiva: Afirmación de la Vida y Transvaloración}
+% 
+% Tras la crítica, Nietzsche propone una nueva actitud vital basada en la afirmación total.
+% 
+% \subsubsection{El Superhombre (\textit{Übermensch}}
+% El superhombre es el \textbf{sentido de la Tierra}, la meta que debe reemplazar a Dios. No es un ser evolutivo ni un dictador, sino el tipo humano que habrá de venir, capaz de:
+% \begin{itemize}
+%     \item Asumir plenamente la \textbf{muerte de Dios} sin caer en el nihilismo pasivo.
+%     \item Crear sus \textbf{propios valores} a partir de su voluntad de poder afirmadora (transvaloración).
+%     \item Amar la vida en su totalidad, incluido el dolor y el sinsentido (\textbf{amor fati}: amor al destino).
+%     \item Vivir de acuerdo con la doctrina del \textbf{eterno retorno}.
+% \end{itemize}
+% Es el antítesis del "último hombre", ser cómodo, mediocre y satisfecho que dice "¡hemos inventado la felicidad!".
+% 
+% \subsubsection{El Eterno Retorno (\textit{Die Ewige Wiederkunft}}
+% Es la \textbf{prueba suprema} de afirmación de la vida. La idea (presentada como una hipótesis física-psicológica en \textit{Así habló Zaratustra}) propone que toda la vida y los acontecimientos se repetirán infinitas veces, exactamente igual. La pregunta nietzscheana es: ¿vivirías tu vida de nuevo, con todos sus dolores y alegrías, sin cambiar nada? Solo el superhombre puede responder con un "sí" jubiloso, porque ama la vida incondicionalmente. Es la fórmula más elevada de afirmación.
+% 
+% \subsubsection{La Transvaloración de Todos los Valores (\textit{Umwertung aller Werte}}
+% Es el acto filosófico central: destruir los valores decadentes (cristianos, platónicos, modernos) y crear unos nuevos desde la \textbf{inocencia del devenir} y la voluntad de poder. Implica sustituir la compasión por la fortaleza, la humildad por el orgullo, la "verdad" por la creatividad perspectivista, el "más allá" por la fidelidad a la Tierra.
+% 
+% \subsection{Estética: lo Apolíneo y lo Dionisíaco}
+% En su primera obra, \textit{El nacimiento de la tragedia}, Nietzsche analiza el arte griego mediante dos principios:
+% \begin{itemize}
+%     \item \textbf{Lo apolíneo}: El principio de la forma, la belleza, la mesura, la individuación (símbolo: la escultura, el sueño). Representado por el dios Apolo.
+%     \item \textbf{Lo dionisíaco}: El principio de la desmesura, el éxtasis, la disolución de los límites individuales en la unidad primordial de la vida (símbolo: la música, la embriaguez). Representado por el dios Dioniso.
+% \end{itemize}
+% La gran tragedia ática logró la síntesis sublime de ambos. Nietzsche valora lo dionisíaco como la afirmación más profunda de la vida, y ve en Sócrates (el racionalista) al asesino de la tragedia y, por tanto, de la cultura dionisíaca saludable.
+% 
+% \begin{center}
+%     % Aquí una imagen sobre: Representación de Apolo y Dioniso.
+%     % Sugerencia: Una imagen que contraste una escultura clásica de Apolo con una pintura o mosaico de una bacanal dionisíaca.
+%     \includegraphics[width=0.7\textwidth]{apolo_dioniso.jpg}
+% \end{center}
+% 
+% \subsection{Legado e Influencia}
+% La influencia de Nietzsche es inmensa y ambivalente. Su crítica radical influyó en el existencialismo (Heidegger, Sartre), la psicología (Freud, Jung), la teoría crítica (Adorno) y la posmodernidad (Foucault, Derrida). Su rechazo a los sistemas y su estilo aforístico lo convierten en un autor proteico, susceptible de múltiples interpretaciones (a menudo contradictorias). Las principales críticas señalan su irracionalismo potencial, su aristocratismo radical y la apropiación tergiversada que hicieron de él los nazis (su hermana Elisabeth falsificó sus textos). No obstante, su diagnóstico del nihilismo y su llamada a una afirmación creadora de la vida lo sitúan como uno de los pensadores más provocadores e indispensables de la modernidad.
+% 
+% \newpage
+% 
+% \part{Lengua}
+% 
+% \section{Preludio}
+% \subsection{Estructura de la Prueba de Selectividad}
+% \subsection{Consejos Generales para el Examen}
+% \subsection{Criterios de Evaluación y Calificación}
+% \subsection{Características de los Textos en la Prueba}
+% \subsection{La Importancia de la Expresión Escrita}
+% 
+% \section{Comentario de texto}
+% \subsection{Introducción al Comentario de Texto}
+% \subsection{Tipos de Comentario}
+% \subsubsection{Comentario Lingüístico}
+% \subsubsection{Comentario Crítico o Personal}
+% \subsection{Fases del Comentario de Texto}
+% \subsubsection{Comprensión y Análisis del Texto}
+% \subsubsection{Resumen y Síntesis}
+% \subsubsection{Análisis de la Forma}
+% \subsubsection{Comentario Crítico}
+% \subsection{Análisis de los Rasgos Lingüísticos}
+% \subsubsection{Nivel Léxico-Semántico}
+% \subsubsection{Nivel Morfosintáctico}
+% \subsubsection{Nivel Textual}
+% \subsection{Análisis de los Rasgos Estilísticos}
+% \subsubsection{Figuras Retóricas y Literarias}
+% \subsubsection{Recursos Estilísticos}
+% \subsection{Análisis del Tipo de Texto}
+% \subsubsection{Texto Narrativo}
+% \subsubsection{Texto Descriptivo}
+% \subsubsection{Texto Expositivo}
+% \subsubsection{Texto Argumentativo}
+% \subsubsection{Texto Dialogado}
+% \subsection{La Argumentación en el Comentario Crítico}
+% \subsubsection{Estructura de la Argumentación}
+% \subsubsection{Tipos de Argumentos}
+% \subsubsection{Falacias Argumentativas}
+% \subsection{Coherencia, Cohesión y Adecuación}
+% \subsubsection{Coherencia Textual}
+% \subsubsection{Mecanismos de Cohesión}
+% \subsubsection{Adecuación al Contexto}
+% \subsection{Ejercicios Prácticos de Comentario}
+% 
+% \section{Análisis sintáctico}
+% \subsection{Conceptos Fundamentales de Sintaxis}
+% \subsubsection{Unidades Sintácticas}
+% \subsubsection{Funciones Sintácticas}
+% \subsection{La Oración Simple}
+% \subsubsection{Sujeto y Predicado}
+% \subsubsection{Tipos de Predicado}
+% \subsubsection{Complementos del Verbo}
+% \subsubsection{Complementos del Nombre}
+% \subsubsection{Complementos del Adjetivo y Adverbio}
+% \subsubsection{Oraciones Impersonales}
+% \subsubsection{Oraciones Pasivas}
+% \subsection{La Oración Compuesta}
+% \subsubsection{Concepto de Oración Compuesta}
+% \subsubsection{Yuxtaposición}
+% \subsubsection{Coordinación}
+% \subsubsection{Subordinación}
+% \subsection{Análisis de Oraciones Compuestas}
+% \subsubsection{Subordinadas Sustantivas}
+% \subsubsection{Subordinadas Adjetivas}
+% \subsubsection{Subordinadas Adverbiales}
+% \subsubsection{Oraciones Subordinadas Adverbiales Impropias}
+% \subsection{Errores Comunes en Análisis Sintáctico}
+% \subsection{Ejercicios Prácticos de Análisis Sintáctico}
+% 
+% \section{Literatura}
+% \subsection{Introducción al Estudio de la Literatura}
+% \subsubsection{Géneros Literarios}
+% \subsubsection{Métrica y Recursos Estilísticos}
+% \subsubsection{Comentario de Texto Literario}
+% \subsection{Edad Media}
+% \subsubsection{La Lírica Tradicional y el Mester de Juglaría}
+% \subsubsection{El Mester de Clerecía}
+% \subsubsection{La Prosa Medieval}
+% \subsubsection{La Poesía del Siglo XV}
+% \subsubsection{El Teatro Medieval}
+% \subsection{Renacimiento (Siglo XVI)}
+% \subsubsection{La Lírica Renacentista}
+% \subsubsection{La Narrativa Renacentista}
+% \subsubsection{El Teatro Renacentista}
+% \subsection{Barroco (Siglo XVII)}
+% \subsubsection{La Lírica Barroca}
+% \subsubsection{La Narrativa Barroca}
+% \subsubsection{El Teatro Barroco}
+% \subsection{Ilustración y Neoclasicismo (Siglo XVIII)}
+% \subsubsection{El Ensayo y el Pensamiento Ilustrado}
+% \subsubsection{La Poesía y el Teatro Neoclásico}
+% \subsection{Romanticismo (Primera Mitad del Siglo XIX)}
+% \subsubsection{Características del Romanticismo}
+% \subsubsection{La Poesía Romántica}
+% \subsubsection{La Prosa Romántica}
+% \subsubsection{El Teatro Romántico}
+% \subsection{Realismo y Naturalismo (Segunda Mitad del Siglo XIX)}
+% \subsubsection{Características del Realismo}
+% \subsubsection{La Novela Realista}
+% \subsubsection{El Naturalismo}
+% \subsection{Fin de Siglo: Modernismo y Generación del 98}
+% \subsubsection{El Modernismo}
+% \subsubsection{La Generación del 98}
+% \subsubsection{Autores del Fin de Siglo}
+% \subsection{Vanguardias y Generación del 27 (Primera Mitad del Siglo XX)}
+% \subsubsection{Las Vanguardias Históricas}
+% \subsubsection{La Generación del 27}
+% \subsubsection{Autores de la Generación del 27}
+% \subsection{La Literatura de la Posguerra (A Partir de 1939)}
+% \subsubsection{La Poesía de Posguerra}
+% \subsubsection{La Narrativa de Posguerra}
+% \subsubsection{El Teatro de Posguerra}
+% \subsection{La Literatura desde 1975 hasta la Actualidad}
+% \subsubsection{Tendencias en la Narrativa Actual}
+% \subsubsection{Tendencias en la Poesía Actual}
+% \subsubsection{Tendencias en el Teatro Actual}
+% \subsection{Literatura en Otras Lenguas de España}
+% \subsubsection{Literatura en Catalán, Gallego y Euskera}
+% \subsection{Repaso y Síntesis de la Historia de la Literatura Española}
 
 \newpage
 

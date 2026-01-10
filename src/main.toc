@@ -29,7 +29,7 @@
 \contentsline {subsection}{\numberline {4.2}Espacios vectoriales}{16}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Bases}{16}{subsubsection.4.2.1}%
 \contentsline {subsubsection}{\numberline {4.2.2}Transformaciones lineales}{16}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Matríces}{17}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3}Matrices}{17}{subsubsection.4.2.3}%
 \contentsline {subsubsection}{\numberline {4.2.4}Tipos de matrices}{17}{subsubsection.4.2.4}%
 \contentsline {subsubsection}{\numberline {4.2.5}Resultados sobre matrices}{18}{subsubsection.4.2.5}%
 \contentsline {section}{\numberline {5}Geometría}{18}{section.5}%
@@ -38,19 +38,19 @@
 \contentsline {subsection}{\numberline {5.2}Ortogonalidad y proyecciones}{20}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Bases ortonormales}{20}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Geometría analítica}{20}{subsection.5.4}%
-\contentsline {subsubsection}{\numberline {5.4.1}Rectas}{20}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1}Rectas}{21}{subsubsection.5.4.1}%
 \contentsline {subsubsection}{\numberline {5.4.2}Planos}{21}{subsubsection.5.4.2}%
 \contentsline {subsection}{\numberline {5.5}Isometrías}{21}{subsection.5.5}%
 \contentsline {section}{\numberline {6}Estadística y probabilidad}{21}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Consecuencias básicas de los axiomas}{22}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Probabilidad condicionada e independencia}{22}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Variables aleatorias}{22}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.3}Variables aleatorias}{23}{subsection.6.3}%
 \contentsline {subsubsection}{\numberline {6.3.1}Distribución}{23}{subsubsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.4}Esperanza y varianza}{23}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}Distribuciones clásicas}{23}{subsection.6.5}%
 \contentsline {subsubsection}{\numberline {6.5.1}Distribución binomial}{23}{subsubsection.6.5.1}%
-\contentsline {subsubsection}{\numberline {6.5.2}Distribución normal}{23}{subsubsection.6.5.2}%
-\contentsline {subsection}{\numberline {6.6}Teoremas fundamentales}{23}{subsection.6.6}%
+\contentsline {subsubsection}{\numberline {6.5.2}Distribución normal}{24}{subsubsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.6}Teoremas fundamentales}{24}{subsection.6.6}%
 \contentsline {subsection}{\numberline {6.7}Estadística descriptiva}{24}{subsection.6.7}%
 \contentsline {part}{III\hspace {1em}Física}{25}{part.3}%
 \contentsline {section}{\numberline {7}Preludio}{25}{section.7}%
@@ -165,5 +165,3 @@
 \contentsline {subsubsection}{\numberline {21.3.1}Alma}{65}{subsubsection.21.3.1}%
 \contentsline {subsubsection}{\numberline {21.3.2}Cuerpo}{65}{subsubsection.21.3.2}%
 \contentsline {subsection}{\numberline {21.4}Política}{66}{subsection.21.4}%
-\contentsline {part}{VI\hspace {1em}Lengua}{68}{part.6}%
-\contentsline {section}{\numberline {22}Preludio}{68}{section.22}%

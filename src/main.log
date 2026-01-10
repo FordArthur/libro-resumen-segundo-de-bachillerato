@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.12.20)  7 JAN 2026 11:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.12.20)  10 JAN 2026 17:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,9 +23,9 @@ File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen141
-) (../NotesTeX.sty
+) (/home/ford/Projects/transcripts/t2a/mea-pugna/NotesTeX.sty
 
-LaTeX Warning: You have requested package `../NotesTeX',
+LaTeX Warning: You have requested package `NotesTeX',
                but the package provides `NotesTeXV3'.
 
 Package: NotesTeXV3 2021/10/22 rV3
@@ -1106,14 +1106,14 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 290.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 290.
-<../img/Continuidad_topologica.png, id=958, 1204.5pt x 764.8575pt>
-File: ../img/Continuidad_topologica.png Graphic file (type png)
-<use ../img/Continuidad_topologica.png>
-Package pdftex.def Info: ../img/Continuidad_topologica.png  used on input line 299.
+<Continuidad_topologica.png, id=948, 1204.5pt x 764.8575pt>
+File: Continuidad_topologica.png Graphic file (type png)
+<use Continuidad_topologica.png>
+Package pdftex.def Info: Continuidad_topologica.png  used on input line 299.
 (pdftex.def)             Requested size: 240.89574pt x 152.96878pt.
 
 
-[7 <../img/Continuidad_topologica.png>]
+[7 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Continuidad_topologica.png>]
 Underfull \hbox (badness 1371) in paragraph at lines 366--366
 []$[]$ \T1/lmr/m/it/8 Es-tos son los lla-ma-dos los
  []
@@ -1139,14 +1139,14 @@ LaTeX Warning: Marginpar on page 8 moved.
 
 
 [8]
-<../img/Limite.png, id=992, 651.43375pt x 673.51625pt>
-File: ../img/Limite.png Graphic file (type png)
-<use ../img/Limite.png>
-Package pdftex.def Info: ../img/Limite.png  used on input line 406.
+<Limite.png, id=982, 651.43375pt x 673.51625pt>
+File: Limite.png Graphic file (type png)
+<use Limite.png>
+Package pdftex.def Info: Limite.png  used on input line 406.
 (pdftex.def)             Requested size: 162.85803pt x 168.37865pt.
 
 
-[9 <../img/Limite.png>]
+[9 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Limite.png>]
 
 [10]
 
@@ -1176,21 +1176,27 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [17]
 
 [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [19]
 
 [20]
 
 [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [22]
 
 [23]
 
 [24]
-Package marginnote Info: Margin note 33.1 is on absolute page 33 on input line 1257.
-Package marginnote Info: right page because not two side mode on input line 1257.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 1257.
+Package marginnote Info: Margin note 33.1 is on absolute page 33 on input line 1258.
+Package marginnote Info: right page because not two side mode on input line 1258.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 1258.
 
 
 [25]
@@ -1198,12 +1204,12 @@ Package marginnote Info: xpos seems to be 67.57281pt on input line 1257.
 [26]
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1407--1407
+Underfull \hbox (badness 10000) in paragraph at lines 1408--1408
 \T1/lmr/m/it/8 son la sin-té-sis de nue-stro
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 1407--1407
+Underfull \hbox (badness 1389) in paragraph at lines 1408--1408
 \T1/lmr/m/it/8 conocimiento so-bre elec-tro-mag-
  []
 
@@ -1233,50 +1239,50 @@ LaTeX Warning: Marginpar on page 28 moved.
 [37]
 
 [38]
-<../img/nuclear_prop1.jpg, id=1501, 351.3125pt x 153.57375pt>
-File: ../img/nuclear_prop1.jpg Graphic file (type jpg)
-<use ../img/nuclear_prop1.jpg>
-Package pdftex.def Info: ../img/nuclear_prop1.jpg  used on input line 1916.
+<nuclear_prop1.jpg, id=1491, 351.3125pt x 153.57375pt>
+File: nuclear_prop1.jpg Graphic file (type jpg)
+<use nuclear_prop1.jpg>
+Package pdftex.def Info: nuclear_prop1.jpg  used on input line 1917.
 (pdftex.def)             Requested size: 380.8599pt x 166.50392pt.
 
 
-[39 <../img/nuclear_prop1.jpg>]
-<../img/14ef6742153f8812d0e3bf47e4fc10be4a038219.png, id=1513, 990.70125pt x 1390.19376pt>
-File: ../img/14ef6742153f8812d0e3bf47e4fc10be4a038219.png Graphic file (type png)
-<use ../img/14ef6742153f8812d0e3bf47e4fc10be4a038219.png>
-Package pdftex.def Info: ../img/14ef6742153f8812d0e3bf47e4fc10be4a038219.png  used on input line 1937.
+[39 </home/ford/Projects/transcripts/t2a/mea-pugna/img/nuclear_prop1.jpg>]
+<14ef6742153f8812d0e3bf47e4fc10be4a038219.png, id=1503, 990.70125pt x 1390.19376pt>
+File: 14ef6742153f8812d0e3bf47e4fc10be4a038219.png Graphic file (type png)
+<use 14ef6742153f8812d0e3bf47e4fc10be4a038219.png>
+Package pdftex.def Info: 14ef6742153f8812d0e3bf47e4fc10be4a038219.png  used on input line 1938.
 (pdftex.def)             Requested size: 285.63315pt x 284.52489pt.
 
-Overfull \hbox (2.38708pt too wide) in paragraph at lines 1948--1949
+Overfull \hbox (2.38708pt too wide) in paragraph at lines 1949--1950
 []\T1/lmr/bx/n/10 Rayos $\OML/lmm/m/it/10 ^^L$\T1/lmr/m/n/10 : Son elec-trones beta $[]\OML/lmm/m/it/10 ^^L$\T1/lmr/m/n/10 , tienen carga neg-a-tiva, se mueven a $\OT1/lmr/m/n/10 260000\OML/lmm/m/it/10 km=s$\T1/lmr/m/n/10 ,
  []
 
 
 
-[40 <../img/14ef6742153f8812d0e3bf47e4fc10be4a038219.png>]
-<../img/Radioactive_Decay_Law_Decay_Constants.png, id=1524, 385.44pt x 351.3125pt>
-File: ../img/Radioactive_Decay_Law_Decay_Constants.png Graphic file (type png)
-<use ../img/Radioactive_Decay_Law_Decay_Constants.png>
-Package pdftex.def Info: ../img/Radioactive_Decay_Law_Decay_Constants.png  used on input line 1988.
+[40 </home/ford/Projects/transcripts/t2a/mea-pugna/img/14ef6742153f8812d0e3bf47e4fc10be4a038219.png>]
+<Radioactive_Decay_Law_Decay_Constants.png, id=1514, 385.44pt x 351.3125pt>
+File: Radioactive_Decay_Law_Decay_Constants.png Graphic file (type png)
+<use Radioactive_Decay_Law_Decay_Constants.png>
+Package pdftex.def Info: Radioactive_Decay_Law_Decay_Constants.png  used on input line 1989.
 (pdftex.def)             Requested size: 285.64459pt x 184.94571pt.
 
 
-[41 <../img/Radioactive_Decay_Law_Decay_Constants.png>]
+[41 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Radioactive_Decay_Law_Decay_Constants.png>]
 
 [42]
 
 [43]
-Package marginnote Info: Margin note 52.1 is on absolute page 52 on input line 2044.
-Package marginnote Info: right page because not two side mode on input line 2044.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 2044.
+Package marginnote Info: Margin note 52.1 is on absolute page 52 on input line 2045.
+Package marginnote Info: right page because not two side mode on input line 2045.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 2045.
 
 
 [44]
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 2136.
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 2137.
 
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 2136.
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 2137.
 
 
 
@@ -1285,165 +1291,165 @@ LaTeX Warning: Command \textordmasculine invalid in math mode on input line 2136
 [46]
 
 [47]
-Overfull \hbox (14.33403pt too wide) in paragraph at lines 2300--2301
+Overfull \hbox (14.33403pt too wide) in paragraph at lines 2301--2302
 \T1/lmr/m/n/10 Llamamos pro-ceso re-versible a aquel en el cuál en el pro-ceso de trans-for-ma-ción $\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 p[]; V[]; T[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 !
  []
 
 
 
 [48]
-<../img/Ciclo_de_4_tiempos.JPG, id=1576, 472.01344pt x 235.63031pt>
-File: ../img/Ciclo_de_4_tiempos.JPG Graphic file (type jpg)
-<use ../img/Ciclo_de_4_tiempos.JPG>
-Package pdftex.def Info: ../img/Ciclo_de_4_tiempos.JPG  used on input line 2346.
+<Ciclo_de_4_tiempos.JPG, id=1566, 472.01344pt x 235.63031pt>
+File: Ciclo_de_4_tiempos.JPG Graphic file (type jpg)
+<use Ciclo_de_4_tiempos.JPG>
+Package pdftex.def Info: Ciclo_de_4_tiempos.JPG  used on input line 2347.
 (pdftex.def)             Requested size: 236.00613pt x 117.81487pt.
 
 
 [49]
-<../img/Esquema-de-2-tiempos.jpg, id=1586, 1451.4225pt x 929.4725pt>
-File: ../img/Esquema-de-2-tiempos.jpg Graphic file (type jpg)
-<use ../img/Esquema-de-2-tiempos.jpg>
-Package pdftex.def Info: ../img/Esquema-de-2-tiempos.jpg  used on input line 2365.
+<Esquema-de-2-tiempos.jpg, id=1576, 1451.4225pt x 929.4725pt>
+File: Esquema-de-2-tiempos.jpg Graphic file (type jpg)
+<use Esquema-de-2-tiempos.jpg>
+Package pdftex.def Info: Esquema-de-2-tiempos.jpg  used on input line 2366.
 (pdftex.def)             Requested size: 290.27936pt x 185.8912pt.
 
 
-[50 <../img/Ciclo_de_4_tiempos.JPG> <../img/Esquema-de-2-tiempos.jpg>]
+[50 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_4_tiempos.JPG> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Esquema-de-2-tiempos.jpg>]
 
 [51]
-<../img/Ciclo_de_Rankine.jpg, id=1607, 1284.8pt x 722.7pt>
-File: ../img/Ciclo_de_Rankine.jpg Graphic file (type jpg)
-<use ../img/Ciclo_de_Rankine.jpg>
-Package pdftex.def Info: ../img/Ciclo_de_Rankine.jpg  used on input line 2435.
+<Ciclo_de_Rankine.jpg, id=1597, 1284.8pt x 722.7pt>
+File: Ciclo_de_Rankine.jpg Graphic file (type jpg)
+<use Ciclo_de_Rankine.jpg>
+Package pdftex.def Info: Ciclo_de_Rankine.jpg  used on input line 2436.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-Overfull \hbox (4.58308pt too wide) in paragraph at lines 2435--2436
+Overfull \hbox (4.58308pt too wide) in paragraph at lines 2436--2437
  [] 
  []
 
 
 
-[52 <../img/Ciclo_de_Rankine.jpg>]
-<../img/Ciclo_de_Brayton.png, id=1616, 513.92pt x 296.10625pt>
-File: ../img/Ciclo_de_Brayton.png Graphic file (type png)
-<use ../img/Ciclo_de_Brayton.png>
-Package pdftex.def Info: ../img/Ciclo_de_Brayton.png  used on input line 2455.
+[52 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine.jpg>]
+<Ciclo_de_Brayton.png, id=1606, 513.92pt x 296.10625pt>
+File: Ciclo_de_Brayton.png Graphic file (type png)
+<use Ciclo_de_Brayton.png>
+Package pdftex.def Info: Ciclo_de_Brayton.png  used on input line 2456.
 (pdftex.def)             Requested size: 256.95937pt x 148.05275pt.
 
 
-[53 <../img/Ciclo_de_Brayton.png>]
+[53 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Brayton.png>]
 
 [54]
-<../img/Ciclo_de_Rankine_inverso.png, id=1638, 642.4pt x 596.2275pt>
-File: ../img/Ciclo_de_Rankine_inverso.png Graphic file (type png)
-<use ../img/Ciclo_de_Rankine_inverso.png>
-Package pdftex.def Info: ../img/Ciclo_de_Rankine_inverso.png  used on input line 2528.
+<Ciclo_de_Rankine_inverso.png, id=1628, 642.4pt x 596.2275pt>
+File: Ciclo_de_Rankine_inverso.png Graphic file (type png)
+<use Ciclo_de_Rankine_inverso.png>
+Package pdftex.def Info: Ciclo_de_Rankine_inverso.png  used on input line 2529.
 (pdftex.def)             Requested size: 321.19922pt x 298.11302pt.
 
 
-[55 <../img/Ciclo_de_Rankine_inverso.png>]
+[55 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Ciclo_de_Rankine_inverso.png>]
 
 [56]
-<../img/Tabla_Distribuidoras.jpg, id=1652, 439.4016pt x 390.258pt>
-File: ../img/Tabla_Distribuidoras.jpg Graphic file (type jpg)
-<use ../img/Tabla_Distribuidoras.jpg>
-Package pdftex.def Info: ../img/Tabla_Distribuidoras.jpg  used on input line 2598.
+<Tabla_Distribuidoras.jpg, id=1642, 439.4016pt x 390.258pt>
+File: Tabla_Distribuidoras.jpg Graphic file (type jpg)
+<use Tabla_Distribuidoras.jpg>
+Package pdftex.def Info: Tabla_Distribuidoras.jpg  used on input line 2599.
 (pdftex.def)             Requested size: 351.52174pt x 312.20682pt.
-<../img/Valvula_antirretorno.png, id=1653, 200.75pt x 93.85063pt>
-File: ../img/Valvula_antirretorno.png Graphic file (type png)
-<use ../img/Valvula_antirretorno.png>
-Package pdftex.def Info: ../img/Valvula_antirretorno.png  used on input line 2610.
+<Valvula_antirretorno.png, id=1643, 200.75pt x 93.85063pt>
+File: Valvula_antirretorno.png Graphic file (type png)
+<use Valvula_antirretorno.png>
+Package pdftex.def Info: Valvula_antirretorno.png  used on input line 2611.
 (pdftex.def)             Requested size: 50.18736pt x 23.46259pt.
-<../img/Valvula_reguladora_bidireccional.png, id=1654, 39.2667pt x 23.3673pt>
-File: ../img/Valvula_reguladora_bidireccional.png Graphic file (type png)
-<use ../img/Valvula_reguladora_bidireccional.png>
-Package pdftex.def Info: ../img/Valvula_reguladora_bidireccional.png  used on input line 2612.
+<Valvula_reguladora_bidireccional.png, id=1644, 39.2667pt x 23.3673pt>
+File: Valvula_reguladora_bidireccional.png Graphic file (type png)
+<use Valvula_reguladora_bidireccional.png>
+Package pdftex.def Info: Valvula_reguladora_bidireccional.png  used on input line 2613.
 (pdftex.def)             Requested size: 29.44994pt x 17.52542pt.
-<../img/Valvula_reguladora_unidireccional.jpg, id=1655, 225.84375pt x 225.84375pt>
-File: ../img/Valvula_reguladora_unidireccional.jpg Graphic file (type jpg)
-<use ../img/Valvula_reguladora_unidireccional.jpg>
-Package pdftex.def Info: ../img/Valvula_reguladora_unidireccional.jpg  used on input line 2614.
+<Valvula_reguladora_unidireccional.jpg, id=1645, 225.84375pt x 225.84375pt>
+File: Valvula_reguladora_unidireccional.jpg Graphic file (type jpg)
+<use Valvula_reguladora_unidireccional.jpg>
+Package pdftex.def Info: Valvula_reguladora_unidireccional.jpg  used on input line 2615.
 (pdftex.def)             Requested size: 56.46078pt x 56.46078pt.
-<../img/Valvula_OR.png, id=1656, 169.91138pt x 95.3349pt>
-File: ../img/Valvula_OR.png Graphic file (type png)
-<use ../img/Valvula_OR.png>
-Package pdftex.def Info: ../img/Valvula_OR.png  used on input line 2616.
+<Valvula_OR.png, id=1646, 169.91138pt x 95.3349pt>
+File: Valvula_OR.png Graphic file (type png)
+<use Valvula_OR.png>
+Package pdftex.def Info: Valvula_OR.png  used on input line 2617.
 (pdftex.def)             Requested size: 42.47774pt x 23.83365pt.
-<../img/Valvula_AND.png, id=1657, 175.2932pt x 99.17905pt>
-File: ../img/Valvula_AND.png Graphic file (type png)
-<use ../img/Valvula_AND.png>
-Package pdftex.def Info: ../img/Valvula_AND.png  used on input line 2618.
+<Valvula_AND.png, id=1647, 175.2932pt x 99.17905pt>
+File: Valvula_AND.png Graphic file (type png)
+<use Valvula_AND.png>
+Package pdftex.def Info: Valvula_AND.png  used on input line 2619.
 (pdftex.def)             Requested size: 43.82318pt x 24.7947pt.
-<../img/Valvula_temporizadora.jpg, id=1658, 321.2pt x 189.70876pt>
-File: ../img/Valvula_temporizadora.jpg Graphic file (type jpg)
-<use ../img/Valvula_temporizadora.jpg>
-Package pdftex.def Info: ../img/Valvula_temporizadora.jpg  used on input line 2620.
+<Valvula_temporizadora.jpg, id=1648, 321.2pt x 189.70876pt>
+File: Valvula_temporizadora.jpg Graphic file (type jpg)
+<use Valvula_temporizadora.jpg>
+Package pdftex.def Info: Valvula_temporizadora.jpg  used on input line 2621.
 (pdftex.def)             Requested size: 80.2998pt x 47.42706pt.
 
-Overfull \hbox (73.78958pt too wide) in paragraph at lines 2606--2623
+Overfull \hbox (73.78958pt too wide) in paragraph at lines 2607--2624
  [] 
  []
 
 
 
-[57 <../img/Tabla_Distribuidoras.jpg> <../img/Valvula_antirretorno.png> <../img/Valvula_reguladora_bidireccional.png> <../img/Valvula_reguladora_unidireccional.jpg> <../img/Valvula_OR.png> <../img/Valvula_AND.png> <../img/Valvula_temporizadora.jpg>]
-<../img/Mando1.jpg, id=1665, 289.08pt x 568.1225pt>
-File: ../img/Mando1.jpg Graphic file (type jpg)
-<use ../img/Mando1.jpg>
-Package pdftex.def Info: ../img/Mando1.jpg  used on input line 2631.
+[57 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Tabla_Distribuidoras.jpg> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Valvula_antirretorno.png> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Valvula_reguladora_bidireccional.png> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Valvula_reguladora_unidireccional.jpg> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Valvula_OR.png> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Valvula_AND.png> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Valvula_temporizadora.jpg>]
+<Mando1.jpg, id=1655, 289.08pt x 568.1225pt>
+File: Mando1.jpg Graphic file (type jpg)
+<use Mando1.jpg>
+Package pdftex.def Info: Mando1.jpg  used on input line 2632.
 (pdftex.def)             Requested size: 144.53964pt x 284.06055pt.
-<../img/Mando2.jpg, id=1666, 77.088pt x 43.362pt>
-File: ../img/Mando2.jpg Graphic file (type jpg)
-<use ../img/Mando2.jpg>
-Package pdftex.def Info: ../img/Mando2.jpg  used on input line 2637.
+<Mando2.jpg, id=1656, 77.088pt x 43.362pt>
+File: Mando2.jpg Graphic file (type jpg)
+<use Mando2.jpg>
+Package pdftex.def Info: Mando2.jpg  used on input line 2638.
 (pdftex.def)             Requested size: 231.2634pt x 130.08563pt.
-<../img/Mando3.png, id=1667, 609.27625pt x 473.77pt>
-File: ../img/Mando3.png Graphic file (type png)
-<use ../img/Mando3.png>
-Package pdftex.def Info: ../img/Mando3.png  used on input line 2643.
+<Mando3.png, id=1657, 609.27625pt x 473.77pt>
+File: Mando3.png Graphic file (type png)
+<use Mando3.png>
+Package pdftex.def Info: Mando3.png  used on input line 2644.
 (pdftex.def)             Requested size: 304.63737pt x 236.88441pt.
 
 Underfull \vbox (badness 3536) has occurred while \output is active []
 
 
 
-[58 <../img/Mando1.jpg> <../img/Mando2.jpg>]
-<../img/Mando4.png, id=1672, 620.3175pt x 483.8075pt>
-File: ../img/Mando4.png Graphic file (type png)
-<use ../img/Mando4.png>
-Package pdftex.def Info: ../img/Mando4.png  used on input line 2649.
+[58 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Mando1.jpg> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Mando2.jpg>]
+<Mando4.png, id=1662, 620.3175pt x 483.8075pt>
+File: Mando4.png Graphic file (type png)
+<use Mando4.png>
+Package pdftex.def Info: Mando4.png  used on input line 2650.
 (pdftex.def)             Requested size: 310.15799pt x 241.90315pt.
 
 
-[59 <../img/Mando3.png> <../img/Mando4.png>]
+[59 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Mando3.png> </home/ford/Projects/transcripts/t2a/mea-pugna/img/Mando4.png>]
 
 [60]
-Package marginnote Info: Margin note 69.1 is on absolute page 69 on input line 2673.
-Package marginnote Info: right page because not two side mode on input line 2673.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 2673.
+Package marginnote Info: Margin note 69.1 is on absolute page 69 on input line 2674.
+Package marginnote Info: right page because not two side mode on input line 2674.
+Package marginnote Info: xpos seems to be 67.57281pt on input line 2674.
 
 
 [61]
-<../img/platon.jpg, id=1686, 2007.5pt x 1962.33125pt>
-File: ../img/platon.jpg Graphic file (type jpg)
-<use ../img/platon.jpg>
-Package pdftex.def Info: ../img/platon.jpg  used on input line 2700.
+<platon.jpg, id=1676, 2007.5pt x 1962.33125pt>
+File: platon.jpg Graphic file (type jpg)
+<use platon.jpg>
+Package pdftex.def Info: platon.jpg  used on input line 2701.
 (pdftex.def)             Requested size: 200.76175pt x 196.24461pt.
 
 
-[62 <../img/Platon.jpg>]
+[62 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Platon.jpg>]
 
 [63]
-<../img/Simil_de_la_linea.png, id=1695, 639.38875pt x 245.91875pt>
-File: ../img/Simil_de_la_linea.png Graphic file (type png)
-<use ../img/Simil_de_la_linea.png>
-Package pdftex.def Info: ../img/Simil_de_la_linea.png  used on input line 2781.
+<Simil_de_la_linea.png, id=1685, 639.38875pt x 245.91875pt>
+File: Simil_de_la_linea.png Graphic file (type png)
+<use Simil_de_la_linea.png>
+Package pdftex.def Info: Simil_de_la_linea.png  used on input line 2782.
 (pdftex.def)             Requested size: 319.69359pt x 122.95906pt.
 
 
-[64 <../img/Simil_de_la_linea.png (PNG copy)>]
+[64 </home/ford/Projects/transcripts/t2a/mea-pugna/img/Simil_de_la_linea.png (PNG copy)>]
 
 [65]
-Underfull \hbox (badness 1067) in paragraph at lines 2860--2860
+Underfull \hbox (badness 1067) in paragraph at lines 2861--2861
 \T1/lmr/m/it/8 y de la jus-ti-cia y demás vir-
  []
 
@@ -1451,33 +1457,27 @@ Underfull \hbox (badness 1067) in paragraph at lines 2860--2860
 
 [66]
 
-[67]
-Package marginnote Info: Margin note 76.1 is on absolute page 76 on input line 2897.
-Package marginnote Info: right page because not two side mode on input line 2897.
-Package marginnote Info: xpos seems to be 67.57281pt on input line 2897.
-
-
-[68] (./main.aux)
+[67] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 86F9CD5E234CC0D8DF71BFC03967159F;29528.
+(rerunfilecheck)             Checksum: CFD8D459ADE024EA10B277D633DA8227;29343.
  ) 
 Here is how much of TeX's memory you used:
- 33880 strings out of 475171
- 671067 string characters out of 5767094
- 1067535 words of memory out of 5000000
- 55538 multiletter control sequences out of 15000+600000
+ 33823 strings out of 475171
+ 668633 string characters out of 5767094
+ 1066515 words of memory out of 5000000
+ 55484 multiletter control sequences out of 15000+600000
  715147 words of font info for 149 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 131i,15n,135p,541b,1263s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,15n,135p,861b,1263s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (74 pages, 3222589 bytes).
+Output written on main.pdf (73 pages, 3220813 bytes).
 PDF statistics:
- 1994 PDF objects out of 2073 (max. 8388607)
- 1814 compressed objects within 19 object streams
- 722 named destinations out of 1000 (max. 500000)
- 1480 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1977 PDF objects out of 2073 (max. 8388607)
+ 1799 compressed objects within 18 object streams
+ 719 named destinations out of 1000 (max. 500000)
+ 1464 words of extra memory for PDF output out of 10000 (max. 10000000)
 
