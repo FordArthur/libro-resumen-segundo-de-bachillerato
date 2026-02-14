@@ -1,1 +1,14 @@
-
+src/*.aux
+src/*.fdb_latexmk
+src/*.fls
+src/*.log
+src/*.out
+src/*.synctex.gz
+src/*.toc
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
