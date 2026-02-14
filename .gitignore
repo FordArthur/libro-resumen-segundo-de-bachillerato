@@ -5,6 +5,7 @@ src/*.log
 src/*.out
 src/*.synctex.gz
 src/*.toc
+src/*.pdf
 *.aux
 *.fdb_latexmk
 *.fls
