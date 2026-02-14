@@ -619,6 +619,16 @@ INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/Simil_de_la_linea.png
 INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/Simil_de_la_linea.png
 INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/Simil_de_la_linea.png
 INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/Simil_de_la_linea.png
+INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/rene_descartes.jpg
+INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/rene_descartes.jpg
+INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/rene_descartes.jpg
+INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/rene_descartes.jpg
+INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/rene_descartes.jpg
+INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/procedimiento_descartes.jpg
+INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/procedimiento_descartes.jpg
+INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/procedimiento_descartes.jpg
+INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/procedimiento_descartes.jpg
+INPUT /home/ford/Projects/transcripts/t2a/mea-pugna/img/procedimiento_descartes.jpg
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
@@ -648,3 +658,4 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb

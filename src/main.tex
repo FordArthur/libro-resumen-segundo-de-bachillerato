@@ -18,7 +18,7 @@
 \title{Apuntes}
 
 \author{Marcos Ávila Navas}
-\affiliation{I.E.S Los Colegiales}
+\affiliation{I.E.S. Los Colegiales}
 
 \begin{document}
 
@@ -658,6 +658,206 @@ Conque podemos integrar funciones racionales como aquella desomposición.
         \end{proof}
 \end{enumerate}
 
+\newpage
+
+\section{Estadística y probabilidad}
+
+La \textbf{estadística y probabilidad} estudia modelos matemáticos que exhiben una falta de información o \textit{aleatoriedad}.
+
+\subsection{Probabilidad}
+
+\begin{definition}[$ \sigma $-álgebra]
+  Dado un conjunto $ \Omega $, una $ \sigma $-algebra es una colección de subconjuntos de $ \Omega $ cerrada ante complementación, y unión e intersección de familias contables.
+\end{definition}
+
+Conque un elemento de una $ \sigma $-álgebra $ \mathcal{F} $ podría ser visto como un \textit{suceso}: Si pasan sucesos $ A, B \in \mathcal{F} $, siempre podremos preguntar
+cuando pasa $ A $ y $ B $ ($ A \cap B $), $ A $ o $ B $ ($ A \cup B $), y cuando no pasa $ A $ ($ \bar{A} $).
+
+\begin{definition}[Espacio de probabilidad]
+  Un espacio de probabilidad es un triple $ (\Omega, \mathcal{F}, p) $ donde $ \mathcal{F} $ es una $ \sigma $-álgebra sobre $ \Omega $ y $ p : \mathcal{F} \to \left[0, 1\right] $
+  es la función de probabilidad, que satisface los \textit{axiomas de Kolmogorov}:
+  \begin{enumerate}
+    \item \[ p(\Omega) = 1 \]
+    \item \[ \forall (A_1 \dots A_n \in \mathcal{F},\ A_i \cup A_j = \emptyset \implies i = j). \ p(\bigcup_i^n A_i) = \sum_i^n p(A_i) \]
+  \end{enumerate}
+\end{definition}
+
+A partir de los axiomas de Kolmogorov y los axiomas de las matemáticas clásicas \sn{La ley del tercero excluido es equivalente a que todo subconjunto tenga un complemento}
+se deducen inmediatamente propiedades fundamentales.
+
+\begin{theorem}
+  Sea $(\Omega, \mathcal{F}, p)$ un espacio de probabilidad. Entonces:
+  \begin{enumerate}
+    \item $p(\emptyset) = 0$,
+    \item si $A \subseteq B$, entonces $p(A) \le p(B)$,
+    \item $p(\bar{A}) = 1 - p(A)$,
+    \item $p(A \cup B) = p(A) + p(B) - p(A \cap B)$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  Todas se deducen usando la aditividad finita y las leyes de De Morgan.
+\end{proof}
+
+Un espacio de probabilidades $ \Omega $ puede ser ``restringido'' a un subconjunto $ B $ (dentro de su $ \sigma $-álgebra): para cualquier otro suceso $ A $, la intersección
+entre ambos $ A \cap B $ da el espacio de posibilidades que suceda $ A $ impuesta la condición $ B $. Así, la medida de esto dividida entre $ p(B) $ (para que $ B $ ``ocupe todo
+el volumen'') da lo que llamamos \textbf{probabilidad condicional}.
+
+\begin{definition}[Probabilidad condicional]
+  Sea $A, B \in \mathcal{F}$ con $p(B) > 0$. Definimos la probabilidad de $A$ condicionada por $B$ como:
+  \[ p(A \mid B) := \frac{p(A \cap B)}{p(B)} \]
+\end{definition}
+
+\begin{remark}
+  Intuitivamente, $ p(B)p(A \mid B) = p(A \cap B) $ es una especie de \textit{modus ponens}.
+\end{remark}
+
+\begin{definition}[Independencia]
+  Dos sucesos $A, B \in \mathcal{F}$ son independientes si:
+  \[ p(A \cap B) = p(A)p(B) \]
+  Equivalentemente:
+  \[ p(A \mid B) = p(A) \]
+\end{definition}
+
+\begin{example}
+  En el lanzamiento de dos monedas justas, el suceso “cara en la primera” es independiente del suceso “cara en la segunda”.
+
+  No obstante, dada una serie de resultados, no podemos deducir la independencia de dos sucesos por este tipo de razonamiento externo en general.
+\end{example}
+
+A continuación una definición intuitiva:
+
+\begin{definition}[Compatibilidad]
+  Dos sucesos $A, B \in \mathcal{F}$ son compatibles si:
+  \[ p(A \cup B) = 0 \]
+  Equivalentemente:
+  \[ p(A \mid B) = 0 \]
+\end{definition}
+
+En muchos contextos consideramos sistemas que nos permitan descomponer otros sucesos en casos más simples. En el caso de la probabilidad:
+
+\begin{definition}[Sistema completo de sucesos]
+  Un sistema completo de sucesos $ \{ A_i \in \mathcal{F} \}\ $ es una familia de sucesos que además cumple que sus sucesos son incompatibles dos a dos y que la unión
+  de la familia es el espacio muestral.
+\end{definition}
+
+La descomposición viene dada por el siguiente teorema:
+
+\begin{theorem}[Teorema de la probabilidad total]
+  Dado un sistema completo de sucesos $ \{ A_i \in \mathcal{F} \} $, y cualquier otro suceso $ B \in \mathcal{F} $, se cumple que:
+  \[ p(B) = \sum_i p(A_i)p(B \mid A_i) \]
+\end{theorem}
+
+\begin{proof}
+  Nótese que, despejando, $ p(B \mid A)p(A) = p(A \cap B) $. Entonces:
+  \[ p(B) = p(B \cap \Omega) = p(B \cap \bigcup_i A_i) = p(\bigcup_i B \cap A_i) = \sum_i p(B \cap A_i) = \sum_i p(A_i)p(B \mid A_i) \]
+  Utilizando tanto la distribución de la intersección sobre la unión, como el hecho de que cada $ B \cap A_i $ es incompatible dos a dos.
+\end{proof}
+
+Todo esto nos da el fundamento detrás de la \textit{epistemología Bayesiana}, la cuál tiene su culmen en el siguiente teorema:
+
+\begin{theorem}[Teorema de Bayes]
+  Si $p(B) > 0$, entonces:
+  \[ p(A \mid B) = \frac{p(B \mid A)p(A)}{p(B)} \]
+\end{theorem}
+
+\begin{proof}
+  Nótese que, despejando, $ p(B \mid A)p(A) = p(A \cap B) $. Entonces:
+  \[ p(A \mid B) := \frac{p(A \cap B)}{p(B)} = \frac{p(B \mid A)p(A)}{p(B)} \]
+\end{proof}
+
+La importancia de este teorema está en su aplicación: la probabilidad de que una hipótesis $ A $ sea cierta dados unos hechos $ B $ se puede actualizar utilizando la probabilidad
+anterior de la hipótesis.
+
+\subsection{Estadística}
+
+Ha resultado conveniente estudiar funciones sobre el espacio de probabilidad a algún espacio medible como $ \R $.
+
+\begin{definition}[Variable aleatoria]
+  Una variable aleatoria es una función medible:
+  \[ X : \Omega \to \R \]
+  Cuando $ \im(X) $ es hablamos de una variable aleatoria \textit{discreta} y \textit{continua} en caso contrario.
+\end{definition}
+
+\begin{example}
+  Ejemplos de variables aleatorias incluyen la suma de valores de lanzar $ n $ veces un dado $ \Sigma : \mathbf{6}^n \to \mathbb{R} $ (discreta) y el tiempo que tarda un
+  autobus en llegar $ t : [0, +\infty) \to \mathbb{R} $.
+\end{example}
+
+\subsection{Distribuciones y parámetros}
+
+(\dots)
+
+\begin{definition}[Distribuciones]
+  Sea $ X $ una variable aleatoria. Definimos la función de probabilidad como la probabilidad del \textit{retroceso de $ i : \{x\} \hookrightarrow \mathbb{R} $ por la variable $ X $}:
+  \[ f(x) = p(X = x) = p(\{x\}\times_\mathbb{R}\Omega) \].
+  Asimismo, definimos la \textbf{distribución} (en el caso discreto) o de \textbf{densidad} (en el caso continuo) como la acumulación de valores menores a uno dado:
+  \[ F(x) = \sum_i^x f(x_i) \quad \text{o} \quad F(x) = \int_{-\infty}^x f(x) \cdot \diff x \]
+\end{definition}
+
+(\dots)
+
+\begin{definition}[Parámetros]
+  Sea $X$ una variable aleatoria discreta e $Y$ una continua. Definimos:
+
+  \begin{itemize}
+    \item La \textbf{esperanza} de $ X $ como: 
+      \[ \mu := \sum_x x \, p(X = x) \]
+      y la de $ Y $ como:
+      \[ \mu := \int_{-\infty}^{+\infty} x \, p(Y = y) \cdot \diff y \]
+    \item La \textbf{varianza} de $ X $ como:
+      \[ \sigma^2 := \sum_x (x - \mu)^2\, p(X = x) \]
+      y la de $ Y $ como:
+      \[ \sigma^2 := \int_{-\infty}^{+\infty} (y - \mu)^2\, p(Y = y) \cdot \diff y \]
+    \item La \textbf{desviación típica} como:
+      \[ \sigma := \sqrt{\sigma^2} \]
+  \end{itemize}
+\end{definition}
+
+\subsection{Distribuciones comunes}
+
+(\dots)
+
+\begin{definition}[Distribución binomial]
+  Una variable aleatoria $X$ sigue una distribución binomial $B(n,p)$ si:
+  \[ p(X = k) = \binom{n}{k} p^k (1-p)^{n-k} \]
+\end{definition}
+
+\begin{example}
+  Número de caras al lanzar $ n $ monedas justas.
+\end{example}
+
+(\dots)
+
+\begin{definition}[Distribución normal]
+  Una variable aleatoria continua $X$ sigue una distribución normal $ N(\mu, \sigma) $ si tiene densidad:
+  \[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]
+\end{definition}
+
+\begin{remark}
+  Dicha distribución aparece como límite universal en muchos procesos aleatorios.
+\end{remark}
+
+En ocasiones conviene aproximar una distribución binomial por una normal. Esto es posible gracias a los siguientes teoremas:
+
+\begin{theorem}[Ley de los grandes números débil]
+  Sea $(X_n)$ una sucesión de variables aleatorias independientes e idénticamente distribuidas con esperanza finita $ \mu $.
+  Entonces:
+  \[ \forall \epsilon > 0,\ \lim_{n \to +\infty} p(| \overline{X_n} - \mu | < \epsilon) = 1 \]
+  donde $ \overline{X_n} $ es el promedio de las variables.
+\end{theorem}
+
+\begin{theorem}[Teorema central del límite]
+  Bajo las mismas hipótesis, la suma normalizada:
+  \[ \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n\sigma^2}} \]
+  converge en distribución a una normal estándar.
+\end{theorem}
+
+Con esto, una binomial $ B(n, p) $ se aproxima por una de $ N(\mu = np, \sigma = \sqrt{np(1-p)}) $. Y una probabilidad de la binomial se aproxima
+por la normal utilizando \textit{aproximación por Yates}.
+
+\newpage
+
 \section{Álgebra}
 
 \subsection{De monoide a espacio vectorial}
@@ -697,13 +897,13 @@ con ciertas operaciones que cumplen ciertas propiedades. La estructura más simp
     \item $(\Z, +, 0)$: enteros con suma, grupo abeliano.
     \item $(\R^*, \times, 1)$: reales distintos de cero con multiplicación.
     \item $S_n$ con composición: el grupo simétrico de permutaciones de $n$ elementos.
-    \item $(\mathbb{C}, +, 0)$: números complejos con suma.
+    \item $(\C, +, 0)$: números complejos con suma.
   \end{itemize}
 \end{example}
 
 \begin{definition}[Anillos]
   Sea $ \mathfrak{R} $ un conjunto. Un anillo es un grupo abeliano $ \left(\mathcal{G}, +, 0\right) $ junto con un monoide
-  $ \left( \mathcal{G}, \cdot, 1 \right) $ tal que la \textit{suma sea distributiva sobre la multiplicación}:
+  $ \left( \mathcal{G}, \cdot, 1 \right) $ tal que la \textit{multiplicación sea distributiva sobre la suma}:
   \[ \forall a, b, c \in \mathfrak{R}, \ a \cdot (b + c) = a \cdot b + a \cdot c \]
   y
   \[ \forall a, b, c \in \mathfrak{R}, \ (b + c) \cdot a = b \cdot a + c \cdot a \]
@@ -716,7 +916,7 @@ con ciertas operaciones que cumplen ciertas propiedades. La estructura más simp
  El ejemplo de anillo canónico es el conjunto de funciones sobre algún espacio a algún otro anillo. Ejemplos de anillos:
   \begin{itemize}
     \item $(\Z, +, \cdot)$: enteros con suma y multiplicación.
-    \item $(\mathbb{R}[x], +, \cdot)$: polinomios reales.
+    \item $(\R[x], +, \cdot)$: polinomios reales.
     \item $(\mathcal{M}_{n \times n}(\R), +, \cdot)$: matrices cuadradas con suma y multiplicación usual.
   \end{itemize}
 \end{example}
@@ -726,7 +926,7 @@ con ciertas operaciones que cumplen ciertas propiedades. La estructura más simp
   \begin{itemize}
     \item $(\Q, +, \cdot)$: números racionales.
     \item $(\R, +, \cdot)$: números reales.
-    \item $(\mathbb{C}, +, \cdot)$: números complejos.
+    \item $(\C, +, \cdot)$: números complejos.
     \item $\mathbb{F}_p$ con $p$ primo: cuerpo finito con operaciones módulo $p$.
   \end{itemize}
 \end{example}
@@ -748,7 +948,7 @@ Cuando $ \mathfrak{R} $ es además un cuerpo, $ V $ es un \textit{espacio vector
   \begin{itemize}
     \item $\Z^n$ como módulo sobre $\Z$.
     \item $\R^n$ como espacio vectorial sobre $\R$.
-    \item $\mathbb{C}^n$ como espacio vectorial sobre $\C$.
+    \item $\C^n$ como espacio vectorial sobre $\C$.
     \item El conjunto de polinomios $\R[x]$ como módulo sobre $\R$.
   \end{itemize}
 \end{example}
@@ -805,7 +1005,7 @@ Una transformación lineal es un $ k $-homomorfismo entre espacios vectoriales, 
 
 Toda transformación lineal es equivalentemente una \textit{matríz}:
 
-\begin{definition}[Matríz $ n \times m $]
+\begin{definition}[Matriz $ n \times m $]
   Una matríz (real, compleja\dots) $ n \times m $ donde $ n, m $ son cardinales (típicamente finitos) es una función $ n \times m \to \R \, (\C, \Q\dots) $. No obstante,
   ``matríz'' implica que debemos representar dicha función como una tabla de $ n $ filas y $ m $ columnas cuyas entradas son valores en el objeto algebraico apropiado (los reales,
   por ejemplo):
@@ -827,6 +1027,38 @@ una transformación a un elemento utilizando matrices (\textit{multiplicación m
 
 Estudiar transformaciones lineales por medio de matrices hace más claro y computacional lo que prosigue. Además, el concepto de matríz escapa el de transformación lineal, siendo una
 manera útil de representar distintos fenómenos.
+
+\begin{remark}
+  Cómo luz de esto, la notación $ \mathcal{M}_{n \times m} $ es más facilmente entendida cuando se entiende alguna matriz $ T \in \mathcal{M}_{n \times m} $ como una transformación
+  $ T : \R^n \to \R^m $. Así, es evidente que si $ T $ ha de representar una transformación siendo sus columnas los vectores base cuyo span forma la imagen de $ T $
+  $ m $ ha de ser el número de columnas y $ n $ de filas.
+\end{remark}
+
+\subsubsection{Operaciones con matríces}
+
+\begin{definition}[Suma de matríces]
+  Sean $ A, B \in \mathcal{M}_{n \times m} $ matríces sobre un cuerpo $ k $. Definimos la suma de matríces como la suma punto a punto, esto es:
+  \[ A + B =
+    \begin{pmatrix}
+      a_{11} + b_{11} & \dots & a_{1m} + b_{1m} \\
+      \vdots & \ddots & \vdots \\
+      a_{n1} + b_{11} & \dots & a_{nm} + b_{1m} \\
+    \end{pmatrix}
+  \]
+\end{definition}
+
+\begin{definition}[Multiplicación de matríces]
+  Sean $ A \in \mathcal{M}_{n \times m} $ y $ B \in \mathcal{M}_{m \times r} $ matríces sobre un cuerpo $ k $. Definimos la multiplicación de matríces como la composición de las
+  transformaciones linales que representan.
+ % Explícitamente:
+ % \[ AB =
+ %   \begin{pmatrix}
+ %     \sum_i^n a_{1i} b_{i1} & \dots & \sum_i^n a_{ri}b_{ir} \\
+ %     \vdots & \ddots & \vdots \\
+ %     \sum_i^n a_{ni} b_{i1} & \dots & \sum_i^n a_{nm} + b_{1m} \\
+ %   \end{pmatrix}
+ % \]
+\end{definition}
 
 \subsubsection{Tipos de matrices}
 
@@ -891,6 +1123,8 @@ manera útil de representar distintos fenómenos.
   \[ P^T A P = D \]
   donde $D$ es diagonal con los valores propios de $A$.
 \end{theorem}
+
+\newpage
 
 \section{Geometría}
 
@@ -1064,196 +1298,6 @@ En $ \R^n $, la geometría se puede describir mediante ecuaciones que ``esculpen
 \begin{remark}
   El conjunto de matrices ortogonales forma un grupo de especial importancia para la física, $ O(n) $.
 \end{remark}
-
-\section{Estadística y probabilidad}
-
-La \textbf{estadística y probabilidad} estudia modelos matemáticos que exhiben una falta de información o \textit{aleatoriedad}.
-
-\begin{definition}[$ \sigma $-álgebra]
-  Dado un conjunto $ \Omega $, una $ \sigma $-algebra es una colección de subconjuntos de $ \Omega $ cerrada ante complementación, y unión e intersección de familias contables.
-\end{definition}
-
-Conque un elemento de una $ \sigma $-álgebra $ \mathcal{F} $ podría ser visto como un \textit{suceso}: Si pasan sucesos $ A, B \in \mathcal{F} $, siempre podremos preguntar
-cuando pasa $ A $ y $ B $ ($ A \cap B $), $ A $ o $ B $ ($ A \cup B $), y cuando no pasa $ A $ ($ \bar{A} $).
-
-\begin{definition}[Espacio de probabilidad]
-  Un espacio de probabilidad es un triple $ (\Omega, \mathcal{F}, p) $ donde $ \mathcal{F} $ es una $ \sigma $-álgebra sobre $ \Omega $ y $ p : \mathcal{F} \to \left[0, 1\right] $
-  es la función de probabilidad, que satisface los \textit{axiomas de Kolmogorov}:
-  \begin{enumerate}
-    \item \[ p(\Omega) = 1 \]
-    \item \[ \forall (A_1 \dots A_n \in \mathcal{F},\ A_i \cup A_j = \emptyset \implies i = j). \ p(\bigcup_i^n A_i) = \sum_i^n p(A_i) \]
-  \end{enumerate}
-\end{definition}
-
-\subsection{Consecuencias básicas de los axiomas}
-
-A partir de los axiomas de Kolmogorov se deducen inmediatamente propiedades fundamentales.
-
-\begin{theorem}
-  Sea $(\Omega, \mathcal{F}, p)$ un espacio de probabilidad. Entonces:
-  \begin{enumerate}
-    \item $p(\emptyset) = 0$,
-    \item si $A \subseteq B$, entonces $p(A) \le p(B)$,
-    \item $p(\bar{A}) = 1 - p(A)$,
-    \item $p(A \cup B) = p(A) + p(B) - p(A \cap B)$.
-  \end{enumerate}
-\end{theorem}
-
-\begin{proof}
-  Todas se deducen usando la aditividad finita y las leyes de De Morgan.
-\end{proof}
-
-\subsection{Probabilidad condicionada e independencia}
-
-\begin{definition}[Probabilidad condicionada]
-  Sea $A, B \in \mathcal{F}$ con $p(B) > 0$. Definimos la probabilidad de $A$ condicionada a $B$ como:
-  \[
-    p(A \mid B) := \frac{p(A \cap B)}{p(B)}
-  \]
-\end{definition}
-
-\begin{remark}
-  Intuitivamente, estamos restringiendo el espacio muestral a $B$ y \textit{renormalizando}.
-
-  Alternativamente, $ p(B)p(A \mid B) = p(A \cap B) $ es una especie de \textit{modus ponens}.
-\end{remark}
-
-\begin{definition}[Independencia]
-  Dos sucesos $A, B \in \mathcal{F}$ son independientes si:
-  \[
-    p(A \cap B) = p(A)p(B)
-  \]
-\end{definition}
-
-\begin{example}
-  En el lanzamiento de dos monedas justas, el suceso “cara en la primera” es independiente del suceso “cara en la segunda”.
-
-  No obstante, dada una serie de resultados, no podemos deducir la independencia de dos sucesos por este tipo de razonamiento externo en general.
-\end{example}
-
-\begin{theorem}[Fórmula de Bayes]
-  Si $p(B) > 0$, entonces:
-  \[
-    p(A \mid B) = \frac{p(B \mid A)p(A)}{p(B)}
-  \]
-\end{theorem}
-
-\subsection{Variables aleatorias}
-
-Ha resultado conveniente estudiar funciones sobre el espacio de probabilidad a algún cuerpo ordenado como $ \R $.
-
-\begin{definition}[Variable aleatoria]
-  Una variable aleatoria es una función medible:
-  \[ X : \Omega \to \R \]
-\end{definition}
-
-\subsubsection{Distribución}
-
-\begin{definition}[Distribución de una variable aleatoria]
-  La distribución de $X$ es la medida inducida:
-  \[ p_X(A) := p(X^{-1}(A)) \]
-\end{definition}
-
-\subsection{Esperanza y varianza}
-
-\begin{definition}[Esperanza matemática]
-  Sea $X$ una variable aleatoria discreta. Definimos su esperanza como:
-  \[
-    \mathbb{E}[X] := \sum_x x \, p(X = x)
-  \]
-\end{definition}
-
-\begin{definition}[Varianza]
-  La varianza de $X$ se define como:
-  \[
-    \mathrm{Var}(X) := \mathbb{E}\left[(X - \mathbb{E}[X])^2\right]
-  \]
-\end{definition}
-
-\begin{theorem}
-  \[
-    \mathrm{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2
-  \]
-\end{theorem}
-
-\begin{remark}
-  La esperanza es lineal:
-  \[
-    \mathbb{E}[aX + bY] = a\mathbb{E}[X] + b\mathbb{E}[Y]
-  \]
-\end{remark}
-
-\subsection{Distribuciones clásicas}
-
-\subsubsection{Distribución binomial}
-
-\begin{definition}[Distribución binomial]
-  Una variable aleatoria $X$ sigue una distribución binomial $B(n,p)$ si:
-  \[
-    p(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
-  \]
-\end{definition}
-
-\begin{example}
-  Número de caras al lanzar $ n $ monedas justas.
-\end{example}
-
-\subsubsection{Distribución normal}
-
-\begin{definition}[Distribución normal]
-  Una variable aleatoria continua $X$ sigue una distribución normal si tiene densidad:
-  \[
-    f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-  \]
-\end{definition}
-
-\begin{remark}
-  Dicha distribución aparece como límite universal en muchos procesos aleatorios.
-\end{remark}
-
-\subsection{Teoremas fundamentales}
-
-\begin{theorem}[Ley de los grandes números]
-  Sea $(X_n)$ una sucesión de variables aleatorias independientes e idénticamente distribuidas con esperanza finita.
-  Entonces:
-  \[
-    \frac{1}{n}\sum_{i=1}^n X_i \xrightarrow{n \to \infty} \mathbb{E}[X_1]
-  \]
-\end{theorem}
-
-\begin{theorem}[Teorema central del límite]
-  Bajo las mismas hipótesis, la suma normalizada:
-  \[
-    \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n\sigma^2}}
-  \]
-  converge en distribución a una normal estándar.
-\end{theorem}
-
-\begin{remark}
-  Este resultado explica la omnipresencia de la distribución normal en la naturaleza.
-\end{remark}
-
-\subsection{Estadística descriptiva}
-
-Dada una muestra $(x_1,\dots,x_n)$, definimos:
-
-\begin{definition}[Media muestral]
-  \[
-    \bar{x} := \frac{1}{n}\sum_{i=1}^n x_i
-  \]
-\end{definition}
-
-\begin{definition}[Varianza muestral]
-  \[
-    s^2 := \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2
-  \]
-\end{definition}
-
-\begin{remark}
-  Estos son estimadores de la esperanza y la varianza poblacionales.
-\end{remark}
-
-\newpage
 
 \part{Física}
 
@@ -2192,7 +2236,7 @@ Solo usaremos el primer principio para lo que prosigue.
 
 Asumimos la Ley de los gases ideales:
 
-\begin{definition}{Ley de los gases ideales}{def3}
+\begin{definition}{Ley de los gases ideales}
     Para un gas (ideal), se cumple:
     \[ pV = nRT \quad \text{donde } R = 0.082 \frac{L \cdot atm}{mol \cdot K} \]
 \end{definition}
@@ -2893,148 +2937,224 @@ Finalmente, la figura del filósofo-rey sintetiza la aspiración platónica: un 
 la polis hacia el bien común. La política platónica, aunque aristocrática en su designio (gobierno de los mejores en conocimiento), está animada por la idea de que el saber auténtico es 
 condición de la legitimidad y la virtud públicas. Su propuesta inaugura el género de la utopía política, un modelo ideal que sirve de crítica a la realidad existente.
 
-% \section{Descartes} % Esta sección fue realizada con IA. Futuras revisiones buscarán suprimir los errores que esto conlleva.
-% 
-% René Descartes (1596-1650) es considerado el \textbf{fundador de la filosofía moderna}. Su obra marca una ruptura consciente con la tradición escolástica y aristotélica, proponiendo un nuevo
-% método para alcanzar un conocimiento \textbf{certero e indubitable}, inspirado en el modelo deductivo de las matemáticas. El contexto de la Revolución Científica (Galileo, Kepler) y el clima
-% de escepticismo heredado del siglo XVI (Montaigne) son esenciales para comprender su proyecto: construir un \textbf{saber universal y firme} desde los cimientos.
-% 
-% \subsection{Epistemología}
-% 
-% El punto de partida de Descartes es \textbf{epistemológico}. Su objetivo es superar la duda y encontrar un \textbf{fundamento absoluto} para el conocimiento.
-% 
-% \subsubsection{El Método Cartesiano}
-% Descartes propone un \textbf{método universal} de cuatro reglas, expuesto en el \textit{Discurso del Método} (1637):
-% 
-% \begin{enumerate}
-%     \item \textbf{Regla de la Evidencia}: "No admitir jamás cosa alguna como verdadera sin haber conocido con evidencia que así era". Solo aceptar lo que se presente al espíritu de modo
-%       \textbf{claro} (presente y manifiesto) y \textbf{distinto} (preciso y diferenciado de todo lo demás). Esta captación inmediata es la \textbf{intuición intelectual}.
-%     \item \textbf{Regla del Análisis}: "Dividir cada una de las dificultades [\dots] en tantas partes como fuera posible". Descomponer los problemas complejos en elementos simples hasta llegar a
-%       \textbf{naturalezas simples} evidentes por sí mismas.
-%     \item \textbf{Regla de la Síntesis}: "Conducir por orden mis pensamientos, comenzando por los objetos más simples [\dots] para ascender poco a poco [\dots] hasta el conocimiento de los más
-%       compuestos". Reconstruir deductivamente el conocimiento a partir de los elementos simples.
-%     \item \textbf{Regla de la Enumeración}: "Hacer en todo unos recuentos tan completos [\dots] que pudiese estar seguro de no omitir nada". Comprobación exhaustiva para garantizar que no se ha
-%       omitido ningún paso.
-% \end{enumerate}
-% 
-% \subsubsection{La Duda Metódica}
-% Para aplicar la primera regla y encontrar la primera evidencia, es necesario eliminar todos los prejuicios. Descartes emprende una \textbf{duda metódica, universal e hiperbólica} como instrumento
-% (no como fin). Se duda sucesivamente de:
-% \begin{itemize}
-%     \item Los \textbf{sentidos}, por ser a veces engañosos.
-%     \item La \textbf{distinción entre vigilia y sueño}, al carecer de un criterio infalible para diferenciarlos.
-%     \item Hasta de las \textbf{verdades matemáticas}, mediante la hipótesis del \textbf{genio maligno} (\textit{genium malignum}), un engañador todopoderoso que podría hacerme errar incluso en lo
-%       más evidente.
-% \end{itemize}
-% 
-% \subsubsection{El \textit{Cogito} y el Criterio de Verdad}
-% En el abismo de esta duda radical, Descartes descubre que hay una verdad que resiste: la propia duda es un pensamiento, y para que haya pensamiento debe existir un sujeto que piense. De aquí
-% surge la primera certeza absoluta: \textbf{\textit{Cogito, ergo sum}} ("Pienso, luego existo"). No es un silogismo, sino una \textbf{intuición inmediata} de la propia existencia como 
-% \textbf{cosa pensante} (\textit{res cogitans}).
-% 
-% Esta primera verdad establece también el \textbf{criterio de verdad}: es verdadero todo aquello que se percibe con la misma \textbf{claridad y distinción} con la que percibo mi existencia como
-% cosa pensante.
-% 
-% \subsubsection{Clasificación de las Ideas}
-% Al analizar el contenido de su mente, Descartes distingue tres tipos de ideas:
-% \begin{itemize}
-%     \item \textbf{Ideas Adventicias}: Parecen provenir de la experiencia externa (ej.: el sonido de un trueno). Son sospechosas para la fundamentación.
-%     \item \textbf{Ideas Facticias}: Construidas por la imaginación a partir de otras ideas (ej.: un centauro).
-%     \item \textbf{Ideas Innatas}: Nacen con el pensamiento mismo, son claras y distintas, y constituyen el fundamento del conocimiento verdadero (ej.: la idea de \textbf{Yo}, de \textbf{Pensamiento}, de \textbf{Perfección}, de \textbf{Infinito}, de \textbf{Dios}).
-% \end{itemize}
-% 
-% \subsection{Metafísica}
-% 
-% Desde la certeza del \textit{cogito}, Descartes busca recuperar el mundo exterior. Para ello, debe demostrar la existencia de un \textbf{Dios veraz} que garantice la fiabilidad de nuestras 
-% facultades cognoscitivas.
-% 
-% \subsubsection{Demostraciones de la Existencia de Dios}
-% Descartes ofrece dos pruebas principales, basadas en el análisis de la \textbf{idea innata de Dios} (Ser Perfecto e Infinito):
-% 
-% \begin{enumerate}
-%     \item \textbf{Prueba por la Causalidad de la Idea de Perfección} (Vía Causal):
-%     \begin{itemize}
-%         \item Tengo en mí la idea de un ser infinito y perfecto.
-%         \item Yo soy un ser finito e imperfecto.
-%         \item El principio de causalidad (la causa debe tener al menos tanta realidad formal como el efecto) exige que esta idea no pueda haber sido producida por mí, ni por nada finito.
-%         \item Luego, debe existir una causa adecuada a esta idea: un \textbf{Ser realmente infinito y perfecto} (Dios).
-%     \end{itemize}
-%     \item \textbf{Prueba Ontológica} (por la Esencia Necesaria):
-%     \begin{itemize}
-%         \item La esencia de Dios implica la \textbf{existencia necesaria}, del mismo modo que la esencia del triángulo implica que sus ángulos sumen 180º.
-%         \item La existencia es una \textbf{perfección}. Un ser sumamente perfecto no puede carecer de perfección alguna.
-%         \item Por tanto, Dios existe necesariamente.
-%     \end{itemize}
-% \end{enumerate}
-% 
-% La existencia de un \textbf{Dios perfecto y veraz} es la segunda certeza fundamental. Su perfección excluye que sea un engañador; por tanto, \textbf{garantiza la fiabilidad de nuestra razón}
-% cuando juzgamos con claridad y distinción, y permite recuperar la confianza en la realidad del mundo material.
-% 
-% \subsubsection{La Teoría de las Tres Sustancias}
-% 
-% Una sustancia es "una cosa que existe de tal manera que no necesita de ninguna otra cosa para existir". En rigor, solo \textbf{Dios es sustancia en sentido absoluto}. No obstante, Descartes
-% admite dos sustancias creadas, definidas por sus atributos esenciales:
-% 
-% \begin{enumerate}
-%     \item \textbf{Sustancia Infinita (Dios)}. Atributo principal: \textbf{La Perfección}.
-%     \item \textbf{Sustancia Pensante (\textit{Res Cogitans})}. Atributo principal: \textbf{El Pensamiento} (dudar, entender, afirmar, querer, imaginar, sentir). Es el \textit{yo} descubierto en el \textit{cogito}.
-%     \item \textbf{Sustancia Extensa (\textit{Res Extensa})}. Atributo principal: \textbf{La Extensión} (longitud, anchura, profundidad). Es la esencia de toda realidad material o corpórea.
-% \end{enumerate}
-% 
-% \begin{center}
-%     % Aquí una imagen sobre: Esquema de las tres sustancias cartesianas.
-%     % Sugerencia: un diagrama con Dios en la cúspide, y debajo, en dos columnas separadas, la Res Cogitans (con un icono de cerebro/mente) y la Res Extensa (con un icono geométrico o del mundo físico).
-%     \includegraphics[width=0.7\textwidth]{sustancias_cartesianas.png}
-% \end{center}
-% 
-% El mundo físico, incluido el cuerpo humano y los animales (considerados por Descartes \textbf{autómatas} complejos), se reduce a \textit{res extensa}: pura geometría y movimiento, gobernado por leyes mecanicistas.
-% 
-% \section{Antropología Filosófica: El Problema del Dualismo}
-% 
-% El ser humano es un \textbf{compuesto problemático} de dos sustancias radicalmente heterogéneas: un \textbf{alma} (\textit{res cogitans}) y un \textbf{cuerpo} (\textit{res extensa}). Este \textbf{dualismo sustancial} es el núcleo de la antropología cartesiana.
-% 
-% \subsection{El Problema de la Interacción Mente-Cuerpo}
-% La cuestión central es: ¿cómo pueden dos realidades de naturaleza opuesta (inmaterial/material, inextensa/extensa) \textbf{interactuar} e influirse mutuamente? En la experiencia común, parece claro que el alma mueve el cuerpo (ej.: decidir caminar) y el cuerpo afecta al alma (ej.: sentir dolor).
-% 
-% \subsection{La Solución Inestable: La Glándula Pineal}
-% Para explicar esta interacción, Descartes postula un \textbf{punto de unión} en el cerebro: la \textbf{glándula pineal}. Allí, los "espíritus animales" (partículas materiales muy sutiles del cuerpo) transmitirían los impulsos sensoriales al alma, y las voliciones del alma moverían el cuerpo. Esta solución es \textbf{insatisfactoria} desde su propio marco metafísico, pues supone que una sustancia inextensa puede actuar localmente sobre lo extenso, violando las leyes de la física mecanicista que él mismo propuso.
-% 
-% \subsection{Consecuencias del Dualismo}
-% \begin{itemize}
-%     \item \textbf{Identidad personal}: La verdadera identidad del ser humano radica en el alma pensante. El cuerpo es una "máquina" o "vestidura".
-%     \item \textbf{Teoría de las cualidades sensibles}: Los colores, sonidos, sabores, etc., no son propiedades del mundo, sino \textbf{modificaciones confusas del pensamiento} producidas en el alma por la interacción con el cuerpo. Solo la extensión y el movimiento son propiedades objetivas de los cuerpos.
-%     \item \textbf{Legado problemático}: Este dualismo generó el célebre \textbf{problema mente-cuerpo}, que dominó la filosofía posterior, dando pie a soluciones como el \textbf{ocasionalismo} (Malebranche) o el \textbf{paralelismo} (Spinoza).
-% \end{itemize}
-% 
-% \section{Ética: La Moral Provisional}
-% 
-% Mientras construía su sistema filosófico definitivo, Descartes propuso en el \textit{Discurso del Método} una \textbf{ética provisional} para guiar la vida práctica. Se basa en tres (o cuatro) máximas de carácter \textbf{estoico}:
-% 
-% \begin{enumerate}
-%     \item \textbf{Obedecer las leyes y costumbres} del país y seguir la religión revelada.
-%     \item \textbf{Ser firme y decidido} en la acción una vez tomada una decisión, actuando con la mayor resolución posible ("seguir incluso las dudas más improbables, una vez decidido").
-%     \item \textbf{Procurar vencerse a sí mismo antes que a la fortuna}, y cambiar los propios deseos antes que el orden del mundo.
-%     \item (Implícita) \textbf{Dedicar toda la vida a cultivar la razón} y avanzar en el conocimiento de la verdad, que es el mayor de los bienes.
-% \end{enumerate}
-% 
-% Esta ética enfatiza el \textbf{autocontrol}, la \textbf{adaptación pragmática} y la primacía de la vida racional, mientras se espera a fundar una ética definitiva sobre bases metafísicas sólidas (proyecto que Descartes no llegó a completar sistemáticamente).
-% 
-% \section{Ciencia y Física: El Mecanicismo y la Geometría Analítica}
-% 
-% El proyecto cartesiano es unitario: su método debía unificar todo el saber.
-% 
-% \subsection{El Mecanicismo Universal}
-% Descartes aplica su modelo a la física: todo fenómeno natural debe explicarse por el \textbf{movimiento y colisión} de partículas de \textit{res extensa}, regidas por leyes matemáticas. Rechaza las \textbf{causas finales} aristotélicas. El universo es una gran máquina.
-% 
-% \subsection{La Geometría Analítica}
-% Es su contribución científica más perdurable. En \textit{La Géométrie} (1637) unió álgebra y geometría al representar curvas mediante ecuaciones con \textbf{coordenadas cartesianas}. Este método revolucionó las matemáticas y sentó las bases para el cálculo infinitesimal.
-% 
-% \begin{center}
-%     % Aquí una imagen sobre: Representación del plano cartesiano con una curva.
-%     % Sugerencia: un gráfico clásico del plano X-Y con los ejes perpendiculares y una parábola representada por la ecuación y=x^2.
-%     \includegraphics[width=0.5\textwidth]{plano_cartesiano.jpg}
-% \end{center}
-% 
+\newpage
+
+\section{Descartes}
+
+\begin{center}
+  \includegraphics[scale=0.25]{rene_descartes.jpg}
+\end{center}
+
+\begin{center}
+  \textit{Descartes, el padre la filosofía moderna [\dots] nunca hubiera sido -- así nos asegura-- guiado a construir su filosofía si hubiera tenido solo un profesor,
+    pues entonces hubiera creído lo qué se le fue dicho; pero, encontrando que sus profesores se contradecían, fue forzado a concluir que ninguna doctrina existente era cierta}
+
+    Bertrand Russell
+\end{center}
+
+La filosofía de Descartes inaugura el racionalismo continental como vertiente filosófica en directa oposición al empirismo británico. Asímismo, plantea los temas ideosincráticos
+que todo filósofo hasta Kant tratará de contestar. Verbigracia, el problema de la duda radical, de cuerpo--mente, del mundo exterior, de la fundación del conocimiento, 
+de la representación\dots
+
+En concreto, la filosofía de Descartes tiene como objetivo dar raíz al \textit{árbol del conocimiento} (cf. Principios de la Filosofía) para que este pueda crecer y así
+super el escepticismo de su época. Para este fin, Descartes concibe un método, modelado en la matemática que considera cómo Galileo el lenguaje del universo, apodado \textit{Mathesis
+Universalis}, esencial en toda ciencia si ha de lograr conocimiento clarividente. Lo natural de la razón es perderse, indagar en falsos razonamientos; método es la rutina que logra 
+dirigir la mente hacia el conocimiento.
+
+Así, dotar a la filosofía de un método para su desarrollo constituiría, siguiendo a Descartes, elevar a dicha disciplina al campo de las ciencias estrictas.
+
+\subsection{Método}
+
+Por todo lo dicho, Descates comienza con su sistema de deducción, su método, \textit{à la matemática}. En el Discurso del Método, Descartes tantea las matemáticas cómo
+fundación para la filosofía, y concluye qué, por venerable que sea esta disciplina, sus métodos no se adecuan a su necesidad de una \textit{philosophia perennis}. Por lo que
+prosigue en busca de un método adecuado para el raciocinio.
+
+\subsubsection{Operaciones de la mente}
+
+El método que propone Descartes parte de los dos procesos mentales que están implicados en las matemáticas: 
+\begin{enumerate}
+  \item \textbf{La intuición}: Descartes entiende por intuición ``la concepción de un espíritu sano y atento, tan distinta y tan fácil que ninguna duda quede sobre lo
+    conocido''. Es decir, sería aquel proceso por el cual se presenta a la mente una idea tan evidente que no cabe ninguna duda sobre ella. Son intuiciones, por ejemplo,
+    la captación inmediata de los axiomas de Euclides, por ejemplo: cosas iguales a una misma cosa son iguales entre sí. 
+  \item \textbf{La deducción}: Es la “operación por la cual comprendemos todas las cosas que son consecuencia necesaria de otras conocidas por nosotros”. En filosofía se
+    entiende por deducción, normalmente una inferencia de carácter necesario por la cual pasamos de unas afirmaciones a otras. o Intuición y deducción componen en 
+    matemáticas el camino que va de las proposiciones más simples a las más complejas, obteniendo así teoremas.
+\end{enumerate} 
+
+\subsubsection{Reglas del método}
+
+En su obra Reglas para la dirección del espíritu, Descartes propuso veintiuna reglas para dirigir correctamente la razón. Posteriormente, en el Discurso del método redujo estas
+reglas a cuatro. A saber:
+
+\begin{enumerate}
+  \item \textbf{Regla de la evidencia}: ``El primero consistía en no admitir cosa alguna como verdadera si no se la había conocido evidentemente como tal''.
+    Se trata con este precepto de ``dudar de todo'',
+    admitiendo únicamente aquello que se presenta ``clara y distintamente'' a la razón.
+  \item \textbf{Regla de la análisis}: ``El segundo exigía que dividiese cada una de las facultades a examinar en tantas partes como fuese posible y necesario para resolverlas más
+    fácilmente''.
+  \item \textbf{Regla de la sintésis}: ``El tercero requería conducir con orden mis reflexiones comenzando por los objetos más simples y más fácilmente cognoscibles, para ascender 
+    poco a poco, gradualmente, hasta el conocimiento de los más complejos''.
+  \item \textbf{Regla de la enumeración}: Por último, ``realizar recuentos tan complejos y revisiones tan amplias que pudiese estar seguro de no omitir nada''.
+\end{enumerate}
+
+Las dos primeras reglas constituyen la parte analítica del método que permite un \textit{ars inveniendi}, es decir, un procedimiento que nos permite separar lo accidental de lo
+sustancial, centrándonos en lo simple para poder conocerlo. La síntesis es un \textit{ars demostrandi} que pone lo que hemos conocido en conexión con lo anterior, bajo la
+forma de un sistema.
+
+\subsection{Metafísica}
+
+De acuerdo con la concepción unitaria del saber de Descartes, la metafísica constituye las raíces del árbol del conocimiento. Por ello, Descartes decide aplicar sus cuatro reglas
+del método justamente en el campo de la metafísica (la filosofía). Ese es el proyecto que desarrolla en sus Meditaciones metafísicas de 1641. La primera regla del método le indica
+que no debe ``admitir como verdadero nada que no sea claro y distinto, evidente y necesario''. Por lo tanto, Descartes busca en la filosofía una verdad primera que tenga los caracteres
+de claridad y distinción que exige la primera regla del método.
+
+Descartes hace premisa de lo que para Montaigne era conclusión: la duda en Descartes es ``metódica'', no existencial; el escepticismo reinante de la época era su punto de partida,
+no de llegada. La duda, por tanto, y a diferencia de Montaigne, tiene un objeto bien definido en Descartes: partiendo de ella se trata de hallar una primera certeza para ``levantar
+el edificio de una nueva Filosofía''. He aquí, en síntesis, el auténtico sentido de la duda metódica cartesiana: que ninguna verdad susceptible de duda puede ser principio de la
+filosofía.
+
+\subsubsection{La Teoría de las Tres Sustancias}
+
+Una sustancia es ``una cosa que existe de tal manera que no necesita de ninguna otra cosa para existir''. En rigor, solo \textbf{Dios es sustancia en sentido absoluto}. 
+No obstante, Descartes admite dos sustancias creadas, definidas por sus atributos esenciales:
+
+\begin{enumerate}
+  \item \textbf{Sustancia Infinita (Dios)}. Atributo principal: \textbf{La Perfección}.
+  \item \textbf{Sustancia Pensante (\textit{Res Cogitans})}. Atributo principal: \textbf{El Pensamiento} (dudar, entender, afirmar, querer, imaginar, sentir). Es el \textit{yo} descubierto en el \textit{cogito}.
+  \item \textbf{Sustancia Extensa (\textit{Res Extensa})}. Atributo principal: \textbf{La Extensión} (longitud, anchura, profundidad). Es la esencia de toda realidad material o corpórea.
+\end{enumerate}
+
+El mundo físico, incluido el cuerpo humano y los animales (considerados por Descartes autómatas complejo), se reduce a \textit{res extensa}: pura geometría y movimiento, gobernado por leyes mecanicistas.
+
+\subsection{Epistemología}
+
+Presentada la metafísica que Descartes trata de demostrar, podemos seguir a Descartes en su punto de partida: la epistemología.
+
+\subsubsection{La Duda Metódica}
+
+Para aplicar la primera regla y encontrar la primera evidencia, es necesario eliminar todos los prejuicios. Descartes emprende una duda metódica, universal e hiperbólica como
+instrumento. Se duda sucesivamente de:
+
+\begin{itemize}
+  \item Los \textbf{sentidos}: Descartes se plantea si es posible fiarse de los sentidos para alcanzar un conocimiento seguro. Pero se encuentra con el ejemplo de las ilusiones
+    ópticas (la refracción de la luz hace que una vara parezca torcida en el agua). Por ello Descartes encuentra que ``es prudente no fiarse nunca por entero de quienes nos han
+    engañado una vez''.
+  \item La \textbf{distinción entre vigilia y sueño}: Ya que la realidad que experimentamos podría no ser más que un sueño, Descartes se da cuenta de que no es en absoluto posible
+    distinguir el sueño de la vigilia. No obstante, hay algo que es verdad tanto en los sueños como en la vigilia: las matemáticas. Da igual si estoy en un sueño o no, una suma
+    siempre será una suma. Pues, ``duerma yo o esté despierto, dos más tres serán siempre cinco, y el cuadrado no tendrá más de cuatro lados''.
+  \item Hasta de las \textbf{verdades matemáticas}, mediante la hipótesis del \textbf{genio maligno} (\textit{genium malignum}): Descartes finge la hipótesis de que el ser humano
+    habría podido ser creado por un Dios todopoderoso malvado. Ese Dios usaría todo su poder para engañarnos. Un ser así podría haber creado la mente de tal modo que nos
+    equivocaríamos incluso en aquello que nos parece más evidente. Debido al genio maligno, \textit{cuanto más cierto esté de algo, tanto más equivocado estoy}.
+\end{itemize}
+
+Evidentemente, la duda metódica no tiene otro sentido que ir “desbrozando” el camino hacia una primera certeza indiscutible. En efecto, aunque todo resulte dudoso, 
+e incluso un genio maligno ponga toda su industria en engañarme, sin embargo, puedo estar seguro al menos de una cosa: de que pienso y, por tanto, soy. ``Cogito ergo sum''.
+He aquí el conocimiento absolutamente cierto e indubitable que Descartes andaba buscando y el punto de partida de toda su filosofía: el “cogito” como principio del
+filosofar. Afirmaba Descartes que si Arquímedes había pedido un punto de apoyo para levantar el mundo, también él tendría derecho a pedir lo propio para levantar el
+edificio de una nueva filosofía.
+
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{procedimiento_descartes.jpg}
+\end{center}
+
+Lo que hizo más bien fue ``refundar'' la filosofía misma, enfrentándose al escepticismo de la época desde la radicalidad del ``cogito''. Por lo demás, cabe destacar que
+esta primera verdad indiscutible, el célebre ``ego sum res cogitans'', no sería sino el resultado de una ``intuición'', o si se quiere, una captación simple e inmediata del
+espíritu, tan clara y distinta, que no deja lugar a dudas. Como declara Descartes: ``Un concepto de la mente pura y atenta que nace de la sola luz de la razón''. Con esto
+tenemos, por tanto, que la esencia última del método cartesiano es este aspecto intuitivo, la ``simplex mentis inspectio''.
+
+Esta primera verdad establece también el criterio de verdad: es verdadero todo aquello que se percibe con la misma claridad y distinción con la que percibo 
+mi existencia como cosa pensante.
+
+\subsubsection{Clasificación de las Ideas}
+
+Al analizar el contenido de su mente, Descartes distingue tres tipos de ideas:
+\begin{itemize}
+  \item \textbf{Ideas Adventicias}: Parecen provenir de la experiencia externa (ej.: el sonido de un trueno). Son sospechosas para la fundamentación.
+  \item \textbf{Ideas Facticias}: Construidas por la imaginación a partir de otras ideas (ej.: un centauro).
+  \item \textbf{Ideas Innatas}: Nacen con el pensamiento mismo, son claras y distintas, y constituyen el fundamento del conocimiento verdadero 
+    (ej.: la idea de Yo, de Pensamiento, de Perfección, de Infinito, de Dios).
+\end{itemize}
+
+Desde la certeza del \textit{cogito}, Descartes busca recuperar el mundo exterior. Para ello, debe demostrar la existencia de un \textbf{Dios veraz} que garantice
+la fiabilidad de nuestras facultades cognoscitivas.
+
+\subsubsection{Demostraciones de la Existencia de Dios}
+Descartes ofrece dos pruebas principales, basadas en el análisis de la idea innata de Dios (Ser Perfecto e Infinito):
+
+\begin{enumerate}
+  \item \textbf{Prueba por la Causalidad de la Idea de Perfección} (Vía Causal):
+    \begin{itemize}
+      \item Tengo en mí la idea de un ser infinito y perfecto.
+      \item Yo soy un ser finito e imperfecto.
+      \item El principio de causalidad (la causa debe tener al menos tanta realidad formal como el efecto) exige que esta idea no pueda haber sido producida 
+        por mí, ni por nada finito.
+      \item Luego, debe existir una causa adecuada a esta idea: un \textbf{Ser realmente infinito y perfecto} (Dios).
+    \end{itemize}
+  \item \textbf{Prueba Ontológica} (por la Esencia Necesaria):
+    \begin{itemize}
+      \item La esencia de Dios implica la \textbf{existencia necesaria}, del mismo modo que la esencia del triángulo implica que sus ángulos sumen 180º.
+      \item La existencia es una \textbf{perfección}. Un ser sumamente perfecto no puede carecer de perfección alguna.
+      \item Por tanto, Dios existe necesariamente.
+    \end{itemize}
+\end{enumerate}
+
+La existencia de un \textbf{Dios perfecto y veraz} es la segunda certeza fundamental. Su perfección excluye que sea un engañador; por tanto,
+\textbf{garantiza la fiabilidad de nuestra razón} cuando juzgamos con claridad y distinción, y permite recuperar la confianza en :wq:la realidad del mundo material.
+
+\subsection{Antropología}
+
+El ser humano es un \textbf{compuesto problemático} de dos sustancias radicalmente heterogéneas: un \textbf{alma} (\textit{res cogitans}) y un \textbf{cuerpo} (\textit{res extensa}). Este \textbf{dualismo sustancial} es el núcleo de la antropología cartesiana.
+
+\subsubsection{El Problema de la Interacción}
+
+La cuestión central es: ¿cómo pueden dos realidades de naturaleza opuesta (inmaterial/material, inextensa/extensa) \textbf{interactuar} e influirse mutuamente? 
+En la experiencia común, parece claro que el alma mueve el cuerpo (ej.: decidir caminar) y el cuerpo afecta al alma (ej.: sentir dolor).
+
+Para explicar esta interacción, Descartes postula un \textbf{punto de unión} en el cerebro: la \textbf{glándula pineal}. Allí, los "espíritus animales" (partículas materiales
+muy sutiles del cuerpo) transmitirían los impulsos sensoriales al alma, y las voliciones del alma moverían el cuerpo. Esta solución es \textbf{insatisfactoria} desde su propio
+marco metafísico, pues supone que una sustancia inextensa puede actuar localmente sobre lo extenso, violando las leyes de la física mecanicista que él mismo propuso.
+
+\section{Obras}
+
+\subsection{}
+
+%\subsection{Consecuencias del Dualismo}
+%\begin{itemize}
+%  \item \textbf{Identidad personal}: La verdadera identidad del ser humano radica en el alma pensante. El cuerpo es una "máquina" o "vestidura".
+%  \item \textbf{Teoría de las cualidades sensibles}: Los colores, sonidos, sabores, etc., no son propiedades del mundo, sino \textbf{modificaciones confusas del pensamiento} producidas en el alma por la interacción con el cuerpo. Solo la extensión y el movimiento son propiedades objetivas de los cuerpos.
+%  \item \textbf{Legado problemático}: Este dualismo generó el célebre \textbf{problema mente-cuerpo}, que dominó la filosofía posterior, dando pie a soluciones como el \textbf{ocasionalismo} (Malebranche) o el \textbf{paralelismo} (Spinoza).
+%\end{itemize}
+%
+%
+%\section{Ética: La Moral Provisional}
+%
+%Mientras construía su sistema filosófico definitivo, Descartes propuso en el \textit{Discurso del Método} una \textbf{ética provisional} para guiar la vida práctica. Se basa en tres (o cuatro) máximas de carácter \textbf{estoico}:
+%
+%\begin{enumerate}
+%  \item \textbf{Obedecer las leyes y costumbres} del país y seguir la religión revelada.
+%  \item \textbf{Ser firme y decidido} en la acción una vez tomada una decisión, actuando con la mayor resolución posible ("seguir incluso las dudas más improbables, una vez decidido").
+%  \item \textbf{Procurar vencerse a sí mismo antes que a la fortuna}, y cambiar los propios deseos antes que el orden del mundo.
+%  \item (Implícita) \textbf{Dedicar toda la vida a cultivar la razón} y avanzar en el conocimiento de la verdad, que es el mayor de los bienes.
+%\end{enumerate}
+%
+%Esta ética enfatiza el \textbf{autocontrol}, la \textbf{adaptación pragmática} y la primacía de la vida racional, mientras se espera a fundar una ética definitiva sobre bases metafísicas sólidas (proyecto que Descartes no llegó a completar sistemáticamente).
+%
+%\section{Ciencia y Física: El Mecanicismo y la Geometría Analítica}
+%
+%El proyecto cartesiano es unitario: su método debía unificar todo el saber.
+%
+%\subsection{El Mecanicismo Universal}
+%Descartes aplica su modelo a la física: todo fenómeno natural debe explicarse por el \textbf{movimiento y colisión} de partículas de \textit{res extensa}, regidas por leyes matemáticas. Rechaza las \textbf{causas finales} aristotélicas. El universo es una gran máquina.
+%
+%\subsection{La Geometría Analítica}
+%Es su contribución científica más perdurable. En \textit{La Géométrie} (1637) unió álgebra y geometría al representar curvas mediante ecuaciones con \textbf{coordenadas cartesianas}. Este método revolucionó las matemáticas y sentó las bases para el cálculo infinitesimal.
+%
+%\begin{center}
+%  % Aquí una imagen sobre: Representación del plano cartesiano con una curva.
+%  % Sugerencia: un gráfico clásico del plano X-Y con los ejes perpendiculares y una parábola representada por la ecuación y=x^2.
+%  \includegraphics[width=0.5\textwidth]{plano_cartesiano.jpg}
+%\end{center}
+
 % \section{Influencia y Críticas Fundamentales}
 % 
 % El cartesianismo generó una escuela poderosa y también objeciones cruciales que moldearon la filosofía posterior.
