@@ -667,7 +667,7 @@ La \textbf{estadística y probabilidad} estudia modelos matemáticos que exhiben
 \subsection{Probabilidad}
 
 \begin{definition}[$ \sigma $-álgebra]
-  Dado un conjunto $ \Omega $, una $ \sigma $-algebra es una colección de subconjuntos de $ \Omega $ cerrada ante complementación, y unión e intersección de familias contables.
+  Dado un conjunto $ \Omega $, una $ \sigma $-álgebra es una colección de subconjuntos de $ \Omega $ cerrada ante complementación, y unión e intersección de familias contables.
 \end{definition}
 
 Conque un elemento de una $ \sigma $-álgebra $ \mathcal{F} $ podría ser visto como un \textit{suceso}: Si pasan sucesos $ A, B \in \mathcal{F} $, siempre podremos preguntar
@@ -931,7 +931,6 @@ con ciertas operaciones que cumplen ciertas propiedades. La estructura más simp
   \end{itemize}
 \end{example}
 
-
 \begin{definition}[Modulo sobre un anillo]
   Un modulo $ V $ sobre un anillo $ \mathfrak{R} $ es un monoide abeliano equipado con una acción
   $ \cdot : \mathfrak{R} \times V \to V $ compatible con la estructura de anillo de $ \mathfrak{R} $:
@@ -957,8 +956,7 @@ Cuando $ \mathfrak{R} $ es además un cuerpo, $ V $ es un \textit{espacio vector
 
 \subsubsection{Bases}
 
-Una base es un subconjunto del espacio vectorial que genera al resto de elementos. Asumiendo el axioma de la elección \sn{\url{https://ncatlab.org/nlab/show/axiom+of+choice}}
-todo espacio vectorial tiene una base. Antes de definir formalmente una base, debemos ser precisos con que significa que ``generen'' el espacio vectorial:
+Una base es un subconjunto del espacio vectorial que genera al resto de elementos. Asumiendo el axioma de la elección todo espacio vectorial tiene una base. Antes de definir formalmente una base, debemos ser precisos con que significa que ``generen'' el espacio vectorial:
 
 \begin{definition}[Combinación lineal]
   Sea $ V $ un espacio vectorial sobre un cuerpo $ k $ y $ U \subseteq V $ un subconjunto. Definimos el conjunto $ \spn U \subseteq V $ como:
@@ -966,14 +964,10 @@ todo espacio vectorial tiene una base. Antes de definir formalmente una base, de
   Decimos que un elemento de $ \spn U $ es una combinación lineal de $ U $.
 \end{definition}
 
-Asimismo, una base $ B \subseteq V $ debería de ser un subconjunto mínimo con la propiedad de que $ \spn B = V $:
-
 \begin{definition}[Independencia lineal]
   Sea $ V $ un espacio vectorial sobre un cuerpo $ k $ y $ U \subseteq V $ un subconjunto finito. Decimos que $ U $ es linealmente independiente si:
   \[ \sum_{a_i \in k,\, \vec{v_i} \in U} a_i \vec{v_i} = 0 \Rightarrow a_i = 0 \]
 \end{definition}
-
-En total:
 
 \begin{definition}[Base]
   Sea $ V $ un espacio vectorial sobre un cuerpo $ k $ y $ B \subseteq V $ un subconjunto (posiblemente infinito). Decimos que $ B $ es una base para $ V $ si $ \spn B = V $
@@ -1005,60 +999,113 @@ Una transformación lineal es un $ k $-homomorfismo entre espacios vectoriales, 
 
 Toda transformación lineal es equivalentemente una \textit{matríz}:
 
-\begin{definition}[Matriz $ n \times m $]
-  Una matríz (real, compleja\dots) $ n \times m $ donde $ n, m $ son cardinales (típicamente finitos) es una función $ n \times m \to \R \, (\C, \Q\dots) $. No obstante,
-  ``matríz'' implica que debemos representar dicha función como una tabla de $ n $ filas y $ m $ columnas cuyas entradas son valores en el objeto algebraico apropiado (los reales,
-  por ejemplo):
-  \begin{center}
-    \[ A = (a_{ij}) = 
+\begin{definition}[Matriz $  m \times n $]
+  Una matríz (real, compleja\dots) $  m \times n $ donde $ n, m $ son cardinales (típicamente finitos) es una función $  m \times n \to \R \, (\C, \Q\dots) $. No obstante,
+  ``matriz'' implica que debemos representar dicha función como una tabla de $ m $ filas y $ n $ columnas cuyas entradas son valores en el objeto algebraico apropiado:
+  \[
+    A = (a_{ij}) = 
     \begin{pmatrix}
-      a_{11} & \dots & a_{1m} \\
+      a_{11} & \dots & a_{1n} \\
       \vdots & \ddots & \vdots \\
-      a_{n1} & \dots & a_{nm} \\
+      a_{m1} & \dots & a_{mn} \\
     \end{pmatrix}
-    \in \mathcal{M}_{n \times m}
+    \in \mathcal{M}_{ m \times n}
   \]
-  \end{center}
 \end{definition}
 
-La correspondencia entre matríz y transformación lineal viene dada por el hecho de que una transformación lineal sea esencialmente determinada por su acción en una alguna base de 
-su dominio. Así, cada columna de la matríz es el resultado de aplicar la transformación a un elemento de la base. Dicho lo cuál, es fácil derivar los cálculos asociados a aplicar
-una transformación a un elemento utilizando matrices (\textit{multiplicación matríz--vector}) y otras operaciones como composición de matrices (\textit{multiplicación matríz--matríz}).
-
-Estudiar transformaciones lineales por medio de matrices hace más claro y computacional lo que prosigue. Además, el concepto de matríz escapa el de transformación lineal, siendo una
-manera útil de representar distintos fenómenos.
-
-\begin{remark}
-  Cómo luz de esto, la notación $ \mathcal{M}_{n \times m} $ es más facilmente entendida cuando se entiende alguna matriz $ T \in \mathcal{M}_{n \times m} $ como una transformación
-  $ T : \R^n \to \R^m $. Así, es evidente que si $ T $ ha de representar una transformación siendo sus columnas los vectores base cuyo span forma la imagen de $ T $
-  $ m $ ha de ser el número de columnas y $ n $ de filas.
-\end{remark}
+La correspondencia entre matríz y transformación lineal viene dada por el hecho de que una transformación lineal sea esencialmente determinada por su acción en una base de 
+su dominio. Cada columna de la matríz es el resultado de aplicar la transformación a un elemento de la base.
 
 \subsubsection{Operaciones con matríces}
 
 \begin{definition}[Suma de matríces]
-  Sean $ A, B \in \mathcal{M}_{n \times m} $ matríces sobre un cuerpo $ k $. Definimos la suma de matríces como la suma punto a punto, esto es:
-  \[ A + B =
-    \begin{pmatrix}
-      a_{11} + b_{11} & \dots & a_{1m} + b_{1m} \\
-      \vdots & \ddots & \vdots \\
-      a_{n1} + b_{11} & \dots & a_{nm} + b_{1m} \\
-    \end{pmatrix}
-  \]
+  Sean $ A, B \in \mathcal{M}_{ m \times n} $ matríces sobre un cuerpo $ k $. Definimos:
+  \[ (A + B)_{ij} = A_{ij} + B_{ij} \]
 \end{definition}
 
 \begin{definition}[Multiplicación de matríces]
-  Sean $ A \in \mathcal{M}_{n \times m} $ y $ B \in \mathcal{M}_{m \times r} $ matríces sobre un cuerpo $ k $. Definimos la multiplicación de matríces como la composición de las
-  transformaciones linales que representan.
- % Explícitamente:
- % \[ AB =
- %   \begin{pmatrix}
- %     \sum_i^n a_{1i} b_{i1} & \dots & \sum_i^n a_{ri}b_{ir} \\
- %     \vdots & \ddots & \vdots \\
- %     \sum_i^n a_{ni} b_{i1} & \dots & \sum_i^n a_{nm} + b_{1m} \\
- %   \end{pmatrix}
- % \]
+  Sean $ A \in \mathcal{M}_{ m \times n} $ y $ B \in \mathcal{M}_{ n \times r} $. Definimos:
+  \[ (AB)_{ij} = \sum_{k=1}^n A_{ik} B_{kj} \]
 \end{definition}
+
+\begin{definition}[Traza de una matriz]
+  Sea $ A \in \mathcal{M}_{n} $. La traza es:
+  \[ \text{tr}(A) = \sum_{i=1}^n A_{ii} \]
+\end{definition}
+
+\begin{definition}[Rango de una matriz]
+  El rango de una matriz es la dimensión del subespacio generado por sus columnas (equivalentemente, por sus filas).
+\end{definition}
+
+\paragraph{Cálculo del rango (método de Gauss).}
+
+El método fundamental para calcular el rango es la \textit{reducción por filas} (eliminación de Gauss). Consiste en aplicar operaciones elementales:
+\begin{itemize}
+  \item Intercambiar dos filas.
+  \item Multiplicar una fila por un escalar no nulo.
+  \item Sumar a una fila un múltiplo de otra.
+\end{itemize}
+
+Estas operaciones no alteran el rango. Reduciendo la matriz a forma escalonada, el rango es el número de filas no nulas (o pivotes).
+
+\paragraph{Cálculo del rango mediante determinantes.}
+
+Sea $ A \in \mathcal{M}_{m \times n} $. El rango es el mayor entero $ r $ tal que existe un menor cuadrado $ r \times r $ con determinante no nulo. Es decir:
+\[
+\operatorname{rg}(A) = r \iff \exists \text{ menor } M \text{ de orden } r \text{ con } \det(M) \neq 0
+\]
+y todos los menores de orden $ r+1 $ son nulos.
+
+\begin{definition}[Determinante de una matriz]
+  El determinante de una matriz cuadrada $ A \in \mathcal{M}_n $ es la aplicación multilineal alternada
+  \[
+  \det : \mathcal{M}_n \to k
+  \]
+  caracterizada por:
+  \begin{itemize}
+    \item Ser multilineal en las filas.
+    \item Cambiar de signo al intercambiar dos filas.
+    \item Satisfacer $\det(I_n)=1$.
+  \end{itemize}
+\end{definition}
+
+\paragraph{Cálculo directo del determinante.}
+
+Para $ A = (a_{ij}) \in \mathcal{M}_n $:
+\[
+\det(A) = \sum_{\sigma \in S_n} \operatorname{sgn}(\sigma)
+\prod_{i=1}^n a_{i\sigma(i)}
+\]
+donde $ S_n $ es el grupo de permutaciones.
+
+\paragraph{Regla de Sarrus (caso $3\times 3$).}
+
+Si 
+\[
+A =
+\begin{pmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{pmatrix}
+\]
+entonces:
+\[
+\det(A) = aei + bfg + cdh - ceg - bdi - afh.
+\]
+
+\paragraph{Cálculo del determinante por Gauss.}
+
+Reduciendo por filas hasta obtener una matriz triangular:
+\begin{itemize}
+  \item Intercambiar filas cambia el signo del determinante.
+  \item Multiplicar una fila por $\lambda$ multiplica el determinante por $\lambda$.
+  \item Sumar múltiplos de filas no altera el determinante.
+\end{itemize}
+Una vez triangular:
+\[
+\det(A) = \prod_{i=1}^n a_{ii}.
+\]
 
 \subsubsection{Tipos de matrices}
 
@@ -1071,58 +1118,89 @@ manera útil de representar distintos fenómenos.
 \end{definition}
 
 \begin{definition}[Matriz identidad]
-  La matriz identidad $I_n$ es diagonal con todos los elementos de la diagonal iguales a $1$.
-\end{definition}
-
-\begin{definition}[Matriz nula]
-  Una matriz $A$ es nula si $a_{ij} = 0$ para todo $i,j$.
-\end{definition}
-
-\begin{definition}[Matriz triangular]
-  \begin{itemize}
-    \item $A$ es triangular superior si $a_{ij} = 0$ para todo $i > j$.
-    \item $A$ es triangular inferior si $a_{ij} = 0$ para todo $i < j$.
-  \end{itemize}
-\end{definition}
-
-\begin{definition}[Matriz simétrica y antisimétrica]
-  \begin{itemize}
-    \item $A$ es simétrica si $A^T = A$.
-    \item $A$ es antisimétrica si $A^T = -A$.
-  \end{itemize}
+  La matriz identidad $I_n$ es diagonal con $a_{ii}=1$.
 \end{definition}
 
 \begin{definition}[Matriz invertible]
   Una matriz $A$ es invertible si existe $B$ tal que $AB = BA = I_n$.
 \end{definition}
 
+\paragraph{Cálculo de la inversa (método de Gauss–Jordan).}
+
+Sea $ A \in \mathcal{M}_n $. Consideramos la matriz aumentada:
+\[
+(A \mid I_n).
+\]
+Aplicando eliminación de Gauss hasta obtener:
+\[
+(I_n \mid B),
+\]
+la matriz $ B $ es $ A^{-1} $.
+
+\paragraph{Cálculo de la inversa mediante determinantes (matriz adjunta).}
+
+Sea $ A \in \mathcal{M}_n $ con $\det(A)\neq 0$. Definimos el cofactor:
+\[
+C_{ij} = (-1)^{i+j} \det(M_{ij}),
+\]
+donde $ M_{ij} $ es el menor que resulta de eliminar fila $i$ y columna $j$.
+
+La matriz adjunta es:
+\[
+\operatorname{adj}(A) = (C_{ji}).
+\]
+
+Entonces:
+\[
+A^{-1} = \frac{1}{\det(A)} \operatorname{adj}(A).
+\]
+
 \subsubsection{Resultados sobre matrices}
 
 \begin{theorem}[Determinante de matriz triangular]
-  Sea $A$ triangular (superior o inferior). Entonces:
-  \[ \det(A) = \prod_{i=1}^n a_{ii} \]
+  Sea $A$ triangular. Entonces:
+  \[
+  \det(A) = \prod_{i=1}^n a_{ii}.
+  \]
 \end{theorem}
 
 \begin{theorem}[Invertibilidad y determinante]
-  Una matriz cuadrada $A$ es invertible si y sólo si $\det(A) \neq 0$.
+  $A$ es invertible si y sólo si $\det(A) \neq 0$.
 \end{theorem}
 
 \begin{theorem}[Producto de matrices]
   Sean $A,B \in \mathcal{M}_{n \times n}$. Entonces:
-  \[ \det(AB) = \det(A)\det(B) \quad\text{y}\quad (AB)^T = B^T A^T \]
+  \[
+  \det(AB) = \det(A)\det(B), 
+  \quad
+  (AB)^T = B^T A^T.
+  \]
 \end{theorem}
 
 \begin{theorem}[Regla de Cramer]
-  Sea $Ax = b$ un sistema lineal con $A$ invertible. Entonces, para cada $i$:
-  \[ x_i = \frac{\det(A_i)}{\det(A)} \]
-  donde $A_i$ es $A$ reemplazando la columna $i$ por $b$.
+  Sea $A\vec{x} = \vec{b}$ con $A$ invertible. Entonces:
+  \[
+  x_i = \frac{\det(A_i)}{\det(A)}.
+  \]
 \end{theorem}
 
-\begin{theorem}[Teorema espectral para matrices simétricas]
-  Sea $A$ simétrica real. Entonces $A$ es diagonalizable por una matriz ortogonal $P$:
-  \[ P^T A P = D \]
-  donde $D$ es diagonal con los valores propios de $A$.
-\end{theorem}
+\subsection{Ecuaciones lineales}
+
+Una ecuación lineal es una ecuación de la forma:
+\[
+AX = B.
+\]
+
+\paragraph{Resolución por eliminación de Gauss.}
+
+Se considera la matriz aumentada $(A \mid B)$ y se reduce a forma escalonada. El sistema es:
+\begin{itemize}
+  \item Compatible determinado si el rango de $A$ es igual al número de incógnitas.
+  \item Compatible indeterminado si el rango es menor.
+  \item Incompatible si $\operatorname{rg}(A) < \operatorname{rg}(A\mid B)$.
+\end{itemize}
+
+Este criterio es el \textit{teorema de Rouché–Frobenius}.
 
 \newpage
 
@@ -3079,7 +3157,7 @@ Desde la certeza del \textit{cogito}, Descartes busca recuperar el mundo exterio
 la fiabilidad de nuestras facultades cognoscitivas.
 
 \subsubsection{Demostraciones de la Existencia de Dios}
-Descartes ofrece dos pruebas principales, basadas en el análisis de la idea innata de Dios (Ser Perfecto e Infinito):
+Descartes ofrece tres pruebas principales, basadas en el análisis de la idea innata de Dios (Ser Perfecto e Infinito):
 
 \begin{enumerate}
   \item \textbf{Prueba por la Causalidad de la Idea de Perfección} (Vía Causal):
@@ -3095,6 +3173,14 @@ Descartes ofrece dos pruebas principales, basadas en el análisis de la idea inn
       \item La esencia de Dios implica la \textbf{existencia necesaria}, del mismo modo que la esencia del triángulo implica que sus ángulos sumen 180º.
       \item La existencia es una \textbf{perfección}. Un ser sumamente perfecto no puede carecer de perfección alguna.
       \item Por tanto, Dios existe necesariamente.
+    \end{itemize}
+  \item \textbf{Prueba Cosmológica} (por la Conservación del Ser):
+    \begin{itemize}
+      \item Yo existo actualmente como un ser pensante, pero soy finito e imperfecto, y no poseo en mí mismo la razón suficiente de mi propia existencia.
+      \item Si yo fuese la causa de mí mismo, me habría dado todas las perfecciones de las que tengo idea; sin embargo, experimento duda, limitación e imperfección.
+      \item La existencia no solo requiere una causa para comenzar, sino también para \textbf{conservarse} en cada instante (la creación continua).
+      \item No puede haber una regresión infinita de causas finitas que expliquen mi existencia presente.
+      \item Por tanto, debe existir una causa primera que posea en sí misma la plenitud del ser y el poder de conservar mi existencia: un \textbf{Ser infinito y perfecto} (Dios).
     \end{itemize}
 \end{enumerate}
 
@@ -3114,9 +3200,61 @@ Para explicar esta interacción, Descartes postula un \textbf{punto de unión} e
 muy sutiles del cuerpo) transmitirían los impulsos sensoriales al alma, y las voliciones del alma moverían el cuerpo. Esta solución es \textbf{insatisfactoria} desde su propio
 marco metafísico, pues supone que una sustancia inextensa puede actuar localmente sobre lo extenso, violando las leyes de la física mecanicista que él mismo propuso.
 
-\section{Obras}
+\subsection{Obras}
 
-\subsection{}
+\subsubsection{Discours de la Méthode}
+
+\textit{Discours de la Méthode} (1637) constituye una de las obras fundacionales de la filosofía moderna y del racionalismo continental. Publicado originalmente en francés, el texto tiene un carácter 
+programático: no pretende ser un tratado sistemático cerrado, sino la exposición del camino que el propio autor ha seguido para alcanzar la verdad y, con ello, proponer un modelo universal de conocimiento.
+En este sentido, la obra se sitúa en un momento histórico decisivo: el tránsito entre la escolástica medieval y la nueva ciencia moderna. El problema filosófico fundamental al que responde Descartes es la
+necesidad de encontrar un fundamento absolutamente seguro para el conocimiento humano, capaz de superar el escepticismo y la incertidumbre heredados de la tradición.
+
+El Discurso desarrolla varias ideas fundamentales. En primer lugar, la confianza en la razón como facultad universal: todos los seres humanos poseen por igual la capacidad racional, pero no todos la
+utilizan correctamente. De ahí la necesidad de un método. En segundo lugar, Descartes formula las cuatro reglas del método (evidencia, análisis, síntesis y enumeración), que constituyen un procedimiento racional
+destinado a alcanzar verdades indudables.
+
+La aplicación radical de esta regla conduce a la famosa duda metódica: Descartes decide poner en cuestión todos los conocimientos que puedan ser dudosos. Sin embargo, esta es
+instrumental: su finalidad es encontrar una verdad absolutamente indudable que sirva de fundamento al conocimiento. Esa verdad aparece en la intuición del \textit{cogito}: mientras dudo,
+pienso; y mientras pienso, existo. La proposición \textit{cogito ergo sum} constituye así la primera certeza y el principio de toda la filosofía cartesiana. Con ella se descubre que la esencia del sujeto
+es el pensamiento, inaugurando el subjetivismo moderno y el giro hacia la conciencia como fundamento del saber.
+
+A partir del \textit{cogito}, el problema filosófico se amplía: ¿cómo pasar de la certeza del yo a la existencia del mundo exterior? Para resolver esta cuestión, Descartes introduce la demostración de la
+existencia de Dios como ser perfecto y veraz, cuya perfección garantiza que las ideas claras y distintas no pueden ser falsas. De este modo, Dios actúa como fundamento último de la verdad y permite recuperar
+la confianza en la realidad del mundo material.
+
+En síntesis, el problema filosófico fundamental del \textit{Discurso del método} es la fundamentación del conocimiento seguro, y las ideas principales que lo articulan son: la confianza en la razón,
+la necesidad de un método universal inspirado en las matemáticas, la duda metódica como instrumento para alcanzar la certeza, el descubrimiento del \textit{cogito} como primera verdad indudable, la 
+demostración de Dios como garantía de la verdad y el dualismo entre pensamiento y extensión. Todo ello configura un proyecto de reconstrucción del saber desde fundamentos absolutamente ciertos, lo que
+justifica que Descartes sea considerado el iniciador de la filosofía moderna.
+
+\subsubsection{Meditationes de prima philosophia}
+
+Las \textit{Meditationes de prima philosophia, in qua Dei existentia et animæ immortalitas demonstrantur} (1641) constituyen la obra propiamente sistemática de René Descartes.
+Si el Discurso del Método tenía un carácter programático y autobiográfico, en el que el autor exponía el camino seguido para alcanzar la certeza, las Meditaciones representan la aplicación 
+rigurosa de ese método al ámbito de la metafísica, es decir, a la investigación de los principios últimos del conocimiento y de la realidad. La obra se inscribe, por tanto, en el contexto general del racionalismo
+moderno y ocupa un lugar central dentro del corpus cartesiano, pues en ella se desarrollan con detalle las tesis fundamentales que servirán de base a sus escritos posteriores, especialmente los 
+\textit{Principios de la filosofía}.
+
+El título, revela ya la intención del autor: demostrar la existencia de Dios y la distinción entre alma y cuerpo, cuestiones que tradicionalmente pertenecían a la metafísica escolástica, pero que 
+Descartes pretende fundamentar mediante la sola razón. La obra fue publicada en latín, lengua académica de la época, y acompañada de objeciones y respuestas de diversos pensadores contemporáneos, 
+lo que muestra su aspiración a intervenir directamente en el debate filosófico europeo.
+
+Las \textit{Meditaciones} están estructuradas en seis partes, presentadas como reflexiones realizadas en seis días consecutivos, siguiendo un modelo inspirado en los ejercicios espirituales. Esta estructura
+no es meramente literaria, sino filosófica, ya que reproduce el proceso gradual por el cual la mente pasa de la duda radical al conocimiento cierto. La primera meditación introduce la duda metódica universal,
+poniendo en cuestión todos los conocimientos anteriores. La segunda alcanza la primera certeza indudable mediante el descubrimiento del \textit{cogito}, estableciendo la naturaleza del yo como sustancia 
+pensante. La tercera desarrolla la demostración de la existencia de Dios a partir de la idea de perfección presente en la mente. La cuarta aborda el problema del error humano y su compatibilidad con la 
+existencia de un Dios perfecto. La quinta presenta una nueva demostración de la existencia divina, de carácter ontológico, y establece la esencia de las cosas materiales como extensión. Finalmente, la 
+sexta meditación demuestra la existencia del mundo exterior y formula la distinción real entre alma y cuerpo, culminando el sistema metafísico cartesiano.
+
+El problema filosófico fundamental de la obra es, la fundamentación del conocimiento cierto, a un nivel más profundo que en el \textit{Discurso}. Se trata de encontrar un principio 
+absolutamente indudable que permita reconstruir el edificio del saber y garantizar la verdad de nuestras ideas. La estrategia cartesiana consiste en partir de la subjetividad, es decir, de la certeza
+del pensamiento, para posteriormente demostrar la existencia de Dios y, a partir de él, la realidad del mundo material. Este itinerario refleja el giro moderno hacia el sujeto como fundamento del 
+conocimiento, uno de los rasgos más característicos de la filosofía posterior.
+
+En síntesis, las ideas fundamentales de las \textit{Meditaciones metafísicas} son la duda metódica como procedimiento de depuración del conocimiento, el descubrimiento del \textit{cogito} como primera
+verdad indudable, la demostración racional de la existencia de Dios como garantía de la verdad, la explicación del error humano, la concepción de la materia como extensión y el dualismo entre alma y cuerpo.
+Todo ello responde al problema filosófico central de establecer un fundamento absolutamente seguro para la ciencia y la filosofía, objetivo que sitúa a Descartes como iniciador de la filosofía moderna y del
+racionalismo.
 
 %\subsection{Consecuencias del Dualismo}
 %\begin{itemize}
@@ -3169,7 +3307,101 @@ marco metafísico, pues supone que una sustancia inextensa puede actuar localmen
 % 
 % \subsection{Legado}
 % A pesar de las críticas, Descartes instauró problemas capitales de la modernidad: la \textbf{búsqueda del fundamento absoluto del conocimiento}, la \textbf{autonomía de la razón subjetiva}, el \textbf{dualismo mente-cuerpo} y el ideal de una \textbf{ciencia unificada} bajo la matemática. Su sombra es alargada en el racionalismo continental (Spinoza, Leibniz), en la fenomenología (Husserl) y en buena parte de la filosofía de la mente contemporánea.
+
+\section{Nietzsche}
 % 
+% \begin{center}
+%     % Aquí una imagen sobre: Retrato de Friedrich Nietzsche.
+%     % Sugerencia: La famosa fotografía de Nietzsche de Gustav Schultze (Naumburg, 1882) o el dibujo de Hans Olde.
+%     \includegraphics[width=0.35\textwidth]{nietzsche_retrato.jpg}
+% \end{center}
+% 
+% \vspace{5mm}
+% \begin{center}
+%     \textit{"Dios ha muerto. [...] Y nosotros lo hemos matado."}
+% \end{center}
+% \vspace{5mm}
+% 
+% \subsection{Introducción: Contexto y Propósito de una Filosofía a Martillazos}
+% 
+% Friedrich Nietzsche (1844-1900) es el gran crítico y disolvente de la cultura occidental. Su pensamiento, radical y aforístico, no construye un sistema, sino que ejecuta una \textbf{destrucción genealógica} de los valores que han regido Europa (el platonismo, el cristianismo, la moral, la racionalidad) para abrir paso a una nueva posibilidad de existencia: el \textbf{superhombre} (\textit{Übermensch}) que afirme la vida en su totalidad. Su filosofía es un \textbf{vitalismo trágico-dionisíaco} que se expresa mediante metáforas, aforismos y una prosa combativa. El contexto de la crisis del positivismo y el nihilismo europeo finisecular es esencial para comprender su obra.
+% 
+% \subsection{Crítica de la Cultura Occidental: Nihilismo y Muerte de Dios}
+% 
+% Nietzsche diagnostica que la cultura occidental está enferma de \textbf{nihilismo} (la desvalorización de los valores supremos, la sensación de que "todo carece de sentido"). Su obra es una genealogía (estudio del origen histórico-psicológico, no lógico) de esta enfermedad.
+% 
+% \subsubsection{La "Muerte de Dios"}
+% Es la metáfora central de su crítica. "Dios" representa aquí todo el mundo suprasensible de la metafísica platónico-cristiana: el Bien, la Verdad, el Orden moral objetivo. Su "muerte" significa el colapso de estos pilares fundamentales. No es un triunfo, sino una catástrofe que deja al hombre ante el abismo del sin-sentido. La pregunta nietzscheana es: ¿qué haremos tras este asesinato?
+% 
+% \subsubsection{Crítica a la Metafísica y al Platonismo}
+% Nietzsche identifica en Sócrates y Platón el origen del error fatal: la invención de un \textbf{mundo verdadero} (el de las Ideas, el Bien, Dios) por oposición a este mundo, el de la vida, el cambio y los sentidos (\textbf{mundo aparente}). Esta metafísica es síntoma de una \textbf{decadencia vital}: los débiles y los frustrados (los "sacerdotes") inventan un "más allá" para vengarse de la vida y de los fuertes que la afirman. Es una filosofía del \textbf{resentimiento}.
+% 
+% \subsubsection{Crítica a la Moral Cristiana}
+% Aplicando el método genealógico en \textit{La genealogía de la moral}, Nietzsche distingue dos tipos de moral:
+% \begin{itemize}
+%     \item \textbf{Moral de señores}: Propia de los nobles, los fuertes, los que afirman la vida. Sus valores son la \textbf{fuerza}, el \textbf{orgullo}, la \textbf{salud}, la \textbf{belleza} y la \textbf{afirmación de sí mismos} (lo "bueno" es lo que soy y hago).
+%     \item \textbf{Moral de esclavos}: Inventada por los débiles, los oprimidos, los sacerdotes. Es la moral del \textbf{resentimiento}. Invierte los valores de los señores: llama "bueno" a lo que les es útil para sobrevivir (\textbf{humildad}, \textbf{piedad}, \textbf{mansedumbre}, \textbf{compasión}) y llama "malo" a la fuerza y la salud de los señores. Esta moral triunfa históricamente con el judaísmo y el cristianismo, en una "rebelión de esclavos" que ha envenenado a Europa.
+% \end{itemize}
+% La moral cristiana es, por tanto, una \textbf{moral anti-vida} que niega los instintos, glorifica el sufrimiento y predica la igualdad para debilitar a los más excelentes.
+% 
+% \subsubsection{Crítica a la Razón y la Ciencia}
+% Nietzsche ve en la razón y la ciencia moderna no la superación, sino la \textbf{heredera secular} del ideal ascético cristiano. Ambas persiguen una "verdad" objetiva y desinteresada, lo que es otra forma de negar la perspectiva vital, los instintos y la voluntad de poder. La ciencia cree en un "orden verdadero" del mundo, repitiendo así el esquema metafísico.
+% 
+% \subsection{Epistemología: Perspectivismo y Voluntad de Poder}
+% 
+% La teoría del conocimiento de Nietzsche es un radical \textbf{perspectivismo}.
+% 
+% \subsubsection{No Hay Hechos, Solo Interpretaciones}
+% Nietzsche niega la posibilidad de un conocimiento objetivo, neutro y desinteresado. Todo conocimiento es una \textbf{interpretación} desde una determinada \textbf{perspectiva} vital, impulsada por necesidades, instintos y valores. La "verdad" es solo un ejército de metáforas móviles, una ficción útil para la vida que ha sido petrificada como dogma.
+% 
+% \subsubsection{La Voluntad de Poder (\textit{Der Wille zur Macht}) como Fundamento}
+% El principio último que mueve toda realidad, y por tanto todo conocimiento, no es la "voluntad de vivir" (Schopenhauer), sino la \textbf{voluntad de poder}: un impulso primordial de expansión, crecimiento, dominio y superación. En el hombre, se manifiesta no solo como deseo de poder político, sino en todas sus actividades: el arte, el conocimiento, la moral. El conocimiento mismo es un instrumento de la voluntad de poder, una forma de apropiarse e interpretar el mundo para fortalecer la vida.
+% 
+% \begin{center}
+%     % Aquí una imagen sobre: Representación de la Voluntad de Poder como fuerza ascendente.
+%     % Sugerencia: Una ilustración abstracta que sugiera un flujo de energía, expansión o una escalada.
+%     \includegraphics[width=0.6\textwidth]{voluntad_poder.png}
+% \end{center}
+% 
+% \subsection{Filosofía Positiva: Afirmación de la Vida y Transvaloración}
+% 
+% Tras la crítica, Nietzsche propone una nueva actitud vital basada en la afirmación total.
+% 
+% \subsubsection{El Superhombre (\textit{Übermensch}}
+% El superhombre es el \textbf{sentido de la Tierra}, la meta que debe reemplazar a Dios. No es un ser evolutivo ni un dictador, sino el tipo humano que habrá de venir, capaz de:
+% \begin{itemize}
+%     \item Asumir plenamente la \textbf{muerte de Dios} sin caer en el nihilismo pasivo.
+%     \item Crear sus \textbf{propios valores} a partir de su voluntad de poder afirmadora (transvaloración).
+%     \item Amar la vida en su totalidad, incluido el dolor y el sinsentido (\textbf{amor fati}: amor al destino).
+%     \item Vivir de acuerdo con la doctrina del \textbf{eterno retorno}.
+% \end{itemize}
+% Es el antítesis del "último hombre", ser cómodo, mediocre y satisfecho que dice "¡hemos inventado la felicidad!".
+% 
+% \subsubsection{El Eterno Retorno (\textit{Die Ewige Wiederkunft}}
+% Es la \textbf{prueba suprema} de afirmación de la vida. La idea (presentada como una hipótesis física-psicológica en \textit{Así habló Zaratustra}) propone que toda la vida y los acontecimientos se repetirán infinitas veces, exactamente igual. La pregunta nietzscheana es: ¿vivirías tu vida de nuevo, con todos sus dolores y alegrías, sin cambiar nada? Solo el superhombre puede responder con un "sí" jubiloso, porque ama la vida incondicionalmente. Es la fórmula más elevada de afirmación.
+% 
+% \subsubsection{La Transvaloración de Todos los Valores (\textit{Umwertung aller Werte}}
+% Es el acto filosófico central: destruir los valores decadentes (cristianos, platónicos, modernos) y crear unos nuevos desde la \textbf{inocencia del devenir} y la voluntad de poder. Implica sustituir la compasión por la fortaleza, la humildad por el orgullo, la "verdad" por la creatividad perspectivista, el "más allá" por la fidelidad a la Tierra.
+% 
+% \subsection{Estética: lo Apolíneo y lo Dionisíaco}
+% En su primera obra, \textit{El nacimiento de la tragedia}, Nietzsche analiza el arte griego mediante dos principios:
+% \begin{itemize}
+%     \item \textbf{Lo apolíneo}: El principio de la forma, la belleza, la mesura, la individuación (símbolo: la escultura, el sueño). Representado por el dios Apolo.
+%     \item \textbf{Lo dionisíaco}: El principio de la desmesura, el éxtasis, la disolución de los límites individuales en la unidad primordial de la vida (símbolo: la música, la embriaguez). Representado por el dios Dioniso.
+% \end{itemize}
+% La gran tragedia ática logró la síntesis sublime de ambos. Nietzsche valora lo dionisíaco como la afirmación más profunda de la vida, y ve en Sócrates (el racionalista) al asesino de la tragedia y, por tanto, de la cultura dionisíaca saludable.
+% 
+% \begin{center}
+%     % Aquí una imagen sobre: Representación de Apolo y Dioniso.
+%     % Sugerencia: Una imagen que contraste una escultura clásica de Apolo con una pintura o mosaico de una bacanal dionisíaca.
+%     \includegraphics[width=0.7\textwidth]{apolo_dioniso.jpg}
+% \end{center}
+% 
+% \subsection{Legado e Influencia}
+% La influencia de Nietzsche es inmensa y ambivalente. Su crítica radical influyó en el existencialismo (Heidegger, Sartre), la psicología (Freud, Jung), la teoría crítica (Adorno) y la posmodernidad (Foucault, Derrida). Su rechazo a los sistemas y su estilo aforístico lo convierten en un autor proteico, susceptible de múltiples interpretaciones (a menudo contradictorias). Las principales críticas señalan su irracionalismo potencial, su aristocratismo radical y la apropiación tergiversada que hicieron de él los nazis (su hermana Elisabeth falsificó sus textos). No obstante, su diagnóstico del nihilismo y su llamada a una afirmación creadora de la vida lo sitúan como uno de los pensadores más provocadores e indispensables de la modernidad.
+% 
+% \newpage
+
 % \section{Ortega y Gasset: La Razón Vital y la Circunstancia} % Esta sección fue realizada con IA. Futuras revisiones buscarán suprimir los errores que esto conlleva.
 % 
 % \begin{center}
@@ -3263,100 +3495,7 @@ marco metafísico, pues supone que una sustancia inextensa puede actuar localmen
 % \subsection{Legado e Influencia}
 % 
 % El pensamiento de Ortega ejerció una influencia decisiva en la filosofía española posterior (la Escuela de Madrid) y en el existencialismo hispánico. Su crítica al racionalismo abstracto y su énfasis en la vida, la historia y la circunstancia anticiparon temas centrales del existencialismo (Heidegger, cuyos análisis del \textit{Dasein} tienen paralelos con la vida orteguiana, aunque con diferencias profundas). Su diagnóstico sociológico sobre la sociedad de masas sigue siendo de una vigencia notable. Las principales críticas a su pensamiento señalan un posible \textbf{aristocratismo} en su distinción masa/minoría y cierta \textbf{impresición terminológica}. No obstante, su proyecto de una razón anclada en la vida humana concreta y histórica constituye una de las aportaciones más originales de la filosofía en español.
-% 
-% \section{Nietzsche: La Transvaloración de Todos los Valores}
-% 
-% \begin{center}
-%     % Aquí una imagen sobre: Retrato de Friedrich Nietzsche.
-%     % Sugerencia: La famosa fotografía de Nietzsche de Gustav Schultze (Naumburg, 1882) o el dibujo de Hans Olde.
-%     \includegraphics[width=0.35\textwidth]{nietzsche_retrato.jpg}
-% \end{center}
-% 
-% \vspace{5mm}
-% \begin{center}
-%     \textit{"Dios ha muerto. [...] Y nosotros lo hemos matado."}
-% \end{center}
-% \vspace{5mm}
-% 
-% \subsection{Introducción: Contexto y Propósito de una Filosofía a Martillazos}
-% 
-% Friedrich Nietzsche (1844-1900) es el gran crítico y disolvente de la cultura occidental. Su pensamiento, radical y aforístico, no construye un sistema, sino que ejecuta una \textbf{destrucción genealógica} de los valores que han regido Europa (el platonismo, el cristianismo, la moral, la racionalidad) para abrir paso a una nueva posibilidad de existencia: el \textbf{superhombre} (\textit{Übermensch}) que afirme la vida en su totalidad. Su filosofía es un \textbf{vitalismo trágico-dionisíaco} que se expresa mediante metáforas, aforismos y una prosa combativa. El contexto de la crisis del positivismo y el nihilismo europeo finisecular es esencial para comprender su obra.
-% 
-% \subsection{Crítica de la Cultura Occidental: Nihilismo y Muerte de Dios}
-% 
-% Nietzsche diagnostica que la cultura occidental está enferma de \textbf{nihilismo} (la desvalorización de los valores supremos, la sensación de que "todo carece de sentido"). Su obra es una genealogía (estudio del origen histórico-psicológico, no lógico) de esta enfermedad.
-% 
-% \subsubsection{La "Muerte de Dios"}
-% Es la metáfora central de su crítica. "Dios" representa aquí todo el mundo suprasensible de la metafísica platónico-cristiana: el Bien, la Verdad, el Orden moral objetivo. Su "muerte" significa el colapso de estos pilares fundamentales. No es un triunfo, sino una catástrofe que deja al hombre ante el abismo del sin-sentido. La pregunta nietzscheana es: ¿qué haremos tras este asesinato?
-% 
-% \subsubsection{Crítica a la Metafísica y al Platonismo}
-% Nietzsche identifica en Sócrates y Platón el origen del error fatal: la invención de un \textbf{mundo verdadero} (el de las Ideas, el Bien, Dios) por oposición a este mundo, el de la vida, el cambio y los sentidos (\textbf{mundo aparente}). Esta metafísica es síntoma de una \textbf{decadencia vital}: los débiles y los frustrados (los "sacerdotes") inventan un "más allá" para vengarse de la vida y de los fuertes que la afirman. Es una filosofía del \textbf{resentimiento}.
-% 
-% \subsubsection{Crítica a la Moral Cristiana}
-% Aplicando el método genealógico en \textit{La genealogía de la moral}, Nietzsche distingue dos tipos de moral:
-% \begin{itemize}
-%     \item \textbf{Moral de señores}: Propia de los nobles, los fuertes, los que afirman la vida. Sus valores son la \textbf{fuerza}, el \textbf{orgullo}, la \textbf{salud}, la \textbf{belleza} y la \textbf{afirmación de sí mismos} (lo "bueno" es lo que soy y hago).
-%     \item \textbf{Moral de esclavos}: Inventada por los débiles, los oprimidos, los sacerdotes. Es la moral del \textbf{resentimiento}. Invierte los valores de los señores: llama "bueno" a lo que les es útil para sobrevivir (\textbf{humildad}, \textbf{piedad}, \textbf{mansedumbre}, \textbf{compasión}) y llama "malo" a la fuerza y la salud de los señores. Esta moral triunfa históricamente con el judaísmo y el cristianismo, en una "rebelión de esclavos" que ha envenenado a Europa.
-% \end{itemize}
-% La moral cristiana es, por tanto, una \textbf{moral anti-vida} que niega los instintos, glorifica el sufrimiento y predica la igualdad para debilitar a los más excelentes.
-% 
-% \subsubsection{Crítica a la Razón y la Ciencia}
-% Nietzsche ve en la razón y la ciencia moderna no la superación, sino la \textbf{heredera secular} del ideal ascético cristiano. Ambas persiguen una "verdad" objetiva y desinteresada, lo que es otra forma de negar la perspectiva vital, los instintos y la voluntad de poder. La ciencia cree en un "orden verdadero" del mundo, repitiendo así el esquema metafísico.
-% 
-% \subsection{Epistemología: Perspectivismo y Voluntad de Poder}
-% 
-% La teoría del conocimiento de Nietzsche es un radical \textbf{perspectivismo}.
-% 
-% \subsubsection{No Hay Hechos, Solo Interpretaciones}
-% Nietzsche niega la posibilidad de un conocimiento objetivo, neutro y desinteresado. Todo conocimiento es una \textbf{interpretación} desde una determinada \textbf{perspectiva} vital, impulsada por necesidades, instintos y valores. La "verdad" es solo un ejército de metáforas móviles, una ficción útil para la vida que ha sido petrificada como dogma.
-% 
-% \subsubsection{La Voluntad de Poder (\textit{Der Wille zur Macht}) como Fundamento}
-% El principio último que mueve toda realidad, y por tanto todo conocimiento, no es la "voluntad de vivir" (Schopenhauer), sino la \textbf{voluntad de poder}: un impulso primordial de expansión, crecimiento, dominio y superación. En el hombre, se manifiesta no solo como deseo de poder político, sino en todas sus actividades: el arte, el conocimiento, la moral. El conocimiento mismo es un instrumento de la voluntad de poder, una forma de apropiarse e interpretar el mundo para fortalecer la vida.
-% 
-% \begin{center}
-%     % Aquí una imagen sobre: Representación de la Voluntad de Poder como fuerza ascendente.
-%     % Sugerencia: Una ilustración abstracta que sugiera un flujo de energía, expansión o una escalada.
-%     \includegraphics[width=0.6\textwidth]{voluntad_poder.png}
-% \end{center}
-% 
-% \subsection{Filosofía Positiva: Afirmación de la Vida y Transvaloración}
-% 
-% Tras la crítica, Nietzsche propone una nueva actitud vital basada en la afirmación total.
-% 
-% \subsubsection{El Superhombre (\textit{Übermensch}}
-% El superhombre es el \textbf{sentido de la Tierra}, la meta que debe reemplazar a Dios. No es un ser evolutivo ni un dictador, sino el tipo humano que habrá de venir, capaz de:
-% \begin{itemize}
-%     \item Asumir plenamente la \textbf{muerte de Dios} sin caer en el nihilismo pasivo.
-%     \item Crear sus \textbf{propios valores} a partir de su voluntad de poder afirmadora (transvaloración).
-%     \item Amar la vida en su totalidad, incluido el dolor y el sinsentido (\textbf{amor fati}: amor al destino).
-%     \item Vivir de acuerdo con la doctrina del \textbf{eterno retorno}.
-% \end{itemize}
-% Es el antítesis del "último hombre", ser cómodo, mediocre y satisfecho que dice "¡hemos inventado la felicidad!".
-% 
-% \subsubsection{El Eterno Retorno (\textit{Die Ewige Wiederkunft}}
-% Es la \textbf{prueba suprema} de afirmación de la vida. La idea (presentada como una hipótesis física-psicológica en \textit{Así habló Zaratustra}) propone que toda la vida y los acontecimientos se repetirán infinitas veces, exactamente igual. La pregunta nietzscheana es: ¿vivirías tu vida de nuevo, con todos sus dolores y alegrías, sin cambiar nada? Solo el superhombre puede responder con un "sí" jubiloso, porque ama la vida incondicionalmente. Es la fórmula más elevada de afirmación.
-% 
-% \subsubsection{La Transvaloración de Todos los Valores (\textit{Umwertung aller Werte}}
-% Es el acto filosófico central: destruir los valores decadentes (cristianos, platónicos, modernos) y crear unos nuevos desde la \textbf{inocencia del devenir} y la voluntad de poder. Implica sustituir la compasión por la fortaleza, la humildad por el orgullo, la "verdad" por la creatividad perspectivista, el "más allá" por la fidelidad a la Tierra.
-% 
-% \subsection{Estética: lo Apolíneo y lo Dionisíaco}
-% En su primera obra, \textit{El nacimiento de la tragedia}, Nietzsche analiza el arte griego mediante dos principios:
-% \begin{itemize}
-%     \item \textbf{Lo apolíneo}: El principio de la forma, la belleza, la mesura, la individuación (símbolo: la escultura, el sueño). Representado por el dios Apolo.
-%     \item \textbf{Lo dionisíaco}: El principio de la desmesura, el éxtasis, la disolución de los límites individuales en la unidad primordial de la vida (símbolo: la música, la embriaguez). Representado por el dios Dioniso.
-% \end{itemize}
-% La gran tragedia ática logró la síntesis sublime de ambos. Nietzsche valora lo dionisíaco como la afirmación más profunda de la vida, y ve en Sócrates (el racionalista) al asesino de la tragedia y, por tanto, de la cultura dionisíaca saludable.
-% 
-% \begin{center}
-%     % Aquí una imagen sobre: Representación de Apolo y Dioniso.
-%     % Sugerencia: Una imagen que contraste una escultura clásica de Apolo con una pintura o mosaico de una bacanal dionisíaca.
-%     \includegraphics[width=0.7\textwidth]{apolo_dioniso.jpg}
-% \end{center}
-% 
-% \subsection{Legado e Influencia}
-% La influencia de Nietzsche es inmensa y ambivalente. Su crítica radical influyó en el existencialismo (Heidegger, Sartre), la psicología (Freud, Jung), la teoría crítica (Adorno) y la posmodernidad (Foucault, Derrida). Su rechazo a los sistemas y su estilo aforístico lo convierten en un autor proteico, susceptible de múltiples interpretaciones (a menudo contradictorias). Las principales críticas señalan su irracionalismo potencial, su aristocratismo radical y la apropiación tergiversada que hicieron de él los nazis (su hermana Elisabeth falsificó sus textos). No obstante, su diagnóstico del nihilismo y su llamada a una afirmación creadora de la vida lo sitúan como uno de los pensadores más provocadores e indispensables de la modernidad.
-% 
-% \newpage
+
 % 
 % \part{Lengua}
 % 
